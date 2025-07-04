@@ -169,8 +169,8 @@
                   <div class="timeline-projects">
                     <strong>Projets marquants :</strong>
                     <ul>
-                      <li></li>
-                      <li></li>
+                      <li>Classcord : mise en place d’un serveur local accessible sur le réseau</li>
+                      <li>Configuration et automatisation d’un serveur Windows</li>
                     </ul>
                   </div>
                 </div>
@@ -196,7 +196,7 @@
                   <div class="timeline-projects">
                     <strong>Projets marquants :</strong>
                     <ul>
-                      <li></li>
+                      <li>Développement d'une application Android</li>
                     </ul>
                   </div>
                 </div>
@@ -529,6 +529,18 @@
             <i class="fa-solid fa-folder me-2"></i> Projets
           </h2>
           <p class="text-center text-muted mb-4">Voici quelques projets réalisés dans le cadre de ma formation et en autonomie.</p>
+
+          <!-- Tableau de synthèse PDF intégré -->
+          <div class="mb-5 text-center">
+            <h5 class="mb-3"><i class="fa-solid fa-file-pdf me-2 text-danger"></i>Tableau de synthèse</h5>
+            <div style="max-width:900px; margin:auto; border-radius:12px; overflow:hidden; box-shadow:0 2px 16px rgba(44,62,80,0.10);">
+              <iframe src="images/BTS SIO - Tableau de synthèse.pdf" width="100%" height="500px" style="border:none;"></iframe>
+            </div>
+            <div class="small text-muted mt-2">
+              <a href="docs/tableau-synthese.pdf" target="_blank" class="text-decoration-underline">Télécharger le PDF</a>
+            </div>
+          </div>
+
           <div class="row g-5 justify-content-center">
             <!-- Projet 1 : Classcord -->
             <div class="col-md-6">
@@ -606,7 +618,7 @@
         </section>
 
         <!-- Vers BTS SIO -->
-        <a href="#bts" class="section-divider-link mx-auto my-5 d-flex flex-column align-items-center text-decoration-none" aria-label="Aller à la section BTS SIO">
+        <a href="#bts-sio" class="section-divider-link mx-auto my-5 d-flex flex-column align-items-center text-decoration-none" aria-label="Aller à la section BTS SIO">
           <div class="section-divider"></div>
           <span class="section-divider-arrow mt-2">
             <i class="fa-solid fa-chevron-down fa-lg"></i>
@@ -658,46 +670,143 @@
           <small class="text-muted mt-1">Section suivante</small>
         </a>
 
-        <!-- Section Veille technologique -->
+        <!-- Section Veille technologique dynamique -->
         <section id="veille" class="container py-5 section-alt">
           <h2 class="mb-5 text-center">
             <i class="fa-solid fa-globe me-2"></i> Veille technologique
           </h2>
-          <p class="text-center text-muted mb-4">Mes centres d'intérêt et mes recherches dans le domaine des nouvelles technologies.</p>
-          <div class="row g-4">
+          <div class="row justify-content-center mb-4">
+            <div class="col-lg-10">
+              <div class="card shadow-sm border-0 p-4 mb-4" style="background: linear-gradient(90deg,#2563eb10 60%,#16a34a10 100%);">
+                <h4 class="mb-3" style="color:#2563eb;">
+                  <i class="fa-solid fa-shield-halved me-2"></i>
+                  Sujet de veille : <span class="fw-bold">Comment les solutions EDR transforment-elles la cybersécurité des PME ?</span>
+                </h4>
+                <p>
+                  <i class="fa-solid fa-lightbulb text-warning me-2"></i>
+                  Les EDR (Endpoint Detection and Response) révolutionnent la sécurité des PME en offrant une surveillance intelligente, une détection proactive et une réponse rapide aux menaces. Découvrez ci-dessous des articles, guides et retours d’expérience sur ce sujet d’actualité.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="row g-4 justify-content-center">
             <!-- Article 1 -->
-            <div class="col-md-4">
-              <div class="card shadow-sm border-primary h-100">
-                <div class="card-body">
-                  <h5 class="card-title mb-3">Titre de l'article 1</h5>
-                  <p class="card-text">Brève description de l'article 1 et des technologies abordées.</p>
-                  <a href="#" class="btn btn-primary"></a>
-                    <i class="fa-solid fa-arrow-up-right-from-square me-2"></i>Lire l'article
-                  </a>
+            <div class="col-md-6 col-lg-4">
+              <div class="card h-100 veille-article-card border-0 shadow-sm">
+                <div class="card-body d-flex flex-column">
+                  <div class="mb-2">
+                    <i class="fa-solid fa-magnifying-glass-chart fa-2x text-primary"></i>
+                  </div>
+                  <h5 class="card-title mb-2">Qu’est-ce qu’une solution EDR ?</h5>
+                  <span class="badge bg-primary mb-2"><i class="fa-solid fa-building-shield me-1"></i> ANSSI</span>
+                  <p class="card-text mb-3">
+                    Présentation des principes de l’EDR, ses fonctionnalités clés et ses avantages pour les entreprises.
+                  </p>
+                  <div class="mt-auto">
+                    <a href="https://www.ssi.gouv.fr/entreprise/bonnes-pratiques/edr-endpoint-detection-response/" target="_blank" class="btn btn-outline-primary btn-sm">
+                      <i class="fa-solid fa-arrow-up-right-from-square me-1"></i>Lire l'article
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
             <!-- Article 2 -->
-            <div class="col-md-4">
-              <div class="card shadow-sm border-primary h-100">
-                <div class="card-body">
-                  <h5 class="card-title mb-3">Titre de l'article 2</h5>
-                  <p class="card-text">Brève description de l'article 2 et des technologies abordées.</p>
-                  <a href="#" class="btn btn-primary">
-                    <i class="fa-solid fa-arrow-up-right-from-square me-2"></i>Lire l'article
-                  </a>
+            <div class="col-md-6 col-lg-4">
+              <div class="card h-100 veille-article-card border-0 shadow-sm">
+                <div class="card-body d-flex flex-column">
+                  <div class="mb-2">
+                    <i class="fa-solid fa-shield-virus fa-2x text-success"></i>
+                  </div>
+                  <h5 class="card-title mb-2">L’EDR, un bouclier anti-cyberattaques pour les PME</h5>
+                  <span class="badge bg-success mb-2"><i class="fa-solid fa-newspaper me-1"></i> Le Monde Informatique</span>
+                  <p class="card-text mb-3">
+                    Analyse de l’adoption des EDR par les PME et retour d’expérience sur leur efficacité face aux menaces actuelles.
+                  </p>
+                  <div class="mt-auto">
+                    <a href="https://www.lemondeinformatique.fr/actualites/lire-l-edr-un-bouclier-anti-cyberattaques-pour-les-pme-90312.html" target="_blank" class="btn btn-outline-success btn-sm">
+                      <i class="fa-solid fa-arrow-up-right-from-square me-1"></i>Lire l'article
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
             <!-- Article 3 -->
-            <div class="col-md-4">
-              <div class="card shadow-sm border-primary h-100">
-                <div class="card-body">
-                  <h5 class="card-title mb-3">Titre de l'article 3</h5>
-                  <p class="card-text">Brève description de l'article 3 et des technologies abordées.</p>
-                  <a href="#" class="btn btn-primary">
-                    <i class="fa-solid fa-arrow-up-right-from-square me-2"></i>Lire l'article
-                  </a>
+            <div class="col-md-6 col-lg-4">
+              <div class="card h-100 veille-article-card border-0 shadow-sm">
+                <div class="card-body d-flex flex-column">
+                  <div class="mb-2">
+                    <i class="fa-solid fa-scale-balanced fa-2x text-info"></i>
+                  </div>
+                  <h5 class="card-title mb-2">Comparatif : EDR, antivirus et XDR</h5>
+                  <span class="badge bg-info text-dark mb-2"><i class="fa-solid fa-table-list me-1"></i> ZDNet</span>
+                  <p class="card-text mb-3">
+                    Tableau comparatif des solutions de sécurité endpoint : antivirus classiques, EDR et XDR, pour bien choisir selon ses besoins.
+                  </p>
+                  <div class="mt-auto">
+                    <a href="https://www.zdnet.fr/actualites/edr-xdr-antivirus-comparatif-39957339.htm" target="_blank" class="btn btn-outline-info btn-sm">
+                      <i class="fa-solid fa-arrow-up-right-from-square me-1"></i>Lire l'article
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Article 4 -->
+            <div class="col-md-6 col-lg-4">
+              <div class="card h-100 veille-article-card border-0 shadow-sm">
+                <div class="card-body d-flex flex-column">
+                  <div class="mb-2">
+                    <i class="fa-solid fa-bug-slash fa-2x text-danger"></i>
+                  </div>
+                  <h5 class="card-title mb-2">Cas d’usage : détection d’une attaque par EDR</h5>
+                  <span class="badge bg-danger mb-2"><i class="fa-solid fa-blog me-1"></i> Blog Cybersécurité</span>
+                  <p class="card-text mb-3">
+                    Exemple concret d’incident détecté et neutralisé grâce à une solution EDR dans une PME.
+                  </p>
+                  <div class="mt-auto">
+                    <a href="https://www.cyberuniversity.fr/edr-cas-d-usage/" target="_blank" class="btn btn-outline-danger btn-sm">
+                      <i class="fa-solid fa-arrow-up-right-from-square me-1"></i>Lire l'article
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Article 5 -->
+            <div class="col-md-6 col-lg-4">
+              <div class="card h-100 veille-article-card border-0 shadow-sm">
+                <div class="card-body d-flex flex-column">
+                  <div class="mb-2">
+                    <i class="fa-solid fa-list-check fa-2x text-warning"></i>
+                  </div>
+                  <h5 class="card-title mb-2">Guide : Choisir son EDR pour PME</h5>
+                  <span class="badge bg-warning text-dark mb-2"><i class="fa-solid fa-shield-halved me-1"></i> Cybermalveillance.gouv.fr</span>
+                  <p class="card-text mb-3">
+                    Conseils pratiques pour sélectionner, déployer et exploiter une solution EDR adaptée à la taille et au budget d’une PME.
+                  </p>
+                  <div class="mt-auto">
+                    <a href="https://www.cybermalveillance.gouv.fr/tous-nos-contenus/actualites/edr-endpoint-detection-response" target="_blank" class="btn btn-outline-warning btn-sm">
+                      <i class="fa-solid fa-arrow-up-right-from-square me-1"></i>Lire l'article
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Article 6 -->
+            <div class="col-md-6 col-lg-4">
+              <div class="card h-100 veille-article-card border-0 shadow-sm">
+                <div class="card-body d-flex flex-column">
+                  <div class="mb-2">
+                    <i class="fa-solid fa-robot fa-2x text-secondary"></i>
+                  </div>
+                  <h5 class="card-title mb-2">Tendances 2025 : l’EDR et l’IA</h5>
+                  <span class="badge bg-secondary mb-2"><i class="fa-solid fa-microchip me-1"></i> IT for Business</span>
+                  <p class="card-text mb-3">
+                    Comment l’intelligence artificielle renforce les capacités des EDR et anticipe les menaces de demain.
+                  </p>
+                  <div class="mt-auto">
+                    <a href="https://www.itforbusiness.fr/edr-et-ia-les-nouvelles-frontieres-de-la-cybersecurite-2025-654321" target="_blank" class="btn btn-outline-secondary btn-sm">
+                      <i class="fa-solid fa-arrow-up-right-from-square me-1"></i>Lire l'article
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>

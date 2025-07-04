@@ -522,3 +522,23 @@ body {
 #bts-sio img {
   background: #fff;
 }
+
+.veille-article-card {
+  background: #f8f9fa;
+  border-radius: 18px;
+  transition: box-shadow 0.2s, transform 0.2s, border 0.2s;
+  border: 2px solid #e3e8ee;
+}
+.veille-article-card:hover {
+  box-shadow: 0 8px 32px rgba(44,62,80,0.13);
+  transform: translateY(-6px) scale(1.03);
+  border-color: #2563eb;
+}
+.veille-article-card .badge {
+  font-size: 0.95em;
+  border-radius: 1em;
+  margin-bottom: 0.5em;
+}
+.veille-article-card i.fa-2x {
+  filter: drop-shadow(0 2px 6px #2563eb22);
+}
