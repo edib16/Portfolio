@@ -5,6 +5,9 @@ body {
     padding: 0;
     overflow-x: hidden;
     background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
   }
   
   .container-fluid, .row {
@@ -541,4 +544,31 @@ body {
 }
 .veille-article-card i.fa-2x {
   filter: drop-shadow(0 2px 6px #2563eb22);
+}
+
+/* Footer toujours en bas */
+html, body {
+  height: 100%;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+.footer-custom {
+  flex-shrink: 0;
+  border-top: 1px solid #222;
+  box-shadow: 0 -2px 12px rgba(44,62,80,0.08);
+  letter-spacing: 0.02em;
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+  background: #212529;
 }
