@@ -20,8 +20,14 @@
     <div class="row">
 
       <!-- Menu fixe à gauche -->
-      <nav class="col-2 sidebar text-white p-3 position-fixed top-0 start-0 vh-100 bg-dark">
+      <nav class="col-2 sidebar text-white p-3 position-fixed top-0 start-0 vh-100 bg-dark d-none d-md-block">
         <h3 class="text-center mb-4">Edib Saoud</h3>
+        <div class="current-date-time mb-4">
+          <div class="current-date fw-bold text-center current-date"></div>
+          <div class="current-time fs-5 text-center current-time"></div>
+        </div>
+        <hr class="sidebar-separator my-3">
+        <div class="nav-section-title text-uppercase text-secondary fw-bold small mb-2 text-center">Navigation</div>
         <ul class="nav flex-column">
           <li class="nav-item">
             <a href="#image-container" class="text-white text-decoration-none">
@@ -54,7 +60,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="#bts" class="text-white text-decoration-none">
+            <a href="#bts-sio" class="text-white text-decoration-none">
               <i class="fa-solid fa-laptop-code me-2"></i>BTS SIO
             </a>
           </li>
@@ -70,6 +76,41 @@
           </li>
         </ul>
       </nav>
+
+      <!-- Menu burger mobile -->
+      <nav class="navbar navbar-dark bg-dark d-md-none position-fixed top-0 start-0 w-100 z-3">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#image-container">Edib Saoud</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasMenu" aria-controls="offcanvasMenu" aria-label="Menu">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
+      </nav>
+      <div class="offcanvas offcanvas-start bg-dark text-white" tabindex="-1" id="offcanvasMenu" aria-labelledby="offcanvasMenuLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasMenuLabel">Edib Saoud</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Fermer"></button>
+        </div>
+        <div class="offcanvas-body">
+          <div class="current-date-time mb-4">
+            <div class="current-date fw-bold text-center current-date"></div>
+            <div class="current-time fs-5 text-center current-time"></div>
+          </div>
+          <hr class="sidebar-separator my-3">
+          <div class="nav-section-title text-uppercase text-secondary fw-bold small mb-2 text-center">Navigation</div>
+          <ul class="nav flex-column">
+            <li class="nav-item"><a href="#image-container" class="text-white text-decoration-none" data-bs-dismiss="offcanvas"><i class="fa-solid fa-house me-2"></i>Accueil</a></li>
+            <li class="nav-item"><a href="#about-section" class="text-white text-decoration-none" data-bs-dismiss="offcanvas"><i class="fa-solid fa-user me-2"></i>Profil</a></li>
+            <li class="nav-item"><a href="#parcours" class="text-white text-decoration-none" data-bs-dismiss="offcanvas"><i class="fa-solid fa-graduation-cap me-2"></i>Parcours</a></li>
+            <li class="nav-item"><a href="#stages" class="text-white text-decoration-none" data-bs-dismiss="offcanvas"><i class="fa-solid fa-briefcase me-2"></i>Stages</a></li>
+            <li class="nav-item"><a href="#competences" class="text-white text-decoration-none" data-bs-dismiss="offcanvas"><i class="fa-solid fa-tools me-2"></i>Compétences</a></li>
+            <li class="nav-item"><a href="#projets" class="text-white text-decoration-none" data-bs-dismiss="offcanvas"><i class="fa-solid fa-folder me-2"></i>Projets</a></li>
+            <li class="nav-item"><a href="#bts-sio" class="text-white text-decoration-none" data-bs-dismiss="offcanvas"><i class="fa-solid fa-laptop-code me-2"></i>BTS SIO</a></li>
+            <li class="nav-item"><a href="#veille" class="text-white text-decoration-none" data-bs-dismiss="offcanvas"><i class="fa-solid fa-globe me-2"></i>Veille technologique</a></li>
+            <li class="nav-item"><a href="#contact" class="text-white text-decoration-none" data-bs-dismiss="offcanvas"><i class="fa-solid fa-envelope me-2"></i>Contact</a></li>
+          </ul>
+        </div>
+      </div>
 
       <!-- Contenu principal -->
       <main class="offset-2 col-10 p-0">
@@ -563,7 +604,7 @@
                 style="border:none;"></iframe>
             </div>
             <div class="small text-muted mt-2">
-              <a href="docs/tableau-synthese.pdf" target="_blank" class="text-decoration-underline">Télécharger le
+              <a href="images/BTS SIO - Tableau de synthèse.pdf" target="_blank" class="text-decoration-underline">Télécharger le
                 PDF</a>
             </div>
           </div>
@@ -951,28 +992,29 @@
           </div>
         </section>
 
-        <!-- Footer amélioré et collé en bas -->
-<footer class="footer-custom bg-dark text-white py-3 mt-auto w-100">
-  <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center">
-    <div class="mb-2 mb-md-0">
-      <span>
-        &copy; 2023 Edib Saoud. Tous droits réservés.
-      </span>
-    </div>
-    <div>
-      <a href="mailto:edib.1605@gmail.com" class="text-white me-3" aria-label="Mail"><i class="fa-solid fa-envelope"></i></a>
-      <a href="https://github.com/edib16" class="text-white me-3" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
-      <a href="https://www.linkedin.com/in/edib-saoud-810569352/" class="text-white" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
-    </div>
-  </div>
-</footer>
-
       </main>
     </div>
   </div>
 
+  <!-- Footer collé en bas, aligné à droite de la sidebar, sans .row ni .col -->
+  <footer class="footer-custom bg-dark text-white py-3 mt-auto">
+    <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center">
+      <div class="mb-2 mb-md-0">
+        <span>
+          &copy; 2023 Edib Saoud. Tous droits réservés.
+        </span>
+      </div>
+      <div>
+        <a href="mailto:edib.1605@gmail.com" class="text-white me-3" aria-label="Mail"><i class="fa-solid fa-envelope"></i></a>
+        <a href="https://github.com/edib16" class="text-white me-3" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/edib-saoud-810569352/" class="text-white" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+      </div>
+    </div>
+  </footer>
+
   <!-- Bootstrap JS (à placer avant </body>) -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
 </body>
 
 </html>
