@@ -870,3 +870,23 @@ body {
     padding-left: 1.2rem;
   }
 }
+
+/* --- Animations d'apparition des sections au scroll (fade/slide) --- */
+.section-animate {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.7s cubic-bezier(.4,0,.2,1), transform 0.7s cubic-bezier(.4,0,.2,1);
+  will-change: opacity, transform;
+}
+.section-animate.visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Optionnel : effet plus doux sur mobile */
+@media (max-width: 767.98px) {
+  .section-animate {
+    transition-duration: 0.5s;
+    transform: translateY(24px);
+  }
+}

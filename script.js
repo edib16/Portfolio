@@ -15,3 +15,27 @@ document.addEventListener('DOMContentLoaded', () => {
   updateDateTime();
   setInterval(updateDateTime, 1000);
 });
+
+// Animation d'apparition des sections au scroll (fade/slide)
+document.addEventListener('DOMContentLoaded', () => {
+  const animatedSections = document.querySelectorAll('section, #image-container');
+  animatedSections.forEach(section => {
+    section.classList.add('section-animate');
+  });
+
+  function revealSectionsOnScroll() {
+    const triggerBottom = window.innerHeight * 0.92;
+    animatedSections.forEach(section => {
+      const rect = section.getBoundingClientRect();
+      if (rect.top < triggerBottom) {
+        section.classList.add('visible');
+      } else {
+        section.classList.remove('visible');
+      }
+    });
+  }
+
+  window.addEventListener('scroll', revealSectionsOnScroll);
+  window.addEventListener('resize', revealSectionsOnScroll);
+  revealSectionsOnScroll();
+});
