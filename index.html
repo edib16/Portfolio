@@ -28,6 +28,7 @@
         </div>
         <hr class="sidebar-separator my-3">
         <div class="nav-section-title text-uppercase text-secondary fw-bold small mb-2 text-center">Navigation</div>
+        <!-- ======= MENU À GAUCHE (sidebar) ======= -->
         <ul class="nav flex-column">
           <li class="nav-item">
             <a href="#image-container" class="text-white text-decoration-none">
@@ -37,6 +38,11 @@
           <li class="nav-item">
             <a href="#about-section" class="text-white text-decoration-none">
               <i class="fa-solid fa-user me-2"></i>Profil
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#parcours" class="text-white text-decoration-none">
+              <i class="fa-solid fa-graduation-cap me-2"></i>Parcours
             </a>
           </li>
           <li class="nav-item">
@@ -50,18 +56,13 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="#parcours" class="text-white text-decoration-none">
-              <i class="fa-solid fa-graduation-cap me-2"></i>Parcours
+            <a href="#projets" class="text-white text-decoration-none">
+              <i class="fa-solid fa-folder me-2"></i>Projets
             </a>
           </li>
           <li class="nav-item">
             <a href="#stages" class="text-white text-decoration-none">
               <i class="fa-solid fa-briefcase me-2"></i>Stages
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="#projets" class="text-white text-decoration-none">
-              <i class="fa-solid fa-folder me-2"></i>Projets
             </a>
           </li>
           <li class="nav-item">
@@ -75,6 +76,7 @@
             </a>
           </li>
         </ul>
+        <!-- ======= FIN MENU À GAUCHE ======= -->
       </nav>
 
       <!-- Menu burger mobile -->
@@ -101,11 +103,11 @@
           <ul class="nav flex-column">
             <li class="nav-item"><a href="#image-container" class="text-white text-decoration-none" data-bs-dismiss="offcanvas"><i class="fa-solid fa-house me-2"></i>Accueil</a></li>
             <li class="nav-item"><a href="#about-section" class="text-white text-decoration-none" data-bs-dismiss="offcanvas"><i class="fa-solid fa-user me-2"></i>Profil</a></li>
+            <li class="nav-item"><a href="#parcours" class="text-white text-decoration-none" data-bs-dismiss="offcanvas"><i class="fa-solid fa-graduation-cap me-2"></i>Parcours</a></li>
             <li class="nav-item"><a href="#bts-sio" class="text-white text-decoration-none" data-bs-dismiss="offcanvas"><i class="fa-solid fa-laptop-code me-2"></i>BTS SIO</a></li>
             <li class="nav-item"><a href="#competences" class="text-white text-decoration-none" data-bs-dismiss="offcanvas"><i class="fa-solid fa-tools me-2"></i>Compétences</a></li>
-            <li class="nav-item"><a href="#parcours" class="text-white text-decoration-none" data-bs-dismiss="offcanvas"><i class="fa-solid fa-graduation-cap me-2"></i>Parcours</a></li>
-            <li class="nav-item"><a href="#stages" class="text-white text-decoration-none" data-bs-dismiss="offcanvas"><i class="fa-solid fa-briefcase me-2"></i>Stages</a></li>
             <li class="nav-item"><a href="#projets" class="text-white text-decoration-none" data-bs-dismiss="offcanvas"><i class="fa-solid fa-folder me-2"></i>Projets</a></li>
+            <li class="nav-item"><a href="#stages" class="text-white text-decoration-none" data-bs-dismiss="offcanvas"><i class="fa-solid fa-briefcase me-2"></i>Stages</a></li>
             <li class="nav-item"><a href="#veille" class="text-white text-decoration-none" data-bs-dismiss="offcanvas"><i class="fa-solid fa-globe me-2"></i>Veille technologique</a></li>
             <li class="nav-item"><a href="#contact" class="text-white text-decoration-none" data-bs-dismiss="offcanvas"><i class="fa-solid fa-envelope me-2"></i>Contact</a></li>
           </ul>
@@ -115,6 +117,8 @@
       <!-- Contenu principal -->
       <main class="offset-2 col-10 p-0">
 
+        <!-- ======= ORDRE DES SECTIONS PRINCIPALES ======= -->
+        <!-- Accueil -->
         <div id="image-container" class="section-animate">
           <img src="images/Background1.jpg" alt="Image de fond">
           <div id="text-overlay">
@@ -129,7 +133,7 @@
           </div>
         </div>
 
-        <!-- Section À propos de moi -->
+        <!-- Profil -->
         <section id="about-section" class="container py-5 section-alt section-animate">
           <div class="row align-items-center">
             <!-- Colonne gauche : photo et infos clés -->
@@ -181,6 +185,82 @@
                 </div>
               </div>
             </div>
+          </div>
+        </section>
+
+        <!-- Parcours -->
+        <a href="#parcours"
+          class="section-divider-link mx-auto my-5 d-flex flex-column align-items-center text-decoration-none"
+          aria-label="Aller à la section Parcours">
+          <div class="section-divider"></div>
+          <span class="section-divider-arrow mt-2">
+            <i class="fa-solid fa-chevron-down fa-lg"></i>
+          </span>
+          <small class="text-muted mt-1">Section suivante</small>
+        </a>
+
+        <!-- Section Parcours alternée -->
+        <section id="parcours" class="container py-5 section-parcours section-animate">
+          <h2 class="mb-5 text-center">
+            <i class="fa-solid fa-graduation-cap me-2"></i> Parcours
+          </h2>
+          <div class="timeline-alt">
+            <!-- Étape 1 : BTS -->
+            <div class="timeline-alt-item left timeline-color-blue">
+              <div class="timeline-alt-content card shadow-sm border-blue">
+                <div class="card-body">
+                  <div class="d-flex align-items-center mb-2">
+                    <img src="/images/iris-strasbourg-ecole-informatique-numerique_o3bxqw.png" alt="Logo école"
+                      class="timeline-logo me-3">
+                    <div>
+                      <span class="badge bg-primary mb-1">2024 - 2026</span>
+                      <h5 class="card-title mb-0">BTS SIO SISR</h5>
+                      <h6 class="card-subtitle text-muted">IRIS, Campus Mediaschool, Paris</h6>
+                    </div>
+                  </div>
+                  <p class="card-text">Spécialisation en réseaux, systèmes et cybersécurité.</p>
+                  <div class="timeline-tags mb-2">
+                    <span class="badge bg-success">Réseaux</span>
+                    <span class="badge bg-info text-dark">Cybersécurité</span>
+                    <span class="badge bg-secondary">Linux</span>
+                  </div>
+                  <div class="timeline-projects">
+                    <strong>Projets marquants :</strong>
+                    <ul>
+                      <li>Classcord : mise en place d’un serveur local accessible sur le réseau</li>
+                      <li>Configuration et automatisation d’un serveur Windows</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Étape 2 : Bac techno -->
+            <div class="timeline-alt-item right timeline-color-green">
+              <div class="timeline-alt-content card shadow-sm border-green">
+                <div class="card-body">
+                  <div class="d-flex align-items-center mb-2">
+                    <img src="/images/AZiBZGrh_400x400.jpg" alt="Logo lycée" class="timeline-logo me-3">
+                    <div>
+                      <span class="badge bg-primary mb-1">2023</span>
+                      <h5 class="card-title mb-0">Baccalauréat Technologique STI2D - Spécialité SIN</h5>
+                      <h6 class="card-subtitle text-muted">Lycée Guillaume Apollinaire</h6>
+                    </div>
+                  </div>
+                  <p class="card-text">Spécialité Systèmes d'Information et Numérique (SIN).</p>
+                  <div class="timeline-tags mb-2">
+                    <span class="badge bg-warning text-dark">STI2D</span>
+                    <span class="badge bg-info text-dark">SIN</span>
+                  </div>
+                  <div class="timeline-projects">
+                    <strong>Projets marquants :</strong>
+                    <ul>
+                      <li>Développement d'une application Android</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="timeline-alt-line"></div>
           </div>
         </section>
 
@@ -249,7 +329,7 @@
           <small class="text-muted mt-1">Section suivante</small>
         </a>
 
-        <!-- Section Compétences -->
+        <!-- Section Compétences avec carrousel d'icônes enrichi -->
         <section id="competences" class="container py-5 section-animate">
           <h2 class="mb-5 text-center">
             <i class="fa-solid fa-tools me-2"></i> Compétences
@@ -591,6 +671,85 @@
           </div>
         </section>
 
+         <!-- Vers Stages -->
+        <a href="#stages"
+          class="section-divider-link mx-auto my-5 d-flex flex-column align-items-center text-decoration-none"
+          aria-label="Aller à la section Stages">
+          <div class="section-divider"></div>
+          <span class="section-divider-arrow mt-2">
+            <i class="fa-solid fa-chevron-down fa-lg"></i>
+          </span>
+          <small class="text-muted mt-1">Section suivante</small>
+        </a>
+
+        <!-- Section Stages aérée -->
+        <section id="stages" class="container py-5 section-alt section-animate">
+          <h2 class="mb-5 text-center">
+            <i class="fa-solid fa-briefcase me-2"></i> Stages
+          </h2>
+          <div class="d-flex flex-column align-items-center gap-5">
+            <!-- Stage 1 : Déménagement et reconfiguration -->
+            <div class="stage-card card shadow-lg border-0 w-100" style="max-width: 700px;">
+              <div class="card-body p-5">
+                <div class="d-flex align-items-center mb-4">
+                  <img src="images/images.jpg" alt="Logo entreprise" class="rounded-circle me-4"
+                    style="width:72px; height:72px; object-fit:cover; background:#f8f9fa;">
+                  <div>
+                    <span class="badge bg-info text-dark mb-2 px-3 py-2 fs-6">À venir</span>
+                    <h4 class="card-title mb-1">Stage Technicien Systèmes & Réseaux</h4>
+                    <div class="text-muted mb-1"><i class="fa-solid fa-building me-2"></i>Entreprise à définir</div>
+                    <div class="text-muted"><i class="fa-solid fa-calendar me-2"></i>15/07/2025 – 15/08/2025</div>
+                  </div>
+                </div>
+                <div class="mb-3">
+                  <strong>Missions principales :</strong>
+                  <ul class="mb-2">
+                    <li>Déménagement de tout l'équipement informatique de l'entreprise</li>
+                    <li>Reconfiguration complète du réseau et des postes</li>
+                    <li>Installation et configuration de systèmes Linux</li>
+                    <li>Tests de bon fonctionnement et documentation</li>
+                  </ul>
+                </div>
+                <div>
+                  <strong>Compétences visées :</strong>
+                  <span class="badge bg-primary">Linux</span>
+                  <span class="badge bg-success">Réseaux</span>
+                  <span class="badge bg-warning text-dark">Déploiement</span>
+                  <span class="badge bg-secondary">Support utilisateur</span>
+                </div>
+              </div>
+            </div>
+            <!-- Stage 2 : Janvier 2026 (contenu temporaire) -->
+            <div class="stage-card card shadow-lg border-0 w-100" style="max-width: 700px;">
+              <div class="card-body p-5">
+                <div class="d-flex align-items-center mb-4">
+                  <img src="images/iris-strasbourg-ecole-informatique-numerique_o3bxqw.png" alt="Logo entreprise"
+                    class="rounded-circle me-4" style="width:72px; height:72px; object-fit:cover; background:#f8f9fa;">
+                  <div>
+                    <span class="badge bg-info text-dark mb-2 px-3 py-2 fs-6">À venir</span>
+                    <h4 class="card-title mb-1">Stage Administrateur Systèmes</h4>
+                    <div class="text-muted mb-1"><i class="fa-solid fa-building me-2"></i>Entreprise à définir</div>
+                    <div class="text-muted"><i class="fa-solid fa-calendar me-2"></i>Janvier 2026</div>
+                  </div>
+                </div>
+                <div class="mb-3">
+                  <strong>Missions principales :</strong>
+                  <ul class="mb-2">
+                    <li>À définir</li>
+                    <li>À définir</li>
+                  </ul>
+                </div>
+                <div>
+                  <strong>Compétences visées :</strong>
+                  <span class="badge bg-primary">Administration</span>
+                  <span class="badge bg-success">Réseaux</span>
+                  <span class="badge bg-secondary">Sécurité</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         <!-- Vers Veille technologique -->
         <a href="#veille"
           class="section-divider-link mx-auto my-5 d-flex flex-column align-items-center text-decoration-none"
@@ -835,6 +994,7 @@
           </div>
         </section>
 
+        <!-- ======= FIN ORDRE DES SECTIONS ======= -->
       </main>
     </div>
   </div>
