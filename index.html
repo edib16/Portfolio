@@ -120,160 +120,173 @@
         <!-- ======= ORDRE DES SECTIONS PRINCIPALES ======= -->
         <!-- Accueil -->
         <div id="image-container" class="section-animate">
-          <img src="images/Background1.jpg" alt="Image de fond">
+          <img src="images/abstract low poly plexus design in black and white 0609.jpg" alt="Image de fond">
           <div id="text-overlay">
             Edib Saoud
             <p class="subtitle">ÉTUDIANT EN BTS SIO - OPTION SISR</p>
             <div class="d-flex justify-content-center gap-3 mt-4">
               <a href="#about-section" class="btn btn-lg custom-btn">En savoir plus</a>
-              <a href="/images/Saoud Edib CV S.pdf" class="btn btn-lg custom-btn" target="_blank" rel="noopener">
+              <a href="/images/Copie de Saoud Edib CV S.pdf" class="btn btn-lg custom-btn" target="_blank" rel="noopener">
                 Télécharger mon CV
               </a>
             </div>
           </div>
+          <!-- Bouton bas de page : aller à Profil (visible au-dessus de l'image) -->
+          <a id="hero-next-btn" href="#about-section"
+            class="section-divider-link position-absolute start-50 translate-middle-x d-flex flex-column align-items-center text-white text-decoration-none"
+            style="bottom:24px; z-index:9999;" aria-label="Aller à la section Profil">
+            <div class="section-divider"></div>
+            <span class="section-divider-arrow mt-2">
+              <i class="fa-solid fa-chevron-down fa-lg"></i>
+            </span>
+            <small class="mt-1">Découvrir</small>
+          </a>
         </div>
 
-        <!-- Profil -->
-        <section id="about-section" class="container py-5 section-alt section-animate">
-          <div class="row align-items-center">
-            <!-- Colonne gauche : photo et infos clés -->
-            <div class="col-md-4 text-center mb-4 mb-md-0">
-              <img src="images/1748349156140.jpg" alt="Photo de Edib Saoud" class="rounded-circle shadow"
-                style="width: 160px; height: 160px; object-fit: cover;">
-              <h3 class="mt-3 mb-1">Edib Saoud</h3>
-              <p class="text-muted mb-2">Étudiant en BTS SIO SISR</p>
-              <ul class="list-unstyled small">
-                <li><i class="fa-solid fa-envelope me-2"></i> edib.1605@gmail.com</li>
-                <li><i class="fa-solid fa-phone me-2"></i> 06 03 94 42 16</li>
-                <li><i class="fa-solid fa-location-dot me-2"></i> Nice (06)</li>
-              </ul>
-              <a href="/images/Saoud Edib CV S.pdf" class="btn btn-lg mt-4"
-                style="background: rgba(30,30,30,0.8); color: #fff; border: none;" target="_blank" rel="noopener">
-                Télécharger mon CV
+        <!-- Profil (présentation personnelle) -->
+        <section id="about-section" class="container py-5 section-animate">
+          <div class="row g-5 align-items-start">
+            <!-- Left: Profile card (unchanged) -->
+            <aside class="col-lg-4">
+              <div class="profile-card h-100 p-4 d-flex flex-column align-items-center text-center">
+                  <img src="images/1748349156140.jpg" alt="Portrait Edib Saoud" class="rounded-circle mb-3">
+                  <h3 class="h4 mb-1">Edib Saoud</h3>
+                  <div class="small text-muted mb-3">Étudiant en BTS SIO SISR</div>
+                  <ul class="list-unstyled bio-list mb-3">
+                    <li class="mb-2"><i class="fa-solid fa-envelope me-2"></i>edib.1605@gmail.com</li>
+                    <li class="mb-2"><i class="fa-solid fa-phone me-2"></i>06 03 94 42 16</li>
+                    <li class="mb-0"><i class="fa-solid fa-location-dot me-2"></i>Nice (06)</li>
+                  </ul>
+
+                  <a href="/images/Copie de Saoud Edib CV S.pdf" target="_blank" rel="noopener" class="btn btn-primary px-4 py-2 mt-auto">Télécharger le CV</a>
+                </div>
+            </aside>
+
+            <!-- Right: Personal presentation (bio) -->
+            <div class="col-lg-8">
+              <div class="about-bio p-4 h-100">
+                <h2 id="about-title" class="section-title mb-2">À propos de moi</h2>
+                <div class="underline mb-3"></div>
+
+                <p class="bio-paragraph">Passionné par les réseaux, la cybersécurité et les technologies de l'information, je poursuis actuellement un BTS SIO option SISR à IRIS au sein du campus Mediaschool. Curieux, rigoureux et motivé, je souhaite approfondir mes compétences en administration systèmes et réseaux, et me spécialiser dans la cybersécurité.</p>
+
+                <div class="row mt-4">
+                  <div class="col-md-6">
+                    <h5>Compétences clés</h5>
+                    <ul class="list-unstyled mt-3">
+                      <li class="mb-2"><i class="fa-solid fa-network-wired me-2"></i>Administration réseaux & systèmes</li>
+                      <li class="mb-2"><i class="fa-solid fa-shield-halved me-2"></i>Sécurité informatique</li>
+                      <li class="mb-2"><i class="fa-solid fa-cloud me-2"></i>Virtualisation & Cloud</li>
+                      <li class="mb-0"><i class="fa-solid fa-gears me-2"></i>Automatisation (scripts, DevOps)</li>
+                    </ul>
+                  </div>
+                  <div class="col-md-6">
+                    <h5>Objectifs</h5>
+                    <ul class="list-unstyled mt-3">
+                      <li class="mb-2"><i class="fa-solid fa-chart-line me-2"></i>Acquérir un maximum de compétences dans le domaine des réseaux</li>
+                      <li class="mb-2"><i class="fa-solid fa-user-gear me-2"></i>Devenir DevOps ou administrateur systèmes et réseaux</li>
+                      <li class="mb-0"><i class="fa-solid fa-briefcase me-2"></i>Intégrer une entreprise où je pourrai mettre en pratique et développer mes compétences</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div class="about-next-button mt-5">
+                  <a href="#parcours"
+                    class="section-divider-link mx-auto d-flex flex-column align-items-center text-decoration-none"
+                    aria-label="Aller à la section Parcours">
+                    <div class="section-divider"></div>
+                    <span class="section-divider-arrow mt-2">
+                      <i class="fa-solid fa-chevron-down fa-lg"></i>
+                    </span>
+                    <small class="text-muted mt-1">Section suivante</small>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Section Parcours - Timeline Circulaire -->
+        <section id="parcours" class="section-parcours-circular section-animate">
+          <div class="parcours-container">
+            <header class="parcours-header">
+              <h2 class="section-title"><i class="fa-solid fa-graduation-cap me-2"></i>Parcours</h2>
+              <p>Une trajectoire évolutive de formation</p>
+            </header>
+
+            <!-- Timeline Circulaire -->
+            <div class="circular-timeline">
+              <!-- Ligne de connexion -->
+              <div class="timeline-line"></div>
+
+              <!-- Étape 1: Baccalauréat -->
+              <div class="timeline-item" data-step="1">
+                <div class="step-node node-completed">
+                  <span class="step-number">1</span>
+                </div>
+                <div class="step-content">
+                  <h5 class="step-title">Baccalauréat STI2D</h5>
+                  <p class="step-year">2023</p>
+                  <p class="step-place">Lycée Guillaume Apollinaire</p>
+                  <p class="step-subtitle">Systèmes d'Information & Numérique</p>
+                </div>
+              </div>
+
+              <!-- Étape 2: BTS SIO -->
+              <div class="timeline-item" data-step="2">
+                <div class="step-node node-primary">
+                  <span class="step-number">2</span>
+                </div>
+                <div class="step-content">
+                  <h5 class="step-title">BTS SIO SISR</h5>
+                  <p class="step-year">2024 – 2026</p>
+                  <p class="step-place">IRIS – Campus Mediaschool</p>
+                  <p class="step-subtitle">Réseaux, systèmes & cybersécurité</p>
+                </div>
+              </div>
+
+              <!-- Étape 3: Bachelor -->
+              <div class="timeline-item" data-step="3">
+                <div class="step-node node-coming">
+                  <span class="step-number">3</span>
+                </div>
+                <div class="step-content">
+                  <h5 class="step-title">Bachelor Bac +3</h5>
+                  <p class="step-year">2026 – 2027</p>
+                  <p class="step-place">IRIS – Campus Mediaschool</p>
+                  <p class="step-subtitle">Administrateur d'infrastructures</p>
+                  <span class="badge bg-warning text-dark mt-2"><i class="fa-solid fa-clock me-1"></i>À venir</span>
+                </div>
+              </div>
+
+              <!-- Étape 4: Master -->
+              <div class="timeline-item" data-step="4">
+                <div class="step-node node-coming">
+                  <span class="step-number">4</span>
+                </div>
+                <div class="step-content">
+                  <h5 class="step-title">Master Bac +5</h5>
+                  <p class="step-year">2027 – 2029</p>
+                  <p class="step-place">IRIS – Campus Mediaschool</p>
+                  <p class="step-subtitle">Expert en Cybersécurité</p>
+                  <span class="badge bg-warning text-dark mt-2"><i class="fa-solid fa-clock me-1"></i>À venir</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="parcours-next-button mt-5">
+              <a href="#bts-sio"
+                class="section-divider-link mx-auto d-flex flex-column align-items-center text-decoration-none"
+                aria-label="Aller à la section BTS SIO">
+                <div class="section-divider"></div>
+                <span class="section-divider-arrow mt-2">
+                  <i class="fa-solid fa-chevron-down fa-lg"></i>
+                </span>
+                <small class="text-muted mt-1">Section suivante</small>
               </a>
             </div>
-            <!-- Colonne droite : présentation et objectifs -->
-            <div class="col-md-8 text-start">
-              <h2 id="about-title" class="mb-3">À propos de moi</h2>
-              <div class="underline mb-3"></div>
-              <p>
-                Passionné par les réseaux, la cybersécurité et les technologies de l'information, je poursuis
-                actuellement un <strong>BTS SIO option SISR</strong> à IRIS au sein du campus Mediaschool. Curieux,
-                rigoureux et motivé, je souhaite approfondir mes compétences en administration systèmes et réseaux, et
-                me spécialiser dans la cybersécurité.
-              </p>
-              <div class="row">
-                <div class="col-sm-6">
-                  <h5 class="fw-bold mt-3 mb-2">Compétences clés</h5>
-                  <ul class="list-unstyled">
-                    <li><i class="fa-solid fa-check text-success me-2"></i> Administration réseaux & systèmes</li>
-                    <li><i class="fa-solid fa-check text-success me-2"></i> Sécurité informatique</li>
-                    <li><i class="fa-solid fa-check text-success me-2"></i> Virtualisation & Cloud</li>
-                    <li><i class="fa-solid fa-check text-success me-2"></i> Automatisation (scripts, DevOps)</li>
-                  </ul>
-                </div>
-                <div class="col-sm-6">
-                  <h5 class="fw-bold mt-3 mb-2">Objectifs</h5>
-                  <ul class="list-unstyled">
-                    <li><i class="fa-solid fa-bullseye text-primary me-2"></i> Acquérir un maximum de compétences dans
-                      le domaine des réseaux</li>
-                    <li><i class="fa-solid fa-bullseye text-primary me-2"></i> Devenir DevOps ou administrateur systèmes
-                      et réseaux</li>
-                    <li><i class="fa-solid fa-bullseye text-primary me-2"></i> Intégrer une entreprise où je pourrai
-                      mettre en pratique et développer mes compétences</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
           </div>
         </section>
-
-        <!-- Parcours -->
-        <a href="#parcours"
-          class="section-divider-link mx-auto my-5 d-flex flex-column align-items-center text-decoration-none"
-          aria-label="Aller à la section Parcours">
-          <div class="section-divider"></div>
-          <span class="section-divider-arrow mt-2">
-            <i class="fa-solid fa-chevron-down fa-lg"></i>
-          </span>
-          <small class="text-muted mt-1">Section suivante</small>
-        </a>
-
-        <!-- Section Parcours alternée -->
-        <section id="parcours" class="container py-5 section-parcours section-animate">
-          <h2 class="mb-5 text-center">
-            <i class="fa-solid fa-graduation-cap me-2"></i> Parcours
-          </h2>
-          <div class="timeline-alt">
-            <!-- Étape 1 : BTS -->
-            <div class="timeline-alt-item left timeline-color-blue">
-              <div class="timeline-alt-content card shadow-sm border-blue">
-                <div class="card-body">
-                  <div class="d-flex align-items-center mb-2">
-                    <img src="/images/iris-strasbourg-ecole-informatique-numerique_o3bxqw.png" alt="Logo école"
-                      class="timeline-logo me-3">
-                    <div>
-                      <span class="badge bg-primary mb-1">2024 - 2026</span>
-                      <h5 class="card-title mb-0">BTS SIO SISR</h5>
-                      <h6 class="card-subtitle text-muted">IRIS, Campus Mediaschool, Paris</h6>
-                    </div>
-                  </div>
-                  <p class="card-text">Spécialisation en réseaux, systèmes et cybersécurité.</p>
-                  <div class="timeline-tags mb-2">
-                    <span class="badge bg-success">Réseaux</span>
-                    <span class="badge bg-info text-dark">Cybersécurité</span>
-                    <span class="badge bg-secondary">Linux</span>
-                  </div>
-                  <div class="timeline-projects">
-                    <strong>Projets marquants :</strong>
-                    <ul>
-                      <li>Classcord : mise en place d’un serveur local accessible sur le réseau</li>
-                      <li>Configuration et automatisation d’un serveur Windows</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- Étape 2 : Bac techno -->
-            <div class="timeline-alt-item right timeline-color-green">
-              <div class="timeline-alt-content card shadow-sm border-green">
-                <div class="card-body">
-                  <div class="d-flex align-items-center mb-2">
-                    <img src="/images/AZiBZGrh_400x400.jpg" alt="Logo lycée" class="timeline-logo me-3">
-                    <div>
-                      <span class="badge bg-primary mb-1">2023</span>
-                      <h5 class="card-title mb-0">Baccalauréat Technologique STI2D - Spécialité SIN</h5>
-                      <h6 class="card-subtitle text-muted">Lycée Guillaume Apollinaire</h6>
-                    </div>
-                  </div>
-                  <p class="card-text">Spécialité Systèmes d'Information et Numérique (SIN).</p>
-                  <div class="timeline-tags mb-2">
-                    <span class="badge bg-warning text-dark">STI2D</span>
-                    <span class="badge bg-info text-dark">SIN</span>
-                  </div>
-                  <div class="timeline-projects">
-                    <strong>Projets marquants :</strong>
-                    <ul>
-                      <li>Développement d'une application Android</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="timeline-alt-line"></div>
-          </div>
-        </section>
-
-        <!-- Vers BTS SIO -->
-        <a href="#bts-sio"
-          class="section-divider-link mx-auto my-5 d-flex flex-column align-items-center text-decoration-none"
-          aria-label="Aller à la section BTS SIO">
-          <div class="section-divider"></div>
-          <span class="section-divider-arrow mt-2">
-            <i class="fa-solid fa-chevron-down fa-lg"></i>
-          </span>
-          <small class="text-muted mt-1">Section suivante</small>
-        </a>
 
         <!-- Section BTS SIO SISR -->
         <section id="bts-sio" class="container py-5 section-alt section-animate">
@@ -290,7 +303,7 @@
             </div>
             <!-- Présentation BTS SIO SISR -->
             <div class="col-md-8">
-              <h2 class="mb-3" style="color:#2563eb;">
+              <h2 class="section-title mb-3">
                 <i class="fa-solid fa-graduation-cap me-2"></i>BTS SIO – Option SISR
               </h2>
               <p class="lead mb-3">
@@ -314,24 +327,25 @@
               <a href="https://ecoleiris.fr/paris/bts-sio-sisr" target="_blank" class="btn btn-primary btn-lg mt-2">
                 <i class="fa-solid fa-globe me-2"></i>Site de l'école IRIS
               </a>
+
+              <div class="bts-next-button mt-5">
+                <a href="#competences"
+                  class="section-divider-link mx-auto d-flex flex-column align-items-center text-decoration-none"
+                  aria-label="Aller à la section Compétences">
+                  <div class="section-divider"></div>
+                  <span class="section-divider-arrow mt-2">
+                    <i class="fa-solid fa-chevron-down fa-lg"></i>
+                  </span>
+                  <small class="text-muted mt-1">Section suivante</small>
+                </a>
+              </div>
             </div>
           </div>
         </section>
 
-        <!-- Vers Compétences -->
-        <a href="#competences"
-          class="section-divider-link mx-auto my-5 d-flex flex-column align-items-center text-decoration-none"
-          aria-label="Aller à la section Compétences">
-          <div class="section-divider"></div>
-          <span class="section-divider-arrow mt-2">
-            <i class="fa-solid fa-chevron-down fa-lg"></i>
-          </span>
-          <small class="text-muted mt-1">Section suivante</small>
-        </a>
-
         <!-- Section Compétences avec carrousel d'icônes enrichi -->
-        <section id="competences" class="container py-5 section-animate">
-          <h2 class="mb-5 text-center">
+        <section id="competences" class="container py-5 py-lg-6 section-animate">
+          <h2 class="section-title mb-5 text-center">
             <i class="fa-solid fa-tools me-2"></i> Compétences
           </h2>
           <div id="competenceIconCarousel" class="carousel slide" data-bs-ride="carousel">
@@ -441,7 +455,7 @@
                 </div>
               </div>
 
-              <!-- Slide 5 (remplace Bash par Java) -->
+              <!-- Slide 5 -->
               <div class="carousel-item">
                 <div class="d-flex justify-content-center gap-5 flex-wrap">
                   <div>
@@ -509,13 +523,13 @@
                   <div class="card h-100 shadow-sm border-0 text-center py-3 softskill-card">
                     <i class="fa-solid fa-comments fa-2x text-info mb-2"></i>
                     <div class="fw-bold mb-1">Communication</div>
-                    <div class="small text-muted">Échanges clairs avec l’équipe et les clients</div>
+                    <div class="small text-muted">Échanges clairs avec l'équipe et les clients</div>
                   </div>
                 </div>
                 <div class="col-6 col-md-4 col-lg-3">
                   <div class="card h-100 shadow-sm border-0 text-center py-3 softskill-card">
                     <i class="fa-solid fa-brain fa-2x text-warning mb-2"></i>
-                    <div class="fw-bold mb-1">Esprit d’analyse</div>
+                    <div class="fw-bold mb-1">Esprit d'analyse</div>
                     <div class="small text-muted">Résolution de problèmes et prise de recul</div>
                   </div>
                 </div>
@@ -528,10 +542,7 @@
                 </div>
                 <div class="col-6 col-md-4 col-lg-3">
                   <div class="card h-100 shadow-sm border-0 text-center py-3 softskill-card">
-                    <!-- Sens de la sécurité -->
                     <i class="fa-solid fa-shield-halved fa-2x text-dark mb-2"></i>
-                    <!-- ou si non disponible -->
-                    <i class="fa-solid fa-shield-alt fa-2x text-dark mb-2"></i>
                     <div class="fw-bold mb-1">Sens de la sécurité</div>
                     <div class="small text-muted">Respect des bonnes pratiques IT</div>
                   </div>
@@ -540,7 +551,7 @@
                   <div class="card h-100 shadow-sm border-0 text-center py-3 softskill-card">
                     <i class="fa-solid fa-arrows-rotate fa-2x text-success mb-2"></i>
                     <div class="fw-bold mb-1">Adaptabilité</div>
-                    <div class="small text-muted">Facilité à s’intégrer à de nouveaux environnements</div>
+                    <div class="small text-muted">Facilité à s'intégrer à de nouveaux environnements</div>
                   </div>
                 </div>
                 <div class="col-6 col-md-4 col-lg-3">
@@ -553,386 +564,617 @@
               </div>
             </div>
           </div>
-        </section>
 
-        <!-- Vers Projets -->
-        <a href="#projets"
-          class="section-divider-link mx-auto my-5 d-flex flex-column align-items-center text-decoration-none"
-          aria-label="Aller à la section Projets">
-          <div class="section-divider"></div>
-          <span class="section-divider-arrow mt-2">
-            <i class="fa-solid fa-chevron-down fa-lg"></i>
-          </span>
-          <small class="text-muted mt-1">Section suivante</small>
-        </a>
-
-        <!-- Section Projets (grille 2x2, espacée) -->
-        <section id="projets" class="container py-5 section-alt section-animate">
-          <h2 class="mb-5 text-center">
-            <i class="fa-solid fa-folder me-2"></i> Projets
-          </h2>
-          <p class="text-center text-muted mb-4">Voici quelques projets réalisés dans le cadre de ma formation et en
-            autonomie.</p>
-
-          <!-- Tableau de synthèse PDF intégré -->
-          <div class="mb-5 text-center">
-            <h5 class="mb-3"><i class="fa-solid fa-file-pdf me-2 text-danger"></i>Tableau de synthèse</h5>
-            <div
-              style="max-width:900px; margin:auto; border-radius:12px; overflow:hidden; box-shadow:0 2px 16px rgba(44,62,80,0.10);">
-              <iframe src="images/BTS SIO - Tableau de synthèse.pdf" width="100%" height="500px"
-                style="border:none;"></iframe>
-            </div>
-            <div class="small text-muted mt-2">
-              <a href="images/BTS SIO - Tableau de synthèse.pdf" target="_blank" class="text-decoration-underline">Télécharger le
-                PDF</a>
-            </div>
-          </div>
-
-          <div class="row g-5 justify-content-center">
-            <!-- Projet 1 : Classcord -->
-            <div class="col-md-6">
-              <div class="card h-100 shadow-sm border-primary project-card">
-                <div class="card-body d-flex flex-column">
-                  <h5 class="card-title mb-3"><i class="fa-solid fa-server me-2 text-primary"></i>Classcord (Réalisation
-                    professionnelle)</h5>
-                  <p class="card-text mb-3">
-                    Mise en place d’un serveur local dans une VM pour permettre la connexion des utilisateurs sur le
-                    réseau local.<br>
-                    <span class="text-muted small">Automatisation par script, gestion des accès, documentation
-                      technique.</span>
-                  </p>
-                  <div class="mt-auto">
-                    <span class="badge bg-primary">VM</span>
-                    <span class="badge bg-success">Automatisation</span>
-                    <span class="badge bg-info text-dark">Réseau local</span>
-                    <span class="badge bg-secondary">Script</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- Projet 2 : Nutrifit -->
-            <div class="col-md-6">
-              <div class="card h-100 shadow-sm border-primary project-card">
-                <div class="card-body d-flex flex-column">
-                  <h5 class="card-title mb-3"><i class="fa-solid fa-utensils me-2 text-success"></i>Nutrifit
-                    (Réalisation professionnelle)</h5>
-                  <p class="card-text mb-3">
-                    Développement et déploiement d’un site web de nutrition sur une VM avec automatisation de
-                    l’installation.<br>
-                    <span class="text-muted small">Scripts de déploiement, gestion serveur web, sécurité.</span>
-                  </p>
-                  <div class="mt-auto">
-                    <span class="badge bg-primary">Web</span>
-                    <span class="badge bg-success">Automatisation</span>
-                    <span class="badge bg-info text-dark">VM</span>
-                    <span class="badge bg-warning text-dark">Sécurité</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- Projet 3 : Windows Server -->
-            <div class="col-md-6">
-              <div class="card h-100 shadow-sm border-primary project-card">
-                <div class="card-body d-flex flex-column">
-                  <h5 class="card-title mb-3"><i class="fa-brands fa-windows me-2 text-info"></i>Windows Server
-                    (Réalisation professionnelle)</h5>
-                  <p class="card-text mb-3">
-                    Configuration complète d’un Windows Server avec déploiement de scripts pour automatiser la création
-                    de comptes utilisateurs.<br>
-                    <span class="text-muted small">Active Directory, PowerShell, gestion des droits.</span>
-                  </p>
-                  <div class="mt-auto">
-                    <span class="badge bg-primary">Windows Server</span>
-                    <span class="badge bg-success">Automatisation</span>
-                    <span class="badge bg-info text-dark">PowerShell</span>
-                    <span class="badge bg-secondary">AD</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- Projet 4 : Portfolio -->
-            <div class="col-md-6">
-              <div class="card h-100 shadow-sm border-primary project-card">
-                <div class="card-body d-flex flex-column">
-                  <h5 class="card-title mb-3"><i class="fa-solid fa-id-card me-2 text-warning"></i>Portfolio</h5>
-                  <p class="card-text mb-3">
-                    Création de ce portfolio pour présenter mon parcours, mes compétences et mes projets.<br>
-                    <span class="text-muted small">HTML, CSS, Bootstrap, design responsive.</span>
-                  </p>
-                  <div class="mt-auto">
-                    <span class="badge bg-primary">HTML</span>
-                    <span class="badge bg-info text-dark">CSS</span>
-                    <span class="badge bg-success">Bootstrap</span>
-                    <span class="badge bg-warning text-dark">Responsive</span>
-                  </div>
-                </div>
-              </div>
-            </div>
+          <div class="competences-next-button mt-5">
+            <a href="#projets"
+              class="section-divider-link mx-auto d-flex flex-column align-items-center text-decoration-none"
+              aria-label="Aller à la section Projets">
+              <div class="section-divider"></div>
+              <span class="section-divider-arrow mt-2">
+                <i class="fa-solid fa-chevron-down fa-lg"></i>
+              </span>
+              <small class="text-muted mt-1">Section suivante</small>
+            </a>
           </div>
         </section>
 
-         <!-- Vers Stages -->
-        <a href="#stages"
-          class="section-divider-link mx-auto my-5 d-flex flex-column align-items-center text-decoration-none"
-          aria-label="Aller à la section Stages">
-          <div class="section-divider"></div>
-          <span class="section-divider-arrow mt-2">
-            <i class="fa-solid fa-chevron-down fa-lg"></i>
-          </span>
-          <small class="text-muted mt-1">Section suivante</small>
-        </a>
+        <!-- Section Réalisations Professionnelles -->
+        <section id="projets" class="py-5 py-lg-6 section-alt section-animate">
+          <div class="container">
+            <div class="text-center mb-5">
+              <h2 class="section-title mb-3">
+                <i class="fa-solid fa-briefcase me-2"></i> Réalisations Professionnelles
+              </h2>
+              <p class="text-muted">Projets et réalisations développés dans le cadre de ma formation BTS SIO</p>
+            </div>
 
-        <!-- Section Stages aérée -->
-        <section id="stages" class="container py-5 section-alt section-animate">
-          <h2 class="mb-5 text-center">
-            <i class="fa-solid fa-briefcase me-2"></i> Stages
-          </h2>
-          <div class="d-flex flex-column align-items-center gap-5">
-            <!-- Stage 1 : Déménagement et reconfiguration -->
-            <div class="stage-card card shadow-lg border-0 w-100" style="max-width: 700px;">
-              <div class="card-body p-5">
-                <div class="d-flex align-items-center mb-4">
-                  <img src="images/images.jpg" alt="Logo entreprise" class="rounded-circle me-4"
-                    style="width:72px; height:72px; object-fit:cover; background:#f8f9fa;">
-                  <div>
-                    <span class="badge bg-info text-dark mb-2 px-3 py-2 fs-6">À venir</span>
-                    <h4 class="card-title mb-1">Stage Technicien Systèmes & Réseaux</h4>
-                    <div class="text-muted mb-1"><i class="fa-solid fa-building me-2"></i>Entreprise à définir</div>
-                    <div class="text-muted"><i class="fa-solid fa-calendar me-2"></i>15/07/2025 – 15/08/2025</div>
-                  </div>
-                </div>
-                <div class="mb-3">
-                  <strong>Missions principales :</strong>
-                  <ul class="mb-2">
-                    <li>Déménagement de tout l'équipement informatique de l'entreprise</li>
-                    <li>Reconfiguration complète du réseau et des postes</li>
-                    <li>Installation et configuration de systèmes Linux</li>
-                    <li>Tests de bon fonctionnement et documentation</li>
-                  </ul>
-                </div>
-                <div>
-                  <strong>Compétences visées :</strong>
-                  <span class="badge bg-primary">Linux</span>
-                  <span class="badge bg-success">Réseaux</span>
-                  <span class="badge bg-warning text-dark">Déploiement</span>
-                  <span class="badge bg-secondary">Support utilisateur</span>
-                </div>
+            <!-- Tableau de synthèse PDF intégré -->
+            <div class="mb-5 text-center">
+              <h5 class="mb-3"><i class="fa-solid fa-file-pdf me-2 text-danger"></i>Tableau de synthèse</h5>
+              <div
+                style="max-width:900px; margin:auto; border-radius:12px; overflow:hidden; box-shadow:0 2px 16px rgba(44,62,80,0.10);">
+                <iframe src="images/Tableau de Synthèse BTS SIO.pdf" width="100%" height="500px"
+                  style="border:none;"></iframe>
+              </div>
+              <div class="mt-3">
+                <a href="images/Tableau de Synthèse BTS SIO.pdf" target="_blank" class="btn btn-pdf">
+                  <i class="fa-solid fa-download me-2"></i>Télécharger le Tableau
+                </a>
               </div>
             </div>
-            <!-- Stage 2 : Janvier 2026 (contenu temporaire) -->
-            <div class="stage-card card shadow-lg border-0 w-100" style="max-width: 700px;">
-              <div class="card-body p-5">
-                <div class="d-flex align-items-center mb-4">
-                  <img src="images/iris-strasbourg-ecole-informatique-numerique_o3bxqw.png" alt="Logo entreprise"
-                    class="rounded-circle me-4" style="width:72px; height:72px; object-fit:cover; background:#f8f9fa;">
-                  <div>
-                    <span class="badge bg-info text-dark mb-2 px-3 py-2 fs-6">À venir</span>
-                    <h4 class="card-title mb-1">Stage Administrateur Systèmes</h4>
-                    <div class="text-muted mb-1"><i class="fa-solid fa-building me-2"></i>Entreprise à définir</div>
-                    <div class="text-muted"><i class="fa-solid fa-calendar me-2"></i>Janvier 2026</div>
+
+            <!-- Grille 3 colonnes -->
+            <div class="row g-4">
+              <!-- RP 1 : Classcord -->
+              <div class="col-lg-4 col-md-6">
+                <div class="rp-card h-100">
+                  <div class="rp-header bg-gradient-blue">
+                    <i class="fa-solid fa-server"></i>
+                  </div>
+                  <div class="rp-body">
+                    <h5 class="rp-title">Classcord</h5>
+                    <p class="rp-subtitle">Réalisation professionnelle</p>
+                    <p class="rp-description">
+                      Mise en place d'un serveur local dans une VM pour permettre la connexion des utilisateurs sur le réseau local avec automatisation complète.
+                    </p>
+                    <div class="rp-tech-stack">
+                      <span class="rp-badge">VM</span>
+                      <span class="rp-badge">Script</span>
+                      <span class="rp-badge">Réseau</span>
+                      <span class="rp-badge">Automatisation</span>
+                    </div>
                   </div>
                 </div>
-                <div class="mb-3">
-                  <strong>Missions principales :</strong>
-                  <ul class="mb-2">
-                    <li>À définir</li>
-                    <li>À définir</li>
-                  </ul>
+              </div>
+
+              <!-- RP 2 : Nutrifit -->
+              <div class="col-lg-4 col-md-6">
+                <div class="rp-card h-100">
+                  <div class="rp-header bg-gradient-green">
+                    <i class="fa-solid fa-utensils"></i>
+                  </div>
+                  <div class="rp-body">
+                    <h5 class="rp-title">Nutrifit</h5>
+                    <p class="rp-subtitle">Réalisation professionnelle</p>
+                    <p class="rp-description">
+                      Développement et déploiement d'un site web de nutrition sur une VM avec automatisation de l'installation et scripts de déploiement.
+                    </p>
+                    <div class="rp-tech-stack">
+                      <span class="rp-badge">Web</span>
+                      <span class="rp-badge">VM</span>
+                      <span class="rp-badge">Déploiement</span>
+                      <span class="rp-badge">Sécurité</span>
+                    </div>
+                  </div>
                 </div>
-                <div>
-                  <strong>Compétences visées :</strong>
-                  <span class="badge bg-primary">Administration</span>
-                  <span class="badge bg-success">Réseaux</span>
-                  <span class="badge bg-secondary">Sécurité</span>
+              </div>
+
+              <!-- RP 3 : Windows Server -->
+              <div class="col-lg-4 col-md-6">
+                <div class="rp-card h-100">
+                  <div class="rp-header bg-gradient-purple">
+                    <i class="fa-brands fa-windows"></i>
+                  </div>
+                  <div class="rp-body">
+                    <h5 class="rp-title">Windows Server</h5>
+                    <p class="rp-subtitle">Réalisation professionnelle</p>
+                    <p class="rp-description">
+                      Configuration complète d'un Windows Server avec déploiement de scripts pour automatiser la création de comptes utilisateurs et gestion des droits.
+                    </p>
+                    <div class="rp-tech-stack">
+                      <span class="rp-badge">PowerShell</span>
+                      <span class="rp-badge">Active Directory</span>
+                      <span class="rp-badge">Administration</span>
+                      <span class="rp-badge">Automatisation</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- RP 4 : Linux Server -->
+              <div class="col-lg-4 col-md-6">
+                <div class="rp-card h-100">
+                  <div class="rp-header bg-gradient-orange">
+                    <i class="fa-brands fa-linux"></i>
+                  </div>
+                  <div class="rp-body">
+                    <h5 class="rp-title">Linux Server</h5>
+                    <p class="rp-subtitle">Réalisation professionnelle</p>
+                    <p class="rp-description">
+                      Configuration et déploiement d'un serveur Linux avec services DHCP, DNS et LDAP pour la gestion centralisée des utilisateurs et des ressources réseau.
+                    </p>
+                    <div class="rp-tech-stack">
+                      <span class="rp-badge">DHCP</span>
+                      <span class="rp-badge">DNS</span>
+                      <span class="rp-badge">LDAP</span>
+                      <span class="rp-badge">Linux</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- RP 5 : VM_Manager -->
+              <div class="col-lg-4 col-md-6">
+                <div class="rp-card h-100">
+                  <div class="rp-header bg-gradient-teal">
+                    <i class="fa-solid fa-laptop-code"></i>
+                  </div>
+                  <div class="rp-body">
+                    <h5 class="rp-title">VM_Manager</h5>
+                    <p class="rp-subtitle">Réalisation professionnelle</p>
+                    <p class="rp-description">
+                      Développement d'une interface web pour la gestion de machines virtuelles avec création, déploiement et console VNC intégrée via Vagrant/libvirt.
+                    </p>
+                    <div class="rp-tech-stack">
+                      <span class="rp-badge">Flask</span>
+                      <span class="rp-badge">Vagrant</span>
+                      <span class="rp-badge">VNC</span>
+                      <span class="rp-badge">DevOps</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- RP 6 : Portfolio -->
+              <div class="col-lg-4 col-md-6">
+                <div class="rp-card h-100">
+                  <div class="rp-header bg-gradient-yellow">
+                    <i class="fa-solid fa-id-card"></i>
+                  </div>
+                  <div class="rp-body">
+                    <h5 class="rp-title">Portfolio</h5>
+                    <p class="rp-subtitle">Projet personnel</p>
+                    <p class="rp-description">
+                      Création d'un portfolio responsif pour présenter mon parcours, compétences, projets et réalisations professionnelles avec design moderne.
+                    </p>
+                    <div class="rp-tech-stack">
+                      <span class="rp-badge">HTML5</span>
+                      <span class="rp-badge">CSS3</span>
+                      <span class="rp-badge">Bootstrap</span>
+                      <span class="rp-badge">JavaScript</span>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
+
+          <div class="projets-next-button mt-5">
+            <a href="#stages"
+              class="section-divider-link mx-auto d-flex flex-column align-items-center text-decoration-none"
+              aria-label="Aller à la section Stages">
+              <div class="section-divider"></div>
+              <span class="section-divider-arrow mt-2">
+                <i class="fa-solid fa-chevron-down fa-lg"></i>
+              </span>
+              <small class="text-muted mt-1">Section suivante</small>
+            </a>
+          </div>
         </section>
 
-        <!-- Vers Veille technologique -->
-        <a href="#veille"
-          class="section-divider-link mx-auto my-5 d-flex flex-column align-items-center text-decoration-none"
-          aria-label="Aller à la section Veille technologique">
-          <div class="section-divider"></div>
-          <span class="section-divider-arrow mt-2">
-            <i class="fa-solid fa-chevron-down fa-lg"></i>
-          </span>
-          <small class="text-muted mt-1">Section suivante</small>
-        </a>
+        <!-- Section Stages - Timeline Circulaire -->
+        <section id="stages" class="section-stages-circular section-alt section-animate">
+          <div class="parcours-container">
+            <header class="parcours-header">
+              <h2 class="section-title"><i class="fa-solid fa-briefcase me-2"></i>Stages</h2>
+              <p>Expériences professionnelles et formations en entreprise</p>
+            </header>
+            <!-- Timeline Stages -->
+            <div class="circular-timeline">
+              <!-- Ligne de connexion -->
+              <div class="timeline-line"></div>
 
-        <!-- Section Veille technologique dynamique -->
-        <section id="veille" class="container py-5 section-alt section-animate">
-          <h2 class="mb-5 text-center">
+              <!-- Étape 1: Stage 1 (Réalisé) -->
+              <div class="timeline-item" data-step="1">
+                <div class="step-node node-completed">
+                  <span class="step-number">1</span>
+                </div>
+                <div class="step-content">
+                  <img src="images/images.jpg" alt="Logo Académie" class="stage-logo mb-3" style="max-width: 100px; height: auto;">
+                  <h5 class="step-title">Technicien Systèmes & Réseaux</h5>
+                  <p class="step-year">15/07 – 15/08/2025</p>
+                  <p class="step-place">Académie</p>
+                  <p class="step-subtitle">Déploiement & Infrastructure</p>
+                  <div class="stage-description mt-3 p-3" style="background-color: #f8f9fa; border-radius: 8px; border-left: 4px solid #4db8a8;">
+                    <p class="mb-0" style="font-size: 0.95rem; color: #555;">
+                      <strong>Missions principales :</strong><br>
+                      • Déménagement de tout l'équipement informatique<br>
+                      • Reconfiguration complète du réseau et des postes<br>
+                      • Installation et configuration de systèmes Linux<br>
+                      • Tests de bon fonctionnement et documentation
+                    </p>
+                  </div>
+                  <div class="mt-3">
+                    <span class="badge bg-info me-2"><i class="fa-solid fa-network-wired me-1"></i>Réseaux</span>
+                    <span class="badge bg-info me-2"><i class="fa-brands fa-linux me-1"></i>Linux</span>
+                    <span class="badge bg-info me-2"><i class="fa-solid fa-server me-1"></i>Déploiement</span>
+                    <span class="badge bg-info"><i class="fa-solid fa-headset me-1"></i>Support</span>
+                  </div>
+                  <span class="badge bg-success mt-3"><i class="fa-solid fa-check me-1"></i>Réalisé</span>
+                </div>
+              </div>
+
+              <!-- Étape 2: Stage 2 (À venir) -->
+              <div class="timeline-item" data-step="2">
+                <div class="step-node node-coming">
+                  <span class="step-number">2</span>
+                </div>
+                <div class="step-content">
+                  <h5 class="step-title">Administrateur Systèmes</h5>
+                  <p class="step-year">Janvier 2026</p>
+                  <p class="step-place">Entreprise à définir</p>
+                  <p class="step-subtitle">Administration & Sécurité</p>
+                  <span class="badge bg-warning text-dark mt-2"><i class="fa-solid fa-clock me-1"></i>À venir</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="stages-next-button mt-5">
+              <a href="#veille"
+                class="section-divider-link mx-auto d-flex flex-column align-items-center text-decoration-none"
+                aria-label="Aller à la section Veille technologique">
+                <div class="section-divider"></div>
+                <span class="section-divider-arrow mt-2">
+                  <i class="fa-solid fa-chevron-down fa-lg"></i>
+                </span>
+                <small class="text-muted mt-1">Section suivante</small>
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <!-- Section Veille technologique -->
+        <section id="veille" class="container py-5 py-lg-6 section-alt section-animate">
+          <h2 class="section-title mb-1 text-center">
             <i class="fa-solid fa-globe me-2"></i> Veille technologique
           </h2>
-          <div class="row justify-content-center mb-4">
+          <p class="text-center text-muted mb-2">Suivi des tendances et innovations en cybersécurité</p>
+          <h3 class="section-title text-center mb-5" style="font-size: 1.75rem;">Les solutions EDR : Protéger les PME contre les cyberattaques</h3>
+
+          <!-- PARTIE 1: CONTEXTE & PROBLÉMATIQUE (1 min) -->
+          <div class="row justify-content-center mb-5">
             <div class="col-lg-10">
-              <div class="card shadow-sm border-0 p-4 mb-4"
-                style="background: linear-gradient(90deg,#2563eb10 60%,#16a34a10 100%);">
-                <h4 class="mb-3" style="color:#2563eb;">
-                  <i class="fa-solid fa-shield-halved me-2"></i>
-                  Sujet de veille : <span class="fw-bold">Comment les solutions EDR transforment-elles la cybersécurité
-                    des PME ?</span>
-                </h4>
-                <p>
-                  <i class="fa-solid fa-lightbulb text-warning me-2"></i>
-                  Les EDR (Endpoint Detection and Response) révolutionnent la sécurité des PME en offrant une
-                  surveillance intelligente, une détection proactive et une réponse rapide aux menaces. Découvrez
-                  ci-dessous des articles, guides et retours d’expérience sur ce sujet d’actualité.
-                </p>
+              <div class="d-flex align-items-center mb-4">
+                <div class="badge bg-primary rounded-pill p-3 me-3" style="font-size: 1.2rem;">1</div>
+                <h3 class="mb-0" style="color: #1e40af;">Contexte & Problématique</h3>
+              </div>
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <div class="card border-0 shadow-sm h-100 p-4" style="background: #eff6ff;">
+                    <h5 class="fw-bold mb-3"><i class="fa-solid fa-triangle-exclamation me-2" style="color: #dc2626;"></i>Le problème</h5>
+                    <p class="mb-0"><strong style="font-size: 1.1rem; color: #dc2626;">42%</strong> des cyberattaques visent les PME (ANSSI 2024)</p>
+                    <p class="text-muted small mt-2">Elles n'ont pas les ressources des grandes entreprises pour se défendre</p>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="card border-0 shadow-sm h-100 p-4" style="background: #f0fdf4;">
+                    <h5 class="fw-bold mb-3"><i class="fa-solid fa-question me-2" style="color: #16a34a;"></i>La question</h5>
+                    <p class="mb-0"><strong>Comment les PME peuvent-elles se défendre efficacement sans budget énorme ?</strong></p>
+                    <p class="text-muted small mt-2">→ Réponse : Les solutions EDR managées</p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-          <div class="row g-4 justify-content-center">
-            <!-- Article 1 -->
-            <div class="col-md-6 col-lg-4">
-              <div class="card h-100 veille-article-card border-0 shadow-sm">
-                <div class="card-body d-flex flex-column">
-                  <div class="mb-2">
-                    <i class="fa-solid fa-magnifying-glass-chart fa-2x text-primary"></i>
+
+          <!-- PARTIE 2: QU'EST-CE QU'UNE EDR ? (1 min) -->
+          <div class="row justify-content-center mb-5">
+            <div class="col-lg-10">
+              <div class="d-flex align-items-center mb-4">
+                <div class="badge bg-success rounded-pill p-3 me-3" style="font-size: 1.2rem;">2</div>
+                <h3 class="mb-0" style="color: #166534;">Qu'est-ce qu'une EDR ?</h3>
+              </div>
+              
+              <div class="card border-0 shadow-sm p-5 mb-4" style="background: linear-gradient(135deg, #dcfce7 0%, #ecfdf5 100%); border-left: 5px solid #16a34a;">
+                <h5 class="fw-bold mb-3"><strong>EDR = Endpoint Detection and Response</strong></h5>
+                <p class="lead mb-0">Une solution qui <strong>surveille en temps réel</strong> chaque appareil (PC, serveurs, mobiles) connecté au réseau pour détecter et combattre les menaces.</p>
+              </div>
+
+              <div class="row g-3">
+                <div class="col-md-4">
+                  <div class="card border-0 shadow-sm h-100 p-4" style="background: #f3f4f6;">
+                    <div class="text-center mb-3">
+                      <i class="fa-solid fa-magnifying-glass fa-2x" style="color: #3b82f6;"></i>
+                    </div>
+                    <h6 class="fw-bold text-center mb-2">Détection</h6>
+                    <p class="small text-center">Identifie les menaces avancées et comportements suspects</p>
                   </div>
-                  <h5 class="card-title mb-2">Qu’est-ce qu’une solution EDR ?</h5>
-                  <span class="badge bg-primary mb-2"><i class="fa-solid fa-building-shield me-1"></i> LeMagIT</span>
-                  <p class="card-text mb-3">
-                    Présentation des principes de l’EDR, ses fonctionnalités clés et ses avantages pour les entreprises.
-                  </p>
-                  <div class="mt-auto">
-                    <a href="https://www.lemagit.fr/definition/EDR-Endpoint-Detection-and-Response"
-                      target="_blank" class="btn btn-outline-primary btn-sm">
-                      <i class="fa-solid fa-arrow-up-right-from-square me-1"></i>Lire l'article
-                    </a>
+                </div>
+                <div class="col-md-4">
+                  <div class="card border-0 shadow-sm h-100 p-4" style="background: #f3f4f6;">
+                    <div class="text-center mb-3">
+                      <i class="fa-solid fa-microscope fa-2x" style="color: #f59e0b;"></i>
+                    </div>
+                    <h6 class="fw-bold text-center mb-2">Investigation</h6>
+                    <p class="small text-center">Analyse en profondeur ce qui s'est passé</p>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="card border-0 shadow-sm h-100 p-4" style="background: #f3f4f6;">
+                    <div class="text-center mb-3">
+                      <i class="fa-solid fa-shield-halved fa-2x" style="color: #ef4444;"></i>
+                    </div>
+                    <h6 class="fw-bold text-center mb-2">Réponse</h6>
+                    <p class="small text-center">Isole et neutralise les menaces automatiquement</p>
                   </div>
                 </div>
               </div>
             </div>
-            <!-- Article 2 -->
-            <div class="col-md-6 col-lg-4">
-              <div class="card h-100 veille-article-card border-0 shadow-sm">
-                <div class="card-body d-flex flex-column">
-                  <div class="mb-2">
-                    <i class="fa-solid fa-shield-virus fa-2x text-success"></i>
+          </div>
+
+          <!-- PARTIE 3: COMMENT ÇA FONCTIONNE ? (1.5 min) -->
+          <div class="row justify-content-center mb-5">
+            <div class="col-lg-10">
+              <div class="d-flex align-items-center mb-4">
+                <div class="badge bg-warning rounded-pill p-3 me-3" style="font-size: 1.2rem; color: #78350f;">3</div>
+                <h3 class="mb-0" style="color: #92400e;">Comment ça fonctionne ?</h3>
+              </div>
+
+              <div class="card border-0 shadow-sm mb-4">
+                <div class="card-body p-4">
+                  <div class="row g-4 align-items-center">
+                    <div class="col-md-3 text-center">
+                      <div class="rounded-circle d-flex align-items-center justify-content-center" style="background: #fef3c7; width: 80px; height: 80px; margin: 0 auto;">
+                        <i class="fa-solid fa-download fa-2x" style="color: #d97706;"></i>
+                      </div>
+                      <p class="fw-bold mt-2">1. Collecte</p>
+                      <p class="small text-muted">Un agent s'installe sur chaque PC/serveur</p>
+                    </div>
+                    <div class="col-md-1 text-center">
+                      <i class="fa-solid fa-arrow-right fa-2x" style="color: #d97706;"></i>
+                    </div>
+                    <div class="col-md-3 text-center">
+                      <div class="rounded-circle d-flex align-items-center justify-content-center" style="background: #fef3c7; width: 80px; height: 80px; margin: 0 auto;">
+                        <i class="fa-solid fa-database fa-2x" style="color: #d97706;"></i>
+                      </div>
+                      <p class="fw-bold mt-2">2. Envoi</p>
+                      <p class="small text-muted">Données centralisées au serveur</p>
+                    </div>
+                    <div class="col-md-1 text-center">
+                      <i class="fa-solid fa-arrow-right fa-2x" style="color: #d97706;"></i>
+                    </div>
+                    <div class="col-md-3 text-center">
+                      <div class="rounded-circle d-flex align-items-center justify-content-center" style="background: #fef3c7; width: 80px; height: 80px; margin: 0 auto;">
+                        <i class="fa-solid fa-brain fa-2x" style="color: #d97706;"></i>
+                      </div>
+                      <p class="fw-bold mt-2">3. Analyse IA</p>
+                      <p class="small text-muted">Détection des anomalies</p>
+                    </div>
                   </div>
-                  <h5 class="card-title mb-2">Enjeux de l’EDR et service managé pour les PME</h5>
-                  <span class="badge bg-success mb-2"><i class="fa-solid fa-newspaper me-1"></i> Apo’g
-                    Informatique</span>
-                  <p class="card-text mb-3">
-                    Pourquoi ça fonctionne ? – Un guide français très complet, qui explique clairement les avantages EDR + MDR, le vocabulaire clé et les choix techniques pour les petites structures.
-                  </p>
-                  <div class="mt-auto">
-                    <a href="https://www.apog.net/ressources/enjeux-edr-service-manage-pme/"
-                      target="_blank" class="btn btn-outline-success btn-sm">
-                      <i class="fa-solid fa-arrow-up-right-from-square me-1"></i>Lire l'article
-                    </a>
+                </div>
+              </div>
+
+              <div class="card border-0 shadow-sm p-4 mb-4" style="background: #fff3cd; border-left: 5px solid #d97706;">
+                <h6 class="fw-bold mb-3"><i class="fa-solid fa-lightbulb me-2"></i> Exemple concret</h6>
+                <p class="small mb-0">Un malware essaie de se connecter à un serveur malveillant ou chiffrer vos fichiers → <strong style="color: #d97706;">L'EDR le détecte en millisecondes et le bloque automatiquement</strong></p>
+              </div>
+
+              <div class="alert alert-info border-0" role="alert" style="background: #dbeafe; border-left: 5px solid #0284c7;">
+                <h6 class="fw-bold mb-2"><i class="fa-solid fa-check me-2" style="color: #0284c7;"></i> Pour les PME</h6>
+                <p class="small mb-0"><strong>Les EDR managées (MDR)</strong> : Un prestataire surveille vos endpoints 24/7 → Pas besoin d'équipe SOC interne</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- PARTIE 4: IMPACTS & CONCLUSION (0.5 min) -->
+          <div class="row justify-content-center mb-5">
+            <div class="col-lg-10">
+              <div class="d-flex align-items-center mb-4">
+                <div class="badge bg-danger rounded-pill p-3 me-3" style="font-size: 1.2rem;">4</div>
+                <h3 class="mb-0" style="color: #7f1d1d;">Impacts & Conclusion</h3>
+              </div>
+
+              <div class="row g-3 mb-4">
+                <div class="col-md-6">
+                  <div class="card border-0 shadow-sm h-100 p-4" style="background: linear-gradient(135deg, #fee2e2 0%, #fecaca 100%);">
+                    <h5 class="fw-bold mb-3"><i class="fa-solid fa-chart-line me-2" style="color: #dc2626;"></i> Les chiffres</h5>
+                    <p class="small mb-2"><strong>70%</strong> de réduction du temps de détection</p>
+                    <p class="small mb-2"><strong>Moins d'arrêts</strong> d'activité en cas de crise</p>
+                    <p class="small"><strong>Conformité</strong> RGPD/NIS2 facilitée</p>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="card border-0 shadow-sm h-100 p-4" style="background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%);">
+                    <h5 class="fw-bold mb-3"><i class="fa-solid fa-star me-2" style="color: #16a34a;"></i> La conclusion</h5>
+                    <p class="small mb-0"><strong style="color: #166534;">Les EDR transforment la cybersécurité des PME.</strong> Elles les mettent à égalité avec les grandes entreprises.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card border-0 shadow-sm p-4" style="background: linear-gradient(135deg, #1e40af 0%, #1e3a8a 100%); color: white;">
+                <h5 class="fw-bold mb-3 text-white"><i class="fa-solid fa-bolt me-2"></i> Message clé</h5>
+                <p class="lead mb-0"><strong>L'adoption des EDR n'est plus optionnelle pour les PME - c'est devenu une nécessité face aux menaces modernes.</strong></p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Ressources complémentaires -->
+          <div class="row justify-content-center">
+            <div class="col-lg-10">
+              <!-- Catégorie 1: Fondamentaux -->
+              <h4 class="mb-4 pb-2" style="border-bottom: 3px solid #2563eb; color: #1e40af;">
+                <i class="fa-solid fa-book me-2"></i> Fondamentaux & Définitions
+              </h4>
+              <div class="row g-4 mb-5">
+                <div class="col-md-6">
+                  <div class="card h-100 border-0 shadow-sm hover-lift" style="transition: transform 0.3s;">
+                    <div class="card-body d-flex flex-column">
+                      <div class="mb-3">
+                        <span class="badge bg-primary"><i class="fa-solid fa-tag me-1"></i> Définition</span>
+                      </div>
+                      <h5 class="card-title fw-bold">Qu'est-ce qu'une solution EDR ?</h5>
+                      <p class="card-text text-muted mb-3 flex-grow-1">
+                        Comprendre les principes fondamentaux de l'EDR, ses fonctionnalités clés et ses avantages pour les entreprises de toute taille.
+                      </p>
+                      <div>
+                        <span class="badge bg-light text-primary mb-2">LeMagIT</span>
+                        <div class="mt-3">
+                          <a href="https://www.lemagit.fr/definition/EDR-Endpoint-Detection-and-Response" target="_blank" class="btn btn-sm btn-outline-primary">
+                            <i class="fa-solid fa-arrow-up-right-from-square me-1"></i> Consulter
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="card h-100 border-0 shadow-sm hover-lift" style="transition: transform 0.3s;">
+                    <div class="card-body d-flex flex-column">
+                      <div class="mb-3">
+                        <span class="badge bg-primary"><i class="fa-solid fa-compass me-1"></i> Guide complet</span>
+                      </div>
+                      <h5 class="card-title fw-bold">Enjeux EDR et services managés pour PME</h5>
+                      <p class="card-text text-muted mb-3 flex-grow-1">
+                        Guide français exhaustif : avantages EDR+MDR, vocabulaire clé, choix techniques et architecture adaptée aux PME.
+                      </p>
+                      <div>
+                        <span class="badge bg-light text-success mb-2">Apo'g Informatique</span>
+                        <div class="mt-3">
+                          <a href="https://www.apog.net/ressources/enjeux-edr-service-manage-pme/" target="_blank" class="btn btn-sm btn-outline-success">
+                            <i class="fa-solid fa-arrow-up-right-from-square me-1"></i> Consulter
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Catégorie 2: Cas d'usage et stratégie -->
+              <h4 class="mb-4 pb-2" style="border-bottom: 3px solid #16a34a; color: #166534;">
+                <i class="fa-solid fa-target me-2"></i> Cas d'usage & Stratégie
+              </h4>
+              <div class="row g-4 mb-5">
+                <div class="col-md-6">
+                  <div class="card h-100 border-0 shadow-sm hover-lift" style="transition: transform 0.3s;">
+                    <div class="card-body d-flex flex-column">
+                      <div class="mb-3">
+                        <span class="badge bg-success"><i class="fa-solid fa-shield me-1"></i> Adoption</span>
+                      </div>
+                      <h5 class="card-title fw-bold">Pourquoi les PME doivent adopter l'EDR</h5>
+                      <p class="card-text text-muted mb-3 flex-grow-1">
+                        Article récent (déc. 2024) avec chiffres ANSSI, intégration Zero Trust, SIEM/SOAR, et cas d'usage concret en contexte français.
+                      </p>
+                      <div>
+                        <span class="badge bg-light text-success mb-2">Cybair</span>
+                        <div class="mt-3">
+                          <a href="https://cybair.net/pourquoi-les-tpe-et-pme-francaises-doivent-adopter-ledr-pour-se-proteger-des-cyberattaques/" target="_blank" class="btn btn-sm btn-outline-success">
+                            <i class="fa-solid fa-arrow-up-right-from-square me-1"></i> Consulter
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="card h-100 border-0 shadow-sm hover-lift" style="transition: transform 0.3s;">
+                    <div class="card-body d-flex flex-column">
+                      <div class="mb-3">
+                        <span class="badge bg-success"><i class="fa-solid fa-boxes me-1"></i> Solution packagée</span>
+                      </div>
+                      <h5 class="card-title fw-bold">Pack Cyber pour PME/ETI</h5>
+                      <p class="card-text text-muted mb-3 flex-grow-1">
+                        Démonstration d'une offre intégrée : EDR managé, SOC isolé et automatisation SOAR pour sécuriser rapidement les petites structures.
+                      </p>
+                      <div>
+                        <span class="badge bg-light text-danger mb-2">Docaposte</span>
+                        <div class="mt-3">
+                          <a href="https://www.docaposte.com/blog/article/pack-cyber-bouclier-cybersecurite-tpe-pme-eti" target="_blank" class="btn btn-sm btn-outline-danger">
+                            <i class="fa-solid fa-arrow-up-right-from-square me-1"></i> Consulter
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Catégorie 3: Sélection et tendances -->
+              <h4 class="mb-4 pb-2" style="border-bottom: 3px solid #ca8a04; color: #92400e;">
+                <i class="fa-solid fa-rocket me-2"></i> Sélection & Tendances 2025
+              </h4>
+              <div class="row g-4 mb-5">
+                <div class="col-md-6">
+                  <div class="card h-100 border-0 shadow-sm hover-lift" style="transition: transform 0.3s;">
+                    <div class="card-body d-flex flex-column">
+                      <div class="mb-3">
+                        <span class="badge" style="background-color: #fcd34d; color: #78350f;"><i class="fa-solid fa-filter me-1"></i> Sélection</span>
+                      </div>
+                      <h5 class="card-title fw-bold">Guide : Choisir son EDR pour PME</h5>
+                      <p class="card-text text-muted mb-3 flex-grow-1">
+                        Conseils pratiques pour évaluer, déployer et exploiter une solution EDR adaptée à votre budget et vos contraintes opérationnelles.
+                      </p>
+                      <div>
+                        <span class="badge bg-light text-warning mb-2">Alphorm</span>
+                        <div class="mt-3">
+                          <a href="https://blog.alphorm.com/comparaison-des-meilleurs-outils-edr-pour-2025" target="_blank" class="btn btn-sm btn-outline-warning">
+                            <i class="fa-solid fa-arrow-up-right-from-square me-1"></i> Consulter
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="card h-100 border-0 shadow-sm hover-lift" style="transition: transform 0.3s;">
+                    <div class="card-body d-flex flex-column">
+                      <div class="mb-3">
+                        <span class="badge bg-secondary"><i class="fa-solid fa-microchip me-1"></i> Innovation</span>
+                      </div>
+                      <h5 class="card-title fw-bold">Tendances 2025 : l'EDR et l'IA</h5>
+                      <p class="card-text text-muted mb-3 flex-grow-1">
+                        Comment l'intelligence artificielle renforce les capacités de détection, prédiction des menaces et automatisation de la réponse.
+                      </p>
+                      <div>
+                        <span class="badge bg-light text-secondary mb-2">IT for Business</span>
+                        <div class="mt-3">
+                          <a href="https://www.itforbusiness.fr/comment-l-ia-sest-imposee-dans-la-securite-des-endpoints-86511" target="_blank" class="btn btn-sm btn-outline-secondary">
+                            <i class="fa-solid fa-arrow-up-right-from-square me-1"></i> Consulter
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Synthèse -->
+              <div class="card border-0 shadow-sm mt-5 p-4" style="background: linear-gradient(135deg, #f0f9ff 0%, #f5f3ff 100%);">
+                <h5 class="fw-bold mb-3"><i class="fa-solid fa-brain me-2" style="color: #7c3aed;"></i> Apprentissages clés</h5>
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <p class="mb-0"><strong style="color: #2563eb;">✓ Accessibilité :</strong> Les EDR managées (MDR) rendent la détection d'endpoints accessible aux PME sans infrastructure SOC.</p>
+                  </div>
+                  <div class="col-md-6">
+                    <p class="mb-0"><strong style="color: #16a34a;">✓ Efficacité :</strong> Réduction drastique du MTTR (Mean Time To Response) et meilleure détection des menaces avancées.</p>
+                  </div>
+                  <div class="col-md-6">
+                    <p class="mb-0"><strong style="color: #ca8a04;">✓ Conformité :</strong> L'EDR facilite la mise en conformité RGPD, NIS2 et autres réglementations sectorielles.</p>
+                  </div>
+                  <div class="col-md-6">
+                    <p class="mb-0"><strong style="color: #dc2626;">✓ Évolution :</strong> L'IA et le machine learning transforment l'EDR en outil prédictif et autonome.</p>
                   </div>
                 </div>
               </div>
             </div>
-            <!-- Article 3 -->
-            <div class="col-md-6 col-lg-4">
-              <div class="card h-100 veille-article-card border-0 shadow-sm">
-                <div class="card-body d-flex flex-column">
-                  <div class="mb-2">
-                    <i class="fa-solid fa-scale-balanced fa-2x text-info"></i>
-                  </div>
-                  <h5 class="card-title mb-2">Pourquoi les TPE/PME doivent adopter l’EDR</h5>
-                  <span class="badge bg-info text-dark mb-2"><i class="fa-solid fa-table-list me-1"></i> Cybair</span>
-                  <p class="card-text mb-3">
-                    Pourquoi ça fonctionne ? – Article récent (déc. 2024) ciblant la France, montrant les chiffres ANSSI et l’intégration de l’EDR dans des stratégies Zero Trust, SIEM, SOAR… Avec un cas d’usage concret.
-                  </p>
-                  <div class="mt-auto">
-                    <a href="https://cybair.net/pourquoi-les-tpe-et-pme-francaises-doivent-adopter-ledr-pour-se-proteger-des-cyberattaques/" target="_blank"
-                      class="btn btn-outline-info btn-sm">
-                      <i class="fa-solid fa-arrow-up-right-from-square me-1"></i>Lire l'article
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- Article 4 -->
-            <div class="col-md-6 col-lg-4">
-              <div class="card h-100 veille-article-card border-0 shadow-sm">
-                <div class="card-body d-flex flex-column">
-                  <div class="mb-2">
-                    <i class="fa-solid fa-bug-slash fa-2x text-danger"></i>
-                  </div>
-                  <h5 class="card-title mb-2">Pack Cyber, un bouclier pour TPE/PME/ETI</h5>
-                  <span class="badge bg-danger mb-2"><i class="fa-solid fa-blog me-1"></i> Docaposte </span>
-                  <p class="card-text mb-3">
-                    Présentation d’un “Pack Cyber” intégrant l’EDR managé, et soulignant l’accès facilité pour les PME à cette technologie, avec mention d’un isolateur SOC et automatisation.
-                  </p>
-                  <div class="mt-auto">
-                    <a href="https://www.docaposte.com/blog/article/pack-cyber-bouclier-cybersecurite-tpe-pme-eti" target="_blank"
-                      class="btn btn-outline-danger btn-sm">
-                      <i class="fa-solid fa-arrow-up-right-from-square me-1"></i>Lire l'article
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- Article 5 -->
-            <div class="col-md-6 col-lg-4">
-              <div class="card h-100 veille-article-card border-0 shadow-sm">
-                <div class="card-body d-flex flex-column">
-                  <div class="mb-2">
-                    <i class="fa-solid fa-list-check fa-2x text-warning"></i>
-                  </div>
-                  <h5 class="card-title mb-2">Guide : Choisir son EDR pour PME</h5>
-                  <span class="badge bg-warning text-dark mb-2"><i class="fa-solid fa-shield-halved me-1"></i>
-                    Alphorm</span>
-                  <p class="card-text mb-3">
-                    Conseils pratiques pour sélectionner, déployer et exploiter une solution EDR adaptée à la taille et
-                    au budget d’une PME.
-                  </p>
-                  <div class="mt-auto">
-                    <a href="https://blog.alphorm.com/comparaison-des-meilleurs-outils-edr-pour-2025"
-                      target="_blank" class="btn btn-outline-warning btn-sm">
-                      <i class="fa-solid fa-arrow-up-right-from-square me-1"></i>Lire l'article
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- Article 6 -->
-            <div class="col-md-6 col-lg-4">
-              <div class="card h-100 veille-article-card border-0 shadow-sm">
-                <div class="card-body d-flex flex-column">
-                  <div class="mb-2">
-                    <i class="fa-solid fa-robot fa-2x text-secondary"></i>
-                  </div>
-                  <h5 class="card-title mb-2">Tendances 2025 : l’EDR et l’IA</h5>
-                  <span class="badge bg-secondary mb-2"><i class="fa-solid fa-microchip me-1"></i> IT for
-                    Business</span>
-                  <p class="card-text mb-3">
-                    Comment l’intelligence artificielle renforce les capacités des EDR et anticipe les menaces de
-                    demain.
-                  </p>
-                  <div class="mt-auto">
-                    <a href="https://www.itforbusiness.fr/comment-l-ia-sest-imposee-dans-la-securite-des-endpoints-86511"
-                      target="_blank" class="btn btn-outline-secondary btn-sm">
-                      <i class="fa-solid fa-arrow-up-right-from-square me-1"></i>Lire l'article
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
+          </div>
+
+          <div class="veille-next-button mt-5">
+            <a href="#contact"
+              class="section-divider-link mx-auto d-flex flex-column align-items-center text-decoration-none"
+              aria-label="Aller à la section Contact">
+              <div class="section-divider"></div>
+              <span class="section-divider-arrow mt-2">
+                <i class="fa-solid fa-chevron-down fa-lg"></i>
+              </span>
+              <small class="text-muted mt-1">Section suivante</small>
+            </a>
           </div>
         </section>
-
-        <!-- Vers Contact -->
-        <a href="#contact"
-          class="section-divider-link mx-auto my-5 d-flex flex-column align-items-center text-decoration-none"
-          aria-label="Aller à la section Contact">
-          <div class="section-divider"></div>
-          <span class="section-divider-arrow mt-2">
-            <i class="fa-solid fa-chevron-down fa-lg"></i>
-          </span>
-          <small class="text-muted mt-1">Section suivante</small>
-        </a>
 
         <!-- Section Contact réaménagée -->
         <section id="contact" class="container py-5 section-alt section-animate">
-          <h2 class="mb-5 text-center">
+          <h2 class="section-title mb-5 text-center">
             <i class="fa-solid fa-envelope me-2"></i> Contact
           </h2>
           <div class="row g-5 align-items-center">
@@ -1001,10 +1243,10 @@
 
   <!-- Footer collé en bas, aligné à droite de la sidebar, sans .row ni .col -->
   <footer class="footer-custom bg-dark text-white py-3 mt-auto">
-    <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center">
+    <div class="d-flex flex-column flex-md-row justify-content-between align-items-center px-3 px-md-4">
       <div class="mb-2 mb-md-0">
         <span>
-          &copy; 2023 Edib Saoud. Tous droits réservés. |
+          &copy; 2025 Edib Saoud. Tous droits réservés. |
           <a href="#mentions-legales" class="text-white text-decoration-underline" data-bs-toggle="modal" data-bs-target="#mentionsLegalesModal">Mentions légales</a>
         </span>
       </div>
