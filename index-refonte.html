@@ -1,0 +1,1101 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Edib Saoud - Portfolio BTS SIO</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Bootstrap & autres ressources -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style-refonte.css">
+  
+  <!-- Forcer le scroll en haut immédiatement -->
+  <script>
+    // Exécuté immédiatement avant le chargement du body
+    window.scrollTo(0, 0);
+    // Aussi lors de l'historique du navigateur
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
+    }
+  </script>
+</head>
+
+<body>
+
+  <div class="container-fluid">
+    <div class="row">
+
+      <!-- Menu fixe à gauche -->
+      <nav class="col-2 sidebar text-white p-3 position-fixed top-0 start-0 vh-100 bg-dark d-none d-md-block">
+        <h3 class="text-center mb-4">Edib Saoud</h3>
+        <div class="current-date-time mb-4">
+          <div class="current-date fw-bold text-center"></div>
+          <div class="current-time fs-5 text-center"></div>
+        </div>
+        <hr class="sidebar-separator my-3">
+        <div class="nav-section-title text-uppercase text-secondary fw-bold small mb-2 text-center">Navigation</div>
+        
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <a href="#accueil" class="nav-link-custom text-white text-decoration-none">
+              <i class="fa-solid fa-house me-2"></i>Accueil
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#presentation" class="nav-link-custom text-white text-decoration-none">
+              <i class="fa-solid fa-user me-2"></i>Présentation
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#parcours" class="nav-link-custom text-white text-decoration-none">
+              <i class="fa-solid fa-road me-2"></i>Parcours
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#formation" class="nav-link-custom text-white text-decoration-none">
+              <i class="fa-solid fa-graduation-cap me-2"></i>Formation
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#competences" class="nav-link-custom text-white text-decoration-none">
+              <i class="fa-solid fa-tools me-2"></i>Compétences
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#realisations" class="nav-link-custom text-white text-decoration-none">
+              <i class="fa-solid fa-project-diagram me-2"></i>Réalisations
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#stages" class="nav-link-custom text-white text-decoration-none">
+              <i class="fa-solid fa-briefcase me-2"></i>Stages
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#veille" class="nav-link-custom text-white text-decoration-none">
+              <i class="fa-solid fa-satellite-dish me-2"></i>Veille
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#contact" class="nav-link-custom text-white text-decoration-none">
+              <i class="fa-solid fa-envelope me-2"></i>Contact
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Menu burger mobile -->
+      <nav class="navbar navbar-dark bg-dark d-md-none position-fixed top-0 start-0 w-100 z-3">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#accueil">Edib Saoud</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasMenu" aria-controls="offcanvasMenu" aria-label="Menu">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
+      </nav>
+
+      <div class="offcanvas offcanvas-start bg-dark text-white" tabindex="-1" id="offcanvasMenu" aria-labelledby="offcanvasMenuLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasMenuLabel">Edib Saoud</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Fermer"></button>
+        </div>
+        <div class="offcanvas-body">
+          <div class="current-date-time mb-4">
+            <div class="current-date fw-bold text-center"></div>
+            <div class="current-time fs-5 text-center"></div>
+          </div>
+          <hr class="sidebar-separator my-3">
+          <div class="nav-section-title text-uppercase text-secondary fw-bold small mb-2 text-center">Navigation</div>
+          <ul class="nav flex-column">
+            <li class="nav-item"><a href="#accueil" class="text-white text-decoration-none" data-bs-dismiss="offcanvas"><i class="fa-solid fa-house me-2"></i>Accueil</a></li>
+            <li class="nav-item"><a href="#presentation" class="text-white text-decoration-none" data-bs-dismiss="offcanvas"><i class="fa-solid fa-user me-2"></i>Présentation</a></li>
+            <li class="nav-item"><a href="#parcours" class="text-white text-decoration-none" data-bs-dismiss="offcanvas"><i class="fa-solid fa-road me-2"></i>Parcours</a></li>
+            <li class="nav-item"><a href="#formation" class="text-white text-decoration-none" data-bs-dismiss="offcanvas"><i class="fa-solid fa-graduation-cap me-2"></i>Formation</a></li>
+            <li class="nav-item"><a href="#competences" class="text-white text-decoration-none" data-bs-dismiss="offcanvas"><i class="fa-solid fa-tools me-2"></i>Compétences</a></li>
+            <li class="nav-item"><a href="#realisations" class="text-white text-decoration-none" data-bs-dismiss="offcanvas"><i class="fa-solid fa-project-diagram me-2"></i>Réalisations</a></li>
+            <li class="nav-item"><a href="#stages" class="text-white text-decoration-none" data-bs-dismiss="offcanvas"><i class="fa-solid fa-briefcase me-2"></i>Stages</a></li>
+            <li class="nav-item"><a href="#veille" class="text-white text-decoration-none" data-bs-dismiss="offcanvas"><i class="fa-solid fa-satellite-dish me-2"></i>Veille</a></li>
+            <li class="nav-item"><a href="#contact" class="text-white text-decoration-none" data-bs-dismiss="offcanvas"><i class="fa-solid fa-envelope me-2"></i>Contact</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Contenu principal -->
+      <main class="offset-md-2 col-md-10 p-0">
+
+        <!-- SECTION 1: ACCUEIL -->
+        <section id="accueil" class="hero-section">
+          <!-- Canvas pour particules - uniquement dans le hero -->
+          <canvas id="particles-canvas"></canvas>
+          
+          <div class="hero-overlay">
+            <h1>Edib Saoud</h1>
+            <p class="subtitle">ÉTUDIANT EN BTS SIO - OPTION SISR</p>
+            <div class="d-flex justify-content-center gap-3 mt-4">
+              <a href="#presentation" class="btn btn-lg custom-btn">En savoir plus</a>
+              <a href="/images/Copie de Saoud Edib CV S.pdf" class="btn btn-lg custom-btn-outline" target="_blank" rel="noopener">
+                Télécharger mon CV
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <!-- SECTION 2: PRÉSENTATION -->
+        <section id="presentation" class="content-section">
+          <div class="container py-5">
+            <h2 class="section-title text-center mb-5">
+              À propos de moi
+            </h2>
+            <div class="underline mx-auto mb-5" style="max-width: 100px;"></div>
+
+            <div class="row g-4 align-items-center">
+              <!-- Carte de profil épurée -->
+              <aside class="col-lg-4">
+                <div class="profile-card-modern text-center">
+                  <div class="profile-image-wrapper">
+                    <img src="images/1748349156140.jpg" alt="Portrait Edib Saoud" class="profile-image">
+                  </div>
+                  <h3 class="profile-name mt-4 mb-2">Edib Saoud</h3>
+                  <p class="profile-role mb-4">Étudiant en BTS SIO SISR</p>
+                  
+                  <div class="profile-contact">
+                    <div class="contact-item">
+                      <span class="contact-label">Email</span>
+                      <a href="mailto:edib.1605@gmail.com" class="contact-value">edib.1605@gmail.com</a>
+                    </div>
+
+                    <div class="contact-item">
+                      <span class="contact-label">Localisation</span>
+                      <span class="contact-value">Nice (06), France</span>
+                    </div>
+                  </div>
+                  
+                  <a href="/images/Copie de Saoud Edib CV S.pdf" target="_blank" rel="noopener" class="btn-download-cv mt-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                      <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/>
+                      <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/>
+                    </svg>
+                    Télécharger le CV
+                  </a>
+                </div>
+              </aside>
+
+              <!-- Présentation personnelle moderne -->
+              <div class="col-lg-8">
+                <div class="about-content">
+                  <div class="bio-text">
+                    <p>
+                      Passionné par les réseaux, la cybersécurité et les technologies de l'information, je poursuis actuellement un BTS SIO option SISR à IRIS au sein du campus Mediaschool. Curieux, rigoureux et motivé, je souhaite approfondir mes compétences en administration systèmes et réseaux, et me spécialiser dans la cybersécurité.
+                    </p>
+                  </div>
+
+                  <div class="row g-4 mt-3">
+                    <!-- Compétences clés -->
+                    <div class="col-md-6">
+                      <div class="info-card">
+                        <h5 class="info-card-title">Compétences clés</h5>
+                        <ul class="info-list">
+                          <li>Administration réseaux & systèmes</li>
+                          <li>Sécurité informatique</li>
+                          <li>Virtualisation & Cloud</li>
+                          <li>Automatisation</li>
+                        </ul>
+                      </div>
+                    </div>
+
+                    <!-- Objectifs -->
+                    <div class="col-md-6">
+                      <div class="info-card">
+                        <h5 class="info-card-title">Objectifs professionnels</h5>
+                        <ul class="info-list">
+                          <li>Acquérir un maximum de compétences dans le domaine des réseaux</li>
+                          <li>Devenir DevOps ou administrateur systèmes et réseaux</li>
+                          <li>Intégrer une entreprise pour développer mes compétences</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Bouton section suivante -->
+          <a href="#parcours" class="section-nav-btn section-nav-right" aria-label="Section suivante">
+            <i class="fa-solid fa-chevron-down"></i>
+            <small>Suivant</small>
+          </a>
+        </section>
+
+        <!-- SECTION 3: PARCOURS -->
+        <section id="parcours" class="content-section section-parcours-circular">
+          <div class="container py-4">
+            <header class="text-center mb-4">
+              <h2 class="section-title">
+                Mon Parcours
+              </h2>
+              <div class="underline mx-auto" style="max-width: 100px;"></div>
+              <p class="section-subtitle mt-3">Une trajectoire évolutive de formation</p>
+            </header>
+
+            <!-- Timeline Circulaire -->
+            <div class="circular-timeline">
+              <!-- Ligne de connexion -->
+              <div class="timeline-line"></div>
+
+              <!-- Étape 1: Baccalauréat -->
+              <div class="timeline-item" data-step="1">
+                <div class="step-node node-past">
+                  <span class="step-number">1</span>
+                </div>
+                <div class="step-content">
+                  <h5 class="step-title">Baccalauréat STI2D</h5>
+                  <p class="step-year">2023</p>
+                  <p class="step-place">Lycée Guillaume Apollinaire</p>
+                  <p class="step-subtitle">Systèmes d'Information & Numérique</p>
+                </div>
+              </div>
+
+              <!-- Étape 2: BTS SIO -->
+              <div class="timeline-item" data-step="2">
+                <div class="step-node node-current">
+                  <span class="step-number">2</span>
+                </div>
+                <div class="step-content">
+                  <h5 class="step-title">BTS SIO SISR</h5>
+                  <p class="step-year">2024 – 2026</p>
+                  <p class="step-place">IRIS – Campus Mediaschool</p>
+                  <p class="step-subtitle">Réseaux, systèmes & cybersécurité</p>
+                </div>
+              </div>
+
+              <!-- Étape 3: Bachelor -->
+              <div class="timeline-item" data-step="3">
+                <div class="step-node node-future">
+                  <span class="step-number">3</span>
+                </div>
+                <div class="step-content">
+                  <h5 class="step-title">Bachelor Bac +3</h5>
+                  <p class="step-year">2026 – 2027</p>
+                  <p class="step-place">IRIS – Campus Mediaschool</p>
+                  <p class="step-subtitle">Administrateur d'infrastructures</p>
+                  <span class="badge-future">À venir</span>
+                </div>
+              </div>
+
+              <!-- Étape 4: Master -->
+              <div class="timeline-item" data-step="4">
+                <div class="step-node node-future">
+                  <span class="step-number">4</span>
+                </div>
+                <div class="step-content">
+                  <h5 class="step-title">Master Bac +5</h5>
+                  <p class="step-year">2027 – 2029</p>
+                  <p class="step-place">IRIS – Campus Mediaschool</p>
+                  <p class="step-subtitle">Expert en Cybersécurité</p>
+                  <span class="badge-future">À venir</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Bouton section suivante -->
+          <a href="#formation" class="section-nav-btn section-nav-right" aria-label="Section suivante">
+            <i class="fa-solid fa-chevron-down"></i>
+            <small>Suivant</small>
+          </a>
+        </section>
+
+        <!-- SECTION 4: FORMATION -->
+        <section id="formation" class="content-section section-formation">
+          <div class="container py-4">
+            <header class="text-center mb-4">
+              <h2 class="section-title">Ma Formation - BTS SIO SISR</h2>
+              <div class="underline mx-auto" style="max-width: 100px;"></div>
+              <p class="section-subtitle mt-3">Services Informatiques aux Organisations</p>
+            </header>
+
+            <div class="row align-items-center g-4">
+              <!-- Logo de l'école -->
+              <div class="col-lg-4 text-center">
+                <div class="formation-logo-container">
+                  <img src="images/iris-strasbourg-ecole-informatique-numerique_o3bxqw.png" 
+                       alt="Logo IRIS Strasbourg" 
+                       class="formation-logo-main">
+                  <div class="mt-3">
+                    <img src="images/mediaschool-formation-groupe-ecole-web_gwhbzg_ctadjq.jpg" 
+                         alt="Logo Mediaschool" 
+                         class="formation-logo-sub">
+                    <p class="formation-campus-name">Campus Mediaschool Nice</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Contenu de la formation -->
+              <div class="col-lg-8">
+                <div class="formation-content">
+                  <h3 class="formation-title">BTS SIO – Option SISR</h3>
+                  <p class="formation-subtitle">Solutions d'Infrastructure, Systèmes et Réseaux</p>
+                  
+                  <p class="formation-description">
+                    Le <strong>BTS Services Informatiques aux Organisations (SIO)</strong> option <strong>SISR</strong>
+                    est une formation professionnalisante dispensée à <strong>IRIS</strong>, école spécialisée en informatique 
+                    au sein du <strong>campus Mediaschool de Nice</strong>. Cette filière forme des techniciens capables de 
+                    gérer, sécuriser et maintenir des infrastructures informatiques modernes.
+                  </p>
+
+                  <!-- Points clés -->
+                  <div class="formation-highlights">
+                    <h4 class="formation-highlights-title">Compétences développées</h4>
+                    <ul class="formation-list">
+                      <li>Gestion et sécurisation des réseaux et serveurs</li>
+                      <li>Virtualisation, déploiement de systèmes, cloud</li>
+                      <li>Automatisation, scripts, supervision</li>
+                      <li>Support technique et gestion de parc informatique</li>
+                    </ul>
+                  </div>
+
+                  <p class="formation-conclusion">
+                    Grâce à cette formation, de solides compétences sont acquises en administration systèmes et réseaux, 
+                    cybersécurité, virtualisation, gestion de projets IT et support utilisateur, permettant une intégration 
+                    rapide dans le monde professionnel.
+                  </p>
+
+                  <!-- Bouton -->
+                  <a href="https://ecoleiris.fr/paris/bts-sio-sisr" 
+                     target="_blank" 
+                     rel="noopener noreferrer"
+                     class="formation-btn">
+                    <i class="fa-solid fa-globe me-2"></i>En savoir plus sur IRIS
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Bouton section suivante -->
+          <a href="#competences" class="section-nav-btn section-nav-right" aria-label="Section suivante">
+            <i class="fa-solid fa-chevron-down"></i>
+            <small>Suivant</small>
+          </a>
+        </section>
+
+        <!-- SECTION 5: COMPÉTENCES -->
+        <section id="competences" class="content-section section-competences">
+          <div class="container py-4">
+            <header class="text-center mb-4">
+              <h2 class="section-title">Mes Compétences Techniques</h2>
+              <div class="underline mx-auto" style="max-width: 100px;"></div>
+              <p class="section-subtitle mt-3">Compétences acquises durant le BTS SIO SISR</p>
+            </header>
+
+            <!-- Grille de compétences par catégorie -->
+            <div class="row g-4">
+              <!-- Catégorie 1: Systèmes & Virtualisation -->
+              <div class="col-md-6">
+                <div class="competence-card">
+                  <div class="competence-header">
+                    <div class="competence-icon">💻</div>
+                    <h3 class="competence-title">Systèmes & Virtualisation</h3>
+                  </div>
+                  <ul class="competence-list">
+                    <li>Linux (Debian, Ubuntu)</li>
+                    <li>Windows Server (AD, DHCP, DNS)</li>
+                    <li>Active Directory & GPO</li>
+                    <li>VMware & VirtualBox</li>
+                    <li>Docker (conteneurisation)</li>
+                  </ul>
+                </div>
+              </div>
+
+              <!-- Catégorie 2: Réseaux & Infrastructure -->
+              <div class="col-md-6">
+                <div class="competence-card">
+                  <div class="competence-header">
+                    <div class="competence-icon">🌐</div>
+                    <h3 class="competence-title">Réseaux & Infrastructure</h3>
+                  </div>
+                  <ul class="competence-list">
+                    <li>TCP/IP, modèle OSI</li>
+                    <li>Routage & VLAN</li>
+                    <li>VPN & accès distants</li>
+                    <li>Wireshark (analyse réseau)</li>
+                    <li>Supervision réseau</li>
+                  </ul>
+                </div>
+              </div>
+
+              <!-- Catégorie 3: Sécurité & Protection -->
+              <div class="col-md-6">
+                <div class="competence-card">
+                  <div class="competence-header">
+                    <div class="competence-icon">🔒</div>
+                    <h3 class="competence-title">Sécurité & Protection</h3>
+                  </div>
+                  <ul class="competence-list">
+                    <li>Pare-feu & filtrage</li>
+                    <li>Sauvegardes & restauration</li>
+                    <li>Cybersécurité (bonnes pratiques)</li>
+                    <li>Gestion des accès & droits</li>
+                    <li>Veille technologique EDR</li>
+                  </ul>
+                </div>
+              </div>
+
+              <!-- Catégorie 4: Outils & Développement -->
+              <div class="col-md-6">
+                <div class="competence-card">
+                  <div class="competence-header">
+                    <div class="competence-icon">⚙️</div>
+                    <h3 class="competence-title">Outils & Développement</h3>
+                  </div>
+                  <ul class="competence-list">
+                    <li>Git & GitHub (versioning)</li>
+                    <li>Bash & PowerShell (scripting)</li>
+                    <li>GLPI (gestion de parc)</li>
+                    <li>HTML, CSS, JavaScript</li>
+                    <li>Python & SQL (notions)</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- Note finale -->
+            <div class="competences-footer">
+              <p class="competences-note">
+                💡 Ces compétences sont détaillées et illustrées dans mes <a href="#realisations" class="competences-link">Réalisations Professionnelles</a>
+              </p>
+            </div>
+          </div>
+          
+          <!-- Bouton section suivante -->
+          <a href="#realisations" class="section-nav-btn section-nav-left" aria-label="Section suivante">
+            <i class="fa-solid fa-chevron-down"></i>
+            <small>Suivant</small>
+          </a>
+        </section>
+
+        <!-- SECTION 6: RÉALISATIONS PROFESSIONNELLES -->
+        <section id="realisations" class="content-section section-realisations">
+          <div class="container py-2">
+            <!-- En-tête compact -->
+            <header class="text-center mb-3">
+              <h2 class="section-title" style="font-size: 1.5rem;">Mes Réalisations Professionnelles</h2>
+              <div class="underline mx-auto" style="max-width: 80px;"></div>
+            </header>
+
+            <!-- Tableau de Synthèse Général -->
+            <div class="rp-tableau-synthese mb-4">
+              <h3 class="rp-tableau-title">Tableau de Synthèse - Bloc 1</h3>
+              <p class="rp-tableau-subtitle">Vue d'ensemble de mes réalisations</p>
+              
+              <!-- Visualisation PDF -->
+              <div class="rp-pdf-container">
+                <iframe src="images/BTS SIO - Tableau de synthèse.pdf#toolbar=0&navpanes=0&view=FitH" 
+                        class="rp-pdf-viewer"
+                        title="Tableau de synthèse des compétences"></iframe>
+              </div>
+              
+              <!-- Bouton téléchargement -->
+              <div class="text-center mt-2">
+                <a href="images/BTS SIO - Tableau de synthèse.pdf" 
+                   target="_blank" 
+                   class="rp-download-btn">
+                  <i class="fa-solid fa-download me-1"></i>Télécharger
+                </a>
+              </div>
+            </div>
+
+            <!-- ========== 2ÈME ANNÉE BTS SIO ========== -->
+            <div class="rp-year-section">
+              <h3 class="rp-year-title">
+                <span class="rp-year-badge">2ème année</span>
+                BTS SIO SISR
+              </h3>
+              
+              <div class="row g-3">
+                <!-- RP 1 - 802.1X -->
+                <div class="col-md-6">
+                  <div class="rp-card" data-rp-id="rp1" data-type="security">
+                    <div class="rp-card-body">
+                      <h4 class="rp-card-title">Infrastructure réseau sécurisée (802.1X)</h4>
+                      <p class="rp-card-period"><i class="fa-regular fa-calendar me-1"></i>IRIS Mediaschool</p>
+                      <p class="rp-card-description">Authentification 802.1X avec serveur RADIUS sur Debian pour sécuriser les accès réseau.</p>
+                      <div class="rp-card-competences">
+                        <span class="rp-competence-badge">C1.1</span>
+                        <span class="rp-competence-badge">C1.4</span>
+                        <span class="rp-competence-badge">C1.5</span>
+                      </div>
+                    </div>
+                    <div class="rp-card-footer">
+                      <button class="rp-card-btn"><i class="fa-solid fa-arrow-right"></i></button>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- RP 2 - WebVirtCloud -->
+                <div class="col-md-6">
+                  <div class="rp-card" data-rp-id="rp2" data-type="infra">
+                    <div class="rp-card-body">
+                      <h4 class="rp-card-title">Portail de virtualisation WebVirtCloud</h4>
+                      <p class="rp-card-period"><i class="fa-regular fa-calendar me-1"></i>IRIS Mediaschool</p>
+                      <p class="rp-card-description">Déploiement d'un portail web KVM pour la gestion de VM par les étudiants.</p>
+                      <div class="rp-card-competences">
+                        <span class="rp-competence-badge">C1.1</span>
+                        <span class="rp-competence-badge">C1.4</span>
+                        <span class="rp-competence-badge">C1.5</span>
+                      </div>
+                    </div>
+                    <div class="rp-card-footer">
+                      <button class="rp-card-btn"><i class="fa-solid fa-arrow-right"></i></button>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- RP 3 - Support technique (Stage) -->
+                <div class="col-md-6">
+                  <div class="rp-card" data-rp-id="rp3" data-type="support">
+                    <div class="rp-card-body">
+                      <h4 class="rp-card-title">Support technique & gestion des incidents</h4>
+                      <p class="rp-card-period"><i class="fa-regular fa-calendar me-1"></i>Stage ActifAzur</p>
+                      <p class="rp-card-description">Diagnostic, réparation matérielle/logicielle et remastérisation de postes clients.</p>
+                      <div class="rp-card-competences">
+                        <span class="rp-competence-badge">C1.1</span>
+                        <span class="rp-competence-badge">C1.2</span>
+                      </div>
+                    </div>
+                    <div class="rp-card-footer">
+                      <button class="rp-card-btn"><i class="fa-solid fa-arrow-right"></i></button>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- RP 4 - Portfolio -->
+                <div class="col-md-6">
+                  <div class="rp-card" data-rp-id="rp4" data-type="web">
+                    <div class="rp-card-body">
+                      <h4 class="rp-card-title">Conception du portfolio professionnel</h4>
+                      <p class="rp-card-period"><i class="fa-regular fa-calendar me-1"></i>Projet personnel</p>
+                      <p class="rp-card-description">Site web responsive centralisant CV, réalisations et veille technologique.</p>
+                      <div class="rp-card-competences">
+                        <span class="rp-competence-badge">C1.3</span>
+                        <span class="rp-competence-badge">C1.4</span>
+                        <span class="rp-competence-badge">C1.6</span>
+                      </div>
+                    </div>
+                    <div class="rp-card-footer">
+                      <button class="rp-card-btn"><i class="fa-solid fa-arrow-right"></i></button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- ========== 1ÈRE ANNÉE BTS SIO ========== -->
+            <div class="rp-year-section">
+              <h3 class="rp-year-title">
+                <span class="rp-year-badge year-1">1ère année</span>
+                BTS SIO SISR
+              </h3>
+              
+              <div class="row g-3">
+                <!-- RP 5 - NutriFit -->
+                <div class="col-md-6">
+                  <div class="rp-card" data-rp-id="rp5" data-type="infra">
+                    <div class="rp-card-body">
+                      <h4 class="rp-card-title">Borne interactive NutriFit (Mode Kiosk)</h4>
+                      <p class="rp-card-period"><i class="fa-regular fa-calendar me-1"></i>Projet inter-spécialités</p>
+                      <p class="rp-card-description">Déploiement système Linux verrouillé pour une borne de salle de sport.</p>
+                      <div class="rp-card-competences">
+                        <span class="rp-competence-badge">C1.1</span>
+                        <span class="rp-competence-badge">C1.4</span>
+                        <span class="rp-competence-badge">C1.5</span>
+                      </div>
+                    </div>
+                    <div class="rp-card-footer">
+                      <button class="rp-card-btn"><i class="fa-solid fa-arrow-right"></i></button>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- RP 6 - Classcord -->
+                <div class="col-md-6">
+                  <div class="rp-card" data-rp-id="rp6" data-type="network">
+                    <div class="rp-card-body">
+                      <h4 class="rp-card-title">Infrastructure serveur Classcord</h4>
+                      <p class="rp-card-period"><i class="fa-regular fa-calendar me-1"></i>Projet inter-spécialités</p>
+                      <p class="rp-card-description">Serveur Linux pour une messagerie locale type Discord.</p>
+                      <div class="rp-card-competences">
+                        <span class="rp-competence-badge">C1.1</span>
+                        <span class="rp-competence-badge">C1.4</span>
+                        <span class="rp-competence-badge">C1.5</span>
+                      </div>
+                    </div>
+                    <div class="rp-card-footer">
+                      <button class="rp-card-btn"><i class="fa-solid fa-arrow-right"></i></button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          
+          <!-- Bouton section suivante -->
+          <a href="#stages" class="section-nav-btn section-nav-right" aria-label="Section suivante">
+            <i class="fa-solid fa-chevron-down"></i>
+            <small>Suivant</small>
+          </a>
+        </section>
+
+        <!-- MODAL RP (Overlay pour le détail) -->
+        <div class="rp-modal" id="rpModal">
+          <div class="rp-modal-overlay"></div>
+          <div class="rp-modal-container">
+            <button class="rp-modal-close" aria-label="Fermer">
+              <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div class="rp-modal-content" id="rpModalContent">
+              <!-- Le contenu sera inséré dynamiquement par JavaScript -->
+              <div class="rp-modal-loading">
+                <p>Chargement...</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SECTION 7: STAGES -->
+        <section id="stages" class="content-section section-stages">
+          <div class="container py-4">
+            <header class="text-center mb-4">
+              <h2 class="section-title">Mes Stages</h2>
+              <div class="underline mx-auto" style="max-width: 100px;"></div>
+              <p class="section-subtitle mt-3">Expériences professionnelles durant le BTS SIO</p>
+            </header>
+
+            <!-- Timeline des stages -->
+            <div class="stages-timeline">
+              
+              <!-- Stage 1 - ActifAzur -->
+              <div class="stage-card" data-status="completed">
+                <div class="stage-card-marker">
+                  <div class="stage-number">1</div>
+                  <div class="stage-line"></div>
+                </div>
+                <div class="stage-card-content">
+                  <div class="stage-header">
+                    <span class="stage-status-badge completed">
+                      <i class="fa-solid fa-check me-1"></i>Réalisé
+                    </span>
+                    <span class="stage-dates">
+                      <i class="fa-regular fa-calendar me-2"></i>05/01 – 13/02/2026
+                    </span>
+                  </div>
+                  
+                  <div class="stage-info">
+                    <div class="stage-logo-container">
+                      <img src="images/actif-azur.webp" alt="Logo ActifAzur" class="stage-logo" onerror="this.style.display='none'">
+                    </div>
+                    <div class="stage-details">
+                      <h3 class="stage-title">Technicien Support Informatique</h3>
+                      <p class="stage-company">
+                        <i class="fa-solid fa-building me-2"></i>ActifAzur – Antibes
+                      </p>
+                    </div>
+                  </div>
+                  
+                  <div class="stage-missions">
+                    <h4 class="stage-missions-title">Missions principales</h4>
+                    <ul class="stage-missions-list">
+                      <li>Réparation de PC portables en atelier</li>
+                      <li>Réinstallation complète de Windows</li>
+                      <li>Installation et mise à jour des pilotes</li>
+                      <li>Service après-vente (SAV)</li>
+                    </ul>
+                  </div>
+                  
+                  <div class="stage-tags">
+                    <span class="stage-tag"><i class="fa-solid fa-screwdriver-wrench me-1"></i>Réparation</span>
+                    <span class="stage-tag"><i class="fa-brands fa-windows me-1"></i>Windows</span>
+                    <span class="stage-tag"><i class="fa-solid fa-headset me-1"></i>SAV</span>
+                    <span class="stage-tag"><i class="fa-solid fa-microchip me-1"></i>Hardware</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Stage 2 - Acadénice -->
+              <div class="stage-card" data-status="completed">
+                <div class="stage-card-marker">
+                  <div class="stage-number">2</div>
+                </div>
+                <div class="stage-card-content">
+                  <div class="stage-header">
+                    <span class="stage-status-badge completed">
+                      <i class="fa-solid fa-check me-1"></i>Réalisé
+                    </span>
+                    <span class="stage-dates">
+                      <i class="fa-regular fa-calendar me-2"></i>15/07 – 15/08/2025
+                    </span>
+                  </div>
+                  
+                  <div class="stage-info">
+                    <div class="stage-logo-container">
+                      <img src="images/images.jpg" alt="Logo Acadénice" class="stage-logo" onerror="this.style.display='none'">
+                    </div>
+                    <div class="stage-details">
+                      <h3 class="stage-title">Technicien Systèmes & Réseaux</h3>
+                      <p class="stage-company">
+                        <i class="fa-solid fa-building me-2"></i>Acadénice
+                      </p>
+                    </div>
+                  </div>
+                  
+                  <div class="stage-missions">
+                    <h4 class="stage-missions-title">Missions principales</h4>
+                    <ul class="stage-missions-list">
+                      <li>Déménagement de tout l'équipement informatique</li>
+                      <li>Reconfiguration complète du réseau et des postes</li>
+                      <li>Installation et configuration de systèmes Linux</li>
+                      <li>Tests de bon fonctionnement et documentation</li>
+                    </ul>
+                  </div>
+                  
+                  <div class="stage-tags">
+                    <span class="stage-tag"><i class="fa-solid fa-network-wired me-1"></i>Réseaux</span>
+                    <span class="stage-tag"><i class="fa-brands fa-linux me-1"></i>Linux</span>
+                    <span class="stage-tag"><i class="fa-solid fa-server me-1"></i>Déploiement</span>
+                    <span class="stage-tag"><i class="fa-solid fa-headset me-1"></i>Support</span>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+          
+          <!-- Bouton section suivante -->
+          <a href="#veille" class="section-nav-btn section-nav-left" aria-label="Section suivante">
+            <i class="fa-solid fa-chevron-down"></i>
+            <small>Suivant</small>
+          </a>
+        </section>
+
+        <!-- SECTION 8: VEILLE TECHNOLOGIQUE -->
+        <section id="veille" class="content-section section-veille">
+          <div class="container py-4">
+            <header class="text-center mb-4">
+              <h2 class="section-title">Veille Technologique</h2>
+              <div class="underline mx-auto" style="max-width: 100px;"></div>
+              <p class="section-subtitle mt-3">Se tenir informé pour rester performant</p>
+            </header>
+
+            <!-- Thème de veille -->
+            <div class="veille-theme">
+              <div class="veille-theme-icon">🛡️</div>
+              <h3 class="veille-theme-title">Les solutions EDR face aux cybermenaces visant les PME</h3>
+              <p class="veille-theme-subtitle">Endpoint Detection and Response : protéger les terminaux contre les menaces modernes</p>
+            </div>
+
+            <!-- Problématique -->
+            <div class="veille-section">
+              <h3 class="veille-section-title">
+                <span class="veille-section-num">1</span>
+                Problématique
+              </h3>
+              <div class="veille-content">
+                <p>
+                  <strong>Pourquoi les PME sont-elles la cible privilégiée des cyberattaques ?</strong>
+                </p>
+                <p>
+                  Les ransomwares et les attaques "Zero-Day" rendent les antivirus classiques (basés sur des signatures) obsolètes. 
+                  Les PME, souvent moins protégées que les grandes entreprises, deviennent des cibles de choix. 
+                  L'EDR répond à ce besoin en analysant le <strong>comportement</strong> plutôt que de chercher des virus connus.
+                </p>
+                <div class="veille-highlight">
+                  <div class="veille-highlight-icon">💡</div>
+                  <div class="veille-highlight-content">
+                    <strong>EDR = Endpoint Detection and Response</strong><br>
+                    Solution de sécurité qui surveille les terminaux (PC, serveurs) en temps réel, détecte les comportements suspects et peut isoler automatiquement une machine infectée.
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Méthodologie de veille -->
+            <div class="veille-section">
+              <h3 class="veille-section-title">
+                <span class="veille-section-num">2</span>
+                Ma Démarche de Veille
+              </h3>
+              <p class="veille-intro">Une veille "Push" automatisée : l'information vient à moi.</p>
+              
+              <div class="veille-methodology">
+                <!-- Étape 1: Capter -->
+                <div class="veille-step">
+                  <div class="veille-step-header">
+                    <div class="veille-step-icon capter">📡</div>
+                    <h4 class="veille-step-title">Capter</h4>
+                  </div>
+                  <div class="veille-step-content">
+                    <p class="veille-step-desc">Sources d'information spécialisées</p>
+                    <ul class="veille-step-list">
+                      <li>Flux RSS de sites spécialisés (Le Monde Informatique, ZATAZ, LeMagIT)</li>
+                      <li>Alertes officielles CERT-FR et ANSSI</li>
+                      <li>Newsletters cybersécurité</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <!-- Flèche -->
+                <div class="veille-arrow">→</div>
+
+                <!-- Étape 2: Filtrer -->
+                <div class="veille-step">
+                  <div class="veille-step-header">
+                    <div class="veille-step-icon filtrer">🔍</div>
+                    <h4 class="veille-step-title">Filtrer</h4>
+                  </div>
+                  <div class="veille-step-content">
+                    <p class="veille-step-desc">Agrégation et tri de l'information</p>
+                    <ul class="veille-step-list">
+                      <li>Feedly pour centraliser tous les flux RSS</li>
+                      <li>Filtres par mots-clés (EDR, ransomware, PME)</li>
+                      <li>Lecture quotidienne des titres</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <!-- Flèche -->
+                <div class="veille-arrow">→</div>
+
+                <!-- Étape 3: Stocker -->
+                <div class="veille-step">
+                  <div class="veille-step-header">
+                    <div class="veille-step-icon stocker">📁</div>
+                    <h4 class="veille-step-title">Stocker</h4>
+                  </div>
+                  <div class="veille-step-content">
+                    <p class="veille-step-desc">Organisation et synthèse</p>
+                    <ul class="veille-step-list">
+                      <li>Notion pour classer par thématiques</li>
+                      <li>Fiches de lecture synthétiques</li>
+                      <li>Archivage des articles pertinents</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Preuves visuelles -->
+              <div class="veille-proofs">
+                <h4 class="veille-proofs-title">📸 Preuves de ma démarche <span class="veille-proofs-hint">(cliquez pour agrandir)</span></h4>
+                <div class="veille-proofs-grid">
+                  <div class="veille-proof-item">
+                    <img src="images/feedlyscreen.png" alt="Capture Feedly" class="veille-proof-img lightbox-trigger" data-caption="Mon agrégateur Feedly">
+                    <p class="veille-proof-caption">Mon agrégateur Feedly</p>
+                  </div>
+                  <div class="veille-proof-item">
+                    <img src="images/notionsscreen.png" alt="Capture Notion" class="veille-proof-img lightbox-trigger" data-caption="Mon organisation Notion">
+                    <p class="veille-proof-caption">Mon organisation Notion</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="veille-section">
+              <h3 class="veille-section-title">
+                <span class="veille-section-num">3</span>
+                Synthèse Technologique
+              </h3>
+              <div class="veille-content">
+                <div class="veille-comparison">
+                  <div class="veille-comparison-item old">
+                    <h4>❌ Antivirus Classique</h4>
+                    <ul>
+                      <li>Basé sur des signatures connues</li>
+                      <li>Ne détecte que les menaces répertoriées</li>
+                      <li>Inefficace contre les attaques Zero-Day</li>
+                    </ul>
+                  </div>
+                  <div class="veille-comparison-vs">VS</div>
+                  <div class="veille-comparison-item new">
+                    <h4>✅ EDR (Analyse Comportementale)</h4>
+                    <ul>
+                      <li>Surveille le comportement du système</li>
+                      <li>Détecte les anomalies (ex: chiffrement massif)</li>
+                      <li>Isolation automatique des machines infectées</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div class="veille-leaders">
+                  <h4 class="veille-leaders-title">Leaders du marché EDR</h4>
+                  <div class="veille-leaders-list">
+                    <span class="veille-leader">CrowdStrike</span>
+                    <span class="veille-leader">SentinelOne</span>
+                    <span class="veille-leader">Microsoft Defender for Endpoint</span>
+                    <span class="veille-leader">Carbon Black</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Bilan Personnel -->
+            <div class="veille-section">
+              <h3 class="veille-section-title">
+                <span class="veille-section-num">4</span>
+                Bilan & Apport Personnel
+              </h3>
+              <div class="veille-content">
+                <div class="veille-bilan">
+                  <div class="veille-bilan-item">
+                    <div class="veille-bilan-icon">📚</div>
+                    <div class="veille-bilan-text">
+                      <h4>Élargissement des compétences</h4>
+                      <p>Acquisition d'une culture de la cybersécurité "Endpoint" et compréhension des enjeux pour les PME.</p>
+                    </div>
+                  </div>
+                  <div class="veille-bilan-item">
+                    <div class="veille-bilan-icon">🔐</div>
+                    <div class="veille-bilan-text">
+                      <h4>Impact sur mes pratiques</h4>
+                      <p>Sensibilisation à l'architecture "Zero Trust" (ne faire confiance à personne par défaut) que j'applique dans mes projets.</p>
+                    </div>
+                  </div>
+                  <div class="veille-bilan-item">
+                    <div class="veille-bilan-icon">🎯</div>
+                    <div class="veille-bilan-text">
+                      <h4>Méthodologie acquise</h4>
+                      <p>Capacité à mettre en place une veille automatisée et structurée sur n'importe quel sujet technologique.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          
+          <!-- Bouton section suivante -->
+          <a href="#contact" class="section-nav-btn section-nav-right" aria-label="Section suivante">
+            <i class="fa-solid fa-chevron-down"></i>
+            <small>Suivant</small>
+          </a>
+        </section>
+
+        <!-- SECTION 9: CONTACT -->
+        <section id="contact" class="content-section section-contact">
+          <div class="container py-5">
+            <h2 class="section-title text-center">
+              Me Contacter
+            </h2>
+            <div class="underline mx-auto"></div>
+
+            <div class="contact-container">
+              <!-- Coordonnées -->
+              <div class="contact-info-card">
+                <h3 class="contact-card-title">Coordonnées</h3>
+                
+                <div class="contact-item">
+                  <div class="contact-item-icon">
+                    <i class="fa-solid fa-envelope"></i>
+                  </div>
+                  <div class="contact-item-content">
+                    <span class="contact-item-label">Email</span>
+                    <a href="mailto:edib.1605@gmail.com" class="contact-item-value">edib.1605@gmail.com</a>
+                  </div>
+                </div>
+
+
+
+                <div class="contact-item">
+                  <div class="contact-item-icon">
+                    <i class="fa-solid fa-location-dot"></i>
+                  </div>
+                  <div class="contact-item-content">
+                    <span class="contact-item-label">Localisation</span>
+                    <span class="contact-item-value">Nice (06), France</span>
+                  </div>
+                </div>
+
+                <div class="contact-socials">
+                  <h4 class="contact-socials-title">Réseaux professionnels</h4>
+                  <div class="contact-socials-links">
+                    <a href="https://github.com/edib16" class="contact-social-btn github" target="_blank" rel="noopener" aria-label="GitHub">
+                      <i class="fa-brands fa-github"></i>
+                      <span>GitHub</span>
+                    </a>
+                    <a href="https://www.linkedin.com/in/edib-saoud-810569352/" class="contact-social-btn linkedin" target="_blank" rel="noopener" aria-label="LinkedIn">
+                      <i class="fa-brands fa-linkedin"></i>
+                      <span>LinkedIn</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Formulaire -->
+              <div class="contact-form-card">
+                <h3 class="contact-card-title">Envoyez-moi un message</h3>
+                
+                <form action="https://formspree.io/f/xqabozor" method="POST" class="contact-form">
+                  <div class="contact-form-row">
+                    <div class="contact-form-group">
+                      <label for="contactName" class="contact-label">Nom complet *</label>
+                      <input type="text" class="contact-input" id="contactName" name="name" placeholder="Votre nom" required>
+                    </div>
+                    <div class="contact-form-group">
+                      <label for="contactEmail" class="contact-label">Adresse email *</label>
+                      <input type="email" class="contact-input" id="contactEmail" name="email" placeholder="votre.email@exemple.com" required>
+                    </div>
+                  </div>
+
+                  <div class="contact-form-group">
+                    <label for="contactSubject" class="contact-label">Sujet</label>
+                    <input type="text" class="contact-input" id="contactSubject" name="subject" placeholder="Objet de votre message">
+                  </div>
+
+                  <div class="contact-form-group">
+                    <label for="contactMessage" class="contact-label">Message *</label>
+                    <textarea class="contact-input contact-textarea" id="contactMessage" name="message" rows="5" placeholder="Votre message..." required></textarea>
+                  </div>
+
+                  <button type="submit" class="contact-submit-btn">
+                    <i class="fa-solid fa-paper-plane me-2"></i>Envoyer le message
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </main>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer-custom bg-dark text-white py-3 mt-auto">
+    <div class="d-flex flex-column flex-md-row justify-content-between align-items-center px-3 px-md-4 offset-md-2">
+      <div class="mb-2 mb-md-0">
+        <span>&copy; 2025 Edib Saoud. Tous droits réservés.</span>
+      </div>
+      <div>
+        <a href="#accueil" class="text-white text-decoration-none">
+          <i class="fas fa-arrow-up me-1"></i>Retour en haut
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Custom JS -->
+  <script src="script-refonte.js"></script>
+
+  <!-- Lightbox Modal (hors du flux de scroll) -->
+  <div class="lightbox-modal" id="lightboxModal">
+    <button class="lightbox-close" aria-label="Fermer">&times;</button>
+    <img src="" alt="" class="lightbox-image" id="lightboxImage">
+    <p class="lightbox-caption" id="lightboxCaption"></p>
+  </div>
+</body>
+
+</html>
