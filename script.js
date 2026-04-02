@@ -654,7 +654,7 @@ const rpData = {
       <p>La plateforme a été <strong>mise en production avec succès</strong> sur le serveur de l'école.</p>
       <p>Les étudiants SLAM et SISR peuvent désormais se connecter via un simple navigateur web pour démarrer, éteindre ou recréer leurs machines virtuelles sans saturer leurs ordinateurs personnels.</p>
       <p><strong>Apport personnel :</strong> Ce projet m'a permis de consolider mes compétences en administration système Linux, en gestion d'hyperviseurs bare-metal (KVM), et en mise en production de services web.</p>
-    `,
+    `
   },
   rp3: {
     badge: 'Support',
@@ -698,7 +698,7 @@ const rpData = {
       <p>Ce stage m'a permis d'acquérir de <strong>solides réflexes de diagnostic</strong> (troubleshooting) et d'augmenter considérablement ma rapidité d'exécution sur le traitement des pannes.</p>
       <p>J'ai également appris à <strong>vulgariser des problèmes techniques complexes</strong> pour les expliquer clairement aux clients.</p>
       <p><strong>Apport personnel :</strong> Cette expérience concrète du terrain est un atout majeur pour mon futur rôle de technicien ou d'administrateur système.</p>
-    `,
+    `
   },
   rp4: {
     badge: 'Web',
@@ -742,7 +742,7 @@ const rpData = {
       <p>Le portfolio est aujourd'hui <strong>en ligne, sécurisé (HTTPS)</strong> et parfaitement fonctionnel sur tous les supports (desktop, tablette, mobile).</p>
       <p>Ce projet m'a permis de sortir de ma zone de confort "Réseau/Système" pour toucher au <strong>développement web (Front-end)</strong> et à la gestion de noms de domaine/hébergement.</p>
       <p><strong>Apport personnel :</strong> Il est devenu mon outil de communication principal pour la valorisation de mes compétences auprès des jurys et recruteurs.</p>
-    `,
+    `
   },
   rp5: {
     badge: 'Système',
@@ -829,6 +829,90 @@ const rpData = {
     resultats: `
       <p>L'infrastructure a <strong>parfaitement soutenu le déploiement</strong> de l'application Classcord. Les développeurs ont pu se connecter à la base de données et les utilisateurs finaux ont pu échanger des messages en temps réel de manière stable.</p>
       <p>Ce projet m'a fait comprendre les enjeux de l'<strong>architecture Client-Serveur</strong> et le rôle crucial de l'administrateur système pour garantir la disponibilité d'une application.</p>
+    `
+  },
+  rp7: {
+    badge: 'Système',
+    badgeClass: 'rp-badge-infra',
+    title: 'Déploiement d\'un annuaire d\'entreprise (Active Directory)',
+    period: '1ère année BTS SIO',
+    context: 'TP Laboratoire / École IRIS',
+    description: `
+      <h4>Contexte</h4>
+      <p>Dans le cadre de la création du système d'information d'une nouvelle agence, la gestion des ordinateurs et des mots de passe se faisait en <strong>groupe de travail ("Workgroup")</strong>. Chaque poste possédait ses propres comptes locaux, ce qui devenait impossible à administrer et posait de graves problèmes de sécurité.</p>
+      <p>Il m'a été demandé de <strong>centraliser l'authentification</strong> et la gestion des droits des employés en déployant un contrôleur de domaine Microsoft.</p>
+    `,
+    objectifs: [
+      'Installer un système d\'exploitation Windows Server et lui attribuer une configuration réseau statique',
+      'Déployer le rôle AD DS (Active Directory Domain Services) et promouvoir le serveur en tant que contrôleur de domaine',
+      'Structurer l\'annuaire d\'entreprise en créant des Unités Organisationnelles (OU), des groupes de sécurité et des comptes utilisateurs selon les différents services (RH, Compta, Direction)',
+      'Intégrer un poste client (Windows 10/11 Pro) au nouveau domaine pour tester l\'authentification'
+    ],
+    technologies: [
+      'Windows Server (2019/2022)',
+      'Windows 10/11 Pro (Client)',
+      'AD DS',
+      'DNS',
+      'Gestionnaire de Serveur',
+      'Console Utilisateurs et Ordinateurs AD'
+    ],
+    methodologie: `
+      <p><strong>Démarche suivie :</strong></p>
+      <ul>
+        <li>Paramétrage réseau du serveur (IP fixe et définition du serveur lui-même comme DNS principal)</li>
+        <li>Installation du rôle via le Gestionnaire de Serveur et création de la forêt/du domaine (ex: iris.local)</li>
+        <li>Création de l'arborescence (Groupes et Utilisateurs) via la console d'administration</li>
+        <li>Côté client : modification des paramètres DNS pour pointer vers le serveur, puis jonction du poste au domaine via les paramètres système</li>
+      </ul>
+    `,
+    competences: [
+      { num: '1.1', text: 'Gérer le patrimoine informatique : Installation et configuration d\'un OS serveur Microsoft et gestion des comptes utilisateurs' },
+      { num: '1.5', text: 'Mettre à disposition un service informatique : Fourniture d\'un service d\'authentification centralisé pour les utilisateurs de l\'entreprise' }
+    ],
+    resultats: `
+      <p>La centralisation a été un <strong>succès</strong>. Lors des tests, un utilisateur créé sur le serveur a pu se connecter sur le poste client avec ses identifiants de domaine, sans avoir de compte local sur la machine.</p>
+      <p>Ce projet m'a permis de comprendre le fonctionnement de l'<strong>administration centralisée sous environnement Microsoft</strong>, qui est incontournable dans le monde professionnel.</p>
+    `
+  },
+  rp8: {
+    badge: 'Système',
+    badgeClass: 'rp-badge-infra',
+    title: 'Déploiement de services d\'infrastructure Linux (DHCP & Web)',
+    period: '1ère année BTS SIO',
+    context: 'TP Laboratoire / École IRIS',
+    description: `
+      <h4>Contexte</h4>
+      <p>Dans un environnement réseau d'entreprise nouvellement créé, l'attribution des adresses IP se faisait de manière <strong>statique</strong> sur chaque poste. Cette méthode devenait fastidieuse à administrer et générait des conflits d'adresses IP.</p>
+      <p>De plus, l'entreprise avait besoin d'un espace interne centralisé pour héberger des informations communes (Intranet). Mon rôle a été de mettre en place un serveur Linux capable d'<strong>automatiser le réseau</strong> et de fournir ce service web.</p>
+    `,
+    objectifs: [
+      'Installer et préparer un serveur sous environnement GNU/Linux',
+      'Déployer et configurer un service DHCP pour distribuer dynamiquement et automatiquement les configurations réseau aux postes clients',
+      'Déployer un serveur Web pour héberger une page HTML d\'accueil accessible par tous les employés via leur navigateur'
+    ],
+    technologies: [
+      'Debian Server',
+      'Administration CLI (ligne de commande)',
+      'isc-dhcp-server',
+      'Apache2',
+      'Configuration réseau Linux'
+    ],
+    methodologie: `
+      <p><strong>Démarche suivie :</strong></p>
+      <ul>
+        <li>Configuration de l'interface réseau du serveur avec une IP statique</li>
+        <li>Paramétrage du fichier <code>dhcpd.conf</code> (définition de la plage d'IP, du masque, de la passerelle et de la durée du bail)</li>
+        <li>Installation du service Apache et création d'une page <code>index.html</code> basique dans le répertoire par défaut <code>/var/www/html</code></li>
+        <li>Redémarrage des services et tests de validation</li>
+      </ul>
+    `,
+    competences: [
+      { num: '1.1', text: 'Gérer le patrimoine informatique : Administration d\'un système d\'exploitation serveur (Linux) et gestion des services réseau' },
+      { num: '1.5', text: 'Mettre à disposition un service informatique : Automatisation de l\'adressage IP (DHCP) et mise à disposition d\'un Intranet fonctionnel pour les utilisateurs' }
+    ],
+    resultats: `
+      <p>Le déploiement s'est déroulé <strong>sans encombre</strong>. Lors des tests de validation, tout poste client branché au réseau recevait instantanément une adresse IP valide fournie par le serveur Debian.</p>
+      <p>De plus, la page web de l'Intranet était parfaitement accessible. Cette réalisation a consolidé mon aisance sur l'<strong>administration système Linux</strong> et l'édition de fichiers de configuration complexes (via nano ou vim).</p>
     `
   }
 };
