@@ -251,6 +251,25 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // ========================================
+// COMPÉTENCES - ANIMATION D'APPARITION
+// ========================================
+
+document.addEventListener('DOMContentLoaded', () => {
+  const competencesSection = document.getElementById('competences');
+  if (!competencesSection) return;
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        competencesSection.classList.add('is-visible');
+      }
+    });
+  }, { threshold: 0.25 });
+
+  observer.observe(competencesSection);
+});
+
+// ========================================
 // ACTIVE NAVIGATION LINK
 // ========================================
 
@@ -565,355 +584,1479 @@ console.log('%c🎓 BTS SIO - Option SISR', 'font-size: 12px; color: #6c757d;');
 
 // Données des RPs (structure à remplir)
 const rpData = {
-  rp1: {
-    badge: 'Sécurité',
-    badgeClass: 'rp-badge-security',
-    title: 'Déploiement d\'une infrastructure réseau sécurisée (802.1X)',
-    period: '2ème année BTS SIO',
-    context: 'IRIS Mediaschool',
-    description: `
-      <h4>Contexte</h4>
-      <p>Le réseau interne de notre établissement nécessitait une refonte sécuritaire. Jusqu'ici, les accès filaires et Wi-Fi étaient vulnérables (absence d'authentification forte, mots de passe partagés).</p>
-      <p>Pour protéger l'infrastructure, le besoin était de s'assurer que <strong>seuls les étudiants et professeurs légitimes</strong> puissent se connecter, avec une authentification individuelle et centralisée.</p>
-    `,
-    objectifs: [
-      'Concevoir une topologie réseau fiable (LAN et WLAN)',
-      'Configurer les équipements d\'interconnexion',
-      'Déployer un serveur d\'authentification (RADIUS)',
-      'Verrouiller l\'accès aux ports physiques et sans fil via le protocole 802.1X'
-    ],
-    technologies: [
-      'Routeur Cisco',
-      'Switch Cisco',
-      'Point d\'Accès Cisco',
-      'Debian 12',
-      'FreeRADIUS',
-      '802.1X / EAP'
-    ],
-    methodologie: `
-      <p><strong>Démarche suivie :</strong></p>
-      <ul>
-        <li>Réalisation d'un schéma d'architecture préalable</li>
-        <li>Paramétrage du service AAA sur le matériel Cisco</li>
-        <li>Installation et configuration de FreeRADIUS sur Debian 12</li>
-        <li>Liaison avec la base de données utilisateurs du serveur RADIUS</li>
-      </ul>
-    `,
-    competences: [
-      { num: '1.1', text: 'Gérer le patrimoine informatique : Intégration et configuration des équipements réseau (Cisco) et du serveur FreeRADIUS sous Debian' },
-      { num: '1.4', text: 'Travailler en mode projet : Conception de l\'architecture de bout en bout, du maquettage aux tests finaux' },
-      { num: '1.5', text: 'Mettre à disposition un service informatique : Fourniture d\'un accès réseau sécurisé et fonctionnel pour les utilisateurs de l\'école' }
-    ],
-    resultats: `
-      <p>Le déploiement est un <strong>succès</strong>. Les tests de validation prouvent que si une machine non autorisée se branche sur une prise réseau ou tente de rejoindre le Wi-Fi, le port reste bloqué au niveau 2 (Switch).</p>
-      <p>L'accès n'est libéré qu'après validation des identifiants par le serveur RADIUS.</p>
-      <p><strong>Apport personnel :</strong> Cette réalisation m'a permis de maîtriser les mécanismes avancés de la sécurité des accès réseau.</p>
-    `
-  },
-  rp2: {
-    badge: 'Infrastructure',
-    badgeClass: '',
-    title: 'Déploiement d\'un portail de virtualisation WebVirtCloud',
-    period: '2ème année BTS SIO',
-    context: 'IRIS Mediaschool',
-    description: `
-      <h4>Contexte</h4>
-      <p>Pour la réalisation de leurs Travaux Pratiques (TP), les étudiants des filières SLAM et SISR avaient besoin de créer et manipuler des machines virtuelles (VM).</p>
-      <p>Cependant, faire tourner ces VM localement sur les PC des étudiants posait des <strong>problèmes de performances et de ressources matérielles</strong>.</p>
-      <p>L'objectif de ma mission était donc de centraliser cette charge de travail en mettant en place un <strong>portail web sécurisé</strong> sur le serveur de l'école, permettant aux étudiants de gérer leurs VM de manière autonome.</p>
-    `,
-    objectifs: [
-      'Installer et configurer un environnement de virtualisation robuste sur un serveur dédié',
-      'Déployer une interface web d\'administration claire et intuitive (WebVirtCloud)',
-      'Sécuriser les accès à la plateforme et cloisonner les environnements pour chaque étudiant ou groupe de TP',
-      'Mettre à disposition des ressources (ISO, templates) pour faciliter le déploiement rapide des VM'
-    ],
-    technologies: [
-      'Debian 12',
-      'KVM / QEMU',
-      'libvirt',
-      'WebVirtCloud',
-      'Traefik',
-      'Linux Bridges'
-    ],
-    methodologie: `
-      <p><strong>Démarche suivie :</strong></p>
-      <ul>
-        <li>Préparation du serveur Debian en ligne de commande (CLI)</li>
-        <li>Installation des dépendances et configuration de Traefik (reverse proxy)</li>
-        <li>Configuration de l'hyperviseur KVM</li>
-        <li>Déploiement de WebVirtCloud et création des comptes utilisateurs</li>
-      </ul>
-    `,
-    competences: [
-      { num: '1.1', text: 'Gérer le patrimoine informatique : Administration du serveur physique sous Debian 12 et gestion des ressources virtuelles' },
-      { num: '1.4', text: 'Travailler en mode projet : Réponse au besoin spécifique de l\'équipe pédagogique et déploiement par étapes' },
-      { num: '1.5', text: 'Mettre à disposition un service informatique : Ouverture du portail web aux étudiants pour la création et la gestion de leurs propres VM en libre-service' }
-    ],
-    resultats: `
-      <p>La plateforme a été <strong>mise en production avec succès</strong> sur le serveur de l'école.</p>
-      <p>Les étudiants SLAM et SISR peuvent désormais se connecter via un simple navigateur web pour démarrer, éteindre ou recréer leurs machines virtuelles sans saturer leurs ordinateurs personnels.</p>
-      <p><strong>Apport personnel :</strong> Ce projet m'a permis de consolider mes compétences en administration système Linux, en gestion d'hyperviseurs bare-metal (KVM), et en mise en production de services web.</p>
-    `
-  },
-  rp3: {
-    badge: 'Support',
-    badgeClass: 'rp-badge-support',
-    title: 'Support technique, remastérisation et gestion des incidents',
-    period: '2ème année BTS SIO (Stage)',
-    context: 'ActifAzur - Antibes',
-    description: `
-      <h4>Contexte</h4>
-      <p>Lors de mon stage en entreprise au sein d'un atelier informatique, j'ai été confronté à la <strong>gestion quotidienne des pannes matérielles et logicielles</strong>.</p>
-      <p>L'objectif principal était d'assurer la continuité de service pour les clients finaux en traitant leurs demandes d'assistance, allant du simple dysfonctionnement logiciel à la panne matérielle nécessitant un remplacement de composants et une réinstallation complète du système.</p>
-    `,
-    objectifs: [
-      'Diagnostiquer de manière méthodique les pannes matérielles (RAM, disques durs, cartes mères) et logicielles (systèmes corrompus, infections virales)',
-      'Réaliser la maintenance préventive et curative des équipements informatiques',
-      'Procéder à la remastérisation des postes clients (installation propre de l\'OS) en assurant la sauvegarde et la restauration des données critiques',
-      'Assurer le suivi des interventions et la communication avec les utilisateurs pour leur expliquer les réparations effectuées'
-    ],
-    technologies: [
-      'Composants PC',
-      'Windows 10/11',
-      'Rufus',
-      'Outils de clonage',
-      'CrystalDiskInfo'
-    ],
-    methodologie: `
-      <p><strong>Méthodologie de Troubleshooting :</strong></p>
-      <ul>
-        <li>Prise en charge de la machine et écoute du client</li>
-        <li>Isolation du problème (tests croisés matériels ou boot sur environnement Live)</li>
-        <li>Réparation ou remplacement du composant défaillant</li>
-        <li>Installation des pilotes et logiciels de base</li>
-        <li>Tests finaux et clôture de l'intervention</li>
-      </ul>
-    `,
-    competences: [
-      { num: '1.1', text: 'Gérer le patrimoine informatique : Manipulation du matériel, installation d\'OS et gestion du cycle de vie des postes' },
-      { num: '1.2', text: 'Répondre aux incidents et aux demandes d\'assistance et d\'évolution : Diagnostic, résolution de pannes (Niveau 1 et 2) et relation client' }
-    ],
-    resultats: `
-      <p>Ce stage m'a permis d'acquérir de <strong>solides réflexes de diagnostic</strong> (troubleshooting) et d'augmenter considérablement ma rapidité d'exécution sur le traitement des pannes.</p>
-      <p>J'ai également appris à <strong>vulgariser des problèmes techniques complexes</strong> pour les expliquer clairement aux clients.</p>
-      <p><strong>Apport personnel :</strong> Cette expérience concrète du terrain est un atout majeur pour mon futur rôle de technicien ou d'administrateur système.</p>
-    `
-  },
-  rp4: {
-    badge: 'Web',
-    badgeClass: 'rp-badge-web',
-    title: 'Conception et déploiement du portfolio professionnel',
-    period: '2ème année BTS SIO',
-    context: 'Projet personnel / IRIS Mediaschool',
-    description: `
-      <h4>Contexte</h4>
-      <p>Dans le cadre de la validation de mon cursus en BTS SIO et de mon entrée sur le marché du travail, il était indispensable de créer une <strong>identité numérique professionnelle</strong>.</p>
-      <p>L'objectif était de concevoir une plateforme web centralisant mon CV, mes réalisations techniques (RP) et ma veille technologique, afin de servir de <strong>support interactif</strong> pour les jurys d'examen et les futurs recruteurs.</p>
-    `,
-    objectifs: [
-      'Concevoir l\'arborescence et le design (UI/UX) d\'un site web clair et ergonomique',
-      'Développer et intégrer les différentes sections (Accueil, Profil, Projets, Veille, Contact) en s\'assurant que le site soit totalement "Responsive" (adapté aux mobiles et tablettes)',
-      'Déployer et héberger le site en ligne de manière sécurisée et le rendre accessible via une URL publique'
-    ],
-    technologies: [
-      'HTML5',
-      'CSS3',
-      'JavaScript',
-      'Bootstrap 5',
-      'GitHub Pages (Hébergement)'
-    ],
-    methodologie: `
-      <p><strong>Démarche suivie :</strong></p>
-      <ul>
-        <li>Création d'une maquette mentale et définition de la structure du site</li>
-        <li>Intégration du code Front-end (HTML/CSS/JS) avec un framework responsive</li>
-        <li>Structuration des fenêtres modales pour la présentation des projets</li>
-        <li>Tests de compatibilité multi-supports (desktop, tablette, mobile)</li>
-        <li>Mise en production sur GitHub Pages avec certificat HTTPS</li>
-      </ul>
-    `,
-    competences: [
-      { num: '1.3', text: 'Développer la présence en ligne de l\'organisation : Création de A à Z d\'un site web accessible publiquement, valorisant une identité professionnelle' },
-      { num: '1.4', text: 'Travailler en mode projet : Respect du cahier des charges de l\'examen et livraison du site dans les délais impartis' },
-      { num: '1.6', text: 'Organiser son développement professionnel : Création d\'un portfolio structuré pour valoriser ses compétences et suivre son évolution' }
-    ],
-    resultats: `
-      <p>Le portfolio est aujourd'hui <strong>en ligne, sécurisé (HTTPS)</strong> et parfaitement fonctionnel sur tous les supports (desktop, tablette, mobile).</p>
-      <p>Ce projet m'a permis de sortir de ma zone de confort "Réseau/Système" pour toucher au <strong>développement web (Front-end)</strong> et à la gestion de noms de domaine/hébergement.</p>
-      <p><strong>Apport personnel :</strong> Il est devenu mon outil de communication principal pour la valorisation de mes compétences auprès des jurys et recruteurs.</p>
-    `
-  },
-  rp5: {
+  // ========== 1ÈRE ANNÉE ==========
+  'rp5': {
     badge: 'Système',
     badgeClass: 'rp-badge-infra',
-    title: 'Déploiement système d\'une borne interactive (NutriFit)',
-    period: '1ère année BTS SIO',
-    context: 'Projet inter-spécialités / IRIS Mediaschool',
+    title: 'RP01 - Borne interactive NutriFit (Mode Kiosk)',
+    period: '05/2025 - 06/2025',
+    context: 'IRIS Mediaschool - Projet Inter-spécialités',
+    useStructuredTemplate: true,
     description: `
-      <h4>Contexte</h4>
-      <p>Dans le cadre d'un projet de création d'une <strong>borne interactive destinée aux salles de sport</strong> (calcul de la masse graisseuse, génération de programmes et de diètes), j'ai collaboré avec un étudiant de la spécialité SLAM (développement).</p>
-      <p>Mon rôle en tant que profil SISR était de fournir l'<strong>environnement système</strong> de cette borne : un système d'exploitation léger, rapide, et surtout <strong>totalement verrouillé</strong> pour que les utilisateurs ne puissent pas quitter l'application ou dérégler la machine.</p>
+      <h4 class="rp-subsection-title">Situation</h4>
+      <p>Projet inter-spécialités BTS SIO mené entre les pôles <strong>SISR</strong> et <strong>SLAM</strong> pour déployer une borne NutriFit utilisable en libre-service.</p>
+      <h4 class="rp-subsection-title">Contexte & Besoin</h4>
+      <p>Le besoin était de fournir une borne dédiée, stable et sécurisée, qui lance automatiquement l'application au démarrage sans accès au système pour l'utilisateur final.</p>
+      <h4 class="rp-subsection-title">Problématique</h4>
+      <p>Comment concevoir un poste Linux en mode kiosk fiable, sécurisé et simple d'usage dans un environnement public ?</p>
     `,
-    objectifs: [
-      'Choisir et installer un système d\'exploitation Linux optimisé pour les petites configurations matérielles',
-      'Configurer l\'environnement en "Mode Kiosk" (lancement automatique de l\'application en plein écran au démarrage)',
-      'Sécuriser et durcir le système en désactivant les raccourcis clavier (Alt+F4, Ctrl+Alt+Suppr) et en masquant l\'interface du bureau'
-    ],
-    technologies: [
-      'Xubuntu (Linux XFCE)',
-      'Scripts Bash',
-      'Configuration autostart XFCE',
-      'Hardening système'
-    ],
-    methodologie: `
-      <p><strong>Démarche suivie :</strong></p>
-      <ul>
-        <li>Installation de l'OS Xubuntu (distribution légère)</li>
-        <li>Déploiement de l'exécutable fourni par le développeur SLAM</li>
-        <li>Création de scripts Bash pour l'auto-démarrage (autostart)</li>
-        <li>Modification des fichiers de configuration XFCE pour le verrouillage des touches</li>
-        <li>Tests de robustesse (tentatives de "casser" l'interface)</li>
-        <li>Mise en production sur la machine cible</li>
+    analyse: `
+      <p>J'ai analysé les contraintes principales : matériel limité, nécessité d'une session verrouillée et exigence de continuité de service pendant les démonstrations.</p>
+      <p>Les risques identifiés étaient le contournement du mode kiosk, les crashs navigateur et l'indisponibilité de la borne en cas d'incident.</p>
+    `,
+    solution: `
+      <p>La solution retenue combine :</p>
+      <ul class="rp-objectifs-list">
+        <li>un système <strong>Xubuntu</strong> optimisé pour une borne interactive,</li>
+        <li>un mode <strong>Chromium Kiosk</strong> verrouillé avec autostart,</li>
+        <li>des scripts Bash pour la relance automatique et la maintenance.</li>
       </ul>
     `,
+    realisation: `
+      <p><strong>Phase 1 - Installation :</strong> déploiement Xubuntu, mise à jour système et configuration d'une session dédiée.</p>
+      <p><strong>Phase 2 - Sécurisation :</strong> blocage des raccourcis, restrictions d'accès système et autostart de Chromium en plein écran.</p>
+      <p><strong>Phase 3 - Stabilisation :</strong> mise en place d'un watchdog de relance et validation sur plusieurs cycles de redémarrage.</p>
+    `,
+    projectManagement: `
+      <div class="rp-pm-meta">
+        <div class="rp-pm-meta-item"><span>Période</span><strong>05/2025 - 06/2025</strong></div>
+        <div class="rp-pm-meta-item"><span>Méthode</span><strong>Agile (itérative)</strong></div>
+        <div class="rp-pm-meta-item"><span>Rôle</span><strong>Technicien SISR</strong></div>
+        <div class="rp-pm-meta-item"><span>Durée</span><strong>8 semaines</strong></div>
+      </div>
+      <div class="rp-pm-grid">
+        <div class="rp-pm-card">
+          <h4 class="rp-subsection-title">Présentation de l'équipe et rôles</h4>
+          <ul class="rp-objectifs-list mb-0">
+            <li><strong>SISR (moi)</strong> : système, sécurité, scripts et exploitation.</li>
+            <li><strong>SLAM</strong> : application métier et tests fonctionnels.</li>
+            <li><strong>Encadrement</strong> : validation des jalons et de la qualité finale.</li>
+          </ul>
+        </div>
+        <div class="rp-pm-card">
+          <h4 class="rp-subsection-title">Parties prenantes</h4>
+          <ul class="rp-objectifs-list mb-0">
+            <li>Référent pédagogique</li>
+            <li>Équipe projet SISR/SLAM</li>
+            <li>Utilisateurs de test</li>
+          </ul>
+        </div>
+        <div class="rp-pm-card">
+          <h4 class="rp-subsection-title">Planification et suivi de projet</h4>
+          <p class="mb-1">Pilotage en phases : cadrage, installation, hardening, intégration, recette.</p>
+          <p class="mb-0">Suivi Kanban (To Do / Doing / Testing / Done) pour prioriser les tâches critiques.</p>
+        </div>
+        <div class="rp-pm-card">
+          <h4 class="rp-subsection-title">Gestion des risques</h4>
+          <div class="table-responsive">
+            <table class="table table-sm table-bordered bg-white">
+              <thead class="table-light"><tr><th>Risque</th><th>Impact</th><th>Traitement</th></tr></thead>
+              <tbody>
+                <tr><td>Sortie du mode kiosk</td><td>Élevé</td><td>Restrictions session + verrouillage raccourcis</td></tr>
+                <tr><td>Crash navigateur</td><td>Moyen</td><td>Watchdog et relance automatique</td></tr>
+                <tr><td>Panne poste</td><td>Élevé</td><td>Image système et procédure de restauration</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <h4 class="rp-subsection-title mt-3">Planification (grandes phases)</h4>
+      <div class="rp-gantt-card" style="--gantt-units: 8;">
+        <h4 class="rp-subsection-title rp-gantt-title"><i class="fa-solid fa-chart-gantt"></i>Diagramme de Gantt (Phases)</h4>
+        <div class="rp-gantt-rows">
+          <div class="rp-gantt-row">
+            <span class="rp-gantt-label">Cadrage & Analyse</span>
+            <div class="rp-gantt-track"><span class="rp-gantt-bar is-indigo" style="--start: 1; --length: 2;"></span></div>
+          </div>
+          <div class="rp-gantt-row">
+            <span class="rp-gantt-label">Installation & Hardening</span>
+            <div class="rp-gantt-track"><span class="rp-gantt-bar is-blue" style="--start: 3; --length: 2;"></span></div>
+          </div>
+          <div class="rp-gantt-row">
+            <span class="rp-gantt-label">Intégration applicative</span>
+            <div class="rp-gantt-track"><span class="rp-gantt-bar is-cyan" style="--start: 5; --length: 2;"></span></div>
+          </div>
+          <div class="rp-gantt-row">
+            <span class="rp-gantt-label">Tests & Recette</span>
+            <div class="rp-gantt-track"><span class="rp-gantt-bar is-green" style="--start: 7; --length: 2;"></span></div>
+          </div>
+          <div class="rp-gantt-chronology">
+            <span><strong>S1</strong><small>Mai</small></span>
+            <span><strong>S2</strong><small>Mai</small></span>
+            <span><strong>S3</strong><small>Mai</small></span>
+            <span><strong>S4</strong><small>Mai</small></span>
+            <span><strong>S5</strong><small>Juin</small></span>
+            <span><strong>S6</strong><small>Juin</small></span>
+            <span><strong>S7</strong><small>Juin</small></span>
+            <span><strong>S8</strong><small>Juin</small></span>
+          </div>
+        </div>
+      </div>
+    `,
+    testsValidation: `
+      <p><strong>Tests fonctionnels :</strong> lancement auto de l'application, navigation fluide et persistance après redémarrage.</p>
+      <p><strong>Tests sécurité :</strong> vérification de l'impossibilité d'accéder au bureau et aux paramètres système.</p>
+      <p><strong>Tests robustesse :</strong> simulation de crash Chromium et contrôle de la relance automatique.</p>
+      <p><strong>Résultat :</strong> borne stable, sécurisée et prête pour une utilisation en libre-service.</p>
+    `,
+    objectifs: [
+      "Déployer un OS Linux optimisé (Xubuntu) pour matériel à ressources limitées",
+      "Configurer le mode Kiosk inviolable (Autostart Chromium restricted)",
+      "Mettre en œuvre une gestion de projet agile (Méthode Kanban)",
+      "Assurer la traçabilité des besoins entre le CDC et la livraison"
+    ],
+    technologies: [
+      "Linux Xubuntu", "Bash Scripting", "Hardening", "Trello (Agile)", "GitHub"
+    ],
+    methodologieTitle: 'Gestion de projet et organisation',
+    methodologie: `
+      <div class="rp-pm-box" style="background:linear-gradient(180deg,#f8fbff 0%,#f8fafc 100%);padding:20px;border-radius:12px;border:1px solid #dbe7ff;border-left:4px solid #3b82f6;">
+        <h4 class="mt-0 mb-3">Gestion de projet</h4>
+        <p class="mb-0" style="background:#eef4ff;border:1px solid #d6e5ff;padding:10px 12px;border-radius:8px;">
+          Le projet a été piloté en mode collaboratif entre les pôles SISR et SLAM, avec une organisation structurée autour de jalons intermédiaires, d'une planification définie en amont et d'un suivi continu via un outil Kanban.
+          Cette organisation a permis d'assurer la coordination des tâches, le respect des délais et la validation progressive des livrables.
+        </p>
+      </div>
+
+      <div class="rp-pm-box mt-3" style="background:#ffffff;padding:16px;border-radius:12px;border:1px solid #dbe3ef;border-top:3px solid #3b82f6;">
+        <h5 class="mb-2">Cartographie des parties prenantes</h5>
+        <div style="border:1px solid #dbe3ef;border-radius:10px;overflow:hidden;">
+          <table class="table table-sm table-bordered mb-0 small bg-white align-middle">
+            <thead style="background:#eaf2ff;">
+              <tr><th>Acteur</th><th>Rôle</th><th>Attentes</th><th>Implication</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>MOA (enseignant)</strong></td><td>Expression du besoin / validation</td><td>Solution fonctionnelle et sécurisée</td><td><span class="badge bg-primary-subtle text-primary-emphasis">Élevée</span></td></tr>
+              <tr><td><strong>Utilisateurs finaux</strong></td><td>Utilisation de la borne</td><td>Simplicité et rapidité</td><td><span class="badge bg-secondary-subtle text-secondary-emphasis">Moyenne</span></td></tr>
+              <tr><td><strong>Équipe SLAM</strong></td><td>Développement application</td><td>Fonctionnalités opérationnelles</td><td><span class="badge bg-primary-subtle text-primary-emphasis">Élevée</span></td></tr>
+              <tr><td><strong>Edib Saoud (SISR)</strong></td><td>Infrastructure & sécurité</td><td>Système stable et sécurisé</td><td><span class="badge bg-primary-subtle text-primary-emphasis">Élevée</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="small text-muted mt-2 mb-0"><strong>Emplacement visuel :</strong> schéma des parties prenantes (diagramme).</p>
+      </div>
+
+      <div class="rp-pm-box mt-3" style="background:#ffffff;padding:16px;border-radius:12px;border:1px solid #dbe3ef;border-top:3px solid #10b981;">
+        <h5 class="mb-2">Rôles et responsabilités (RACI simplifié)</h5>
+        <div style="border:1px solid #dbe3ef;border-radius:10px;overflow:hidden;">
+          <table class="table table-sm table-bordered mb-0 small bg-white align-middle">
+            <thead style="background:#eafbf4;">
+              <tr><th>Tâche</th><th>Responsable</th><th>Contributeur</th><th>Validateur</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Analyse du besoin</td><td>MOA</td><td>Équipe projet</td><td>MOA</td></tr>
+              <tr><td>Développement application</td><td>SLAM</td><td>-</td><td>MOA</td></tr>
+              <tr><td>Installation système</td><td>SISR</td><td>-</td><td>MOE</td></tr>
+              <tr><td>Sécurisation (hardening)</td><td>SISR</td><td>-</td><td>MOE</td></tr>
+              <tr><td>Tests et validation</td><td>SISR + SLAM</td><td>-</td><td>MOA</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="small text-muted mt-2 mb-0"><strong>Emplacement visuel :</strong> diagramme RACI.</p>
+      </div>
+
+      <div class="rp-pm-box mt-3" style="background:#ffffff;padding:16px;border-radius:12px;border:1px solid #dbe3ef;border-top:3px solid #6366f1;">
+        <h5 class="mb-2">Organisation de l'équipe</h5>
+        <ul class="mb-2">
+          <li><strong>SISR :</strong> infrastructure, sécurité, scripts</li>
+          <li><strong>SLAM :</strong> développement de l'application</li>
+        </ul>
+        <p class="mb-1">Coordination par points hebdomadaires, Trello (Kanban) et suivi continu des tâches.</p>
+        <p class="mb-0">Cette organisation a permis une séparation claire des responsabilités tout en assurant une collaboration efficace entre les deux pôles.</p>
+      </div>
+
+      <div class="rp-pm-box mt-3" style="background:#ffffff;padding:16px;border-radius:12px;border:1px solid #dbe3ef;border-top:3px solid #0ea5e9;">
+        <h5 class="mb-2">Méthodologie de gestion de projet</h5>
+        <p class="mb-0">Approche Agile inspirée de Kanban, combinant planification globale (phases et jalons) et exécution itérative.</p>
+      </div>
+
+      <div class="rp-pm-box mt-3" style="background:#ffffff;padding:16px;border-radius:12px;border:1px solid #dbe3ef;border-top:3px solid #8b5cf6;">
+        <h5 class="mb-2">Planification et contraintes temporelles</h5>
+        <p class="mb-1"><strong>Période :</strong> début mai 2025 -> fin juin 2025 (échéance semaine 8).</p>
+        <p class="mb-1">Chaque jalon faisait l'objet d'une validation par la MOA simulée, permettant de vérifier la conformité aux besoins exprimés.</p>
+        <ul class="mb-2">
+          <li>S1-S2 : Analyse du besoin</li>
+          <li>S3-S4 : Installation et hardening</li>
+          <li>S5-S6 : Intégration</li>
+          <li>S7 : Tests</li>
+          <li>S8 : Recette et livraison</li>
+        </ul>
+        <div style="border:1px solid #dbe3ef;border-radius:10px;overflow:hidden;">
+          <table class="table table-sm table-bordered mb-0 small bg-white align-middle">
+            <thead style="background:#eef2ff;">
+              <tr><th>Jalon</th><th>Échéance</th><th>Statut</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Besoin validé</td><td>Fin S2</td><td><span class="badge bg-success-subtle text-success-emphasis">Atteint</span></td></tr>
+              <tr><td>Système sécurisé</td><td>Fin S4</td><td><span class="badge bg-success-subtle text-success-emphasis">Atteint</span></td></tr>
+              <tr><td>Application fonctionnelle</td><td>Fin S6</td><td><span class="badge bg-success-subtle text-success-emphasis">Atteint</span></td></tr>
+              <tr><td>Tests validés</td><td>S7</td><td><span class="badge bg-success-subtle text-success-emphasis">Atteint</span></td></tr>
+              <tr><td>Livraison finale</td><td>S8</td><td><span class="badge bg-success-subtle text-success-emphasis">Atteint</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="small text-muted mt-2 mb-2"><strong>Emplacement visuel :</strong> capture du diagramme de Gantt.</p>
+      </div>
+
+      <div class="rp-pm-box mt-3" style="background:#ffffff;padding:16px;border-radius:12px;border:1px solid #dbe3ef;border-top:3px solid #f59e0b;">
+        <h5 class="mb-2">Contraintes du projet</h5>
+        <ul class="mb-0">
+          <li>Budget matériel limité (&lt; 200 EUR)</li>
+          <li>Matériel à faibles ressources (mini-PC)</li>
+          <li>Environnement public (borne en libre accès)</li>
+          <li>Utilisateurs non techniques</li>
+          <li>Exigences fortes de sécurité</li>
+          <li>Délai contraint (8 semaines)</li>
+        </ul>
+      </div>
+
+      <div class="rp-pm-box mt-3" style="background:#ffffff;padding:16px;border-radius:12px;border:1px solid #dbe3ef;border-top:3px solid #ef4444;">
+        <h5 class="mb-2">Analyse et gestion des risques</h5>
+        <p class="mb-2">Les risques ont été évalués selon leur probabilité et leur impact afin de prioriser les actions correctives.</p>
+        <div style="border:1px solid #dbe3ef;border-radius:10px;overflow:hidden;">
+          <table class="table table-sm table-bordered mb-0 small bg-white align-middle">
+            <thead style="background:#fff5f5;">
+              <tr><th>Risque</th><th>Probabilité</th><th>Impact</th><th>Solution</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Accès système utilisateur</td><td><span class="badge bg-danger-subtle text-danger-emphasis">Élevée</span></td><td><span class="badge bg-danger-subtle text-danger-emphasis">Critique</span></td><td>Hardening XFCE</td></tr>
+              <tr><td>Crash application</td><td><span class="badge bg-warning-subtle text-warning-emphasis">Moyenne</span></td><td><span class="badge bg-warning-subtle text-warning-emphasis">Moyen</span></td><td>Watchdog Bash</td></tr>
+              <tr><td>Coupure brutale</td><td><span class="badge bg-secondary-subtle text-secondary-emphasis">Faible</span></td><td><span class="badge bg-warning-subtle text-warning-emphasis">Moyen</span></td><td>Vérification au boot</td></tr>
+              <tr><td>Mauvaise utilisation</td><td><span class="badge bg-warning-subtle text-warning-emphasis">Moyenne</span></td><td><span class="badge bg-secondary-subtle text-secondary-emphasis">Faible</span></td><td>Interface simplifiée</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="rp-pm-box mt-3" style="background:#ffffff;padding:16px;border-radius:12px;border:1px solid #dbe3ef;border-top:3px solid #14b8a6;">
+        <h5 class="mb-2">Cahier des charges</h5>
+        <p class="mb-1">Le CDC formalise les besoins fonctionnels (consultation nutrition), les contraintes techniques (Linux + kiosk), budgétaires et les exigences de sécurité.</p>
+        <p class="mb-1">Le cahier des charges précisait notamment l'obligation d'un environnement inviolable empêchant toute sortie du mode kiosk.</p>
+        <p class="small text-muted mb-0"><strong>Emplacement visuel :</strong> extrait ou capture du cahier des charges.</p>
+      </div>
+
+      <div class="rp-pm-box mt-3" style="background:#ffffff;padding:16px;border-radius:12px;border:1px solid #dbe3ef;border-top:3px solid #0ea5e9;">
+        <h5 class="mb-2">Collecte et traçabilité des besoins</h5>
+        <p class="mb-1">Besoins collectés par échanges avec la MOA simulée puis transformés en tâches Trello.</p>
+        <p class="mb-1">Traçabilité assurée par backlog structuré et suivi des tickets.</p>
+        <p class="small text-muted mb-0"><strong>Emplacement visuel :</strong> capture du backlog Trello.</p>
+      </div>
+
+      <div class="rp-pm-box mt-3" style="background:#ffffff;padding:16px;border-radius:12px;border:1px solid #dbe3ef;border-top:3px solid #06b6d4;">
+        <h5 class="mb-2">Ressources mobilisées</h5>
+        <div style="border:1px solid #dbe3ef;border-radius:10px;overflow:hidden;">
+          <table class="table table-sm table-bordered mb-0 small bg-white align-middle">
+            <thead style="background:#f0f9ff;">
+              <tr><th>Type</th><th>Ressources</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Humaines</td><td>1 étudiant SISR, 1 étudiant SLAM</td></tr>
+              <tr><td>Matérielles</td><td>Mini-PC, écran tactile, support borne</td></tr>
+              <tr><td>Logicielles</td><td>Linux Xubuntu, Bash, Chromium (kiosk), Trello, GitHub</td></tr>
+              <tr><td>Temps</td><td>8 semaines (environ 6 à 8 heures par semaine)</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="rp-pm-box mt-3" style="background:#ffffff;padding:16px;border-radius:12px;border:1px solid #dbe3ef;border-top:3px solid #7c3aed;">
+        <h5 class="mb-2">Tests et validation</h5>
+        <p class="mb-1">Une phase de tests a été réalisée incluant :</p>
+        <ul class="mb-0">
+          <li>des tests fonctionnels (accès à l'application),</li>
+          <li>des tests de sécurité (résistance aux manipulations utilisateur),</li>
+          <li>des tests de robustesse (redémarrage, crash application).</li>
+        </ul>
+        <p class="mt-2 mb-0">Ces tests ont permis de valider la robustesse et la sécurité de la solution avant sa mise en production.</p>
+      </div>
+
+      <div class="rp-pm-box mt-3" style="background:#ffffff;padding:16px;border-radius:12px;border:1px solid #dbe3ef;border-top:3px solid #22c55e;">
+        <h5 class="mb-2">Suivi du projet - Kanban</h5>
+        <p class="mb-1">Colonnes utilisées : <strong>To Do / Doing / Testing / Done</strong>.</p>
+        <p class="mb-1">Ce suivi a permis une meilleure organisation, un pilotage en temps réel et une priorisation efficace.</p>
+        <p class="mb-1">Les tâches étaient priorisées en fonction de leur criticité (sécurité, fonctionnement) afin de garantir la livraison d'un produit stable dans les délais.</p>
+        <p class="small text-muted mb-0"><strong>Emplacement visuel :</strong> capture du tableau Kanban.</p>
+      </div>
+    `,
     competences: [
-      { num: '1.1', text: 'Gérer le patrimoine informatique : Installation et paramétrage d\'un système d\'exploitation client (Linux)' },
-      { num: '1.4', text: 'Travailler en mode projet : Collaboration directe avec un développeur (SLAM) pour répondre à un cahier des charges commun' },
-      { num: '1.5', text: 'Mettre à disposition un service informatique : Fourniture d\'une borne prête à l\'emploi et sécurisée pour le public' }
+      { num: "1.1", text: "Gérer le patrimoine informatique : Installation et sécurisation d'un système Linux kiosk." },
+      { num: "1.4", text: "Travailler en mode projet : Coordination inter-spécialités SISR/SLAM." },
+      { num: "1.5", text: "Mettre à disposition un service informatique : Livraison d'une borne stable et exploitable." }
     ],
     resultats: `
-      <p>Le projet a été une <strong>grande réussite technique et humaine</strong>. La borne démarrait directement sur l'application NutriFit sans jamais afficher le bureau Linux, et il était impossible pour un utilisateur de fermer le programme.</p>
-      <p>Cette expérience m'a appris à <strong>durcir un système d'exploitation (Hardening)</strong> et m'a prouvé l'importance d'une bonne communication entre les équipes d'infrastructure et de développement.</p>
-    `
+      <p><strong>Résultat :</strong> une borne fonctionnelle, sécurisée et stable a été livrée dans les délais, répondant aux exigences du cahier des charges, notamment en termes de sécurité et d'accessibilité.</p>
+      <p><strong>Bilan :</strong> ce projet m'a permis de comprendre que la réussite d'une infrastructure ne repose pas uniquement sur les aspects techniques, mais également sur une organisation rigoureuse, une gestion des risques anticipée et une coordination efficace entre les différents acteurs du projet.</p>
+      <p>Ce projet a également mis en évidence l'importance de la sécurisation des environnements accessibles au public.</p>
+      <h5 class="mt-3 mb-2">Difficultés rencontrées</h5>
+      <ul class="mb-0">
+        <li>Sécurisation complète de XFCE (blocage des raccourcis)</li>
+        <li>Gestion des crashs Chromium</li>
+        <li>Coordination SISR / SLAM</li>
+      </ul>
+      <p class="mt-2 mb-0">Des solutions techniques (scripts Bash, watchdog, hardening) ont été mises en place pour répondre à ces problématiques.</p>
+      <p class="mt-2 mb-0"><strong>Amélioration possible :</strong> l'ajout d'un système de supervision à distance afin de faciliter la maintenance et le suivi de la borne.</p>
+    `,
+    projectInfo: {
+      duration: '8 semaines',
+      team: 'Binôme inter-spécialités (SISR/SLAM)',
+      context: 'Formation BTS SIO',
+      status: 'Terminé',
+      technologies: ['Xubuntu', 'Chromium Kiosk', 'Bash', 'Hardening Linux'],
+      documentation: '#'
+    },
+    images: [
+      { src: "images/Nutrifit.png", caption: "Aperçu NutriFit côté client" }
+    ]
   },
-  rp6: {
+  'rp6': {
     badge: 'Réseau',
     badgeClass: 'rp-badge-network',
-    title: 'Infrastructure serveur pour une messagerie locale (Classcord)',
-    period: '1ère année BTS SIO',
+    title: 'RP02 - Infrastructure serveur Classcord',
+    period: '04/2025',
     context: 'Projet inter-spécialités / IRIS Mediaschool',
+    useStructuredTemplate: true,
     description: `
-      <h4>Contexte</h4>
-      <p>Le projet "Classcord" avait pour but de créer un <strong>clone sécurisé de Discord</strong>, réservé aux étudiants, hébergé en local sur le réseau de l'école.</p>
-      <p>Les étudiants SLAM étaient en charge du développement de l'interface client et de la base de données. En tant que technicien SISR, ma mission était de concevoir, déployer et administrer le <strong>serveur backend</strong> capable d'héberger cette solution et de gérer les connexions entrantes des clients.</p>
+      <h4 class="rp-subsection-title">Situation</h4>
+      <p>Projet réalisé en BTS SIO dans un contexte de collaboration <strong>SISR / SLAM</strong> pour mettre en service une messagerie interne type Classcord sur le réseau pédagogique.</p>
+      <h4 class="rp-subsection-title">Contexte & Besoin</h4>
+      <p>L'équipe de développement avait besoin d'une infrastructure stable pour héberger l'application et sa base de données, avec accès contrôlé depuis les postes du campus.</p>
+      <h4 class="rp-subsection-title">Problématique</h4>
+      <p>Comment fournir un serveur fiable, sécurisé et maintenable permettant aux développeurs de livrer l'application, tout en respectant les contraintes réseau de l'école ?</p>
     `,
-    objectifs: [
-      'Déployer un serveur local sous Linux',
-      'Configurer l\'environnement réseau pour rendre le serveur accessible depuis les postes des étudiants (adressage IP, ouvertures de ports)',
-      'Héberger les composants nécessaires au fonctionnement de l\'application (serveur web/applicatif et base de données)',
-      'Administrer et monitorer le serveur pendant les phases de tests des développeurs'
-    ],
-    technologies: [
-      'Debian Linux (Serveur)',
-      'Configuration IP statique',
-      'Pare-feu UFW/Iptables',
-      'Monitoring système (htop)'
-    ],
-    methodologie: `
-      <p><strong>Démarche suivie :</strong></p>
-      <ul>
-        <li>Déploiement de la machine virtuelle serveur</li>
-        <li>Configuration IP statique et paramétrage du pare-feu</li>
-        <li>Ouverture des ports nécessaires (80, 443, 3306)</li>
-        <li>Installation des paquets prérequis pour les développeurs</li>
-        <li>Tests de ping et de connectivité depuis les postes clients</li>
-        <li>Surveillance des ressources (CPU/RAM) lors des tests de charge</li>
+    analyse: `
+      <p>J'ai identifié les prérequis techniques : adressage IP fixe, règles de filtrage minimales, disponibilité du service applicatif et supervision de base.</p>
+      <p>L'analyse des risques a aussi mis en évidence les points critiques : indisponibilité serveur, mauvaise exposition réseau, et incohérences entre besoins SLAM et contraintes d'infrastructure.</p>
+    `,
+    solution: `
+      <p>La solution retenue combine :</p>
+      <ul class="rp-objectifs-list">
+        <li>un serveur <strong>Debian</strong> dédié à l'hébergement applicatif,</li>
+        <li>un durcissement réseau via <strong>UFW</strong> et segmentation contrôlée des flux,</li>
+        <li>une supervision légère pour le suivi de charge et la stabilité en phase de tests.</li>
       </ul>
     `,
-    competences: [
-      { num: '1.1', text: 'Gérer le patrimoine informatique : Administration d\'un serveur applicatif et configuration réseau' },
-      { num: '1.4', text: 'Travailler en mode projet : Rôle d\'administrateur système en support d\'une équipe de développement' },
-      { num: '1.5', text: 'Mettre à disposition un service informatique : Mise en production d\'une infrastructure serveur fonctionnelle et sécurisée' }
+    realisation: `
+      <p><strong>Phase 1 - Préparation système :</strong> installation du serveur Debian, configuration IP statique, mise à jour, sécurisation SSH et création des comptes d'administration.</p>
+      <p><strong>Phase 2 - Mise en service :</strong> ouverture des ports strictement nécessaires, déploiement des composants backend attendus par l'équipe SLAM et validation de la connectivité LAN.</p>
+      <p><strong>Phase 3 - Stabilisation :</strong> supervision des ressources, ajustements de configuration réseau, documentation d'exploitation pour la continuité de service.</p>
+    `,
+    projectManagement: `
+      <div class="rp-pm-meta">
+        <div class="rp-pm-meta-item"><span>Période</span><strong>04/2025</strong></div>
+        <div class="rp-pm-meta-item"><span>Méthode</span><strong>Agile (itérative)</strong></div>
+        <div class="rp-pm-meta-item"><span>Rôle</span><strong>Administrateur SISR</strong></div>
+        <div class="rp-pm-meta-item"><span>Durée</span><strong>4 semaines</strong></div>
+      </div>
+
+      <div class="rp-pm-grid">
+        <div class="rp-pm-card">
+          <h4 class="rp-subsection-title">Présentation de l'équipe et rôles</h4>
+          <ul class="rp-objectifs-list mb-0">
+            <li><strong>SISR (moi)</strong> : conception infra, sécurité réseau, déploiement serveur.</li>
+            <li><strong>SLAM</strong> : développement applicatif, intégration fonctionnelle, tests côté client.</li>
+            <li><strong>Encadrement</strong> : validation des choix techniques et suivi pédagogique.</li>
+          </ul>
+        </div>
+
+        <div class="rp-pm-card">
+          <h4 class="rp-subsection-title">Parties prenantes</h4>
+          <ul class="rp-objectifs-list mb-0">
+            <li>Équipe projet SISR/SLAM</li>
+            <li>Référent pédagogique</li>
+            <li>Utilisateurs test (étudiants)</li>
+          </ul>
+        </div>
+
+        <div class="rp-pm-card">
+          <h4 class="rp-subsection-title">Planification et suivi de projet</h4>
+          <p class="mb-1">Découpage en phases hebdomadaires : cadrage, déploiement, intégration, validation.</p>
+          <p class="mb-0">Suivi opérationnel avec logique Kanban (<em>To Do / Doing / Testing / Done</em>) et points d'avancement réguliers.</p>
+        </div>
+
+        <div class="rp-pm-card">
+          <h4 class="rp-subsection-title">Gestion des risques</h4>
+          <div class="table-responsive">
+            <table class="table table-sm table-bordered bg-white">
+              <thead class="table-light"><tr><th>Risque</th><th>Impact</th><th>Traitement</th></tr></thead>
+              <tbody>
+                <tr><td>Indisponibilité serveur</td><td>Élevé</td><td>Procédure de redémarrage + supervision active</td></tr>
+                <tr><td>Ouverture excessive des ports</td><td>Élevé</td><td>Politique pare-feu minimale et revue de règles</td></tr>
+                <tr><td>Conflit infra/applicatif</td><td>Moyen</td><td>Validation conjointe SISR/SLAM avant recette</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <h4 class="rp-subsection-title mt-3">Planification (grandes phases)</h4>
+      <div class="rp-gantt-card" style="--gantt-units: 4;">
+        <h4 class="rp-subsection-title rp-gantt-title"><i class="fa-solid fa-chart-gantt"></i>Diagramme de Gantt (Phases)</h4>
+        <div class="rp-gantt-rows">
+          <div class="rp-gantt-row">
+            <span class="rp-gantt-label">Cadrage & Préparation</span>
+            <div class="rp-gantt-track"><span class="rp-gantt-bar is-indigo" style="--start: 1; --length: 1;"></span></div>
+          </div>
+          <div class="rp-gantt-row">
+            <span class="rp-gantt-label">Déploiement Serveur</span>
+            <div class="rp-gantt-track"><span class="rp-gantt-bar is-blue" style="--start: 2; --length: 1.2;"></span></div>
+          </div>
+          <div class="rp-gantt-row">
+            <span class="rp-gantt-label">Intégration applicative</span>
+            <div class="rp-gantt-track"><span class="rp-gantt-bar is-cyan" style="--start: 3.1; --length: 0.9;"></span></div>
+          </div>
+          <div class="rp-gantt-row">
+            <span class="rp-gantt-label">Tests & Validation</span>
+            <div class="rp-gantt-track"><span class="rp-gantt-bar is-green" style="--start: 4; --length: 1;"></span></div>
+          </div>
+          <div class="rp-gantt-chronology">
+            <span><strong>S1</strong><small>07-13/04</small></span>
+            <span><strong>S2</strong><small>14-20/04</small></span>
+            <span><strong>S3</strong><small>21-27/04</small></span>
+            <span><strong>S4</strong><small>28-30/04</small></span>
+          </div>
+        </div>
+      </div>
+    `,
+    testsValidation: `
+      <p><strong>Tests fonctionnels :</strong> disponibilité du service, connectivité des clients au serveur, accès applicatif stable sur le LAN.</p>
+      <p><strong>Tests sécurité :</strong> vérification des ports ouverts, tentative d'accès non autorisé, contrôle des journaux.</p>
+      <p><strong>Tests de charge légère :</strong> observation CPU/RAM/disque pendant utilisation simultanée de plusieurs clients.</p>
+      <p><strong>Résultat :</strong> infrastructure opérationnelle, stable et exploitable par l'équipe de développement jusqu'à la recette finale.</p>
+    `,
+    objectifs: [
+      'Déployer un serveur Debian dédié au projet Classcord',
+      'Sécuriser l\'exposition réseau avec un pare-feu minimal',
+      'Garantir l\'accessibilité des composants backend pour l\'équipe SLAM',
+      'Assurer un suivi technique pendant les phases de tests',
+      'Documenter l\'exploitation et les procédures de maintenance'
     ],
+    competences: [
+      { num: '1.1', text: 'Gérer le patrimoine informatique : Administration système Linux et configuration réseau.' },
+      { num: '1.4', text: 'Travailler en mode projet : Coordination inter-spécialités SISR/SLAM.' },
+      { num: '1.5', text: 'Mettre à disposition un service informatique : Infrastructure serveur sécurisée et disponible.' }
+    ],
+    technologies: ['Debian Linux', 'UFW', 'Réseau TCP/IP', 'Supervision système', 'CLI Linux'],
     resultats: `
-      <p>L'infrastructure a <strong>parfaitement soutenu le déploiement</strong> de l'application Classcord. Les développeurs ont pu se connecter à la base de données et les utilisateurs finaux ont pu échanger des messages en temps réel de manière stable.</p>
-      <p>Ce projet m'a fait comprendre les enjeux de l'<strong>architecture Client-Serveur</strong> et le rôle crucial de l'administrateur système pour garantir la disponibilité d'une application.</p>
-    `
+      <p>L'infrastructure mise en place a permis un déploiement applicatif fluide avec une connectivité stable pour les développeurs et les utilisateurs de test.</p>
+      <p>Le serveur est resté disponible sur toute la phase projet avec des règles réseau maîtrisées et une documentation d'exploitation exploitable.</p>
+    `,
+    projectInfo: {
+      duration: '4 semaines',
+      team: 'Binôme inter-spécialités (SISR/SLAM)',
+      context: 'Formation BTS SIO',
+      status: 'Terminé',
+      technologies: ['Debian Linux', 'UFW', 'TCP/IP', 'Supervision', 'CLI Linux'],
+      documentation: '#'
+    },
+    images: [
+      { src: "images/classcordclient.png", caption: "Interface client Classcord en phase de test" }
+    ]
   },
-  rp7: {
-    badge: 'Système',
-    badgeClass: 'rp-badge-infra',
-    title: 'Déploiement d\'un annuaire d\'entreprise (Active Directory)',
-    period: '1ère année BTS SIO',
-    context: 'TP Laboratoire / École IRIS',
+  'rp7': {
+    badge: '1ère Année',
+    badgeClass: 'rp-badge-system',
+    title: 'RP03 - Annuaire d\'entreprise (Active Directory)',
+    period: '10/2025 - 02/2026',
+    context: 'IRIS Mediaschool',
+    useStructuredTemplate: true,
+    
     description: `
-      <h4>Contexte</h4>
-      <p>Dans le cadre de la création du système d'information d'une nouvelle agence, la gestion des ordinateurs et des mots de passe se faisait en <strong>groupe de travail ("Workgroup")</strong>. Chaque poste possédait ses propres comptes locaux, ce qui devenait impossible à administrer et posait de graves problèmes de sécurité.</p>
-      <p>Il m'a été demandé de <strong>centraliser l'authentification</strong> et la gestion des droits des employés en déployant un contrôleur de domaine Microsoft.</p>
+      <h4 class="rp-subsection-title">Situation</h4>
+      <p>Projet réalisé en première année BTS SIO option SISR au sein de l'infrastructure de l'école, mettant en place une solution d'authentification centralisée utilisant les technologies Microsoft.</p>
+      <h4 class="rp-subsection-title">Contexte & Besoin</h4>
+      <p>L'école disposait de postes client dispersés sans authentification centralisée. Chaque utilisateur gérait ses identifiants localement, ce qui causait une gestion manuelle des droits d'accès et une traçabilité inexistante des connexions réseau.</p>
+      <h4 class="rp-subsection-title">Problématique</h4>
+      <p>Comment mettre en place une authentification centralisée et une gestion cohérente des accès pour les utilisateurs (étudiants, formateurs, administrateurs) du réseau pédagogique ?</p>
     `,
-    objectifs: [
-      'Installer un système d\'exploitation Windows Server et lui attribuer une configuration réseau statique',
-      'Déployer le rôle AD DS (Active Directory Domain Services) et promouvoir le serveur en tant que contrôleur de domaine',
-      'Structurer l\'annuaire d\'entreprise en créant des Unités Organisationnelles (OU), des groupes de sécurité et des comptes utilisateurs selon les différents services (RH, Compta, Direction)',
-      'Intégrer un poste client (Windows 10/11 Pro) au nouveau domaine pour tester l\'authentification'
-    ],
-    technologies: [
-      'Windows Server (2019/2022)',
-      'Windows 10/11 Pro (Client)',
-      'AD DS',
-      'DNS',
-      'Gestionnaire de Serveur',
-      'Console Utilisateurs et Ordinateurs AD'
-    ],
-    methodologie: `
-      <p><strong>Démarche suivie :</strong></p>
-      <ul>
-        <li>Paramétrage réseau du serveur (IP fixe et définition du serveur lui-même comme DNS principal)</li>
-        <li>Installation du rôle via le Gestionnaire de Serveur et création de la forêt/du domaine (ex: iris.local)</li>
-        <li>Création de l'arborescence (Groupes et Utilisateurs) via la console d'administration</li>
-        <li>Côté client : modification des paramètres DNS pour pointer vers le serveur, puis jonction du poste au domaine via les paramètres système</li>
+    
+    analyse: `
+      <p>J'ai analysé l'infrastructure existante et identifié les risques : absence de traçabilité des accès, duplication de comptes sur chaque poste, pas de politiques de sécurité globales, et difficulté à gérer les droits d'accès aux ressources partagées.</p>
+      <p>Cette analyse m'a orienté vers une architecture centralisée basée sur <strong>Active Directory Domain Services (AD DS)</strong>, permettant une authentification par utilisateur sur un domaine unique et l'application de politiques de groupe cohérentes.</p>
+    `,
+    
+    solution: `
+      <p>La solution retenue combine :</p>
+      <ul class="rp-objectifs-list">
+        <li><strong>Windows Server 2022</strong> en contrôleur de domaine,</li>
+        <li><strong>Active Directory Domain Services (AD DS)</strong> pour l'authentification centralisée,</li>
+        <li><strong>Politiques de groupe (GPO)</strong> pour l'application automatisée des règles de sécurité par profil utilisateur.</li>
       </ul>
     `,
-    competences: [
-      { num: '1.1', text: 'Gérer le patrimoine informatique : Installation et configuration d\'un OS serveur Microsoft et gestion des comptes utilisateurs' },
-      { num: '1.5', text: 'Mettre à disposition un service informatique : Fourniture d\'un service d\'authentification centralisé pour les utilisateurs de l\'entreprise' }
+    
+    realisation: `
+      <p><strong>Phase 1 - Installation & Configuration :</strong> Installation de Windows Server 2022, activation des rôles AD DS et DNS intégré.</p>
+      <p><strong>Phase 2 - Structure d'annuaire :</strong> création de la hiérarchie organisationnelle avec UO par profil (étudiants, formateurs, administrateurs), création des groupes de sécurité et des comptes utilisateurs.</p>
+      <p><strong>Phase 3 - Stratégies de groupe :</strong> mise en place de GPO pour appliquer les politiques de sécurité (mots de passe, restrictions d'accès, mappages réseau) selon le profil.</p>
+      <p><strong>Phase 4 - Intégration réseau :</strong> jonction des postes clients Windows au domaine et validation des authentifications AD.</p>
+    `,
+    
+    projectManagement: `
+      <div class="rp-pm-meta">
+        <div class="rp-pm-meta-item"><span>Début projet</span><strong>10/2025</strong></div>
+        <div class="rp-pm-meta-item"><span>Fin projet</span><strong>02/2026</strong></div>
+        <div class="rp-pm-meta-item"><span>Équipe</span><strong>SISR (individuel)</strong></div>
+        <div class="rp-pm-meta-item"><span>Méthode de gestion</span><strong>Traditionnelle (Cycle en V)</strong></div>
+      </div>
+
+      <div class="rp-pm-grid">
+        <div class="rp-pm-card">
+          <h4 class="rp-subsection-title">Cartographie des parties prenantes</h4>
+          <div class="table-responsive">
+            <table class="table table-sm align-middle mb-0 rp-pm-table">
+              <thead><tr><th>Partie prenante</th><th>Fonction</th><th>Rôle projet</th></tr></thead>
+              <tbody>
+                <tr><td>Référent pédagogique</td><td>MOA</td><td>Cadrage, validation, arbitrage</td></tr>
+                <tr><td>Administrateur IT école</td><td>MOE</td><td>Contraintes techniques, infrastructure</td></tr>
+                <tr><td>Utilisateurs finaux</td><td>Usagers</td><td>Authentification et accès ressources</td></tr>
+                <tr><td>Étudiant SISR (moi)</td><td>Réalisateur</td><td>Conception AD, déploiement, recette</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="rp-pm-card">
+          <h4 class="rp-subsection-title">Rôles & responsabilités</h4>
+          <div class="table-responsive">
+            <table class="table table-sm align-middle mb-0 rp-pm-table">
+              <thead><tr><th>Lot</th><th>Responsable</th><th>Validateur</th></tr></thead>
+              <tbody>
+                <tr><td>Analyse et conception AD</td><td>Étudiant SISR</td><td>Référent pédagogique</td></tr>
+                <tr><td>Configuration infrastructure</td><td>Étudiant SISR</td><td>Administrateur IT</td></tr>
+                <tr><td>Tests & validation</td><td>Étudiant SISR</td><td>Référent pédagogique</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="rp-pm-card">
+          <h4 class="rp-subsection-title">Organisation équipes & missions</h4>
+          <ul class="rp-objectifs-list mb-0">
+            <li><strong>Pôle technique SISR :</strong> architecture AD, structuration de l'annuaire, design des GPO.</li>
+            <li><strong>Encadrement :</strong> validation des choix techniques et conformité au besoin métier.</li>
+          </ul>
+        </div>
+
+        <div class="rp-pm-card">
+          <h4 class="rp-subsection-title">Contraintes identifiées</h4>
+          <ul class="rp-objectifs-list mb-0">
+            <li>Standards Microsoft pour la sécurité (principes du moindre privilège).</li>
+            <li>Maintien de continuité de service DNS pendant le déploiement.</li>
+            <li>Gestion cohérente des droits d'accès entre les profils utilisateurs.</li>
+            <li>Compatibilité des clients Windows 10/11 avec le domaine AD.</li>
+          </ul>
+        </div>
+
+        <div class="rp-pm-card">
+          <h4 class="rp-subsection-title">Gestion des risques</h4>
+          <div class="table-responsive">
+            <table class="table table-sm table-bordered bg-white">
+              <thead class="table-light"><tr><th>Risque</th><th>Impact</th><th>Traitement</th></tr></thead>
+              <tbody>
+                <tr><td>Erreur GPO bloquante</td><td>Élevé</td><td>Tests sur OU pilote avant généralisation</td></tr>
+                <tr><td>Conflit DNS</td><td>Moyen</td><td>Plan d'adressage validé, tests de résolution</td></tr>
+                <tr><td>Droits insuffisants/excessifs</td><td>Élevé</td><td>Audit RBAC, principe du moindre privilège</td></tr>
+                <tr><td>Perte de service AD</td><td>Critique</td><td>Sauvegarde AD, documentations procédures</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="rp-pm-card">
+          <h4 class="rp-subsection-title">Planification (Grandes phases)</h4>
+        </div>
+      </div>
+
+      <h4 class="rp-subsection-title mt-3">Planification (grandes phases)</h4>
+      <div class="rp-gantt-card" style="--gantt-units: 6;">
+        <h4 class="rp-subsection-title rp-gantt-title"><i class="fa-solid fa-chart-gantt"></i>Diagramme de Gantt (Phases)</h4>
+        <div class="rp-gantt-rows">
+          <div class="rp-gantt-row">
+            <span class="rp-gantt-label">Cadrage & Analyse</span>
+            <div class="rp-gantt-track"><span class="rp-gantt-bar is-indigo" style="--start: 1; --length: 1.2;"></span></div>
+          </div>
+          <div class="rp-gantt-row">
+            <span class="rp-gantt-label">Mise en œuvre AD / GPO</span>
+            <div class="rp-gantt-track"><span class="rp-gantt-bar is-blue" style="--start: 2.2; --length: 2.5;"></span></div>
+          </div>
+          <div class="rp-gantt-row">
+            <span class="rp-gantt-label">Tests & Validation</span>
+            <div class="rp-gantt-track"><span class="rp-gantt-bar is-green" style="--start: 4.7; --length: 1.2;"></span></div>
+          </div>
+          <div class="rp-gantt-row">
+            <span class="rp-gantt-label">Recette & Documentation</span>
+            <div class="rp-gantt-track"><span class="rp-gantt-bar is-amber" style="--start: 5.9; --length: 0.7;"></span></div>
+          </div>
+          <div class="rp-gantt-chronology">
+            <span><strong>M1</strong> 10/2025</span>
+            <span><strong>M2</strong> 11/2025</span>
+            <span><strong>M3</strong> 12/2025</span>
+            <span><strong>M4</strong> 01/2026</span>
+            <span><strong>M5</strong> 02/2026</span>
+          </div>
+        </div>
+      </div>
+    `,
+    
+    testsValidation: `
+      <p><strong>Tests fonctionnels :</strong> authentification réussie et échouée via console Windows, jonction de postes au domaine, résolution DNS du contrôleur de domaine.</p>
+      <p><strong>Tests de sécurité :</strong> validation des droits d'accès par profil utilisateur, blocage des accès non autorisés, audit des tentatives échouées dans l'event viewer.</p>
+      <p><strong>Tests de performance :</strong> latence d'authentification AD, temps de réplication SYSVOL, application des GPO sur les clients.</p>
+      <p><strong>Résultat :</strong> tous les tests sont concluants. L'authentification est centralisée, tracée et sécurisée. Les politiques de groupe s'appliquent correctement sur tous les clients joints au domaine.</p>
+    `,
+    
+    objectifs: [
+      'Installer Windows Server 2022 et configurer le rôle AD DS',
+      'Structurer l\'annuaire avec UO par profil utilisateur (étudiants, formateurs, admin)',
+      'Créer les groupes de sécurité et les comptes utilisateurs',
+      'Mettre en place des stratégies de groupe (GPO) pour la sécurité',
+      'Intégrer et tester les postes clients Windows au domaine'
     ],
+    
+    competences: [
+      { num: '1.1', text: 'Gérer le patrimoine informatique : Configuration d\'un serveur Microsoft et infrastructure AD.' },
+      { num: '1.2', text: 'Répondre aux incidents et demandes d\'assistance : Gestion des comptes et droits utilisateurs.' },
+      { num: '1.5', text: 'Mettre à disposition un service informatique : Service d\'authentification centralisé et sécurisé.' }
+    ],
+    
+    technologies: ['Windows Server 2022', 'Active Directory Domain Services', 'DNS', 'Politiques de groupe (GPO)', 'Windows 10/11'],
+    
     resultats: `
-      <p>La centralisation a été un <strong>succès</strong>. Lors des tests, un utilisateur créé sur le serveur a pu se connecter sur le poste client avec ses identifiants de domaine, sans avoir de compte local sur la machine.</p>
-      <p>Ce projet m'a permis de comprendre le fonctionnement de l'<strong>administration centralisée sous environnement Microsoft</strong>, qui est incontournable dans le monde professionnel.</p>
-    `
+      <p>Centralisation réussie de l'authentification utilisateur. Service AD stable et disponible. Traçabilité complète des connexions via Event Viewer. Gestion simplifiée des droits d'accès via groupes de sécurité.</p>
+      <p>Compréhension approfondie de l'administration centralisée Windows, de la sécurité réseau en environnement Microsoft, et des meilleures pratiques RBAC (Role-Based Access Control).</p>
+    `,
+    
+    projectInfo: {
+      duration: '5 mois',
+      team: 'Projet individuel (SISR)',
+      context: 'Formation BTS SIO',
+      status: 'Terminé',
+      technologies: ['Windows Server 2022', 'Active Directory', 'DNS', 'GPO', 'Windows 10/11'],
+      documentation: '#'
+    },
+    
+    images: [
+      { src: "images/Usersws.png", caption: "Gestion des utilisateurs dans l'annuaire AD" },
+      { src: "images/WSou1.png", caption: "Première Organisational Unit (SISR)" },
+      { src: "images/WSou2.png", caption: "Deuxième Organisational Unit (SLAM)" }
+    ]
   },
-  rp8: {
-    badge: 'Système',
-    badgeClass: 'rp-badge-infra',
-    title: 'Déploiement de services d\'infrastructure Linux (DHCP & Web)',
-    period: '1ère année BTS SIO',
-    context: 'TP Laboratoire / École IRIS',
+  'rp8': {
+    badge: '1ère Année',
+    badgeClass: 'rp-badge-system',
+    title: 'RP04 - Services d\'infrastructure Linux (DHCP & Web)',
+    period: '01/2025 - 01/2025',
+    context: 'École IRIS',
+    useStructuredTemplate: true,
+    
     description: `
-      <h4>Contexte</h4>
-      <p>Dans un environnement réseau d'entreprise nouvellement créé, l'attribution des adresses IP se faisait de manière <strong>statique</strong> sur chaque poste. Cette méthode devenait fastidieuse à administrer et générait des conflits d'adresses IP.</p>
-      <p>De plus, l'entreprise avait besoin d'un espace interne centralisé pour héberger des informations communes (Intranet). Mon rôle a été de mettre en place un serveur Linux capable d'<strong>automatiser le réseau</strong> et de fournir ce service web.</p>
+      <h4 class="rp-subsection-title">Situation</h4>
+      <p>Projet réalisé en première année BTS SIO option SISR portant sur le déploiement de services d'infrastructure réseau critiques sous environnement Linux.</p>
+      <h4 class="rp-subsection-title">Contexte & Besoin</h4>
+      <p>L'école disposait de postes clients dispersés nécessitant une attribution d'adresses IP centralisée et automatisée. Le besoin était également de mettre en place un intranet accessible pour faciliter la communication et le partage d'information au sein du réseau pédagogique.</p>
+      <h4 class="rp-subsection-title">Problématique</h4>
+      <p>Comment automatiser l'adressage IP et mettre en place un service web fiable sur une infrastructure Linux, tout en garantissant la disponibilité et la facilité d'administration ?</p>
     `,
-    objectifs: [
-      'Installer et préparer un serveur sous environnement GNU/Linux',
-      'Déployer et configurer un service DHCP pour distribuer dynamiquement et automatiquement les configurations réseau aux postes clients',
-      'Déployer un serveur Web pour héberger une page HTML d\'accueil accessible par tous les employés via leur navigateur'
-    ],
-    technologies: [
-      'Debian Server',
-      'Administration CLI (ligne de commande)',
-      'isc-dhcp-server',
-      'Apache2',
-      'Configuration réseau Linux'
-    ],
-    methodologie: `
-      <p><strong>Démarche suivie :</strong></p>
-      <ul>
-        <li>Configuration de l'interface réseau du serveur avec une IP statique</li>
-        <li>Paramétrage du fichier <code>dhcpd.conf</code> (définition de la plage d'IP, du masque, de la passerelle et de la durée du bail)</li>
-        <li>Installation du service Apache et création d'une page <code>index.html</code> basique dans le répertoire par défaut <code>/var/www/html</code></li>
-        <li>Redémarrage des services et tests de validation</li>
+    
+    analyse: `
+      <p>J'ai identifié les besoin critiques : absence de service DHCP centralisé causant une gestion manuelle des adresses, absence d'intranet accessible limitant la communication, et nécessité d'une solution open-source maintenable à long terme.</p>
+      <p>Cette analyse a orienté le choix vers Debian Linux avec Kea DHCP pour l'automatisation et Apache2 pour le service web, permettant une gestion efficace et peu coûteuse.</p>
+    `,
+    
+    solution: `
+      <p>La solution retenue combine :</p>
+      <ul class="rp-objectifs-list">
+        <li><strong>Debian Server</strong> comme système d'exploitation performant et sécurisé,</li>
+        <li><strong>Kea DHCP</strong> pour l'attribution automatique d'adresses IP avec gestion des baux,</li>
+        <li><strong>Apache2</strong> pour déployer un intranet accessible sur le réseau local.</li>
       </ul>
     `,
+    
+    realisation: `
+      <p><strong>Phase 1 - Installation système :</strong> Déploiement d'une machine virtuelle Debian Server, configuration réseau de base et accès SSH.</p>
+      <p><strong>Phase 2 - Configuration DHCP :</strong> Installation de Kea DHCP (service kea-dhcp4-server), définition des plages d'adressage, création de réservations pour les postes critiques.</p>
+      <p><strong>Phase 3 - Déploiement Web :</strong> Installation et configuration d'Apache2, création de pages HTML pour l'intranet, test d'accessibilité depuis les clients.</p>
+      <p><strong>Phase 4 - Validation :</strong> Tests d'attribution IP, tests d'accès web, configuration de la journalisation pour la traçabilité.</p>
+    `,
+    
+    projectManagement: `
+      <div class="rp-pm-meta">
+        <div class="rp-pm-meta-item"><span>Début projet</span><strong>06/01/2025</strong></div>
+        <div class="rp-pm-meta-item"><span>Fin projet</span><strong>30/01/2025</strong></div>
+        <div class="rp-pm-meta-item"><span>Équipe</span><strong>SISR (individuel)</strong></div>
+        <div class="rp-pm-meta-item"><span>Méthode de gestion</span><strong>Traditionnelle (Cycle en V)</strong></div>
+      </div>
+
+      <div class="rp-pm-grid">
+        <div class="rp-pm-card">
+          <h4 class="rp-subsection-title">Cartographie des parties prenantes</h4>
+          <div class="table-responsive">
+            <table class="table table-sm align-middle mb-0 rp-pm-table">
+              <thead><tr><th>Partie prenante</th><th>Fonction</th><th>Rôle projet</th></tr></thead>
+              <tbody>
+                <tr><td>Référent pédagogique</td><td>MOA</td><td>Cadrage, validation, arbitrage</td></tr>
+                <tr><td>Technicien SISR</td><td>Réalisateur</td><td>Configuration et implémentation (moi)</td></tr>
+                <tr><td>Utilisateurs finaux</td><td>Usagers</td><td>Tests d'accès et retours</td></tr>
+                <tr><td>Support IT</td><td>Opérationnel</td><td>Maintenance post-déploiement</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="rp-pm-card">
+          <h4 class="rp-subsection-title">Rôles & responsabilités</h4>
+          <div class="table-responsive">
+            <table class="table table-sm align-middle mb-0 rp-pm-table">
+              <thead><tr><th>Lot</th><th>Responsable</th><th>Validateur</th></tr></thead>
+              <tbody>
+                <tr><td>Installation & configuration DHCP</td><td>Étudiant SISR</td><td>Référent pédagogique</td></tr>
+                <tr><td>Déploiement Apache2</td><td>Étudiant SISR</td><td>Référent pédagogique</td></tr>
+                <tr><td>Tests & validation</td><td>Étudiant SISR</td><td>Référent pédagogique</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="rp-pm-card">
+          <h4 class="rp-subsection-title">Organisation équipes & missions</h4>
+          <ul class="rp-objectifs-list mb-0">
+            <li><strong>Pôle technique :</strong> architecture DHCP, configuration Apache, scripting et documentation.</li>
+            <li><strong>Encadrement :</strong> validation des configurations et conformité au besoin.</li>
+          </ul>
+        </div>
+
+        <div class="rp-pm-card">
+          <h4 class="rp-subsection-title">Contraintes identifiées</h4>
+          <ul class="rp-objectifs-list mb-0">
+            <li>Équipement limité du laboratoire (nombre de VMs et de clients de test).</li>
+            <li>Maintien de disponibilité du réseau pédagogique pendant les manipulations.</li>
+            <li>Performance acceptable pour accès concurrent multiples.</li>
+            <li>Documentation minimale pour la maintenance future.</li>
+          </ul>
+        </div>
+
+        <div class="rp-pm-card">
+          <h4 class="rp-subsection-title">Gestion des risques</h4>
+          <div class="table-responsive">
+            <table class="table table-sm table-bordered bg-white">
+              <thead class="table-light"><tr><th>Risque</th><th>Impact</th><th>Traitement</th></tr></thead>
+              <tbody>
+                <tr><td>Conflit DHCP sur le réseau</td><td>Élevé</td><td>Plages réservées et tests en isolation</td></tr>
+                <tr><td>Erreur de configuration Apache</td><td>Moyen</td><td>Validation syntaxe et tests par scénarios</td></tr>
+                <tr><td>Perte d'accès réseau</td><td>Élevé</td><td>Rollback plan et documentation procédures</td></tr>
+                <tr><td>Indisponibilité intranet</td><td>Moyen</td><td>Redondance et monitoring d'activité</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <h4 class="rp-subsection-title mt-3">Planification (grandes phases)</h4>
+      <div class="rp-gantt-card" style="--gantt-units: 4;">
+        <h4 class="rp-subsection-title rp-gantt-title"><i class="fa-solid fa-chart-gantt"></i>Diagramme de Gantt (Phases)</h4>
+        <div class="rp-gantt-rows">
+          <div class="rp-gantt-row">
+            <span class="rp-gantt-label">Cadrage & Préparation</span>
+            <div class="rp-gantt-track"><span class="rp-gantt-bar is-indigo" style="--start: 1; --length: 1;"></span></div>
+          </div>
+          <div class="rp-gantt-row">
+            <span class="rp-gantt-label">Configuration DHCP</span>
+            <div class="rp-gantt-track"><span class="rp-gantt-bar is-blue" style="--start: 2; --length: 1.3;"></span></div>
+          </div>
+          <div class="rp-gantt-row">
+            <span class="rp-gantt-label">Déploiement Apache</span>
+            <div class="rp-gantt-track"><span class="rp-gantt-bar is-cyan" style="--start: 3.2; --length: 0.8;"></span></div>
+          </div>
+          <div class="rp-gantt-row">
+            <span class="rp-gantt-label">Tests & Validation</span>
+            <div class="rp-gantt-track"><span class="rp-gantt-bar is-green" style="--start: 4; --length: 1;"></span></div>
+          </div>
+          <div class="rp-gantt-chronology">
+            <span><strong>S1</strong><small>06-12/01</small></span>
+            <span><strong>S2</strong><small>13-19/01</small></span>
+            <span><strong>S3</strong><small>20-26/01</small></span>
+            <span><strong>S4</strong><small>27-30/01</small></span>
+          </div>
+        </div>
+      </div>
+    `,
+    
+    testsValidation: `
+      <p><strong>Tests fonctionnels DHCP :</strong> attribution automatique d'adresses, vérification des baux, test des réservations, renouvellement des baux.</p>
+      <p><strong>Tests web :</strong> accessibilité de l'intranet depuis clients variés, test de performance sous charge, validation du contenu HTML.</p>
+      <p><strong>Tests d'intégration :</strong> coexistence DHCP/Apache sans conflits, persistance après redémarrage du serveur.</p>
+      <p><strong>Résultat :</strong> tous les tests sont concluants. Service DHCP stable et fiable. Intranet accessible et performant. Documentation d'exploitation validée.</p>
+    `,
+    
+    objectifs: [
+      'Configurer un service DHCP automatisé sous Debian',
+      'Définir les plages d\'adressage et les réservations',
+      'Déployer un serveur Web Apache2 opérationnel',
+      'Créer un intranet accessible sur le réseau local',
+      'Effectuer les tests d\'intégration et de performance'
+    ],
+    
     competences: [
-      { num: '1.1', text: 'Gérer le patrimoine informatique : Administration d\'un système d\'exploitation serveur (Linux) et gestion des services réseau' },
-      { num: '1.5', text: 'Mettre à disposition un service informatique : Automatisation de l\'adressage IP (DHCP) et mise à disposition d\'un Intranet fonctionnel pour les utilisateurs' }
+      { num: '1.1', text: 'Gérer le patrimoine informatique : Administration Linux et services réseau.' },
+      { num: '1.5', text: 'Mettre à disposition un service informatique : Automation DHCP et intranet web.' }
+    ],
+    
+    technologies: ['Debian Server', 'Kea DHCP', 'Apache2', 'HTML/CSS', 'CLI Linux'],
+    
+    resultats: `
+      <p>Adressage IP dynamique entièrement fonctionnel et fiable. Intranet accessible et performant. Service stable et maintenable à long terme.</p>
+      <p>Consolidation de l'administration système Linux, compréhension profonde des services réseau critiques, et meilleures pratiques de déploiement infrastructure.</p>
+    `,
+    
+    projectInfo: {
+      duration: '4 semaines',
+      team: 'Projet individuel (SISR)',
+      context: 'Formation BTS SIO',
+      status: 'Terminé',
+      technologies: ['Debian Server', 'Kea DHCP', 'Apache2', 'HTML', 'CSS'],
+      documentation: '#'
+    },
+    
+    images: [
+      { src: "images/dhcpimg.png", caption: "Aperçu de la configuration DHCP sur Debian" }
+    ]
+  },
+
+  // ========== 2ÈME ANNÉE ==========
+  'rp1': {
+    badge: 'Sécurité',
+    badgeClass: 'rp-badge-security',
+    title: 'RP05 - Sécurisation des accès réseau 802.1X (Standard Microsoft)',
+    period: '11/2025 - 04/2026',
+    context: 'IRIS Mediaschool',
+    useStructuredTemplate: true,
+    description: `
+      <h4 class="rp-subsection-title">Situation</h4>
+      <p>Projet réalisé dans le réseau de l'école <strong>IRIS Mediaschool</strong>, sur un environnement Microsoft en BTS SIO SISR.</p>
+      <h4 class="rp-subsection-title">Contexte & Besoin</h4>
+      <p>Les accès Wi-Fi et filaires reposaient sur des mécanismes trop permissifs (clés partagées, faible traçabilité des connexions). Le besoin était de mettre en place une authentification <strong>individuelle</strong> et centralisée avec le protocole 802.1X adossé à l'Active Directory.</p>
+      <h4 class="rp-subsection-title">Problématique</h4>
+      <p>Comment verrouiller les accès réseau pour qu'un utilisateur non autorisé ne puisse plus se connecter, tout en conservant une administration claire et traçable ?</p>
+    `,
+    analyse: `
+      <p>J'ai analysé les points de faiblesse existants : partage de secrets Wi-Fi, absence d'identification utilisateur sur le réseau filaire, et manque de journalisation exploitable pour l'équipe IT.</p>
+      <p>Cette analyse a orienté l'architecture vers un modèle AAA centralisé : équipements Cisco comme clients RADIUS, serveur Windows Server 2022 avec rôle NPS, et contrôles d'accès basés sur les comptes AD.</p>
+    `,
+    solution: `
+      <p>La solution retenue combine :</p>
+      <ul class="rp-objectifs-list">
+        <li>le protocole <strong>802.1X</strong> pour l'authentification par utilisateur,</li>
+        <li>un serveur <strong>NPS (Network Policy Server)</strong> sur Windows Server 2022,</li>
+        <li>l'intégration avec <strong>Active Directory</strong> pour appliquer des politiques réseau centralisées.</li>
+      </ul>
+    `,
+    realisation: `
+      <p><strong>Infrastructure :</strong> routeur/switch Cisco et borne AP Cisco connectés au serveur d'authentification.</p>
+      <p><strong>Service d'authentification :</strong> installation et configuration du rôle NPS sur Windows Server 2022.</p>
+      <p><strong>Configuration AAA :</strong> paramétrage du secret partagé Cisco ↔ NPS et activation du contrôle d'accès 802.1X sur les ports du switch.</p>
+      <p><strong>Configuration système :</strong> création des stratégies de demande de connexion et des stratégies réseau (dont VLAN dynamique selon les profils).</p>
+    `,
+    projectManagement: `
+      <div class="rp-pm-meta">
+        <div class="rp-pm-meta-item"><span>Début projet</span><strong>11/2025</strong></div>
+        <div class="rp-pm-meta-item"><span>Fin projet</span><strong>04/2026</strong></div>
+        <div class="rp-pm-meta-item"><span>Équipe</span><strong>SISR (individuel)</strong></div>
+        <div class="rp-pm-meta-item"><span>Méthode de gestion</span><strong>Agile (itérative)</strong></div>
+      </div>
+
+      <div class="rp-pm-grid">
+        <div class="rp-pm-card">
+          <h4 class="rp-subsection-title">Cartographie des parties prenantes</h4>
+          <div class="table-responsive">
+            <table class="table table-sm align-middle mb-0 rp-pm-table">
+              <thead><tr><th>Partie prenante</th><th>Fonction</th><th>Rôle projet</th></tr></thead>
+              <tbody>
+                <tr><td>Référent pédagogique</td><td>MOA</td><td>Cadre, validation, arbitrage</td></tr>
+                <tr><td>Administration IT école</td><td>MOE</td><td>Contraintes techniques, conformité réseau</td></tr>
+                <tr><td>Utilisateur final</td><td>Usager</td><td>Authentification AD sur accès filaire/Wi-Fi</td></tr>
+                <tr><td>Étudiant SISR (moi)</td><td>Réalisateur</td><td>Conception, déploiement NPS/AAA, recette</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="rp-pm-card">
+          <h4 class="rp-subsection-title">Rôles & responsabilités</h4>
+          <div class="table-responsive">
+            <table class="table table-sm align-middle mb-0 rp-pm-table">
+              <thead><tr><th>Lot</th><th>Responsable</th><th>Validateur</th></tr></thead>
+              <tbody>
+                <tr><td>Analyse du besoin</td><td>Étudiant SISR</td><td>Référent pédagogique</td></tr>
+                <tr><td>Configuration NPS/AAA</td><td>Étudiant SISR</td><td>Administration IT</td></tr>
+                <tr><td>Tests & recette</td><td>Étudiant SISR</td><td>Référent pédagogique</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="rp-pm-card">
+          <h4 class="rp-subsection-title">Organisation équipes & missions</h4>
+          <ul class="rp-objectifs-list mb-0">
+            <li><strong>Pôle SISR :</strong> architecture d'authentification, configuration Cisco, politiques NPS.</li>
+            <li><strong>Encadrement :</strong> validation de jalons et conformité au besoin exprimé.</li>
+          </ul>
+        </div>
+
+        <div class="rp-pm-card">
+          <h4 class="rp-subsection-title">Contraintes identifiées</h4>
+          <ul class="rp-objectifs-list mb-0">
+            <li>Compatibilité Cisco / NPS / Active Directory.</li>
+            <li>Maintien de service pendant la bascule de sécurité.</li>
+            <li>Traçabilité complète des accès authentifiés.</li>
+          </ul>
+        </div>
+
+        <div class="rp-pm-card">
+          <h4 class="rp-subsection-title">Gestion des risques</h4>
+          <div class="table-responsive">
+            <table class="table table-sm align-middle mb-0 rp-pm-table">
+              <thead><tr><th>Risque</th><th>Impact</th><th>Traitement</th></tr></thead>
+              <tbody>
+                <tr><td>Erreur de politique NPS</td><td>Élevé</td><td>Tests en maquette avant déploiement</td></tr>
+                <tr><td>Blocage utilisateurs légitimes</td><td>Moyen</td><td>Déploiement progressif + rollback</td></tr>
+                <tr><td>Mauvaise traçabilité</td><td>Moyen</td><td>Journalisation NPS et vérifications régulières</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="rp-pm-card">
+          <h4 class="rp-subsection-title">Collecte des besoins & traçabilité</h4>
+          <p class="mb-0">Besoins collectés en points de cadrage avec le référent puis traduits en exigences techniques. Chaque exigence est reliée à une preuve de configuration (NPS/Cisco) et à un test de validation.</p>
+        </div>
+
+        <div class="rp-pm-card">
+          <h4 class="rp-subsection-title">Ressources mobilisées</h4>
+          <div class="table-responsive">
+            <table class="table table-sm align-middle mb-0 rp-pm-table">
+              <thead><tr><th>Type</th><th>Détail</th></tr></thead>
+              <tbody>
+                <tr><td>Humaines</td><td>1 étudiant SISR + encadrement pédagogique</td></tr>
+                <tr><td>Matérielles</td><td>Windows Server 2022, Cisco switch/AP, postes clients</td></tr>
+                <tr><td>Financières</td><td>Infrastructure pédagogique existante (coût additionnel nul)</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <h4 class="rp-subsection-title mt-3">Planification (grandes phases)</h4>
+      <div class="rp-gantt-card" style="--gantt-units: 6;">
+        <h4 class="rp-subsection-title rp-gantt-title"><i class="fa-solid fa-chart-gantt"></i>Diagramme de Gantt (Phases)</h4>
+        <div class="rp-gantt-rows">
+          <div class="rp-gantt-row">
+            <span class="rp-gantt-label">Cadrage & Analyse</span>
+            <div class="rp-gantt-track"><span class="rp-gantt-bar is-blue" style="--start: 1; --length: 1.4;"></span></div>
+          </div>
+          <div class="rp-gantt-row">
+            <span class="rp-gantt-label">Mise en œuvre NPS / AAA</span>
+            <div class="rp-gantt-track"><span class="rp-gantt-bar is-indigo" style="--start: 2.2; --length: 2.3;"></span></div>
+          </div>
+          <div class="rp-gantt-row">
+            <span class="rp-gantt-label">Tests & Validation</span>
+            <div class="rp-gantt-track"><span class="rp-gantt-bar is-green" style="--start: 4.3; --length: 1.1;"></span></div>
+          </div>
+          <div class="rp-gantt-row">
+            <span class="rp-gantt-label">Recette & Documentation</span>
+            <div class="rp-gantt-track"><span class="rp-gantt-bar is-amber" style="--start: 5.1; --length: 0.9;"></span></div>
+          </div>
+        </div>
+        <div class="rp-gantt-chronology">
+          <span><strong>M1</strong><small>11/2025</small></span>
+          <span><strong>M2</strong><small>12/2025</small></span>
+          <span><strong>M3</strong><small>01/2026</small></span>
+          <span><strong>M4</strong><small>02/2026</small></span>
+          <span><strong>M5</strong><small>03/2026</small></span>
+          <span><strong>M6</strong><small>04/2026</small></span>
+        </div>
+        <div class="rp-gantt-footer">
+          <span><i class="fa-regular fa-calendar"></i>Début : 11/2025</span>
+          <span><i class="fa-regular fa-flag-checkered"></i>Fin : 04/2026</span>
+        </div>
+      </div>
+    `,
+    testsValidation: `
+      <p>Des tests d'authentification ont été effectués avec des comptes AD valides et invalides, en Wi-Fi et sur ports filaires, afin de vérifier les stratégies NPS et le comportement des équipements Cisco.</p>
+      <p><strong>Résultat :</strong> un utilisateur non authentifié dans l'AD ne peut pas obtenir d'adresse IP. Le port reste bloqué en couche 2 tant que l'authentification n'est pas conforme.</p>
+    `,
+    objectifs: [
+      'Mettre en œuvre 802.1X sur les accès Wi-Fi et filaires',
+      'Déployer et configurer NPS sur Windows Server 2022',
+      'Centraliser les règles d\'accès sur l\'Active Directory'
+    ],
+    technologies: [
+      'Windows Server 2022', 'NPS', 'Active Directory', 'Cisco Switch/AP', '802.1X / RADIUS'
+    ],
+    competences: [
+      { num: '1.1', text: 'Gérer le patrimoine informatique : Administration réseau Cisco et service NPS.' },
+      { num: '1.4', text: 'Travailler en mode projet : Cadrage, planification et validation technique.' },
+      { num: '1.5', text: 'Mettre à disposition un service informatique : Contrôle d\'accès 802.1X sécurisé.' }
     ],
     resultats: `
-      <p>Le déploiement s'est déroulé <strong>sans encombre</strong>. Lors des tests de validation, tout poste client branché au réseau recevait instantanément une adresse IP valide fournie par le serveur Debian.</p>
-      <p>De plus, la page web de l'Intranet était parfaitement accessible. Cette réalisation a consolidé mon aisance sur l'<strong>administration système Linux</strong> et l'édition de fichiers de configuration complexes (via nano ou vim).</p>
-    `
+      <p>Le réseau est verrouillé et les accès sont centralisés sur l'AD. Cette RP m'a permis de maîtriser la sécurisation des accès réseau en environnement propriétaire Microsoft.</p>
+    `,
+    images: [
+      { src: "images/Apperc%C3%A7uRP01.png", caption: "NPS - Clients RADIUS enregistrés" },
+      { src: "images/Shéma-Réseau-RP01.png", caption: "Schéma réseau global RP05" }
+    ],
+    projectInfo: {
+      duration: '6 mois',
+      team: 'Projet individuel (SISR)',
+      context: 'Réseau école - IRIS Mediaschool',
+      status: 'Terminé',
+      technologies: ['Windows Server 2022', 'NPS', 'Active Directory', 'Cisco Switch/AP', '802.1X / RADIUS'],
+      links: [
+        { label: 'Documentation', href: 'images/BTS%20SIO%20-%20Tableau%20de%20synth%C3%A8se.pdf' }
+      ]
+    }
+  },
+  'rp2': {
+    badge: 'Souveraineté',
+    badgeClass: 'rp-badge-infra',
+    title: 'RP06 - Migration souveraine Open Source (FreeRADIUS/OpenLDAP)',
+    period: '03/2026 - 04/2026',
+    context: 'IRIS Mediaschool - Mediaschool Group',
+    useStructuredTemplate: true,
+    description: `
+      <h4 class="rp-subsection-title">Situation</h4>
+      <p>Suite à une décision stratégique de souveraineté numérique du groupe Mediaschool, j'ai été chargé de remplacer les composants d'authentification propriétaires par une stack libre et maîtrisée.</p>
+      <h4 class="rp-subsection-title">Contexte & Besoin</h4>
+      <p>L'objectif était de migrer vers <strong>FreeRADIUS + OpenLDAP</strong> sous Debian 12, puis de déployer une supervision autonome sous Docker (Prometheus/Loki/Grafana) pour ne plus dépendre d'éditeurs tiers.</p>
+      <h4 class="rp-subsection-title">Problématique</h4>
+      <p>Comment assurer une transition fiable vers une infrastructure 100% Open Source, sans perte de sécurité ni de visibilité sur l'état du réseau ?</p>
+    `,
+    analyse: `
+      <p>J'ai commencé par inventorier les dépendances au socle propriétaire existant (authentification, annuaire, supervision) puis défini une trajectoire de migration progressive.</p>
+      <p>Les risques principaux identifiés étaient la rupture d'authentification, l'incohérence des comptes et une absence de monitoring durant la transition.</p>
+    `,
+    solution: `
+      <p>La solution mise en place repose sur :</p>
+      <ul class="rp-objectifs-list">
+        <li>un serveur Debian 12 avec <strong>FreeRADIUS + OpenLDAP</strong> pour l'identité et l'authentification,</li>
+        <li>la migration des équipements Cisco (switch / borne Wi-Fi) vers le nouveau serveur RADIUS,</li>
+        <li>une supervision conteneurisée <strong>Prometheus / Loki / Grafana</strong> avec remontée SNMP et Node Exporter.</li>
+      </ul>
+    `,
+    realisation: `
+      <p>J'ai installé Debian 12 sur une VM dédiée, puis déployé FreeRADIUS et OpenLDAP afin de construire un annuaire utilisateurs souverain.</p>
+      <p>J'ai ensuite reconfiguré les équipements Cisco pour qu'ils interrogent exclusivement le serveur RADIUS Debian (.100), puis validé les connexions via le nouvel annuaire.</p>
+      <p>Pour la supervision, j'ai déployé la stack Docker (Prometheus, Loki, Grafana), activé SNMP sur les équipements Cisco et installé Node Exporter sur Debian pour la remontée des métriques en temps réel.</p>
+    `,
+    projectManagement: `
+      <div class="rp-pm-meta">
+        <div class="rp-pm-meta-item"><span>Début projet</span><strong>03/2026</strong></div>
+        <div class="rp-pm-meta-item"><span>Fin projet</span><strong>04/2026</strong></div>
+        <div class="rp-pm-meta-item"><span>Équipe</span><strong>SISR (individuel)</strong></div>
+        <div class="rp-pm-meta-item"><span>Méthode de gestion</span><strong>Agile (itérative)</strong></div>
+      </div>
+
+      <div class="rp-pm-grid">
+        <div class="rp-pm-card">
+          <h4 class="rp-subsection-title">Cartographie des parties prenantes</h4>
+          <div class="table-responsive">
+            <table class="table table-sm align-middle mb-0 rp-pm-table">
+              <thead><tr><th>Partie prenante</th><th>Fonction</th><th>Rôle projet</th></tr></thead>
+              <tbody>
+                <tr><td>Direction technique groupe</td><td>MOA</td><td>Orientation souveraineté, validation</td></tr>
+                <tr><td>Administration IT campus</td><td>MOE</td><td>Contraintes de production et exploitation</td></tr>
+                <tr><td>Étudiant SISR (moi)</td><td>Réalisateur</td><td>Migration RADIUS/LDAP + supervision</td></tr>
+                <tr><td>Utilisateurs campus</td><td>Usagers</td><td>Validation des accès et continuité de service</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="rp-pm-card">
+          <h4 class="rp-subsection-title">Rôles & responsabilités</h4>
+          <div class="table-responsive">
+            <table class="table table-sm align-middle mb-0 rp-pm-table">
+              <thead><tr><th>Lot</th><th>Responsable</th><th>Validateur</th></tr></thead>
+              <tbody>
+                <tr><td>Migration FreeRADIUS/OpenLDAP</td><td>Étudiant SISR</td><td>Admin IT campus</td></tr>
+                <tr><td>Bascule équipements Cisco</td><td>Étudiant SISR</td><td>Admin IT campus</td></tr>
+                <tr><td>Supervision Docker</td><td>Étudiant SISR</td><td>Direction technique</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="rp-pm-card">
+          <h4 class="rp-subsection-title">Contraintes & risques</h4>
+          <div class="table-responsive">
+            <table class="table table-sm align-middle mb-0 rp-pm-table">
+              <thead><tr><th>Risque</th><th>Impact</th><th>Traitement</th></tr></thead>
+              <tbody>
+                <tr><td>Rupture d'authentification</td><td>Élevé</td><td>Bascule progressive + tests de non-régression</td></tr>
+                <tr><td>Incohérence annuaire</td><td>Moyen</td><td>Validation des comptes et groupes OpenLDAP</td></tr>
+                <tr><td>Absence de visibilité monitoring</td><td>Moyen</td><td>Déploiement Prometheus/Grafana avant généralisation</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="rp-pm-card">
+          <h4 class="rp-subsection-title">Collecte des besoins & ressources</h4>
+          <p class="mb-2">Les besoins ont été collectés via cadrage avec la direction technique puis traduits en exigences vérifiables (authentification, supervision, autonomie d'exploitation).</p>
+          <ul class="rp-objectifs-list mb-0">
+            <li><strong>Humaines :</strong> 1 étudiant SISR + encadrement IT.</li>
+            <li><strong>Matérielles :</strong> VM Debian, équipements Cisco, poste d'administration.</li>
+            <li><strong>Financières :</strong> composants Open Source (coût logiciel nul).</li>
+          </ul>
+        </div>
+      </div>
+
+      <h4 class="rp-subsection-title mt-3">Planification (grandes phases)</h4>
+      <div class="rp-gantt-card" style="--gantt-units: 2;">
+        <h4 class="rp-subsection-title rp-gantt-title"><i class="fa-solid fa-chart-gantt"></i>Diagramme de Gantt (Phases)</h4>
+        <div class="rp-gantt-rows">
+          <div class="rp-gantt-row">
+            <span class="rp-gantt-label">Cadrage & préparation Debian</span>
+            <div class="rp-gantt-track"><span class="rp-gantt-bar is-blue" style="--start: 1; --length: 0.6;"></span></div>
+          </div>
+          <div class="rp-gantt-row">
+            <span class="rp-gantt-label">Déploiement FreeRADIUS/OpenLDAP</span>
+            <div class="rp-gantt-track"><span class="rp-gantt-bar is-indigo" style="--start: 1.4; --length: 0.9;"></span></div>
+          </div>
+          <div class="rp-gantt-row">
+            <span class="rp-gantt-label">Migration Cisco vers RADIUS Debian</span>
+            <div class="rp-gantt-track"><span class="rp-gantt-bar is-green" style="--start: 1.8; --length: 0.7;"></span></div>
+          </div>
+          <div class="rp-gantt-row">
+            <span class="rp-gantt-label">Supervision Docker & validation</span>
+            <div class="rp-gantt-track"><span class="rp-gantt-bar is-amber" style="--start: 2; --length: 0.5;"></span></div>
+          </div>
+        </div>
+        <div class="rp-gantt-chronology">
+          <span><strong>M1</strong><small>03/2026</small></span>
+          <span><strong>M2</strong><small>04/2026</small></span>
+        </div>
+        <div class="rp-gantt-footer">
+          <span><i class="fa-regular fa-calendar"></i>Début : 03/2026</span>
+          <span><i class="fa-regular fa-flag-checkered"></i>Fin : 04/2026</span>
+        </div>
+      </div>
+    `,
+    testsValidation: `
+      <p>Les tests ont validé la connexion des utilisateurs via OpenLDAP/FreeRADIUS et confirmé la sortie de l'écosystème propriétaire sans perte de contrôle d'accès.</p>
+      <p>La supervision Grafana affiche correctement les métriques Cisco (SNMP) et serveur Debian (Node Exporter), permettant un monitoring proactif en continu.</p>
+    `,
+    objectifs: [
+      'Remplacer l\'authentification propriétaire par FreeRADIUS/OpenLDAP',
+      'Migrer les équipements Cisco vers le nouveau serveur RADIUS Debian',
+      'Déployer une supervision autonome Prometheus/Loki/Grafana'
+    ],
+    technologies: [
+      'Debian 12', 'FreeRADIUS', 'OpenLDAP', 'Docker', 'Prometheus', 'Loki', 'Grafana', 'SNMP', 'Node Exporter'
+    ],
+    competences: [
+      { num: '1.1', text: 'Gérer le patrimoine informatique : Migration d\'infrastructure vers des solutions libres.' },
+      { num: '1.4', text: 'Travailler en mode projet : Planification et conduite de migration progressive.' },
+      { num: '1.5', text: 'Mettre à disposition un service informatique : Authentification et supervision pérennes.' }
+    ],
+    resultats: `
+      <p>La migration vers une infrastructure libre est validée : authentification opérationnelle, supervision active, et autonomie renforcée de l'établissement.</p>
+    `,
+    images: [
+      { src: "images/Shéma-Réseau-RP02.png", caption: "Schéma réseau global RP06" },
+      { src: "images/RP02-FreeRadius-a-ajouter.png", caption: "1. Extrait FreeRadius" },
+      { src: "images/RP02-Grafana-a-ajouter.png", caption: "2. Dashboard Grafana" }
+    ],
+    projectInfo: {
+      duration: '2 mois',
+      team: 'Projet individuel (SISR)',
+      context: 'Souveraineté numérique - Mediaschool',
+      status: 'Terminé',
+      technologies: ['Debian 12', 'FreeRADIUS', 'OpenLDAP', 'Docker', 'Prometheus', 'Grafana', 'SNMP'],
+      links: [
+        { label: 'Documentation', href: 'images/BTS%20SIO%20-%20Tableau%20de%20synth%C3%A8se.pdf' }
+      ]
+    }
+  },
+  'rp3': {
+    badge: 'Support',
+    badgeClass: 'rp-badge-support',
+    title: 'RP07 - Support technique (Stage ActifAzur)',
+    period: '01/2026 - 02/2026',
+    context: 'Stage ActifAzur - Antibes',
+    useStructuredTemplate: true,
+    description: `
+      <h4 class="rp-subsection-title">Situation</h4>
+      <p>Cette RP correspond à mon stage de 2ème année chez <strong>ActifAzur</strong>, spécialisé dans le support et la maintenance informatique.</p>
+      <h4 class="rp-subsection-title">Contexte & Besoin</h4>
+      <p>Le besoin principal était d'assurer le traitement rapide des incidents matériels et logiciels, tout en garantissant une restitution claire aux clients et une traçabilité des interventions.</p>
+      <h4 class="rp-subsection-title">Problématique</h4>
+      <p>Comment standardiser le diagnostic et la résolution d'incidents hétérogènes, avec un niveau de qualité constant et des délais maîtrisés ?</p>
+    `,
+    analyse: `
+      <p>J'ai analysé les typologies de pannes récurrentes (démarrage, stockage, RAM, OS corrompu, malware) pour structurer une démarche de diagnostic progressive.</p>
+      <p>Cette phase a permis de prioriser les interventions et de fiabiliser les procédures de prise en charge selon la criticité.</p>
+    `,
+    solution: `
+      <p>La démarche adoptée repose sur :</p>
+      <ul class="rp-objectifs-list">
+        <li>un protocole de diagnostic standardisé (vérifications hardware puis software),</li>
+        <li>des procédures de réparation/remastérisation documentées,</li>
+        <li>un suivi des interventions pour assurer la traçabilité client.</li>
+      </ul>
+    `,
+    realisation: `
+      <p>J'ai réalisé des diagnostics complets sur des postes clients (pannes matérielles et logicielles), puis mis en œuvre les actions correctives adaptées.</p>
+      <p>Les interventions ont inclus remplacement de composants, réinstallation système, nettoyage et tests de validation avant restitution.</p>
+      <p>Chaque intervention a été tracée avec un compte rendu technique pour capitaliser les solutions et améliorer la qualité du support.</p>
+    `,
+    projectManagement: `
+      <div class="rp-pm-meta">
+        <div class="rp-pm-meta-item"><span>Début projet</span><strong>01/2026</strong></div>
+        <div class="rp-pm-meta-item"><span>Fin projet</span><strong>02/2026</strong></div>
+        <div class="rp-pm-meta-item"><span>Équipe</span><strong>Atelier support + stagiaire SISR</strong></div>
+        <div class="rp-pm-meta-item"><span>Méthode de gestion</span><strong>Agile (flux d'incidents)</strong></div>
+      </div>
+
+      <div class="rp-pm-grid">
+        <div class="rp-pm-card">
+          <h4 class="rp-subsection-title">Parties prenantes & rôles</h4>
+          <div class="table-responsive">
+            <table class="table table-sm align-middle mb-0 rp-pm-table">
+              <thead><tr><th>Partie prenante</th><th>Fonction</th><th>Rôle</th></tr></thead>
+              <tbody>
+                <tr><td>Responsable atelier</td><td>Référent</td><td>Priorisation et validation des interventions</td></tr>
+                <tr><td>Technicien stagiaire SISR</td><td>Exécutant</td><td>Diagnostic, réparation, reporting</td></tr>
+                <tr><td>Clients finaux</td><td>Usagers</td><td>Expression du besoin et validation restitution</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="rp-pm-card">
+          <h4 class="rp-subsection-title">Contraintes & risques</h4>
+          <div class="table-responsive">
+            <table class="table table-sm align-middle mb-0 rp-pm-table">
+              <thead><tr><th>Risque</th><th>Impact</th><th>Traitement</th></tr></thead>
+              <tbody>
+                <tr><td>Erreur de diagnostic initial</td><td>Moyen</td><td>Tests croisés et validation N2</td></tr>
+                <tr><td>Délai de résolution trop long</td><td>Élevé</td><td>Priorisation par criticité</td></tr>
+                <tr><td>Perte de données</td><td>Élevé</td><td>Sauvegarde avant intervention lourde</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="rp-pm-card">
+          <h4 class="rp-subsection-title">Collecte des besoins & ressources</h4>
+          <p class="mb-2">Les besoins étaient collectés via tickets et échanges directs avec les clients. La traçabilité était assurée dans les fiches d'intervention.</p>
+          <ul class="rp-objectifs-list mb-0">
+            <li><strong>Humaines :</strong> équipe atelier + technicien stagiaire.</li>
+            <li><strong>Matérielles :</strong> banc de test, pièces SAV, outils de diagnostic.</li>
+            <li><strong>Financières :</strong> stock atelier et budget SAV.</li>
+          </ul>
+        </div>
+      </div>
+
+      <h4 class="rp-subsection-title mt-3">Planification (grandes phases)</h4>
+      <div class="rp-gantt-card" style="--gantt-units: 2;">
+        <h4 class="rp-subsection-title rp-gantt-title"><i class="fa-solid fa-chart-gantt"></i>Diagramme de Gantt (Phases)</h4>
+        <div class="rp-gantt-rows">
+          <div class="rp-gantt-row">
+            <span class="rp-gantt-label">Prise en main & cadrage</span>
+            <div class="rp-gantt-track"><span class="rp-gantt-bar is-blue" style="--start: 1; --length: 0.5;"></span></div>
+          </div>
+          <div class="rp-gantt-row">
+            <span class="rp-gantt-label">Interventions support</span>
+            <div class="rp-gantt-track"><span class="rp-gantt-bar is-indigo" style="--start: 1.3; --length: 1.2;"></span></div>
+          </div>
+          <div class="rp-gantt-row">
+            <span class="rp-gantt-label">Standardisation & bilan</span>
+            <div class="rp-gantt-track"><span class="rp-gantt-bar is-green" style="--start: 1.8; --length: 0.4;"></span></div>
+          </div>
+        </div>
+        <div class="rp-gantt-chronology">
+          <span><strong>M1</strong><small>01/2026</small></span>
+          <span><strong>M2</strong><small>02/2026</small></span>
+        </div>
+      </div>
+    `,
+    testsValidation: `
+      <p>Chaque poste réparé a été validé par une batterie de tests fonctionnels (démarrage, stabilité, connectivité, absence d'erreurs système).</p>
+      <p>Les résultats ont montré une amélioration du temps moyen de traitement et une meilleure fiabilité des restitutions clients.</p>
+    `,
+    objectifs: [
+      'Diagnostiquer rapidement les pannes matérielles et logicielles',
+      'Appliquer des procédures de réparation standardisées',
+      'Assurer la traçabilité des interventions de support'
+    ],
+    technologies: [
+      'Windows 10/11', 'Outils de diagnostic hardware', 'Rufus'
+    ],
+    competences: [
+      { num: '1.1', text: 'Gérer le patrimoine informatique : Maintenance matérielle et logicielle du parc.' },
+      { num: '1.2', text: 'Répondre aux incidents : Diagnostic, résolution et communication client.' },
+      { num: '1.4', text: 'Travailler en mode projet : Organisation des interventions et suivi des priorités.' }
+    ],
+    resultats: `
+      <p>Optimisation du temps de diagnostic, amélioration du taux de résolution et satisfaction client renforcée.</p>
+    `,
+    images: [
+      { src: "images/D%C3%A9pannage.JPG", caption: "Intervention de dépannage sur poste client" }
+    ],
+    projectInfo: {
+      duration: '2 mois',
+      team: 'Équipe support + stagiaire SISR',
+      context: 'Stage 2ème année - ActifAzur',
+      status: 'Terminé',
+      technologies: ['Windows 10/11', 'Outils de diagnostic', 'Rufus', 'Procédures SAV'],
+      links: [
+        { label: 'Documentation', href: 'images/BTS%20SIO%20-%20Tableau%20de%20synth%C3%A8se.pdf' }
+      ]
+    }
+  },
+  'rp4': {
+    badge: 'Web',
+    badgeClass: 'rp-badge-web',
+    title: 'RP08 - Conception du portfolio professionnel',
+    period: '2024 - 2026',
+    context: 'Projet personnel',
+    useStructuredTemplate: true,
+    description: `
+      <h4 class="rp-subsection-title">Situation</h4>
+      <p>Dans le cadre de ma préparation BTS SIO SISR, j'ai conçu un portfolio pour présenter mes réalisations, compétences et preuves techniques de manière exploitable en soutenance.</p>
+      <h4 class="rp-subsection-title">Contexte & Besoin</h4>
+      <p>Le besoin était de disposer d'un support clair, professionnel et évolutif, capable de démontrer à la fois mes compétences techniques et ma méthode de travail en mode projet.</p>
+      <h4 class="rp-subsection-title">Problématique</h4>
+      <p>Comment construire une vitrine professionnelle qui ne soit pas seulement descriptive, mais réellement démonstrative et utile à l'oral comme à la lecture autonome ?</p>
+    `,
+    analyse: `
+      <p>J'ai identifié les attentes principales : lisibilité rapide, structure pédagogique, accessibilité mobile et cohérence visuelle entre les différentes rubriques (RP, compétences, veille, stages).</p>
+      <p>L'analyse des retours enseignants m'a conduit à renforcer la partie gestion de projet et à privilégier des preuves visuelles ciblées plutôt qu'un texte trop dense.</p>
+    `,
+    solution: `
+      <p>La solution retenue repose sur :</p>
+      <ul class="rp-objectifs-list">
+        <li>une architecture en sections claires orientées présentation orale,</li>
+        <li>une interface responsive et moderne,</li>
+        <li>une logique de preuves (captures, schémas, documentation liée) pour chaque RP.</li>
+      </ul>
+    `,
+    realisation: `
+      <p>J'ai conçu puis développé le portfolio en HTML/CSS/JavaScript avec Bootstrap, en itérant sur l'UX et la hiérarchie de l'information.</p>
+      <p>J'ai intégré des modales détaillées pour chaque RP, des composants visuels de planification (Gantt), ainsi qu'une organisation cohérente des éléments de preuve.</p>
+      <p>Le déploiement et les mises à jour sont versionnés pour assurer un suivi régulier et une amélioration continue.</p>
+    `,
+    projectManagement: `
+      <div class="rp-pm-meta">
+        <div class="rp-pm-meta-item"><span>Début projet</span><strong>10/2024</strong></div>
+        <div class="rp-pm-meta-item"><span>Fin projet</span><strong>04/2026</strong></div>
+        <div class="rp-pm-meta-item"><span>Équipe</span><strong>Projet individuel</strong></div>
+        <div class="rp-pm-meta-item"><span>Méthode de gestion</span><strong>Agile (itérative)</strong></div>
+      </div>
+
+      <div class="rp-pm-grid">
+        <div class="rp-pm-card">
+          <h4 class="rp-subsection-title">Parties prenantes & rôles</h4>
+          <div class="table-responsive">
+            <table class="table table-sm align-middle mb-0 rp-pm-table">
+              <thead><tr><th>Partie prenante</th><th>Fonction</th><th>Rôle</th></tr></thead>
+              <tbody>
+                <tr><td>Étudiant SISR (moi)</td><td>Porteur</td><td>Conception, développement, maintenance</td></tr>
+                <tr><td>Enseignants / jury</td><td>Évaluateurs</td><td>Retours et validation pédagogique</td></tr>
+                <tr><td>Recruteurs / lecteurs</td><td>Utilisateurs</td><td>Consultation des compétences et réalisations</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="rp-pm-card">
+          <h4 class="rp-subsection-title">Contraintes & risques</h4>
+          <div class="table-responsive">
+            <table class="table table-sm align-middle mb-0 rp-pm-table">
+              <thead><tr><th>Risque</th><th>Impact</th><th>Traitement</th></tr></thead>
+              <tbody>
+                <tr><td>Contenu trop descriptif</td><td>Élevé</td><td>Structuration orientée preuves & démonstration</td></tr>
+                <tr><td>Surcharge visuelle</td><td>Moyen</td><td>Hiérarchie claire et sections homogènes</td></tr>
+                <tr><td>Manque de traçabilité</td><td>Élevé</td><td>Documentation liée à chaque RP</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="rp-pm-card">
+          <h4 class="rp-subsection-title">Collecte des besoins & ressources</h4>
+          <p class="mb-2">Les besoins ont été collectés via référentiel BTS SIO, retours enseignants et auto-revue continue après chaque évolution.</p>
+          <ul class="rp-objectifs-list mb-0">
+            <li><strong>Humaines :</strong> projet solo avec feedback pédagogique.</li>
+            <li><strong>Matérielles :</strong> poste de développement et hébergement GitHub.</li>
+            <li><strong>Financières :</strong> coûts maîtrisés (outils open source / gratuits).</li>
+          </ul>
+        </div>
+      </div>
+
+      <h4 class="rp-subsection-title mt-3">Planification (grandes phases)</h4>
+      <div class="rp-gantt-card" style="--gantt-units: 6;">
+        <h4 class="rp-subsection-title rp-gantt-title"><i class="fa-solid fa-chart-gantt"></i>Diagramme de Gantt (Phases)</h4>
+        <div class="rp-gantt-rows">
+          <div class="rp-gantt-row">
+            <span class="rp-gantt-label">Cadrage initial</span>
+            <div class="rp-gantt-track"><span class="rp-gantt-bar is-blue" style="--start: 1; --length: 1;"></span></div>
+          </div>
+          <div class="rp-gantt-row">
+            <span class="rp-gantt-label">Conception UI/UX</span>
+            <div class="rp-gantt-track"><span class="rp-gantt-bar is-indigo" style="--start: 2; --length: 1.5;"></span></div>
+          </div>
+          <div class="rp-gantt-row">
+            <span class="rp-gantt-label">Développement cœur du site</span>
+            <div class="rp-gantt-track"><span class="rp-gantt-bar is-green" style="--start: 3; --length: 2;"></span></div>
+          </div>
+          <div class="rp-gantt-row">
+            <span class="rp-gantt-label">Intégration des preuves RP</span>
+            <div class="rp-gantt-track"><span class="rp-gantt-bar is-amber" style="--start: 4.5; --length: 1.5;"></span></div>
+          </div>
+        </div>
+        <div class="rp-gantt-chronology">
+          <span><strong>P1</strong><small>10/2024</small></span>
+          <span><strong>P2</strong><small>01/2025</small></span>
+          <span><strong>P3</strong><small>06/2025</small></span>
+          <span><strong>P4</strong><small>10/2025</small></span>
+          <span><strong>P5</strong><small>01/2026</small></span>
+          <span><strong>P6</strong><small>04/2026</small></span>
+        </div>
+      </div>
+    `,
+    testsValidation: `
+      <p>La validation a été réalisée par tests multi-supports (desktop/mobile), vérification de l'accessibilité des sections et revue de cohérence des contenus.</p>
+      <p>Les retours utilisateurs/enseignants ont permis d'améliorer la lisibilité globale et la pertinence des preuves présentées.</p>
+    `,
+    objectifs: [
+      'Design UI/UX épuré et moderne',
+      'Développement Responsive (Bootstrap 5)',
+      'Déploiement automatisé (GitHub Pages)'
+    ],
+    technologies: [
+      'HTML5', 'CSS3', 'JS', 'Bootstrap 5', 'GitHub'
+    ],
+    competences: [
+      { num: '1.3', text: 'Développer la présence en ligne.' },
+      { num: '1.4', text: 'Travailler en mode projet.' },
+      { num: '1.6', text: 'Organiser son développement professionnel.' }
+    ],
+    resultats: `
+      <p>Portfolio interactif et sécurisé en ligne.</p>
+    `,
+    images: [
+      { src: "images/portfolioimg2.png", caption: "Aperçu de la réalisation du portfolio" }
+    ],
+    projectInfo: {
+      duration: '18 mois',
+      team: 'Projet individuel',
+      context: 'Projet personnel - BTS SIO',
+      status: 'Terminé',
+      technologies: ['HTML5', 'CSS3', 'JavaScript', 'Bootstrap 5', 'GitHub Pages'],
+      links: [
+        { label: 'Documentation', href: 'images/BTS%20SIO%20-%20Tableau%20de%20synth%C3%A8se.pdf' }
+      ]
+    }
   }
 };
 
@@ -938,7 +2081,7 @@ function generateRPContent(rp) {
   // Méthodologie (optionnel)
   const methodologieHTML = rp.methodologie ? `
     <div class="rp-detail-section">
-      <h3 class="rp-detail-section-title">Méthodologie & Démarche</h3>
+      <h3 class="rp-detail-section-title">${rp.methodologieTitle || 'Méthodologie & Démarche'}</h3>
       ${rp.methodologie}
     </div>
   ` : '';
@@ -957,6 +2100,96 @@ function generateRPContent(rp) {
       </div>
     </div>
   ` : '';
+
+  if (rp.useStructuredTemplate) {
+    const info = rp.projectInfo || {};
+    const sidebarTechs = (info.technologies || rp.technologies || []).map(tech =>
+      `<span class="tech-tag-sidebar">${tech}</span>`
+    ).join('');
+    const sidebarLinks = (info.links || []).map(link =>
+      `<a class="sidebar-link-item" href="${link.href}" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-link"></i>${link.label}</a>`
+    ).join('');
+
+    const visualPreviewHTML = rp.images && rp.images.length > 0 ? `
+      <div class="rp-images-grid">
+        ${rp.images.map(img => `
+          <div class="rp-image-item">
+            <img src="${img.src}" alt="${img.caption}" class="rp-image lightbox-trigger" data-caption="${img.caption}" onerror="this.parentElement.innerHTML='<div class=\\'rp-image-placeholder\\'><i class=\\'fa-solid fa-image\\'></i><span>${img.caption}</span></div>'">
+            <p class="rp-image-caption">${img.caption}</p>
+          </div>
+        `).join('')}
+      </div>
+    ` : `<div class="rp-visual-placeholder">Aperçu visuel à insérer</div>`;
+
+    return `
+      <div class="rp-modal-layout">
+        <div class="rp-modal-main">
+          <div class="rp-detail-header">
+            <span class="rp-detail-badge ${rp.badgeClass}">${rp.badge}</span>
+            <h2 class="rp-detail-title">${rp.title}</h2>
+            <div class="rp-detail-meta">
+              <span><i class="fa-regular fa-calendar"></i>${rp.period}</span>
+              <span><i class="fa-regular fa-building"></i>${rp.context}</span>
+            </div>
+          </div>
+
+          <div class="rp-step-section">
+            <h3 class="rp-step-title"><span class="rp-step-icon"><i class="fa-solid fa-building-shield"></i></span><span class="rp-step-number">1.</span> Contexte</h3>
+            ${rp.description}
+          </div>
+
+          <div class="rp-step-section">
+            <h3 class="rp-step-title"><span class="rp-step-icon"><i class="fa-solid fa-magnifying-glass-chart"></i></span><span class="rp-step-number">2.</span> Démarche d'Analyse</h3>
+            ${rp.analyse || '<p>Contenu en cours d\'ajout.</p>'}
+          </div>
+
+          <div class="rp-step-section">
+            <h3 class="rp-step-title"><span class="rp-step-icon"><i class="fa-solid fa-lightbulb"></i></span><span class="rp-step-number">3.</span> Solution Proposée</h3>
+            ${rp.solution || '<p>Contenu en cours d\'ajout.</p>'}
+            <h4 class="rp-subsection-title">Aperçu visuel</h4>
+            ${visualPreviewHTML}
+          </div>
+
+          <div class="rp-step-section">
+            <h3 class="rp-step-title"><span class="rp-step-icon"><i class="fa-solid fa-screwdriver-wrench"></i></span><span class="rp-step-number">4.</span> Réalisation</h3>
+            ${rp.realisation || rp.resultats}
+          </div>
+
+          <div class="rp-step-section">
+            <h3 class="rp-step-title"><span class="rp-step-icon"><i class="fa-solid fa-calendar-check"></i></span><span class="rp-step-number">5.</span> Cadrage et Gestion de Projet</h3>
+            ${rp.projectManagement || '<p>Contenu en cours d\'ajout.</p>'}
+          </div>
+
+          <div class="rp-step-section">
+            <h3 class="rp-step-title"><span class="rp-step-icon"><i class="fa-solid fa-vial-circle-check"></i></span><span class="rp-step-number">6.</span> Tests & Validation</h3>
+            ${rp.testsValidation || '<p>Contenu en cours d\'ajout.</p>'}
+          </div>
+
+          <div class="rp-step-section">
+            <h3 class="rp-step-title"><span class="rp-step-icon"><i class="fa-solid fa-graduation-cap"></i></span><span class="rp-step-number">7.</span> Compétences du Bloc 1 couvertes</h3>
+            <div class="rp-detail-competences">
+              <div class="rp-detail-competences-grid">
+                ${competencesHTML}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <aside class="rp-modal-sidebar">
+          <h4 class="sidebar-title"><i class="fa-solid fa-circle-info"></i>Informations</h4>
+          <div class="info-item"><span class="info-label">Durée</span><span class="info-value">${info.duration || rp.period}</span></div>
+          <div class="info-item"><span class="info-label">Équipe</span><span class="info-value">${info.team || 'Non précisé'}</span></div>
+          <div class="info-item"><span class="info-label">Contexte</span><span class="info-value">${info.context || rp.context}</span></div>
+          <div class="info-item"><span class="info-label">Statut</span><span class="info-value">${info.status || 'Terminé'}</span></div>
+          <div class="info-item">
+            <span class="info-label">Technologies</span>
+            <div class="tech-tags-container">${sidebarTechs}</div>
+          </div>
+          ${sidebarLinks ? `<div class="info-item sidebar-links"><span class="info-label">Liens</span>${sidebarLinks}</div>` : ''}
+        </aside>
+      </div>
+    `;
+  }
 
   return `
     <div class="rp-detail-header">
@@ -987,7 +2220,7 @@ function generateRPContent(rp) {
 
     <div class="rp-detail-section">
       <div class="rp-detail-competences">
-        <h4 class="rp-detail-competences-title">✅ Compétences du Bloc 1 mobilisées</h4>
+        <h4 class="rp-detail-competences-title">Compétences du Bloc 1 mobilisées</h4>
         <div class="rp-detail-competences-grid">
           ${competencesHTML}
         </div>

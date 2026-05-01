@@ -1544,74 +1544,181 @@ textarea.form-control {
   background: #ffffff;
 }
 
-/* Cartes de compétences */
-.competence-card {
-  background: white;
-  padding: 1.75rem;
-  border-radius: 12px;
-  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.06);
-  border: 1px solid #f0f0f0;
-  height: 100%;
-  transition: all 0.3s ease;
+/* Hub compétences inspiré cartes */
+.skills-hub {
+  background: #ffffff;
+  border: 1px solid #dbe7ff;
+  border-radius: 22px;
+  padding: 1rem;
+  box-shadow: 0 6px 24px rgba(37, 99, 235, 0.08);
 }
 
-.competence-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
-  border-color: #e0e0e0;
+.skills-hub-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0;
 }
 
-/* Header de la carte */
-.competence-header {
+.skills-hub-card {
+  padding: 1.3rem 1.1rem;
+  border-right: 1px solid #e6eefc;
+  border-bottom: 1px solid #e6eefc;
+  transition: background 0.22s ease, transform 0.22s ease;
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.skills-hub-card:hover {
+  background: #f8fbff;
+}
+
+.section-competences.is-visible .skills-hub-card {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.section-competences.is-visible .skills-hub-card:nth-child(1) { transition-delay: 0.03s; }
+.section-competences.is-visible .skills-hub-card:nth-child(2) { transition-delay: 0.07s; }
+.section-competences.is-visible .skills-hub-card:nth-child(3) { transition-delay: 0.11s; }
+.section-competences.is-visible .skills-hub-card:nth-child(4) { transition-delay: 0.15s; }
+.section-competences.is-visible .skills-hub-card:nth-child(5) { transition-delay: 0.19s; }
+.section-competences.is-visible .skills-hub-card:nth-child(6) { transition-delay: 0.23s; }
+
+.skills-hub-card:nth-child(3n) {
+  border-right: none;
+}
+
+.skills-hub-card:nth-last-child(-n + 3) {
+  border-bottom: none;
+}
+
+.skills-hub-head {
+  margin-bottom: 0.8rem;
+}
+
+.skills-hub-icon {
+  display: inline-flex;
+  font-size: 1.3rem;
+  color: #3b82f6;
+  margin-bottom: 0.55rem;
+}
+
+.skills-hub-title {
+  margin: 0;
+  color: #0f172a;
+  font-size: 1.25rem;
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+.skills-chip-list,
+.skills-os-list {
+  display: grid;
+  gap: 0.55rem;
+  margin-bottom: 1rem;
+}
+
+.skills-chip-list {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.skills-os-list {
+  grid-template-columns: 1fr;
+}
+
+.skills-chip {
   display: flex;
   align-items: center;
-  margin-bottom: 1.25rem;
-  padding-bottom: 1rem;
-  border-bottom: 2px solid #f0f0f0;
+  min-height: 38px;
+  border: 1px solid #cfe0ff;
+  background: #f8fbff;
+  color: #334155;
+  border-radius: 10px;
+  padding: 0.42rem 0.65rem;
+  font-size: 0.86rem;
+  font-weight: 600;
+  line-height: 1.2;
 }
 
-.competence-icon {
-  font-size: 2rem;
-  margin-right: 1rem;
-  filter: grayscale(30%);
-}
-
-.competence-title {
-  font-size: 1.15rem;
-  font-weight: 700;
-  color: #2c3e50;
-  margin: 0;
-}
-
-/* Liste de compétences */
-.competence-list {
-  list-style: none;
-  padding-left: 0;
-  margin-bottom: 0;
-}
-
-.competence-list li {
-  position: relative;
-  padding-left: 1.5rem;
-  margin-bottom: 0.7rem;
-  font-size: 0.9rem;
-  color: #34495e;
-  line-height: 1.6;
-}
-
-.competence-list li:last-child {
-  margin-bottom: 0;
-}
-
-.competence-list li::before {
+.skills-chip::before {
   content: "";
-  position: absolute;
-  left: 0;
-  top: 0.6rem;
-  width: 6px;
-  height: 6px;
-  background: #3b82f6;
+  width: 7px;
+  height: 7px;
   border-radius: 50%;
+  background: #3b82f6;
+  margin-right: 0.5rem;
+  flex: 0 0 7px;
+}
+
+.skills-os-pill {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid #d4e2fc;
+  background: #f6f9ff;
+  color: #334155;
+  border-radius: 10px;
+  padding: 0.45rem 0.65rem;
+  font-size: 0.86rem;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.skills-os-pill i {
+  margin-right: 0.35rem;
+  color: #60a5fa;
+}
+
+.skills-hub-proof {
+  padding-top: 0.85rem;
+  border-top: 1px solid #e6eefc;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.skills-hub-proof > span {
+  color: #64748b;
+  font-size: 0.84rem;
+  font-weight: 600;
+}
+
+.skills-hub-link {
+  border: 1px solid #bfd9ff;
+  background: #eaf2ff;
+  color: #1e40af;
+  border-radius: 999px;
+  padding: 0.25rem 0.62rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.skills-hub-link:hover {
+  border-color: #93c5fd;
+  background: #dbeafe;
+}
+
+@media (max-width: 1100px) {
+  .skills-hub-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .skills-hub-card:nth-child(3n) {
+    border-right: 1px solid #e6eefc;
+  }
+
+  .skills-hub-card:nth-child(2n) {
+    border-right: none;
+  }
+
+  .skills-hub-card:nth-last-child(-n + 3) {
+    border-bottom: 1px solid #e6eefc;
+  }
+
+  .skills-hub-card:nth-last-child(-n + 2) {
+    border-bottom: none;
+  }
 }
 
 /* Footer avec note */
@@ -1621,25 +1728,24 @@ textarea.form-control {
 }
 
 .competences-note {
-  font-size: 0.95rem;
-  color: #64748b;
-  font-style: italic;
+  font-size: 0.92rem;
+  color: #334155;
   margin: 0;
-  padding: 1.25rem;
-  background: #f8f9fa;
-  border-radius: 8px;
-  border-left: 4px solid #3b82f6;
+  padding: 1rem;
+  background: #f3f6fa;
+  border-radius: 10px;
+  border: 1px solid #dbe7ff;
 }
 
 .competences-link {
-  color: #3b82f6;
+  color: #2563eb;
   text-decoration: none;
   font-weight: 600;
-  transition: color 0.3s ease;
+  margin-left: 0.35rem;
 }
 
 .competences-link:hover {
-  color: #2563eb;
+  color: #1d4ed8;
   text-decoration: underline;
 }
 
@@ -1648,22 +1754,26 @@ textarea.form-control {
   .section-competences {
     padding: 3rem 0 !important;
   }
-  
-  .competence-card {
-    padding: 1.5rem;
+
+  .skills-hub-grid {
+    grid-template-columns: 1fr;
   }
-  
-  .competence-icon {
-    font-size: 1.75rem;
-    margin-right: 0.75rem;
+
+  .skills-hub-card {
+    border-right: none;
+    border-bottom: 1px solid #e6eefc;
   }
-  
-  .competence-title {
-    font-size: 1.05rem;
+
+  .skills-hub-card:last-child {
+    border-bottom: none;
   }
-  
-  .competence-list li {
-    font-size: 0.85rem;
+
+  .skills-hub-title {
+    font-size: 1.2rem;
+  }
+
+  .skills-chip-list {
+    grid-template-columns: 1fr;
   }
   
   .competences-footer {
@@ -1672,12 +1782,12 @@ textarea.form-control {
 }
 
 /* ========================================
-   RÉALISATIONS PROFESSIONNELLES
+   TABLEAU DE SYNTHÈSE
 ======================================== */
 
-.section-realisations {
+.section-synthese {
   min-height: auto !important;
-  padding: 2rem 0 !important;
+  padding: 4rem 0 !important;
   background: #f8f9fa;
 }
 
@@ -1689,21 +1799,6 @@ textarea.form-control {
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
   border: 1px solid #f0f0f0;
   margin-bottom: 1.5rem !important;
-}
-
-.rp-tableau-title {
-  font-size: 1rem;
-  font-weight: 700;
-  color: #2c3e50;
-  margin-bottom: 0.3rem;
-  text-align: center;
-}
-
-.rp-tableau-subtitle {
-  font-size: 0.95rem;
-  color: #64748b;
-  text-align: center;
-  margin-bottom: 1.5rem;
 }
 
 /* PDF Viewer */
@@ -1744,149 +1839,313 @@ textarea.form-control {
   color: white;
 }
 
-/* Séparateur */
-.rp-separator {
-  text-align: center;
-  margin: 2rem 0 0.75rem 0;
-  position: relative;
-}
-
-.rp-separator::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 0;
-  right: 0;
-  height: 1px;
-  background: #e0e0e0;
-}
-
-.rp-separator-text {
-  background: #f8f9fa;
-  padding: 0 1.5rem;
-  position: relative;
-  font-size: 1.2rem;
-  font-weight: 600;
-  color: #2c3e50;
-}
-
-/* Sections par année */
-.rp-year-section {
-  margin-bottom: 2rem;
-}
-
-.rp-year-title {
+/* Séparateur d'années dans les RPs */
+.rp-year-separator {
+  grid-column: 1 / -1;
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin: 2rem 0 1.5rem 0;
   display: flex;
   align-items: center;
-  gap: 1rem;
-  font-size: 1.25rem;
+  gap: 1.5rem;
+}
+
+.rp-year-separator::after {
+  content: "";
+  height: 1px;
+  flex-grow: 1;
+  background: linear-gradient(90deg, #e2e8f0 0%, transparent 100%);
+}
+
+/* ========================================
+   RÉALISATIONS PROFESSIONNELLES (MODERN CARDS)
+======================================== */
+
+.section-realisations {
+  padding: 5rem 0 !important;
+  background: #f8fafc; /* Fond très légèrement bleuté pour faire ressortir les cartes blanches */
+}
+.rp-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Forçage en 2 colonnes pour le 2x2 */
+  gap: 2.5rem;
+}
+
+.rp-grid-year {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+/* Modal plus large pour le nouveau layout */
+.rp-modal-dialog {
+  max-width: 1200px !important;
+  width: 95%;
+  margin: 1.75rem auto;
+}
+
+.rp-modal-content {
+  border: none;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+/* Layout 2 colonnes dans le modal */
+.rp-modal-layout {
+  display: flex;
+  gap: 40px;
+  padding: 40px;
+  background: white;
+}
+
+.rp-modal-main {
+  flex: 1;
+}
+
+.rp-modal-sidebar {
+  width: 320px;
+  position: sticky;
+  top: 20px;
+  background: #f8fafc;
+  border-radius: 12px;
+  padding: 25px;
+  border: 1px solid #e2e8f0;
+  height: fit-content;
+}
+
+/* Sections du modèle (1. 2. 3...) */
+.rp-step-section {
+  margin-bottom: 50px;
+}
+
+.rp-step-title {
+  display: flex;
+  align-items: center;
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #1e293b;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #f1f5f9;
+  padding-bottom: 12px;
+}
+
+.rp-step-number {
+  color: #3b82f6;
+  margin-right: 15px;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Sidebar Info Styles */
+.sidebar-title {
+  font-size: 1.1rem;
   font-weight: 700;
   color: #1e293b;
-  margin-bottom: 1.5rem;
-  padding: 1rem 1.25rem;
-  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
-  border-radius: 12px;
-  border-left: 5px solid #3b82f6;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-}
-
-.rp-year-badge {
-  background: linear-gradient(135deg, #3b82f6, #2563eb);
-  color: white;
-  padding: 0.4rem 1rem;
-  border-radius: 20px;
-  font-size: 0.85rem;
-  font-weight: 700;
-  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
-  letter-spacing: 0.5px;
-}
-
-.rp-year-badge.year-1 {
-  background: linear-gradient(135deg, #8b5cf6, #7c3aed);
-  box-shadow: 0 4px 12px rgba(139, 92, 246, 0.3);
-}
-
-/* Cartes placeholder */
-.rp-card-placeholder {
-  background: #f8fafc;
-  border: 1px dashed #cbd5e1;
-  box-shadow: none;
-  cursor: default;
-  min-height: auto;
-  padding-left: 0 !important;
-}
-
-.rp-card-placeholder .rp-card-body {
-  padding: 0.5rem 1rem;
-}
-
-.rp-card-placeholder:hover {
-  transform: none;
-  box-shadow: none;
-  border-color: #cbd5e1;
-}
-
-.rp-card-placeholder::before,
-.rp-card-placeholder::after {
-  display: none !important;
-}
-
-/* Cartes RP - Design attractif et spacieux */
-.rp-card {
-  background: white;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-  overflow: visible;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  margin-bottom: 20px;
   display: flex;
-  flex-direction: row;
   align-items: center;
-  cursor: pointer;
-  position: relative;
-  border: 2px solid #f1f5f9;
-  padding-left: 70px;
-  min-height: 140px;
+  gap: 10px;
 }
 
-/* Icône à gauche */
-.rp-card::before {
-  content: "";
+.info-item {
+  margin-bottom: 18px;
+}
+
+.info-label {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 4px;
+}
+
+.info-value {
+  display: block;
+  font-size: 1rem;
+  color: #334155;
+  font-weight: 600;
+}
+
+.tech-tags-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.tech-tag-sidebar {
+  background: white;
+  border: 1px solid #e2e8f0;
+  padding: 4px 12px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #3b82f6;
+}
+
+.sidebar-btn-doc {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  padding: 12px;
+  background: #3b82f6;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  margin-top: 20px;
+  transition: all 0.2s;
+}
+
+.sidebar-btn-doc:hover {
+  background: #2563eb;
+  color: white;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 992px) {
+  .rp-grid { grid-template-columns: 1fr; }
+  .rp-modal-layout { flex-direction: column; padding: 20px; }
+  .rp-modal-sidebar { width: 100%; position: static; }
+}
+  margin-top: 2rem;
+}
+
+.rp-card-new {
+  background: #ffffff;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  transition: box-shadow 0.22s ease, border-color 0.22s ease;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.03);
+}
+
+.rp-card-new:hover {
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.09);
+  border-color: rgba(59, 130, 246, 0.28);
+}
+
+/* Image Header de la carte */
+.rp-card-img-container {
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+  background: #f1f5f9;
+  position: relative;
+}
+
+.rp-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.28s ease;
+}
+
+.rp-card-img-dezoom {
+  object-fit: contain;
+  object-position: center top;
+  padding: 10px;
+  background: #f1f5f9;
+}
+
+.rp-card-new:hover .rp-card-img {
+  transform: scale(1.02);
+}
+
+.rp-card-new:hover .rp-card-img.rp-card-img-dezoom {
+  transform: scale(0.98);
+}
+
+/* Badge Année sur l'image */
+.rp-card-year-badge {
   position: absolute;
-  top: 50%;
-  left: 16px;
-  transform: translateY(-50%);
-  width: 42px;
-  height: 42px;
+  top: 15px;
+  left: 15px;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(5px);
+  padding: 4px 12px;
+  border-radius: 8px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #1e293b;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* Contenu de la carte */
+.rp-card-content {
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.rp-card-title-new {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 0.75rem;
+}
+
+.rp-card-description-new {
+  font-size: 0.95rem;
+  color: #64748b;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+/* Badges technos (Style Screenshot) */
+.rp-card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-bottom: 2rem;
+  margin-top: auto; /* Pousse les tags vers le bas */
+}
+
+.rp-tag-item {
+  background: #eff6ff; /* Bleu très clair */
+  color: #3b82f6; /* Bleu pro */
+  padding: 6px 14px;
   border-radius: 10px;
-  background: linear-gradient(135deg, #3b82f6, #60a5fa);
-  z-index: 1;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+/* Bouton (Style Screenshot) */
+.rp-card-footer-new {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.rp-btn-more {
+  background: #3b82f6;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 12px;
+  font-size: 0.9rem;
+  font-weight: 600;
   transition: all 0.3s ease;
   box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
 }
 
-/* Icône par défaut */
-.rp-card::after {
-  content: "\f013";
-  font-family: "Font Awesome 6 Free";
-  font-weight: 900;
-  position: absolute;
-  top: 50%;
-  left: 16px;
-  transform: translateY(-50%);
-  width: 42px;
-  height: 42px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  font-size: 1.1rem;
-  z-index: 2;
+.rp-btn-more:hover {
+  background: #2563eb;
+  box-shadow: 0 6px 15px rgba(59, 130, 246, 0.4);
 }
 
-.rp-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 32px rgba(59, 130, 246, 0.2);
-  border-color: #3b82f6;
+/* Responsive */
+@media (max-width: 768px) {
+  .rp-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 .rp-card:hover::before {
@@ -2142,9 +2401,9 @@ textarea.form-control {
   position: relative;
   background: white;
   border-radius: 16px;
-  max-width: 900px;
-  width: 100%;
-  max-height: 90vh;
+  max-width: 1400px;
+  width: min(96vw, 1400px);
+  max-height: 94vh;
   overflow: hidden;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
   animation: modalSlideIn 0.3s ease;
@@ -2187,9 +2446,281 @@ textarea.form-control {
 }
 
 .rp-modal-content {
-  max-height: 90vh;
+  max-height: 94vh;
   overflow-y: auto;
+  padding: 0;
+}
+
+.rp-modal-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 340px;
+  gap: 2rem;
   padding: 2.5rem;
+}
+
+.rp-modal-main {
+  min-width: 0;
+  color: #334155;
+}
+
+.rp-modal-main p,
+.rp-modal-main li,
+.rp-modal-main td,
+.rp-modal-main th,
+.rp-modal-main label {
+  color: #334155 !important;
+}
+
+.rp-modal-main a {
+  color: #2563eb !important;
+}
+
+.rp-modal-main strong,
+.rp-modal-main .rp-subsection-title,
+.rp-modal-main .rp-detail-competence-text {
+  color: #1e293b !important;
+}
+
+.rp-modal-main .rp-step-title,
+.rp-modal-main .rp-detail-title {
+  color: #2c3e50 !important;
+}
+
+.rp-modal-main .rp-step-number {
+  color: #3b82f6 !important;
+}
+
+.rp-modal-main .progress-bar {
+  color: #ffffff !important;
+}
+
+.rp-modal-sidebar {
+  position: sticky;
+  top: 1rem;
+  align-self: start;
+  height: fit-content;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 1.25rem;
+}
+
+.rp-step-section {
+  margin-bottom: 1.4rem;
+  border: 1px solid #bfdbfe;
+  border-radius: 18px;
+  background: linear-gradient(180deg, #f9fbff 0%, #f5f8ff 100%);
+  padding: 1.35rem 1.35rem 1.15rem;
+  box-shadow: 0 6px 18px rgba(59, 130, 246, 0.08);
+}
+
+.rp-step-title {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #c9911a;
+  margin-bottom: 1rem;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.rp-step-number {
+  color: #c9911a;
+  font-weight: 800;
+}
+
+.rp-step-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  background: #fef3c7;
+  color: #c9911a;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+}
+
+.rp-subsection-title {
+  margin: 1rem 0 0.65rem;
+  font-size: 1.08rem;
+  color: #1e293b;
+  font-weight: 700;
+}
+
+.rp-step-section p {
+  font-size: 1.02rem;
+  line-height: 1.7;
+  margin-bottom: 0.7rem;
+  color: #334155 !important;
+}
+
+.rp-step-section ul {
+  margin-bottom: 0.5rem;
+}
+
+.rp-gantt-card {
+  --gantt-label-width: 220px;
+  --gantt-gap: 1rem;
+  --gantt-units: 4;
+  margin-top: 0.75rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 14px;
+  background: #f8fafc;
+  padding: 1rem;
+}
+
+.rp-pm-meta {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 0.7rem;
+  margin-bottom: 1rem;
+}
+
+.rp-pm-meta-item {
+  background: #f8fafc;
+  border: 1px solid #dbe7ff;
+  border-radius: 10px;
+  padding: 0.6rem 0.75rem;
+}
+
+.rp-pm-meta-item span {
+  display: block;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #64748b;
+}
+
+.rp-pm-meta-item strong {
+  color: #1e293b;
+}
+
+.rp-pm-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.8rem;
+}
+
+.rp-pm-card {
+  background: #f8fafc;
+  border: 1px solid #dbe7ff;
+  border-radius: 12px;
+  padding: 0.9rem;
+}
+
+.rp-pm-table thead th {
+  background: #eef4ff;
+  color: #334155;
+  border-bottom: 1px solid #cbd5e1;
+}
+
+.rp-gantt-title {
+  margin-top: 0;
+}
+
+.rp-gantt-title i {
+  margin-right: 0.45rem;
+  color: #3b82f6;
+}
+
+.rp-gantt-rows {
+  margin-top: 0.45rem;
+}
+
+.rp-gantt-row {
+  display: grid;
+  grid-template-columns: var(--gantt-label-width) 1fr;
+  gap: var(--gantt-gap);
+  align-items: center;
+  margin-bottom: 0.7rem;
+}
+
+.rp-gantt-label {
+  font-weight: 600;
+  color: #334155;
+}
+
+.rp-gantt-track {
+  position: relative;
+  height: 14px;
+  border-radius: 999px;
+  background: #e2e8f0;
+}
+
+.rp-gantt-bar {
+  position: absolute;
+  top: 1px;
+  left: calc((var(--start) - 1) * (100% / var(--gantt-units)));
+  width: calc(var(--length) * (100% / var(--gantt-units)) - 6px);
+  min-width: 16px;
+  height: 12px;
+  border-radius: 999px;
+}
+
+.rp-gantt-bar.is-blue { background: linear-gradient(90deg, #60a5fa, #3b82f6); }
+.rp-gantt-bar.is-indigo { background: linear-gradient(90deg, #3b82f6, #2563eb); }
+.rp-gantt-bar.is-cyan { background: linear-gradient(90deg, #22d3ee, #06b6d4); }
+.rp-gantt-bar.is-green { background: linear-gradient(90deg, #4ade80, #22c55e); }
+.rp-gantt-bar.is-amber { background: linear-gradient(90deg, #fbbf24, #d97706); }
+
+.rp-gantt-chronology {
+  margin-top: 0.75rem;
+  padding-top: 0.65rem;
+  margin-left: calc(var(--gantt-label-width) + var(--gantt-gap));
+  width: calc(100% - (var(--gantt-label-width) + var(--gantt-gap)));
+  border-top: 1px dashed #cbd5e1;
+  display: grid;
+  grid-template-columns: repeat(var(--gantt-units), minmax(0, 1fr));
+  gap: 0.4rem;
+  color: #475569;
+}
+
+.rp-gantt-chronology span {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.rp-gantt-chronology small {
+  color: #64748b;
+}
+
+.rp-gantt-footer {
+  margin-top: 0.8rem;
+  padding-top: 0.4rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  color: #64748b;
+  font-size: 0.95rem;
+}
+
+.rp-gantt-footer i {
+  margin-right: 0.35rem;
+}
+
+.sidebar-links {
+  margin-top: 0.7rem;
+}
+
+.sidebar-link-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #2563eb;
+  text-decoration: none;
+  font-weight: 600;
+  margin-bottom: 0.45rem;
+}
+
+.sidebar-link-item:hover {
+  color: #1d4ed8;
+  text-decoration: underline;
 }
 
 /* Contenu détaillé de la RP */
@@ -2360,12 +2891,23 @@ textarea.form-control {
 }
 
 .rp-objectifs-list li::before {
-  content: "✓";
+  content: "•";
   position: absolute;
   left: 0;
-  color: #10b981;
+  color: #64748b;
   font-weight: bold;
-  font-size: 1rem;
+  font-size: 1.15rem;
+  line-height: 1;
+}
+
+.rp-visual-placeholder {
+  border: 1px dashed #93c5fd;
+  background: #eff6ff;
+  color: #1e40af;
+  border-radius: 12px;
+  padding: 1rem;
+  text-align: center;
+  font-weight: 600;
 }
 
 /* Images RP */
@@ -2454,7 +2996,35 @@ textarea.form-control {
   }
   
   .rp-modal-content {
-    padding: 1.5rem;
+    padding: 0;
+  }
+
+  .rp-modal-layout {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 1.25rem;
+  }
+
+  .rp-modal-sidebar {
+    position: static;
+  }
+
+  .rp-step-title {
+    font-size: 1.55rem;
+  }
+
+  .rp-gantt-row {
+    grid-template-columns: 1fr;
+    gap: 0.4rem;
+  }
+
+  .rp-pm-meta {
+    grid-template-columns: 1fr;
+  }
+
+  .rp-gantt-chronology {
+    margin-left: 0;
+    width: 100%;
   }
   
   .rp-detail-title {

@@ -64,6 +64,11 @@
             </a>
           </li>
           <li class="nav-item">
+            <a href="#synthese" class="nav-link-custom text-white text-decoration-none">
+              <i class="fa-solid fa-table me-2"></i>Tableau de synthèse
+            </a>
+          </li>
+          <li class="nav-item">
             <a href="#realisations" class="nav-link-custom text-white text-decoration-none">
               <i class="fa-solid fa-project-diagram me-2"></i>Réalisations
             </a>
@@ -114,6 +119,7 @@
             <li class="nav-item"><a href="#parcours" class="text-white text-decoration-none" data-bs-dismiss="offcanvas"><i class="fa-solid fa-road me-2"></i>Parcours</a></li>
             <li class="nav-item"><a href="#formation" class="text-white text-decoration-none" data-bs-dismiss="offcanvas"><i class="fa-solid fa-graduation-cap me-2"></i>Formation</a></li>
             <li class="nav-item"><a href="#competences" class="text-white text-decoration-none" data-bs-dismiss="offcanvas"><i class="fa-solid fa-tools me-2"></i>Compétences</a></li>
+            <li class="nav-item"><a href="#synthese" class="text-white text-decoration-none" data-bs-dismiss="offcanvas"><i class="fa-solid fa-table me-2"></i>Tableau de synthèse</a></li>
             <li class="nav-item"><a href="#realisations" class="text-white text-decoration-none" data-bs-dismiss="offcanvas"><i class="fa-solid fa-project-diagram me-2"></i>Réalisations</a></li>
             <li class="nav-item"><a href="#stages" class="text-white text-decoration-none" data-bs-dismiss="offcanvas"><i class="fa-solid fa-briefcase me-2"></i>Stages</a></li>
             <li class="nav-item"><a href="#veille" class="text-white text-decoration-none" data-bs-dismiss="offcanvas"><i class="fa-solid fa-satellite-dish me-2"></i>Veille</a></li>
@@ -386,111 +392,153 @@
         <section id="competences" class="content-section section-competences">
           <div class="container py-4">
             <header class="text-center mb-4">
-              <h2 class="section-title">Mes Compétences Techniques</h2>
+              <h2 class="section-title">Compétences appliquées en projet</h2>
               <div class="underline mx-auto" style="max-width: 100px;"></div>
-              <p class="section-subtitle mt-3">Compétences acquises durant le BTS SIO SISR</p>
+              <p class="section-subtitle mt-3">Une lecture directe de ce que je maîtrise et où je l'ai appliqué</p>
             </header>
 
-            <!-- Grille de compétences par catégorie -->
-            <div class="row g-4">
-              <!-- Catégorie 1: Systèmes & Virtualisation -->
-              <div class="col-md-6">
-                <div class="competence-card">
-                  <div class="competence-header">
-                    <div class="competence-icon">💻</div>
-                    <h3 class="competence-title">Systèmes & Virtualisation</h3>
+            <div class="skills-hub">
+              <div class="skills-hub-grid">
+                <article class="skills-hub-card">
+                  <div class="skills-hub-head">
+                    <span class="skills-hub-icon"><i class="fa-solid fa-network-wired"></i></span>
+                    <h3 class="skills-hub-title">Configuration d'équipements réseau</h3>
                   </div>
-                  <ul class="competence-list">
-                    <li>Linux (Debian, Ubuntu)</li>
-                    <li>Windows Server (AD, DHCP, DNS)</li>
-                    <li>Active Directory & GPO</li>
-                    <li>VMware & VirtualBox</li>
-                    <li>Docker (conteneurisation)</li>
-                  </ul>
-                </div>
-              </div>
+                  <div class="skills-chip-list">
+                    <span class="skills-chip">Switch Cisco</span>
+                    <span class="skills-chip">Routeur</span>
+                    <span class="skills-chip">Borne Wi-Fi (AP)</span>
+                    <span class="skills-chip">VLAN</span>
+                  </div>
+                  <div class="skills-hub-proof">
+                    <span>Réalisations liées :</span>
+                    <button class="skills-hub-link" onclick="openRPModal('rp1')">RP05 802.1X</button>
+                    <button class="skills-hub-link" onclick="openRPModal('rp2')">RP06 FreeRADIUS</button>
+                  </div>
+                </article>
 
-              <!-- Catégorie 2: Réseaux & Infrastructure -->
-              <div class="col-md-6">
-                <div class="competence-card">
-                  <div class="competence-header">
-                    <div class="competence-icon">🌐</div>
-                    <h3 class="competence-title">Réseaux & Infrastructure</h3>
+                <article class="skills-hub-card">
+                  <div class="skills-hub-head">
+                    <span class="skills-hub-icon"><i class="fa-solid fa-user-shield"></i></span>
+                    <h3 class="skills-hub-title">Réseau & sécurité</h3>
                   </div>
-                  <ul class="competence-list">
-                    <li>TCP/IP, modèle OSI</li>
-                    <li>Routage & VLAN</li>
-                    <li>VPN & accès distants</li>
-                    <li>Wireshark (analyse réseau)</li>
-                    <li>Supervision réseau</li>
-                  </ul>
-                </div>
-              </div>
+                  <div class="skills-chip-list">
+                    <span class="skills-chip">802.1X</span>
+                    <span class="skills-chip">RADIUS / AAA</span>
+                    <span class="skills-chip">Contrôle d'accès</span>
+                    <span class="skills-chip">Journalisation</span>
+                  </div>
+                  <div class="skills-hub-proof">
+                    <span>Réalisations liées :</span>
+                    <button class="skills-hub-link" onclick="openRPModal('rp1')">RP05 Microsoft NPS</button>
+                    <button class="skills-hub-link" onclick="openRPModal('rp2')">RP06 Open Source</button>
+                  </div>
+                </article>
 
-              <!-- Catégorie 3: Sécurité & Protection -->
-              <div class="col-md-6">
-                <div class="competence-card">
-                  <div class="competence-header">
-                    <div class="competence-icon">🔒</div>
-                    <h3 class="competence-title">Sécurité & Protection</h3>
+                <article class="skills-hub-card">
+                  <div class="skills-hub-head">
+                    <span class="skills-hub-icon"><i class="fa-solid fa-desktop"></i></span>
+                    <h3 class="skills-hub-title">Systèmes d'exploitation</h3>
                   </div>
-                  <ul class="competence-list">
-                    <li>Pare-feu & filtrage</li>
-                    <li>Sauvegardes & restauration</li>
-                    <li>Cybersécurité (bonnes pratiques)</li>
-                    <li>Gestion des accès & droits</li>
-                    <li>Veille technologique EDR</li>
-                  </ul>
-                </div>
-              </div>
+                  <div class="skills-os-list">
+                    <span class="skills-os-pill"><i class="fa-brands fa-windows"></i> Windows Server</span>
+                    <span class="skills-os-pill"><i class="fa-brands fa-debian"></i> Debian 12</span>
+                    <span class="skills-os-pill"><i class="fa-brands fa-ubuntu"></i> Xubuntu</span>
+                  </div>
+                  <div class="skills-hub-proof">
+                    <span>Réalisations liées :</span>
+                    <button class="skills-hub-link" onclick="openRPModal('rp7')">RP03 Active Directory</button>
+                    <button class="skills-hub-link" onclick="openRPModal('rp8')">RP04 Services Linux</button>
+                    <button class="skills-hub-link" onclick="openRPModal('rp5')">RP01 NutriFit</button>
+                  </div>
+                </article>
 
-              <!-- Catégorie 4: Outils & Développement -->
-              <div class="col-md-6">
-                <div class="competence-card">
-                  <div class="competence-header">
-                    <div class="competence-icon">⚙️</div>
-                    <h3 class="competence-title">Outils & Développement</h3>
+                <article class="skills-hub-card">
+                  <div class="skills-hub-head">
+                    <span class="skills-hub-icon"><i class="fa-solid fa-server"></i></span>
+                    <h3 class="skills-hub-title">Services d'infrastructure</h3>
                   </div>
-                  <ul class="competence-list">
-                    <li>Git & GitHub (versioning)</li>
-                    <li>Bash & PowerShell (scripting)</li>
-                    <li>GLPI (gestion de parc)</li>
-                    <li>HTML, CSS, JavaScript</li>
-                    <li>Python & SQL (notions)</li>
-                  </ul>
-                </div>
+                  <div class="skills-chip-list">
+                    <span class="skills-chip">Kea DHCP</span>
+                    <span class="skills-chip">Docker</span>
+                    <span class="skills-chip">Ansible</span>
+                    <span class="skills-chip">Vagrant</span>
+                    <span class="skills-chip">Prometheus</span>
+                    <span class="skills-chip">Grafana</span>
+                    <span class="skills-chip">Monitoring</span>
+                  </div>
+                  <div class="skills-hub-proof">
+                    <span>Réalisations liées :</span>
+                    <button class="skills-hub-link" onclick="openRPModal('rp8')">RP04 DHCP & Web</button>
+                    <button class="skills-hub-link" onclick="openRPModal('rp2')">RP06 LDAP</button>
+                    <button class="skills-hub-link" onclick="openRPModal('rp7')">RP03 AD</button>
+                  </div>
+                </article>
+
+                <article class="skills-hub-card">
+                  <div class="skills-hub-head">
+                    <span class="skills-hub-icon"><i class="fa-solid fa-terminal"></i></span>
+                    <h3 class="skills-hub-title">Scripting & automatisation</h3>
+                  </div>
+                  <div class="skills-chip-list">
+                    <span class="skills-chip">Bash</span>
+                    <span class="skills-chip">PowerShell</span>
+                    <span class="skills-chip">Automatisation tâches</span>
+                    <span class="skills-chip">Scripts de contrôle</span>
+                  </div>
+                  <div class="skills-hub-proof">
+                    <span>Réalisations liées :</span>
+                    <button class="skills-hub-link" onclick="openRPModal('rp5')">RP01 NutriFit</button>
+                    <button class="skills-hub-link" onclick="openRPModal('rp8')">RP04 Services Linux</button>
+                  </div>
+                </article>
+
+                <article class="skills-hub-card">
+                  <div class="skills-hub-head">
+                    <span class="skills-hub-icon"><i class="fa-solid fa-list-check"></i></span>
+                    <h3 class="skills-hub-title">Documentation & projet</h3>
+                  </div>
+                  <div class="skills-chip-list">
+                    <span class="skills-chip">Kanban</span>
+                    <span class="skills-chip">Gantt</span>
+                    <span class="skills-chip">Notion</span>
+                    <span class="skills-chip">Documentation technique</span>
+                  </div>
+                  <div class="skills-hub-proof">
+                    <span>Réalisations liées :</span>
+                    <button class="skills-hub-link" onclick="openRPModal('rp1')">RP05</button>
+                    <button class="skills-hub-link" onclick="openRPModal('rp6')">RP02</button>
+                    <button class="skills-hub-link" onclick="openRPModal('rp4')">RP08</button>
+                  </div>
+                </article>
               </div>
             </div>
 
-            <!-- Note finale -->
             <div class="competences-footer">
               <p class="competences-note">
-                💡 Ces compétences sont détaillées et illustrées dans mes <a href="#realisations" class="competences-link">Réalisations Professionnelles</a>
+                Chaque lien ouvre directement la fiche RP correspondante pour montrer l'application en contexte.
+                <a href="#realisations" class="competences-link">Voir toutes les réalisations</a>
               </p>
             </div>
           </div>
           
           <!-- Bouton section suivante -->
-          <a href="#realisations" class="section-nav-btn section-nav-left" aria-label="Section suivante">
+          <a href="#synthese" class="section-nav-btn section-nav-left" aria-label="Section suivante">
             <i class="fa-solid fa-chevron-down"></i>
             <small>Suivant</small>
           </a>
         </section>
 
-        <!-- SECTION 6: RÉALISATIONS PROFESSIONNELLES -->
-        <section id="realisations" class="content-section section-realisations">
-          <div class="container py-2">
-            <!-- En-tête compact -->
-            <header class="text-center mb-3">
-              <h2 class="section-title" style="font-size: 1.5rem;">Mes Réalisations Professionnelles</h2>
-              <div class="underline mx-auto" style="max-width: 80px;"></div>
+        <!-- SECTION 6: TABLEAU DE SYNTHÈSE -->
+        <section id="synthese" class="content-section section-synthese">
+          <div class="container py-4">
+            <header class="text-center mb-4">
+              <h2 class="section-title">Tableau de Synthèse</h2>
+              <div class="underline mx-auto" style="max-width: 100px;"></div>
+              <p class="section-subtitle mt-3">Mes compétences du Bloc 1</p>
             </header>
 
-            <!-- Tableau de Synthèse Général -->
             <div class="rp-tableau-synthese mb-4">
-              <h3 class="rp-tableau-title">Tableau de Synthèse - Bloc 1</h3>
-              <p class="rp-tableau-subtitle">Vue d'ensemble de mes réalisations</p>
-              
               <!-- Visualisation PDF -->
               <div class="rp-pdf-container">
                 <iframe src="images/BTS SIO - Tableau de synthèse.pdf#toolbar=0&navpanes=0&view=FitH" 
@@ -499,184 +547,201 @@
               </div>
               
               <!-- Bouton téléchargement -->
-              <div class="text-center mt-2">
+              <div class="text-center mt-3">
                 <a href="images/BTS SIO - Tableau de synthèse.pdf" 
                    target="_blank" 
                    class="rp-download-btn">
-                  <i class="fa-solid fa-download me-1"></i>Télécharger
+                  <i class="fa-solid fa-download me-1"></i>Télécharger le Tableau de Synthèse (PDF)
                 </a>
               </div>
             </div>
+          </div>
+          
+          <!-- Bouton section suivante -->
+          <a href="#realisations" class="section-nav-btn section-nav-right" aria-label="Section suivante">
+            <i class="fa-solid fa-chevron-down"></i>
+            <small>Suivant</small>
+          </a>
+        </section>
 
-            <!-- ========== 2ÈME ANNÉE BTS SIO ========== -->
-            <div class="rp-year-section">
-              <h3 class="rp-year-title">
-                <span class="rp-year-badge">2ème année</span>
-                BTS SIO SISR
-              </h3>
+        <!-- SECTION 7: RÉALISATIONS PROFESSIONNELLES -->
+        <section id="realisations" class="content-section section-realisations">
+          <div class="container py-4">
+            <header class="text-center mb-5">
+              <h2 class="section-title">Mes Réalisations Professionnelles</h2>
+              <div class="underline mx-auto" style="max-width: 100px;"></div>
+              <p class="section-subtitle mt-3">Journal de bord de mes projets et missions techniques</p>
+            </header>
+
+            <!-- ========== 1ÈRE ANNÉE ========== -->
+            <h3 class="rp-year-separator">Première Année - BTS SIO</h3>
+            <div class="rp-grid rp-grid-year mb-5">
               
-              <div class="row g-3">
-                <!-- RP 1 - 802.1X -->
-                <div class="col-md-6">
-                  <div class="rp-card" data-rp-id="rp1" data-type="security">
-                    <div class="rp-card-body">
-                      <h4 class="rp-card-title">Infrastructure réseau sécurisée (802.1X)</h4>
-                      <p class="rp-card-period"><i class="fa-regular fa-calendar me-1"></i>IRIS Mediaschool</p>
-                      <p class="rp-card-description">Authentification 802.1X avec serveur RADIUS sur Debian pour sécuriser les accès réseau.</p>
-                      <div class="rp-card-competences">
-                        <span class="rp-competence-badge">C1.1</span>
-                        <span class="rp-competence-badge">C1.4</span>
-                        <span class="rp-competence-badge">C1.5</span>
-                      </div>
-                    </div>
-                    <div class="rp-card-footer">
-                      <button class="rp-card-btn"><i class="fa-solid fa-arrow-right"></i></button>
-                    </div>
+              <!-- RP01 - NutriFit -->
+              <article class="rp-card-new">
+                <div class="rp-card-img-container">
+                  <div class="rp-card-year-badge">1ère Année</div>
+                  <img src="images/xubuntu.webp" alt="NutriFit" class="rp-card-img" onerror="this.src='images/images.jpg'">
+                </div>
+                <div class="rp-card-content">
+                  <h3 class="rp-card-title-new">RP01 - Borne NutriFit</h3>
+                  <p class="rp-card-description-new">Déploiement d'un système Linux sécurisé en mode Kiosk pour une borne interactive de salle de sport.</p>
+                  <div class="rp-card-tags">
+                    <span class="rp-tag-item">Linux</span>
+                    <span class="rp-tag-item">Kiosk</span>
+                    <span class="rp-tag-item">Infrastructure</span>
+                  </div>
+                  <div class="rp-card-footer-new">
+                    <button class="rp-btn-more" onclick="openRPModal('rp5')">En savoir plus...</button>
                   </div>
                 </div>
+              </article>
 
-                <!-- RP 2 - WebVirtCloud -->
-                <div class="col-md-6">
-                  <div class="rp-card" data-rp-id="rp2" data-type="infra">
-                    <div class="rp-card-body">
-                      <h4 class="rp-card-title">Portail de virtualisation WebVirtCloud</h4>
-                      <p class="rp-card-period"><i class="fa-regular fa-calendar me-1"></i>IRIS Mediaschool</p>
-                      <p class="rp-card-description">Déploiement d'un portail web KVM pour la gestion de VM par les étudiants.</p>
-                      <div class="rp-card-competences">
-                        <span class="rp-competence-badge">C1.1</span>
-                        <span class="rp-competence-badge">C1.4</span>
-                        <span class="rp-competence-badge">C1.5</span>
-                      </div>
-                    </div>
-                    <div class="rp-card-footer">
-                      <button class="rp-card-btn"><i class="fa-solid fa-arrow-right"></i></button>
-                    </div>
+              <!-- RP02 - Classcord -->
+              <article class="rp-card-new">
+                <div class="rp-card-img-container">
+                  <div class="rp-card-year-badge">1ère Année</div>
+                  <img src="images/classcord.png" alt="Classcord" class="rp-card-img" onerror="this.src='images/images.jpg'">
+                </div>
+                <div class="rp-card-content">
+                  <h3 class="rp-card-title-new">RP02 - Serveur Classcord</h3>
+                  <p class="rp-card-description-new">Mise en place d'une infrastructure serveur complète pour une application de messagerie instantanée.</p>
+                  <div class="rp-card-tags">
+                    <span class="rp-tag-item">Réseau</span>
+                    <span class="rp-tag-item">MySQL</span>
+                    <span class="rp-tag-item">Linux</span>
+                  </div>
+                  <div class="rp-card-footer-new">
+                    <button class="rp-btn-more" onclick="openRPModal('rp6')">En savoir plus...</button>
                   </div>
                 </div>
+              </article>
 
-                <!-- RP 3 - Support technique (Stage) -->
-                <div class="col-md-6">
-                  <div class="rp-card" data-rp-id="rp3" data-type="support">
-                    <div class="rp-card-body">
-                      <h4 class="rp-card-title">Support technique & gestion des incidents</h4>
-                      <p class="rp-card-period"><i class="fa-regular fa-calendar me-1"></i>Stage ActifAzur</p>
-                      <p class="rp-card-description">Diagnostic, réparation matérielle/logicielle et remastérisation de postes clients.</p>
-                      <div class="rp-card-competences">
-                        <span class="rp-competence-badge">C1.1</span>
-                        <span class="rp-competence-badge">C1.2</span>
-                      </div>
-                    </div>
-                    <div class="rp-card-footer">
-                      <button class="rp-card-btn"><i class="fa-solid fa-arrow-right"></i></button>
-                    </div>
+              <!-- RP03 - Active Directory -->
+              <article class="rp-card-new">
+                <div class="rp-card-img-container">
+                  <div class="rp-card-year-badge">1ère Année</div>
+                  <img src="images/wsimg.jpg" alt="Active Directory" class="rp-card-img">
+                </div>
+                <div class="rp-card-content">
+                  <h3 class="rp-card-title-new">RP03 - Active Directory</h3>
+                  <p class="rp-card-description-new">Installation et configuration d'un contrôleur de domaine Windows Server avec gestion des GPO.</p>
+                  <div class="rp-card-tags">
+                    <span class="rp-tag-item">Windows</span>
+                    <span class="rp-tag-item">Sécurité</span>
+                    <span class="rp-tag-item">Systèmes</span>
+                  </div>
+                  <div class="rp-card-footer-new">
+                    <button class="rp-btn-more" onclick="openRPModal('rp7')">En savoir plus...</button>
                   </div>
                 </div>
+              </article>
 
-                <!-- RP 4 - Portfolio -->
-                <div class="col-md-6">
-                  <div class="rp-card" data-rp-id="rp4" data-type="web">
-                    <div class="rp-card-body">
-                      <h4 class="rp-card-title">Conception du portfolio professionnel</h4>
-                      <p class="rp-card-period"><i class="fa-regular fa-calendar me-1"></i>Projet personnel</p>
-                      <p class="rp-card-description">Site web responsive centralisant CV, réalisations et veille technologique.</p>
-                      <div class="rp-card-competences">
-                        <span class="rp-competence-badge">C1.3</span>
-                        <span class="rp-competence-badge">C1.4</span>
-                        <span class="rp-competence-badge">C1.6</span>
-                      </div>
-                    </div>
-                    <div class="rp-card-footer">
-                      <button class="rp-card-btn"><i class="fa-solid fa-arrow-right"></i></button>
-                    </div>
+              <!-- RP04 - DHCP / Apache -->
+              <article class="rp-card-new">
+                <div class="rp-card-img-container">
+                  <div class="rp-card-year-badge">1ère Année</div>
+                  <img src="images/debianserverimg.jpg" alt="Services Linux" class="rp-card-img rp-card-img-dezoom">
+                </div>
+                <div class="rp-card-content">
+                  <h3 class="rp-card-title-new">RP04 - Services Infrastructure</h3>
+                  <p class="rp-card-description-new">Automatisation réseau et déploiement d'un intranet sous Debian (Services DHCP & Web).</p>
+                  <div class="rp-card-tags">
+                    <span class="rp-tag-item">Linux</span>
+                    <span class="rp-tag-item">DHCP</span>
+                    <span class="rp-tag-item">Services</span>
+                  </div>
+                  <div class="rp-card-footer-new">
+                    <button class="rp-btn-more" onclick="openRPModal('rp8')">En savoir plus...</button>
                   </div>
                 </div>
-              </div>
+              </article>
             </div>
 
-            <!-- ========== 1ÈRE ANNÉE BTS SIO ========== -->
-            <div class="rp-year-section">
-              <h3 class="rp-year-title">
-                <span class="rp-year-badge year-1">1ère année</span>
-                BTS SIO SISR
-              </h3>
+            <!-- ========== 2ÈME ANNÉE ========== -->
+            <h3 class="rp-year-separator">Deuxième Année - BTS SIO</h3>
+            <div class="rp-grid rp-grid-year">
               
-              <div class="row g-3">
-                <!-- RP 5 - NutriFit -->
-                <div class="col-md-6">
-                  <div class="rp-card" data-rp-id="rp5" data-type="infra">
-                    <div class="rp-card-body">
-                      <h4 class="rp-card-title">Borne interactive NutriFit (Mode Kiosk)</h4>
-                      <p class="rp-card-period"><i class="fa-regular fa-calendar me-1"></i>Projet inter-spécialités</p>
-                      <p class="rp-card-description">Déploiement système Linux verrouillé pour une borne de salle de sport.</p>
-                      <div class="rp-card-competences">
-                        <span class="rp-competence-badge">C1.1</span>
-                        <span class="rp-competence-badge">C1.4</span>
-                        <span class="rp-competence-badge">C1.5</span>
-                      </div>
-                    </div>
-                    <div class="rp-card-footer">
-                      <button class="rp-card-btn"><i class="fa-solid fa-arrow-right"></i></button>
-                    </div>
+              <!-- RP05 - 802.1X -->
+              <article class="rp-card-new">
+                <div class="rp-card-img-container">
+                  <div class="rp-card-year-badge">2ème Année</div>
+                  <img src="images/Shéma-Réseau-RP01.png" alt="Schéma réseau RP05" class="rp-card-img">
+                </div>
+                <div class="rp-card-content">
+                  <h3 class="rp-card-title-new">RP05 - Sécurité 802.1X</h3>
+                  <p class="rp-card-description-new">Authentification centralisée via serveur RADIUS pour sécuriser les accès au réseau local.</p>
+                  <div class="rp-card-tags">
+                    <span class="rp-tag-item">Sécurité</span>
+                    <span class="rp-tag-item">Radius</span>
+                    <span class="rp-tag-item">Cisco</span>
+                  </div>
+                  <div class="rp-card-footer-new">
+                    <button class="rp-btn-more" onclick="openRPModal('rp1')">En savoir plus...</button>
                   </div>
                 </div>
+              </article>
 
-                <!-- RP 6 - Classcord -->
-                <div class="col-md-6">
-                  <div class="rp-card" data-rp-id="rp6" data-type="network">
-                    <div class="rp-card-body">
-                      <h4 class="rp-card-title">Infrastructure serveur Classcord</h4>
-                      <p class="rp-card-period"><i class="fa-regular fa-calendar me-1"></i>Projet inter-spécialités</p>
-                      <p class="rp-card-description">Serveur Linux pour une messagerie locale type Discord.</p>
-                      <div class="rp-card-competences">
-                        <span class="rp-competence-badge">C1.1</span>
-                        <span class="rp-competence-badge">C1.4</span>
-                        <span class="rp-competence-badge">C1.5</span>
-                      </div>
-                    </div>
-                    <div class="rp-card-footer">
-                      <button class="rp-card-btn"><i class="fa-solid fa-arrow-right"></i></button>
-                    </div>
+              <!-- RP06 - Migration Open Source -->
+              <article class="rp-card-new">
+                <div class="rp-card-img-container">
+                  <div class="rp-card-year-badge">2ème Année</div>
+                  <img src="images/Shéma-Réseau-RP02.png" alt="Schéma réseau RP06" class="rp-card-img" style="object-position: center top;" onerror="this.src='images/images.jpg'">
+                </div>
+                <div class="rp-card-content">
+                  <h3 class="rp-card-title-new">RP06 - Migration Souveraine Open Source</h3>
+                  <p class="rp-card-description-new">Migration NPS vers FreeRADIUS/OpenLDAP et déploiement d'une supervision Prometheus/Grafana sous Docker.</p>
+                  <div class="rp-card-tags">
+                    <span class="rp-tag-item">FreeRADIUS</span>
+                    <span class="rp-tag-item">OpenLDAP</span>
+                    <span class="rp-tag-item">Debian</span>
+                  </div>
+                  <div class="rp-card-footer-new">
+                    <button class="rp-btn-more" onclick="openRPModal('rp2')">En savoir plus...</button>
                   </div>
                 </div>
+              </article>
 
-                <!-- RP 7 - Active Directory -->
-                <div class="col-md-6">
-                  <div class="rp-card" data-rp-id="rp7" data-type="infra">
-                    <div class="rp-card-body">
-                      <h4 class="rp-card-title">Annuaire d'entreprise (Active Directory)</h4>
-                      <p class="rp-card-period"><i class="fa-regular fa-calendar me-1"></i>TP Laboratoire IRIS</p>
-                      <p class="rp-card-description">Déploiement d'un contrôleur de domaine Windows Server pour centraliser l'authentification.</p>
-                      <div class="rp-card-competences">
-                        <span class="rp-competence-badge">C1.1</span>
-                        <span class="rp-competence-badge">C1.5</span>
-                      </div>
-                    </div>
-                    <div class="rp-card-footer">
-                      <button class="rp-card-btn"><i class="fa-solid fa-arrow-right"></i></button>
-                    </div>
+              <!-- RP07 - Stage ActifAzur -->
+              <article class="rp-card-new">
+                <div class="rp-card-img-container">
+                  <div class="rp-card-year-badge">2ème Année</div>
+                  <img src="images/actif-azur.webp" alt="ActifAzur" class="rp-card-img" style="object-fit: contain; background: #ffffff;">
+                </div>
+                <div class="rp-card-content">
+                  <h3 class="rp-card-title-new">RP07 - Support Technique (Stage ActifAzur)</h3>
+                  <p class="rp-card-description-new">Diagnostic, réparation matérielle et gestion des incidents durant mon stage chez ActifAzur.</p>
+                  <div class="rp-card-tags">
+                    <span class="rp-tag-item">Support</span>
+                    <span class="rp-tag-item">Stage</span>
+                    <span class="rp-tag-item">Maintenance</span>
+                  </div>
+                  <div class="rp-card-footer-new">
+                    <button class="rp-btn-more" onclick="openRPModal('rp3')">En savoir plus...</button>
                   </div>
                 </div>
+              </article>
 
-                <!-- RP 8 - DHCP & Web Linux -->
-                <div class="col-md-6">
-                  <div class="rp-card" data-rp-id="rp8" data-type="infra">
-                    <div class="rp-card-body">
-                      <h4 class="rp-card-title">Services d'infrastructure Linux (DHCP & Web)</h4>
-                      <p class="rp-card-period"><i class="fa-regular fa-calendar me-1"></i>TP Laboratoire IRIS</p>
-                      <p class="rp-card-description">Automatisation réseau et déploiement d'un intranet sous Debian.</p>
-                      <div class="rp-card-competences">
-                        <span class="rp-competence-badge">C1.1</span>
-                        <span class="rp-competence-badge">C1.5</span>
-                      </div>
-                    </div>
-                    <div class="rp-card-footer">
-                      <button class="rp-card-btn"><i class="fa-solid fa-arrow-right"></i></button>
-                    </div>
+              <!-- RP08 - Mon Portfolio -->
+              <article class="rp-card-new">
+                <div class="rp-card-img-container">
+                  <div class="rp-card-year-badge">2ème Année</div>
+                  <img src="images/portfolioimg1.png" alt="Portfolio" class="rp-card-img" onerror="this.src='images/images.jpg'">
+                </div>
+                <div class="rp-card-content">
+                  <h3 class="rp-card-title-new">RP08 - Mon Portfolio</h3>
+                  <p class="rp-card-description-new">Conception et développement d'une vitrine professionnelle interactive pour le BTS SIO.</p>
+                  <div class="rp-card-tags">
+                    <span class="rp-tag-item">Web</span>
+                    <span class="rp-tag-item">Design</span>
+                    <span class="rp-tag-item">Portfolio</span>
+                  </div>
+                  <div class="rp-card-footer-new">
+                    <button class="rp-btn-more" onclick="openRPModal('rp4')">En savoir plus...</button>
                   </div>
                 </div>
-              </div>
+              </article>
             </div>
-
           </div>
           
           <!-- Bouton section suivante -->
