@@ -1425,7 +1425,7 @@ const rpData = {
   'rp1': {
     badge: 'Sécurité',
     badgeClass: 'rp-badge-security',
-    title: 'RP05 - Sécurisation des accès réseau 802.1X (Standard Microsoft)',
+    title: 'RP06 - Sécurisation des accès réseau 802.1X (Standard Microsoft)',
     period: '11/2025 - 04/2026',
     context: 'IRIS Mediaschool',
     useStructuredTemplate: true,
@@ -1601,7 +1601,7 @@ const rpData = {
     `,
     images: [
       { src: "images/Apperc%C3%A7uRP01.png", caption: "NPS - Clients RADIUS enregistrés" },
-      { src: "images/Shéma-Réseau-RP01.png", caption: "Schéma réseau global RP05" }
+      { src: "images/Shéma-Réseau-RP01.png", caption: "Schéma réseau global RP06" }
     ],
     projectInfo: {
       duration: '6 mois',
@@ -1617,7 +1617,7 @@ const rpData = {
   'rp2': {
     badge: 'Souveraineté',
     badgeClass: 'rp-badge-infra',
-    title: 'RP06 - Migration souveraine Open Source (FreeRADIUS/OpenLDAP)',
+    title: 'RP07 - Migration souveraine Open Source (FreeRADIUS/OpenLDAP)',
     period: '03/2026 - 04/2026',
     context: 'IRIS Mediaschool - Mediaschool Group',
     useStructuredTemplate: true,
@@ -1761,7 +1761,7 @@ const rpData = {
       <p>La migration vers une infrastructure libre est validée : authentification opérationnelle, supervision active, et autonomie renforcée de l'établissement.</p>
     `,
     images: [
-      { src: "images/Shéma-Réseau-RP02.png", caption: "Schéma réseau global RP06" },
+      { src: "images/Shéma-Réseau-RP02.png", caption: "Schéma réseau global RP07" },
       { src: "images/RP02-FreeRadius-a-ajouter.png", caption: "1. Extrait FreeRadius" },
       { src: "images/RP02-Grafana-a-ajouter.png", caption: "2. Dashboard Grafana" }
     ],
@@ -1779,7 +1779,7 @@ const rpData = {
   'rp3': {
     badge: 'Support',
     badgeClass: 'rp-badge-support',
-    title: 'RP07 - Support technique (Stage ActifAzur)',
+    title: 'RP08 - Support technique (Stage ActifAzur)',
     period: '01/2026 - 02/2026',
     context: 'Stage ActifAzur - Antibes',
     useStructuredTemplate: true,
@@ -1916,7 +1916,7 @@ const rpData = {
   'rp4': {
     badge: 'Web',
     badgeClass: 'rp-badge-web',
-    title: 'RP08 - Conception du portfolio professionnel',
+    title: 'RP09 - Conception du portfolio professionnel',
     period: '2024 - 2026',
     context: 'Projet personnel',
     useStructuredTemplate: true,
