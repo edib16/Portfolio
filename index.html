@@ -10,6 +10,8 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Raleway:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <!-- Chart.js pour les graphiques -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
   
   <!-- Forcer le scroll en haut immédiatement -->
   <script>
@@ -778,57 +780,10 @@
             <!-- Timeline des stages -->
             <div class="stages-timeline">
               
-              <!-- Stage 1 - ActifAzur -->
+              <!-- Stage 1 - Acadénice -->
               <div class="stage-card" data-status="completed">
                 <div class="stage-card-marker">
                   <div class="stage-number">1</div>
-                  <div class="stage-line"></div>
-                </div>
-                <div class="stage-card-content">
-                  <div class="stage-header">
-                    <span class="stage-status-badge completed">
-                      <i class="fa-solid fa-check me-1"></i>Réalisé
-                    </span>
-                    <span class="stage-dates">
-                      <i class="fa-regular fa-calendar me-2"></i>05/01 – 13/02/2026
-                    </span>
-                  </div>
-                  
-                  <div class="stage-info">
-                    <div class="stage-logo-container">
-                      <img src="images/actif-azur.webp" alt="Logo ActifAzur" class="stage-logo" onerror="this.style.display='none'">
-                    </div>
-                    <div class="stage-details">
-                      <h3 class="stage-title">Technicien Support Informatique</h3>
-                      <p class="stage-company">
-                        <i class="fa-solid fa-building me-2"></i>ActifAzur – Antibes
-                      </p>
-                    </div>
-                  </div>
-                  
-                  <div class="stage-missions">
-                    <h4 class="stage-missions-title">Missions principales</h4>
-                    <ul class="stage-missions-list">
-                      <li>Réparation de PC portables en atelier</li>
-                      <li>Réinstallation complète de Windows</li>
-                      <li>Installation et mise à jour des pilotes</li>
-                      <li>Service après-vente (SAV)</li>
-                    </ul>
-                  </div>
-                  
-                  <div class="stage-tags">
-                    <span class="stage-tag"><i class="fa-solid fa-screwdriver-wrench me-1"></i>Réparation</span>
-                    <span class="stage-tag"><i class="fa-brands fa-windows me-1"></i>Windows</span>
-                    <span class="stage-tag"><i class="fa-solid fa-headset me-1"></i>SAV</span>
-                    <span class="stage-tag"><i class="fa-solid fa-microchip me-1"></i>Hardware</span>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Stage 2 - Acadénice -->
-              <div class="stage-card" data-status="completed">
-                <div class="stage-card-marker">
-                  <div class="stage-number">2</div>
                 </div>
                 <div class="stage-card-content">
                   <div class="stage-header">
@@ -867,6 +822,52 @@
                     <span class="stage-tag"><i class="fa-brands fa-linux me-1"></i>Linux</span>
                     <span class="stage-tag"><i class="fa-solid fa-server me-1"></i>Déploiement</span>
                     <span class="stage-tag"><i class="fa-solid fa-headset me-1"></i>Support</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Stage 2 - ActifAzur -->
+              <div class="stage-card" data-status="completed">
+                <div class="stage-card-marker">
+                  <div class="stage-number">2</div>
+                </div>
+                <div class="stage-card-content">
+                  <div class="stage-header">
+                    <span class="stage-status-badge completed">
+                      <i class="fa-solid fa-check me-1"></i>Réalisé
+                    </span>
+                    <span class="stage-dates">
+                      <i class="fa-regular fa-calendar me-2"></i>05/01 – 13/02/2026
+                    </span>
+                  </div>
+                  
+                  <div class="stage-info">
+                    <div class="stage-logo-container">
+                      <img src="images/actif-azur.webp" alt="Logo ActifAzur" class="stage-logo" onerror="this.style.display='none'">
+                    </div>
+                    <div class="stage-details">
+                      <h3 class="stage-title">Technicien Support Informatique</h3>
+                      <p class="stage-company">
+                        <i class="fa-solid fa-building me-2"></i>ActifAzur – Antibes
+                      </p>
+                    </div>
+                  </div>
+                  
+                  <div class="stage-missions">
+                    <h4 class="stage-missions-title">Missions principales</h4>
+                    <ul class="stage-missions-list">
+                      <li>Réparation de PC portables en atelier</li>
+                      <li>Réinstallation complète de Windows</li>
+                      <li>Installation et mise à jour des pilotes</li>
+                      <li>Service après-vente (SAV)</li>
+                    </ul>
+                  </div>
+                  
+                  <div class="stage-tags">
+                    <span class="stage-tag"><i class="fa-solid fa-screwdriver-wrench me-1"></i>Réparation</span>
+                    <span class="stage-tag"><i class="fa-brands fa-windows me-1"></i>Windows</span>
+                    <span class="stage-tag"><i class="fa-solid fa-headset me-1"></i>SAV</span>
+                    <span class="stage-tag"><i class="fa-solid fa-microchip me-1"></i>Hardware</span>
                   </div>
                 </div>
               </div>
@@ -913,7 +914,9 @@
                   L'EDR répond à ce besoin en analysant le <strong>comportement</strong> plutôt que de chercher des virus connus.
                 </p>
                 <div class="veille-highlight">
-                  <div class="veille-highlight-icon">💡</div>
+                  <div class="veille-highlight-icon">
+                    <i class="fa-solid fa-lightbulb"></i>
+                  </div>
                   <div class="veille-highlight-content">
                     <strong>EDR = Endpoint Detection and Response</strong><br>
                     Solution de sécurité qui surveille les terminaux (PC, serveurs) en temps réel, détecte les comportements suspects et peut isoler automatiquement une machine infectée.
@@ -1008,35 +1011,151 @@
                 Synthèse Technologique
               </h3>
               <div class="veille-content">
-                <div class="veille-comparison">
-                  <div class="veille-comparison-item old">
-                    <h4>❌ Antivirus Classique</h4>
-                    <ul>
-                      <li>Basé sur des signatures connues</li>
-                      <li>Ne détecte que les menaces répertoriées</li>
-                      <li>Inefficace contre les attaques Zero-Day</li>
-                    </ul>
+
+                <!-- Comparaison Antivirus vs EDR -->
+                <div class="veille-versus">
+                  <div class="veille-vs-card veille-vs-old">
+                    <div class="veille-vs-header veille-vs-header-old">
+                      <h4>Antivirus Classique</h4>
+                      <span class="veille-vs-badge-verdict veille-verdict-bad">Obsolète pour les entreprises</span>
+                    </div>
+                    <div class="veille-vs-body">
+                      <div class="veille-vs-block">
+                        <h5 class="veille-vs-block-title">Fonctionnement</h5>
+                        <ul class="veille-vs-list veille-vs-list-con">
+                          <li>Basé sur des signatures de virus connus</li>
+                          <li>Ne détecte que les menaces déjà répertoriées</li>
+                          <li>Inefficace contre les attaques Zero-Day</li>
+                        </ul>
+                      </div>
+                      <div class="veille-vs-block">
+                        <h5 class="veille-vs-block-title">Inconvénients</h5>
+                        <ul class="veille-vs-list veille-vs-list-con">
+                          <li>Approche uniquement réactive</li>
+                          <li>Aucune capacité d'isolation des machines</li>
+                          <li>Pas de visibilité sur les comportements suspects</li>
+                          <li>Mises à jour dépendantes de la base de signatures</li>
+                        </ul>
+                      </div>
+                    </div>
                   </div>
-                  <div class="veille-comparison-vs">VS</div>
-                  <div class="veille-comparison-item new">
-                    <h4>✅ EDR (Analyse Comportementale)</h4>
-                    <ul>
-                      <li>Surveille le comportement du système</li>
-                      <li>Détecte les anomalies (ex: chiffrement massif)</li>
-                      <li>Isolation automatique des machines infectées</li>
-                    </ul>
+
+                  <div class="veille-vs-separator">
+                    <span class="veille-vs-label">VS</span>
+                  </div>
+
+                  <div class="veille-vs-card veille-vs-new">
+                    <div class="veille-vs-header veille-vs-header-new">
+                      <h4>EDR — Analyse Comportementale</h4>
+                      <span class="veille-vs-badge-verdict veille-verdict-good">Recommandé pour les entreprises</span>
+                    </div>
+                    <div class="veille-vs-body">
+                      <div class="veille-vs-block">
+                        <h5 class="veille-vs-block-title">Fonctionnement</h5>
+                        <ul class="veille-vs-list veille-vs-list-pro">
+                          <li>Surveille le comportement du système en temps réel</li>
+                          <li>Détecte les anomalies (ex : chiffrement massif)</li>
+                          <li>Isolation automatique des machines infectées</li>
+                        </ul>
+                      </div>
+                      <div class="veille-vs-block">
+                        <h5 class="veille-vs-block-title">Avantages</h5>
+                        <ul class="veille-vs-list veille-vs-list-pro">
+                          <li>Approche proactive grâce à l'IA</li>
+                          <li>Visibilité complète sur les endpoints</li>
+                          <li>Réponse automatisée aux incidents</li>
+                          <li>Fonctionne sans base de signatures</li>
+                        </ul>
+                      </div>
+                    </div>
                   </div>
                 </div>
 
-                <div class="veille-leaders">
-                  <h4 class="veille-leaders-title">Leaders du marché EDR</h4>
-                  <div class="veille-leaders-list">
-                    <span class="veille-leader">CrowdStrike</span>
-                    <span class="veille-leader">SentinelOne</span>
-                    <span class="veille-leader">Microsoft Defender for Endpoint</span>
-                    <span class="veille-leader">Carbon Black</span>
+                <!-- Verdict -->
+                <div class="veille-verdict-box">
+                  <p>Pour les entreprises, et particulièrement les PME, les antivirus classiques ne suffisent plus face aux menaces modernes. <strong>L'EDR est devenu le standard de protection des terminaux</strong>, offrant une détection proactive et une réponse automatisée indispensables.</p>
+                </div>
+
+                <!-- Leaders du marché -->
+                <div class="veille-leaders-v2">
+                  <h4 class="veille-leaders-v2-title">Leaders du marché EDR</h4>
+                  <div class="veille-leaders-v2-grid">
+
+                    <div class="veille-leader-v2">
+                      <div class="veille-leader-v2-rank">#1</div>
+                      <div class="veille-leader-v2-logo">
+                        <img src="images/CrowdStrike.png" alt="CrowdStrike">
+                      </div>
+                      <div class="veille-leader-v2-info">
+                        <h5>CrowdStrike</h5>
+                        <p class="veille-leader-v2-sub">Falcon EDR — Plateforme cloud native</p>
+                        <p class="veille-leader-v2-desc">Leader incontesté avec sa plateforme Falcon. Détection et réponse en temps réel basée sur l'IA, utilisée par plus de 25 000 entreprises.</p>
+                        <div class="veille-leader-v2-tags">
+                          <span>IA Comportementale</span>
+                          <span>Cloud Native</span>
+                          <span>Temps Réel</span>
+                        </div>
+                      </div>
+                      <a href="https://www.crowdstrike.com" target="_blank" rel="noopener" class="veille-leader-v2-link">Visiter <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+
+                    <div class="veille-leader-v2">
+                      <div class="veille-leader-v2-rank">#2</div>
+                      <div class="veille-leader-v2-logo">
+                        <img src="images/SentinelOne.jpg" alt="SentinelOne">
+                      </div>
+                      <div class="veille-leader-v2-info">
+                        <h5>SentinelOne</h5>
+                        <p class="veille-leader-v2-sub">Singularity Platform — Autonomie XDR</p>
+                        <p class="veille-leader-v2-desc">Plateforme autonome avec détection sans signature et réponse automatisée aux menaces endpoint.</p>
+                        <div class="veille-leader-v2-tags">
+                          <span>Sans Signature</span>
+                          <span>XDR</span>
+                          <span>Autonome</span>
+                        </div>
+                      </div>
+                      <a href="https://www.sentinelone.com" target="_blank" rel="noopener" class="veille-leader-v2-link">Visiter <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+
+                    <div class="veille-leader-v2">
+                      <div class="veille-leader-v2-rank">#3</div>
+                      <div class="veille-leader-v2-logo">
+                        <img src="images/Microsoft Defender.webp" alt="Microsoft Defender">
+                      </div>
+                      <div class="veille-leader-v2-info">
+                        <h5>Microsoft Defender</h5>
+                        <p class="veille-leader-v2-sub">Microsoft 365 Defender — Intégration native</p>
+                        <p class="veille-leader-v2-desc">Solution EDR native intégrée à Windows et Microsoft 365, idéale pour les entreprises dans l'écosystème Microsoft.</p>
+                        <div class="veille-leader-v2-tags">
+                          <span>Intégré Windows</span>
+                          <span>M365</span>
+                          <span>Unifié</span>
+                        </div>
+                      </div>
+                      <a href="https://www.microsoft.com/en-us/security/business/endpoint-security/microsoft-defender-endpoint" target="_blank" rel="noopener" class="veille-leader-v2-link">Visiter <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+
+                    <div class="veille-leader-v2">
+                      <div class="veille-leader-v2-rank">#4</div>
+                      <div class="veille-leader-v2-logo">
+                        <img src="images/Carbon Black.png" alt="Carbon Black">
+                      </div>
+                      <div class="veille-leader-v2-info">
+                        <h5>Carbon Black</h5>
+                        <p class="veille-leader-v2-sub">VMware Carbon Black — Architecture API-First</p>
+                        <p class="veille-leader-v2-desc">Solution EDR d'entreprise offrant une visibilité complète sur les endpoints et une réponse automatisée aux incidents.</p>
+                        <div class="veille-leader-v2-tags">
+                          <span>API-First</span>
+                          <span>Entreprise</span>
+                          <span>Automatisée</span>
+                        </div>
+                      </div>
+                      <a href="https://www.vmware.com/products/carbon-black.html" target="_blank" rel="noopener" class="veille-leader-v2-link">Visiter <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+
                   </div>
                 </div>
+
               </div>
             </div>
 
@@ -1047,29 +1166,47 @@
                 Bilan & Apport Personnel
               </h3>
               <div class="veille-content">
-                <div class="veille-bilan">
-                  <div class="veille-bilan-item">
-                    <div class="veille-bilan-icon">📚</div>
-                    <div class="veille-bilan-text">
-                      <h4>Élargissement des compétences</h4>
-                      <p>Acquisition d'une culture de la cybersécurité "Endpoint" et compréhension des enjeux pour les PME.</p>
-                    </div>
+
+                <!-- Stats visuelles -->
+                <div class="veille-stats">
+                  <div class="veille-stat">
+                    <span class="veille-stat-number">15+</span>
+                    <span class="veille-stat-label">Articles analysés</span>
                   </div>
-                  <div class="veille-bilan-item">
-                    <div class="veille-bilan-icon">🔐</div>
-                    <div class="veille-bilan-text">
-                      <h4>Impact sur mes pratiques</h4>
-                      <p>Sensibilisation à l'architecture "Zero Trust" (ne faire confiance à personne par défaut) que j'applique dans mes projets.</p>
-                    </div>
+                  <div class="veille-stat">
+                    <span class="veille-stat-number">2</span>
+                    <span class="veille-stat-label">Outils de veille (Feedly, Notion)</span>
                   </div>
-                  <div class="veille-bilan-item">
-                    <div class="veille-bilan-icon">🎯</div>
-                    <div class="veille-bilan-text">
-                      <h4>Méthodologie acquise</h4>
-                      <p>Capacité à mettre en place une veille automatisée et structurée sur n'importe quel sujet technologique.</p>
+                  <div class="veille-stat">
+                    <span class="veille-stat-number">100%</span>
+                    <span class="veille-stat-label">Veille automatisée</span>
+                  </div>
+                </div>
+
+                <!-- Apports concis -->
+                <div class="veille-apports">
+                  <h4 class="veille-apports-title">Ce que cette veille m'a apporté</h4>
+                  <div class="veille-apports-grid">
+                    <div class="veille-apport-item">
+                      <h5>Culture cybersécurité</h5>
+                      <p>Acquisition d'une vision globale de la sécurité des endpoints et compréhension des enjeux pour les PME.</p>
+                    </div>
+                    <div class="veille-apport-item">
+                      <h5>Approche Zero Trust</h5>
+                      <p>Sensibilisation au principe "ne faire confiance à personne par défaut" que j'applique dans mes projets réseau.</p>
+                    </div>
+                    <div class="veille-apport-item">
+                      <h5>Méthodologie réutilisable</h5>
+                      <p>Capacité à mettre en place une veille structurée et automatisée sur n'importe quel sujet technologique.</p>
                     </div>
                   </div>
                 </div>
+
+                <!-- Conclusion -->
+                <div class="veille-conclusion">
+                  <p>Cette veille m'a convaincu que la cybersécurité n'est pas un luxe, mais un investissement stratégique. En tant que futur professionnel SISR, je considère l'EDR comme un outil incontournable à maîtriser.</p>
+                </div>
+
               </div>
             </div>
 
@@ -1124,10 +1261,7 @@
                       <i class="fa-brands fa-github"></i>
                       <span>GitHub</span>
                     </a>
-                    <a href="https://www.linkedin.com/in/edib-saoud-810569352/" class="contact-social-btn linkedin" target="_blank" rel="noopener" aria-label="LinkedIn">
-                      <i class="fa-brands fa-linkedin"></i>
-                      <span>LinkedIn</span>
-                    </a>
+
                   </div>
                 </div>
               </div>
@@ -1196,6 +1330,8 @@
     <img src="" alt="" class="lightbox-image" id="lightboxImage">
     <p class="lightbox-caption" id="lightboxCaption"></p>
   </div>
+
+
 </body>
 
 </html>

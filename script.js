@@ -589,7 +589,7 @@ const rpData = {
     badge: 'Système',
     badgeClass: 'rp-badge-infra',
     title: 'RP01 - Borne interactive NutriFit (Mode Kiosk)',
-    period: '05/2025 - 06/2025',
+    period: '11/2024 - 12/2024',
     context: 'IRIS Mediaschool - Projet Inter-spécialités',
     useStructuredTemplate: true,
     description: `
@@ -619,10 +619,10 @@ const rpData = {
     `,
     projectManagement: `
       <div class="rp-pm-meta">
-        <div class="rp-pm-meta-item"><span>Période</span><strong>05/2025 - 06/2025</strong></div>
+        <div class="rp-pm-meta-item"><span>Période</span><strong>11/2024 - 12/2024</strong></div>
         <div class="rp-pm-meta-item"><span>Méthode</span><strong>Agile (itérative)</strong></div>
         <div class="rp-pm-meta-item"><span>Rôle</span><strong>Technicien SISR</strong></div>
-        <div class="rp-pm-meta-item"><span>Durée</span><strong>8 semaines</strong></div>
+        <div class="rp-pm-meta-item"><span>Durée</span><strong>7 semaines</strong></div>
       </div>
       <div class="rp-pm-grid">
         <div class="rp-pm-card">
@@ -661,34 +661,33 @@ const rpData = {
         </div>
       </div>
       <h4 class="rp-subsection-title mt-3">Planification (grandes phases)</h4>
-      <div class="rp-gantt-card" style="--gantt-units: 8;">
+      <div class="rp-gantt-card" style="--gantt-units: 7;">
         <h4 class="rp-subsection-title rp-gantt-title"><i class="fa-solid fa-chart-gantt"></i>Diagramme de Gantt (Phases)</h4>
         <div class="rp-gantt-rows">
           <div class="rp-gantt-row">
             <span class="rp-gantt-label">Cadrage & Analyse</span>
-            <div class="rp-gantt-track"><span class="rp-gantt-bar is-indigo" style="--start: 1; --length: 2;"></span></div>
+            <div class="rp-gantt-track"><span class="rp-gantt-bar is-indigo" style="--start: 1; --length: 1;"></span></div>
           </div>
           <div class="rp-gantt-row">
             <span class="rp-gantt-label">Installation & Hardening</span>
-            <div class="rp-gantt-track"><span class="rp-gantt-bar is-blue" style="--start: 3; --length: 2;"></span></div>
+            <div class="rp-gantt-track"><span class="rp-gantt-bar is-blue" style="--start: 2; --length: 2;"></span></div>
           </div>
           <div class="rp-gantt-row">
             <span class="rp-gantt-label">Intégration applicative</span>
-            <div class="rp-gantt-track"><span class="rp-gantt-bar is-cyan" style="--start: 5; --length: 2;"></span></div>
+            <div class="rp-gantt-track"><span class="rp-gantt-bar is-cyan" style="--start: 4; --length: 2;"></span></div>
           </div>
           <div class="rp-gantt-row">
             <span class="rp-gantt-label">Tests & Recette</span>
-            <div class="rp-gantt-track"><span class="rp-gantt-bar is-green" style="--start: 7; --length: 2;"></span></div>
+            <div class="rp-gantt-track"><span class="rp-gantt-bar is-green" style="--start: 6; --length: 2;"></span></div>
           </div>
           <div class="rp-gantt-chronology">
-            <span><strong>S1</strong><small>Mai</small></span>
-            <span><strong>S2</strong><small>Mai</small></span>
-            <span><strong>S3</strong><small>Mai</small></span>
-            <span><strong>S4</strong><small>Mai</small></span>
-            <span><strong>S5</strong><small>Juin</small></span>
-            <span><strong>S6</strong><small>Juin</small></span>
-            <span><strong>S7</strong><small>Juin</small></span>
-            <span><strong>S8</strong><small>Juin</small></span>
+            <span><strong>S1</strong><small>Nov</small></span>
+            <span><strong>S2</strong><small>Nov</small></span>
+            <span><strong>S3</strong><small>Nov</small></span>
+            <span><strong>S4</strong><small>Nov</small></span>
+            <span><strong>S5</strong><small>Déc</small></span>
+            <span><strong>S6</strong><small>Déc</small></span>
+            <span><strong>S7</strong><small>Déc</small></span>
           </div>
         </div>
       </div>
@@ -772,14 +771,14 @@ const rpData = {
 
       <div class="rp-pm-box mt-3" style="background:#ffffff;padding:16px;border-radius:12px;border:1px solid #dbe3ef;border-top:3px solid #8b5cf6;">
         <h5 class="mb-2">Planification et contraintes temporelles</h5>
-        <p class="mb-1"><strong>Période :</strong> début mai 2025 -> fin juin 2025 (échéance semaine 8).</p>
+        <p class="mb-1"><strong>Période :</strong> début novembre 2024 -> fin décembre 2024 (échéance semaine 7).</p>
         <p class="mb-1">Chaque jalon faisait l'objet d'une validation par la MOA simulée, permettant de vérifier la conformité aux besoins exprimés.</p>
         <ul class="mb-2">
-          <li>S1-S2 : Analyse du besoin</li>
-          <li>S3-S4 : Installation et hardening</li>
-          <li>S5-S6 : Intégration</li>
-          <li>S7 : Tests</li>
-          <li>S8 : Recette et livraison</li>
+          <li>S1 : Analyse du besoin</li>
+          <li>S2-S3 : Installation et hardening</li>
+          <li>S4-S5 : Intégration</li>
+          <li>S6 : Tests</li>
+          <li>S7 : Recette et livraison</li>
         </ul>
         <div style="border:1px solid #dbe3ef;border-radius:10px;overflow:hidden;">
           <table class="table table-sm table-bordered mb-0 small bg-white align-middle">
@@ -787,11 +786,11 @@ const rpData = {
               <tr><th>Jalon</th><th>Échéance</th><th>Statut</th></tr>
             </thead>
             <tbody>
-              <tr><td>Besoin validé</td><td>Fin S2</td><td><span class="badge bg-success-subtle text-success-emphasis">Atteint</span></td></tr>
-              <tr><td>Système sécurisé</td><td>Fin S4</td><td><span class="badge bg-success-subtle text-success-emphasis">Atteint</span></td></tr>
-              <tr><td>Application fonctionnelle</td><td>Fin S6</td><td><span class="badge bg-success-subtle text-success-emphasis">Atteint</span></td></tr>
-              <tr><td>Tests validés</td><td>S7</td><td><span class="badge bg-success-subtle text-success-emphasis">Atteint</span></td></tr>
-              <tr><td>Livraison finale</td><td>S8</td><td><span class="badge bg-success-subtle text-success-emphasis">Atteint</span></td></tr>
+              <tr><td>Besoin validé</td><td>Fin S1</td><td><span class="badge bg-success-subtle text-success-emphasis">Atteint</span></td></tr>
+              <tr><td>Système sécurisé</td><td>Fin S3</td><td><span class="badge bg-success-subtle text-success-emphasis">Atteint</span></td></tr>
+              <tr><td>Application fonctionnelle</td><td>Fin S5</td><td><span class="badge bg-success-subtle text-success-emphasis">Atteint</span></td></tr>
+              <tr><td>Tests validés</td><td>S6</td><td><span class="badge bg-success-subtle text-success-emphasis">Atteint</span></td></tr>
+              <tr><td>Livraison finale</td><td>S7</td><td><span class="badge bg-success-subtle text-success-emphasis">Atteint</span></td></tr>
             </tbody>
           </table>
         </div>
@@ -853,7 +852,7 @@ const rpData = {
               <tr><td>Humaines</td><td>1 étudiant SISR, 1 étudiant SLAM</td></tr>
               <tr><td>Matérielles</td><td>Mini-PC, écran tactile, support borne</td></tr>
               <tr><td>Logicielles</td><td>Linux Xubuntu, Bash, Chromium (kiosk), Trello, GitHub</td></tr>
-              <tr><td>Temps</td><td>8 semaines (environ 6 à 8 heures par semaine)</td></tr>
+              <tr><td>Temps</td><td>7 semaines (environ 6 à 8 heures par semaine)</td></tr>
             </tbody>
           </table>
         </div>
@@ -897,7 +896,7 @@ const rpData = {
       <p class="mt-2 mb-0"><strong>Amélioration possible :</strong> l'ajout d'un système de supervision à distance afin de faciliter la maintenance et le suivi de la borne.</p>
     `,
     projectInfo: {
-      duration: '8 semaines',
+      duration: '7 semaines',
       team: 'Binôme inter-spécialités (SISR/SLAM)',
       context: 'Formation BTS SIO',
       status: 'Terminé',
@@ -912,7 +911,7 @@ const rpData = {
     badge: 'Réseau',
     badgeClass: 'rp-badge-network',
     title: 'RP02 - Infrastructure serveur Classcord',
-    period: '04/2025',
+    period: '06/2025',
     context: 'Projet inter-spécialités / IRIS Mediaschool',
     useStructuredTemplate: true,
     description: `
@@ -945,7 +944,7 @@ const rpData = {
         <div class="rp-pm-meta-item"><span>Période</span><strong>04/2025</strong></div>
         <div class="rp-pm-meta-item"><span>Méthode</span><strong>Agile (itérative)</strong></div>
         <div class="rp-pm-meta-item"><span>Rôle</span><strong>Administrateur SISR</strong></div>
-        <div class="rp-pm-meta-item"><span>Durée</span><strong>4 semaines</strong></div>
+        <div class="rp-pm-meta-item"><span>Durée</span><strong>5 jours</strong></div>
       </div>
 
       <div class="rp-pm-grid">
@@ -969,7 +968,7 @@ const rpData = {
 
         <div class="rp-pm-card">
           <h4 class="rp-subsection-title">Planification et suivi de projet</h4>
-          <p class="mb-1">Découpage en phases hebdomadaires : cadrage, déploiement, intégration, validation.</p>
+          <p class="mb-1">Découpage en phases journalières : cadrage, déploiement, intégration, validation.</p>
           <p class="mb-0">Suivi opérationnel avec logique Kanban (<em>To Do / Doing / Testing / Done</em>) et points d'avancement réguliers.</p>
         </div>
 
@@ -989,7 +988,7 @@ const rpData = {
       </div>
 
       <h4 class="rp-subsection-title mt-3">Planification (grandes phases)</h4>
-      <div class="rp-gantt-card" style="--gantt-units: 4;">
+      <div class="rp-gantt-card" style="--gantt-units: 5;">
         <h4 class="rp-subsection-title rp-gantt-title"><i class="fa-solid fa-chart-gantt"></i>Diagramme de Gantt (Phases)</h4>
         <div class="rp-gantt-rows">
           <div class="rp-gantt-row">
@@ -998,21 +997,22 @@ const rpData = {
           </div>
           <div class="rp-gantt-row">
             <span class="rp-gantt-label">Déploiement Serveur</span>
-            <div class="rp-gantt-track"><span class="rp-gantt-bar is-blue" style="--start: 2; --length: 1.2;"></span></div>
+            <div class="rp-gantt-track"><span class="rp-gantt-bar is-blue" style="--start: 2; --length: 2;"></span></div>
           </div>
           <div class="rp-gantt-row">
             <span class="rp-gantt-label">Intégration applicative</span>
-            <div class="rp-gantt-track"><span class="rp-gantt-bar is-cyan" style="--start: 3.1; --length: 0.9;"></span></div>
+            <div class="rp-gantt-track"><span class="rp-gantt-bar is-cyan" style="--start: 4; --length: 1;"></span></div>
           </div>
           <div class="rp-gantt-row">
             <span class="rp-gantt-label">Tests & Validation</span>
-            <div class="rp-gantt-track"><span class="rp-gantt-bar is-green" style="--start: 4; --length: 1;"></span></div>
+            <div class="rp-gantt-track"><span class="rp-gantt-bar is-green" style="--start: 5; --length: 1;"></span></div>
           </div>
           <div class="rp-gantt-chronology">
-            <span><strong>S1</strong><small>07-13/04</small></span>
-            <span><strong>S2</strong><small>14-20/04</small></span>
-            <span><strong>S3</strong><small>21-27/04</small></span>
-            <span><strong>S4</strong><small>28-30/04</small></span>
+            <span><strong>J1</strong><small>16/06</small></span>
+            <span><strong>J2</strong><small>17/06</small></span>
+            <span><strong>J3</strong><small>18/06</small></span>
+            <span><strong>J4</strong><small>19/06</small></span>
+            <span><strong>J5</strong><small>20/06</small></span>
           </div>
         </div>
       </div>
@@ -1041,7 +1041,7 @@ const rpData = {
       <p>Le serveur est resté disponible sur toute la phase projet avec des règles réseau maîtrisées et une documentation d'exploitation exploitable.</p>
     `,
     projectInfo: {
-      duration: '4 semaines',
+      duration: '5 jours',
       team: 'Binôme inter-spécialités (SISR/SLAM)',
       context: 'Formation BTS SIO',
       status: 'Terminé',
@@ -1056,7 +1056,7 @@ const rpData = {
     badge: '1ère Année',
     badgeClass: 'rp-badge-system',
     title: 'RP03 - Annuaire d\'entreprise (Active Directory)',
-    period: '10/2025 - 02/2026',
+    period: '01/2025',
     context: 'IRIS Mediaschool',
     useStructuredTemplate: true,
     
@@ -1092,8 +1092,8 @@ const rpData = {
     
     projectManagement: `
       <div class="rp-pm-meta">
-        <div class="rp-pm-meta-item"><span>Début projet</span><strong>10/2025</strong></div>
-        <div class="rp-pm-meta-item"><span>Fin projet</span><strong>02/2026</strong></div>
+        <div class="rp-pm-meta-item"><span>Début projet</span><strong>05/01/2025</strong></div>
+        <div class="rp-pm-meta-item"><span>Fin projet</span><strong>25/01/2025</strong></div>
         <div class="rp-pm-meta-item"><span>Équipe</span><strong>SISR (individuel)</strong></div>
         <div class="rp-pm-meta-item"><span>Méthode de gestion</span><strong>Traditionnelle (Cycle en V)</strong></div>
       </div>
@@ -1167,31 +1167,29 @@ const rpData = {
       </div>
 
       <h4 class="rp-subsection-title mt-3">Planification (grandes phases)</h4>
-      <div class="rp-gantt-card" style="--gantt-units: 6;">
+      <div class="rp-gantt-card" style="--gantt-units: 3;">
         <h4 class="rp-subsection-title rp-gantt-title"><i class="fa-solid fa-chart-gantt"></i>Diagramme de Gantt (Phases)</h4>
         <div class="rp-gantt-rows">
           <div class="rp-gantt-row">
             <span class="rp-gantt-label">Cadrage & Analyse</span>
-            <div class="rp-gantt-track"><span class="rp-gantt-bar is-indigo" style="--start: 1; --length: 1.2;"></span></div>
+            <div class="rp-gantt-track"><span class="rp-gantt-bar is-indigo" style="--start: 1; --length: 1;"></span></div>
           </div>
           <div class="rp-gantt-row">
             <span class="rp-gantt-label">Mise en œuvre AD / GPO</span>
-            <div class="rp-gantt-track"><span class="rp-gantt-bar is-blue" style="--start: 2.2; --length: 2.5;"></span></div>
+            <div class="rp-gantt-track"><span class="rp-gantt-bar is-blue" style="--start: 2; --length: 1;"></span></div>
           </div>
           <div class="rp-gantt-row">
             <span class="rp-gantt-label">Tests & Validation</span>
-            <div class="rp-gantt-track"><span class="rp-gantt-bar is-green" style="--start: 4.7; --length: 1.2;"></span></div>
+            <div class="rp-gantt-track"><span class="rp-gantt-bar is-green" style="--start: 3; --length: 0.5;"></span></div>
           </div>
           <div class="rp-gantt-row">
             <span class="rp-gantt-label">Recette & Documentation</span>
-            <div class="rp-gantt-track"><span class="rp-gantt-bar is-amber" style="--start: 5.9; --length: 0.7;"></span></div>
+            <div class="rp-gantt-track"><span class="rp-gantt-bar is-amber" style="--start: 3.5; --length: 0.5;"></span></div>
           </div>
           <div class="rp-gantt-chronology">
-            <span><strong>M1</strong> 10/2025</span>
-            <span><strong>M2</strong> 11/2025</span>
-            <span><strong>M3</strong> 12/2025</span>
-            <span><strong>M4</strong> 01/2026</span>
-            <span><strong>M5</strong> 02/2026</span>
+            <span><strong>S1</strong><small>05-11/01</small></span>
+            <span><strong>S2</strong><small>12-18/01</small></span>
+            <span><strong>S3</strong><small>19-25/01</small></span>
           </div>
         </div>
       </div>
@@ -1226,7 +1224,7 @@ const rpData = {
     `,
     
     projectInfo: {
-      duration: '5 mois',
+      duration: '3 semaines',
       team: 'Projet individuel (SISR)',
       context: 'Formation BTS SIO',
       status: 'Terminé',
@@ -1244,7 +1242,7 @@ const rpData = {
     badge: '1ère Année',
     badgeClass: 'rp-badge-system',
     title: 'RP04 - Services d\'infrastructure Linux (DHCP & Web)',
-    period: '01/2025 - 01/2025',
+    period: '02/2025 - 03/2025',
     context: 'École IRIS',
     useStructuredTemplate: true,
     
@@ -1280,8 +1278,8 @@ const rpData = {
     
     projectManagement: `
       <div class="rp-pm-meta">
-        <div class="rp-pm-meta-item"><span>Début projet</span><strong>06/01/2025</strong></div>
-        <div class="rp-pm-meta-item"><span>Fin projet</span><strong>30/01/2025</strong></div>
+        <div class="rp-pm-meta-item"><span>Début projet</span><strong>12/02/2025</strong></div>
+        <div class="rp-pm-meta-item"><span>Fin projet</span><strong>03/03/2025</strong></div>
         <div class="rp-pm-meta-item"><span>Équipe</span><strong>SISR (individuel)</strong></div>
         <div class="rp-pm-meta-item"><span>Méthode de gestion</span><strong>Traditionnelle (Cycle en V)</strong></div>
       </div>
@@ -1351,7 +1349,7 @@ const rpData = {
       </div>
 
       <h4 class="rp-subsection-title mt-3">Planification (grandes phases)</h4>
-      <div class="rp-gantt-card" style="--gantt-units: 4;">
+      <div class="rp-gantt-card" style="--gantt-units: 3;">
         <h4 class="rp-subsection-title rp-gantt-title"><i class="fa-solid fa-chart-gantt"></i>Diagramme de Gantt (Phases)</h4>
         <div class="rp-gantt-rows">
           <div class="rp-gantt-row">
@@ -1360,21 +1358,20 @@ const rpData = {
           </div>
           <div class="rp-gantt-row">
             <span class="rp-gantt-label">Configuration DHCP</span>
-            <div class="rp-gantt-track"><span class="rp-gantt-bar is-blue" style="--start: 2; --length: 1.3;"></span></div>
+            <div class="rp-gantt-track"><span class="rp-gantt-bar is-blue" style="--start: 2; --length: 1;"></span></div>
           </div>
           <div class="rp-gantt-row">
             <span class="rp-gantt-label">Déploiement Apache</span>
-            <div class="rp-gantt-track"><span class="rp-gantt-bar is-cyan" style="--start: 3.2; --length: 0.8;"></span></div>
+            <div class="rp-gantt-track"><span class="rp-gantt-bar is-cyan" style="--start: 3; --length: 0.5;"></span></div>
           </div>
           <div class="rp-gantt-row">
             <span class="rp-gantt-label">Tests & Validation</span>
-            <div class="rp-gantt-track"><span class="rp-gantt-bar is-green" style="--start: 4; --length: 1;"></span></div>
+            <div class="rp-gantt-track"><span class="rp-gantt-bar is-green" style="--start: 3.5; --length: 0.5;"></span></div>
           </div>
           <div class="rp-gantt-chronology">
-            <span><strong>S1</strong><small>06-12/01</small></span>
-            <span><strong>S2</strong><small>13-19/01</small></span>
-            <span><strong>S3</strong><small>20-26/01</small></span>
-            <span><strong>S4</strong><small>27-30/01</small></span>
+            <span><strong>S1</strong><small>12-16/02</small></span>
+            <span><strong>S2</strong><small>17-23/02</small></span>
+            <span><strong>S3</strong><small>24/02-03/03</small></span>
           </div>
         </div>
       </div>
@@ -1408,7 +1405,7 @@ const rpData = {
     `,
     
     projectInfo: {
-      duration: '4 semaines',
+      duration: '3 semaines',
       team: 'Projet individuel (SISR)',
       context: 'Formation BTS SIO',
       status: 'Terminé',
@@ -1426,7 +1423,7 @@ const rpData = {
     badge: 'Sécurité',
     badgeClass: 'rp-badge-security',
     title: 'RP06 - Sécurisation des accès réseau 802.1X (Standard Microsoft)',
-    period: '11/2025 - 04/2026',
+    period: '10/11/2025 - 12/04/2026',
     context: 'IRIS Mediaschool',
     useStructuredTemplate: true,
     description: `
@@ -1457,8 +1454,8 @@ const rpData = {
     `,
     projectManagement: `
       <div class="rp-pm-meta">
-        <div class="rp-pm-meta-item"><span>Début projet</span><strong>11/2025</strong></div>
-        <div class="rp-pm-meta-item"><span>Fin projet</span><strong>04/2026</strong></div>
+        <div class="rp-pm-meta-item"><span>Début projet</span><strong>10/11/2025</strong></div>
+        <div class="rp-pm-meta-item"><span>Fin projet</span><strong>12/04/2026</strong></div>
         <div class="rp-pm-meta-item"><span>Équipe</span><strong>SISR (individuel)</strong></div>
         <div class="rp-pm-meta-item"><span>Méthode de gestion</span><strong>Agile (itérative)</strong></div>
       </div>
@@ -1550,19 +1547,19 @@ const rpData = {
         <div class="rp-gantt-rows">
           <div class="rp-gantt-row">
             <span class="rp-gantt-label">Cadrage & Analyse</span>
-            <div class="rp-gantt-track"><span class="rp-gantt-bar is-blue" style="--start: 1; --length: 1.4;"></span></div>
+            <div class="rp-gantt-track"><span class="rp-gantt-bar is-blue" style="--start: 1; --length: 1.5;"></span></div>
           </div>
           <div class="rp-gantt-row">
             <span class="rp-gantt-label">Mise en œuvre NPS / AAA</span>
-            <div class="rp-gantt-track"><span class="rp-gantt-bar is-indigo" style="--start: 2.2; --length: 2.3;"></span></div>
+            <div class="rp-gantt-track"><span class="rp-gantt-bar is-indigo" style="--start: 2.5; --length: 2.5;"></span></div>
           </div>
           <div class="rp-gantt-row">
             <span class="rp-gantt-label">Tests & Validation</span>
-            <div class="rp-gantt-track"><span class="rp-gantt-bar is-green" style="--start: 4.3; --length: 1.1;"></span></div>
+            <div class="rp-gantt-track"><span class="rp-gantt-bar is-green" style="--start: 5; --length: 1;"></span></div>
           </div>
           <div class="rp-gantt-row">
             <span class="rp-gantt-label">Recette & Documentation</span>
-            <div class="rp-gantt-track"><span class="rp-gantt-bar is-amber" style="--start: 5.1; --length: 0.9;"></span></div>
+            <div class="rp-gantt-track"><span class="rp-gantt-bar is-amber" style="--start: 6; --length: 1;"></span></div>
           </div>
         </div>
         <div class="rp-gantt-chronology">
@@ -1574,8 +1571,8 @@ const rpData = {
           <span><strong>M6</strong><small>04/2026</small></span>
         </div>
         <div class="rp-gantt-footer">
-          <span><i class="fa-regular fa-calendar"></i>Début : 11/2025</span>
-          <span><i class="fa-regular fa-flag-checkered"></i>Fin : 04/2026</span>
+          <span><i class="fa-regular fa-calendar"></i>Début : 10/11/2025</span>
+          <span><i class="fa-regular fa-flag-checkered"></i>Fin : 12/04/2026</span>
         </div>
       </div>
     `,
@@ -1618,7 +1615,7 @@ const rpData = {
     badge: 'Souveraineté',
     badgeClass: 'rp-badge-infra',
     title: 'RP07 - Migration souveraine Open Source (FreeRADIUS/OpenLDAP)',
-    period: '03/2026 - 04/2026',
+    period: '02/03/2026 - 30/04/2026',
     context: 'IRIS Mediaschool - Mediaschool Group',
     useStructuredTemplate: true,
     description: `
@@ -1648,8 +1645,8 @@ const rpData = {
     `,
     projectManagement: `
       <div class="rp-pm-meta">
-        <div class="rp-pm-meta-item"><span>Début projet</span><strong>03/2026</strong></div>
-        <div class="rp-pm-meta-item"><span>Fin projet</span><strong>04/2026</strong></div>
+        <div class="rp-pm-meta-item"><span>Début projet</span><strong>02/03/2026</strong></div>
+        <div class="rp-pm-meta-item"><span>Fin projet</span><strong>30/04/2026</strong></div>
         <div class="rp-pm-meta-item"><span>Équipe</span><strong>SISR (individuel)</strong></div>
         <div class="rp-pm-meta-item"><span>Méthode de gestion</span><strong>Agile (itérative)</strong></div>
       </div>
@@ -1715,19 +1712,19 @@ const rpData = {
         <div class="rp-gantt-rows">
           <div class="rp-gantt-row">
             <span class="rp-gantt-label">Cadrage & préparation Debian</span>
-            <div class="rp-gantt-track"><span class="rp-gantt-bar is-blue" style="--start: 1; --length: 0.6;"></span></div>
+            <div class="rp-gantt-track"><span class="rp-gantt-bar is-blue" style="--start: 1; --length: 0.5;"></span></div>
           </div>
           <div class="rp-gantt-row">
             <span class="rp-gantt-label">Déploiement FreeRADIUS/OpenLDAP</span>
-            <div class="rp-gantt-track"><span class="rp-gantt-bar is-indigo" style="--start: 1.4; --length: 0.9;"></span></div>
+            <div class="rp-gantt-track"><span class="rp-gantt-bar is-indigo" style="--start: 1.5; --length: 0.5;"></span></div>
           </div>
           <div class="rp-gantt-row">
             <span class="rp-gantt-label">Migration Cisco vers RADIUS Debian</span>
-            <div class="rp-gantt-track"><span class="rp-gantt-bar is-green" style="--start: 1.8; --length: 0.7;"></span></div>
+            <div class="rp-gantt-track"><span class="rp-gantt-bar is-green" style="--start: 2; --length: 0.5;"></span></div>
           </div>
           <div class="rp-gantt-row">
             <span class="rp-gantt-label">Supervision Docker & validation</span>
-            <div class="rp-gantt-track"><span class="rp-gantt-bar is-amber" style="--start: 2; --length: 0.5;"></span></div>
+            <div class="rp-gantt-track"><span class="rp-gantt-bar is-amber" style="--start: 2.5; --length: 0.5;"></span></div>
           </div>
         </div>
         <div class="rp-gantt-chronology">
@@ -1735,8 +1732,8 @@ const rpData = {
           <span><strong>M2</strong><small>04/2026</small></span>
         </div>
         <div class="rp-gantt-footer">
-          <span><i class="fa-regular fa-calendar"></i>Début : 03/2026</span>
-          <span><i class="fa-regular fa-flag-checkered"></i>Fin : 04/2026</span>
+          <span><i class="fa-regular fa-calendar"></i>Début : 02/03/2026</span>
+          <span><i class="fa-regular fa-flag-checkered"></i>Fin : 30/04/2026</span>
         </div>
       </div>
     `,
@@ -1762,8 +1759,8 @@ const rpData = {
     `,
     images: [
       { src: "images/Shéma-Réseau-RP02.png", caption: "Schéma réseau global RP07" },
-      { src: "images/RP02-FreeRadius-a-ajouter.png", caption: "1. Extrait FreeRadius" },
-      { src: "images/RP02-Grafana-a-ajouter.png", caption: "2. Dashboard Grafana" }
+      { src: "images/free-radius.png", caption: "Extrait de la configuration FreeRadius" },
+      { src: "images/Dashboard Grafana.png", caption: "Dashboard de supervision Grafana" }
     ],
     projectInfo: {
       duration: '2 mois',
@@ -1780,7 +1777,7 @@ const rpData = {
     badge: 'Support',
     badgeClass: 'rp-badge-support',
     title: 'RP08 - Support technique (Stage ActifAzur)',
-    period: '01/2026 - 02/2026',
+    period: '05/01/2026 - 13/02/2026',
     context: 'Stage ActifAzur - Antibes',
     useStructuredTemplate: true,
     description: `
@@ -1810,8 +1807,8 @@ const rpData = {
     `,
     projectManagement: `
       <div class="rp-pm-meta">
-        <div class="rp-pm-meta-item"><span>Début projet</span><strong>01/2026</strong></div>
-        <div class="rp-pm-meta-item"><span>Fin projet</span><strong>02/2026</strong></div>
+        <div class="rp-pm-meta-item"><span>Début projet</span><strong>05/01/2026</strong></div>
+        <div class="rp-pm-meta-item"><span>Fin projet</span><strong>13/02/2026</strong></div>
         <div class="rp-pm-meta-item"><span>Équipe</span><strong>Atelier support + stagiaire SISR</strong></div>
         <div class="rp-pm-meta-item"><span>Méthode de gestion</span><strong>Agile (flux d'incidents)</strong></div>
       </div>
@@ -1866,11 +1863,11 @@ const rpData = {
           </div>
           <div class="rp-gantt-row">
             <span class="rp-gantt-label">Interventions support</span>
-            <div class="rp-gantt-track"><span class="rp-gantt-bar is-indigo" style="--start: 1.3; --length: 1.2;"></span></div>
+            <div class="rp-gantt-track"><span class="rp-gantt-bar is-indigo" style="--start: 1.5; --length: 1;"></span></div>
           </div>
           <div class="rp-gantt-row">
             <span class="rp-gantt-label">Standardisation & bilan</span>
-            <div class="rp-gantt-track"><span class="rp-gantt-bar is-green" style="--start: 1.8; --length: 0.4;"></span></div>
+            <div class="rp-gantt-track"><span class="rp-gantt-bar is-green" style="--start: 2.5; --length: 0.5;"></span></div>
           </div>
         </div>
         <div class="rp-gantt-chronology">
@@ -1917,7 +1914,7 @@ const rpData = {
     badge: 'Web',
     badgeClass: 'rp-badge-web',
     title: 'RP09 - Conception du portfolio professionnel',
-    period: '2024 - 2026',
+    period: '10/10/2024 - 03/05/2026',
     context: 'Projet personnel',
     useStructuredTemplate: true,
     description: `
@@ -1947,8 +1944,8 @@ const rpData = {
     `,
     projectManagement: `
       <div class="rp-pm-meta">
-        <div class="rp-pm-meta-item"><span>Début projet</span><strong>10/2024</strong></div>
-        <div class="rp-pm-meta-item"><span>Fin projet</span><strong>04/2026</strong></div>
+        <div class="rp-pm-meta-item"><span>Début projet</span><strong>10/10/2024</strong></div>
+        <div class="rp-pm-meta-item"><span>Fin projet</span><strong>03/05/2026</strong></div>
         <div class="rp-pm-meta-item"><span>Équipe</span><strong>Projet individuel</strong></div>
         <div class="rp-pm-meta-item"><span>Méthode de gestion</span><strong>Agile (itérative)</strong></div>
       </div>
@@ -2007,11 +2004,11 @@ const rpData = {
           </div>
           <div class="rp-gantt-row">
             <span class="rp-gantt-label">Développement cœur du site</span>
-            <div class="rp-gantt-track"><span class="rp-gantt-bar is-green" style="--start: 3; --length: 2;"></span></div>
+            <div class="rp-gantt-track"><span class="rp-gantt-bar is-green" style="--start: 3.5; --length: 2;"></span></div>
           </div>
           <div class="rp-gantt-row">
             <span class="rp-gantt-label">Intégration des preuves RP</span>
-            <div class="rp-gantt-track"><span class="rp-gantt-bar is-amber" style="--start: 4.5; --length: 1.5;"></span></div>
+            <div class="rp-gantt-track"><span class="rp-gantt-bar is-amber" style="--start: 5.5; --length: 1.5;"></span></div>
           </div>
         </div>
         <div class="rp-gantt-chronology">
@@ -2355,3 +2352,54 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
+
+// ========================================
+// DEEP LINKS — Ouverture automatique des RP
+// ========================================
+// Permet d'envoyer un lien comme: tonsite.com/#RP06
+// La page scrolle vers la section projets et ouvre le modal correspondant.
+
+(function() {
+  // Mapping nom RP visible → ID interne utilisé par openRPModal
+  const rpDeepLinkMap = {
+    'RP01': 'rp5',
+    'RP02': 'rp6',
+    'RP03': 'rp7',
+    'RP04': 'rp8',
+    'RP06': 'rp1',
+    'RP07': 'rp2',
+    'RP08': 'rp3',
+    'RP09': 'rp4'
+  };
+
+  function handleDeepLink() {
+    const hash = window.location.hash.replace('#', '').toUpperCase();
+    const rpInternalId = rpDeepLinkMap[hash];
+    
+    if (!rpInternalId) return; // Pas un lien RP, laisser le comportement normal
+
+    // Attendre que la page soit prête puis scroll + ouvrir le modal
+    setTimeout(() => {
+      // Scroll vers la section réalisations
+      const realisationsSection = document.getElementById('realisations');
+      if (realisationsSection) {
+        realisationsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+
+      // Ouvrir le modal après le scroll
+      setTimeout(() => {
+        openRPModal(rpInternalId);
+      }, 600);
+    }, 500);
+  }
+
+  // Au chargement de la page
+  if (document.readyState === 'complete') {
+    handleDeepLink();
+  } else {
+    window.addEventListener('load', handleDeepLink);
+  }
+
+  // Si le hash change dynamiquement (ex: clic sur un lien interne)
+  window.addEventListener('hashchange', handleDeepLink);
+})();
