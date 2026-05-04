@@ -901,7 +901,9 @@ const rpData = {
       context: 'Formation BTS SIO',
       status: 'Terminé',
       technologies: ['Xubuntu', 'Chromium Kiosk', 'Bash', 'Hardening Linux'],
-      documentation: '#'
+      links: [
+        { label: 'Documentation GitHub', href: 'https://github.com/edib16/RP01-Borne-interactive-NutriFit' }
+      ]
     },
     images: [
       { src: "images/Nutrifit.png", caption: "Aperçu NutriFit côté client" }
@@ -1046,7 +1048,9 @@ const rpData = {
       context: 'Formation BTS SIO',
       status: 'Terminé',
       technologies: ['Debian Linux', 'UFW', 'TCP/IP', 'Supervision', 'CLI Linux'],
-      documentation: '#'
+      links: [
+        { label: 'Documentation GitHub', href: 'https://github.com/edib16/RP02-Infrastructure-serveur-Classcord' }
+      ]
     },
     images: [
       { src: "images/classcordclient.png", caption: "Interface client Classcord en phase de test" }
@@ -1229,7 +1233,9 @@ const rpData = {
       context: 'Formation BTS SIO',
       status: 'Terminé',
       technologies: ['Windows Server 2022', 'Active Directory', 'DNS', 'GPO', 'Windows 10/11'],
-      documentation: '#'
+      links: [
+        { label: 'Documentation GitHub', href: 'https://github.com/edib16/RP03-Annuaire-Active-Directory' }
+      ]
     },
     
     images: [
@@ -1410,7 +1416,9 @@ const rpData = {
       context: 'Formation BTS SIO',
       status: 'Terminé',
       technologies: ['Debian Server', 'Kea DHCP', 'Apache2', 'HTML', 'CSS'],
-      documentation: '#'
+      links: [
+        { label: 'Documentation GitHub', href: 'https://github.com/edib16/RP04-Services-infrastructure-Linux' }
+      ]
     },
     
     images: [
@@ -1607,7 +1615,7 @@ const rpData = {
       status: 'Terminé',
       technologies: ['Windows Server 2022', 'NPS', 'Active Directory', 'Cisco Switch/AP', '802.1X / RADIUS'],
       links: [
-        { label: 'Documentation', href: 'images/BTS%20SIO%20-%20Tableau%20de%20synth%C3%A8se.pdf' }
+        { label: 'Documentation GitHub', href: 'https://github.com/edib16/RP06-Securisation-reseau-8021X' }
       ]
     }
   },
@@ -1769,7 +1777,7 @@ const rpData = {
       status: 'Terminé',
       technologies: ['Debian 12', 'FreeRADIUS', 'OpenLDAP', 'Docker', 'Prometheus', 'Grafana', 'SNMP'],
       links: [
-        { label: 'Documentation', href: 'images/BTS%20SIO%20-%20Tableau%20de%20synth%C3%A8se.pdf' }
+        { label: 'Documentation GitHub', href: 'https://github.com/edib16/RP07-Migration-Open-Source' }
       ]
     }
   },
@@ -1904,10 +1912,7 @@ const rpData = {
       team: 'Équipe support + stagiaire SISR',
       context: 'Stage 2ème année - ActifAzur',
       status: 'Terminé',
-      technologies: ['Windows 10/11', 'Outils de diagnostic', 'Rufus', 'Procédures SAV'],
-      links: [
-        { label: 'Documentation', href: 'images/BTS%20SIO%20-%20Tableau%20de%20synth%C3%A8se.pdf' }
-      ]
+      technologies: ['Windows 10/11', 'Outils de diagnostic', 'Rufus', 'Procédures SAV']
     }
   },
   'rp4': {
@@ -2049,9 +2054,8 @@ const rpData = {
       team: 'Projet individuel',
       context: 'Projet personnel - BTS SIO',
       status: 'Terminé',
-      technologies: ['HTML5', 'CSS3', 'JavaScript', 'Bootstrap 5', 'GitHub Pages'],
       links: [
-        { label: 'Documentation', href: 'images/BTS%20SIO%20-%20Tableau%20de%20synth%C3%A8se.pdf' }
+        { label: 'Portfolio GitHub', href: 'https://github.com/edib16/Portfolio' }
       ]
     }
   }
@@ -2241,6 +2245,13 @@ function openRPModal(rpId) {
   rpModalContent.innerHTML = generateRPContent(rp);
   rpModal.classList.add('active');
   document.body.style.overflow = 'hidden'; // Empêcher le scroll du body
+
+  // Reset du scroll vers le haut à chaque ouverture
+  rpModalContent.scrollTop = 0;
+  if (rpModal.querySelector('.rp-modal-body')) {
+    rpModal.querySelector('.rp-modal-body').scrollTop = 0;
+  }
+  rpModal.scrollTop = 0;
 }
 
 // Fermer le modal
