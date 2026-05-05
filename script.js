@@ -588,7 +588,7 @@ const rpData = {
   'rp5': {
     badge: 'Système',
     badgeClass: 'rp-badge-infra',
-    title: 'RP01 - Borne interactive NutriFit (Mode Kiosk)',
+    title: 'AP01 - Borne interactive NutriFit (Mode Kiosk)',
     period: '11/2024 - 12/2024',
     context: 'IRIS Mediaschool - Projet Inter-spécialités',
     useStructuredTemplate: true,
@@ -878,9 +878,14 @@ const rpData = {
       </div>
     `,
     competences: [
-      { num: "1.1", text: "Gérer le patrimoine informatique : Installation et sécurisation d'un système Linux kiosk." },
-      { num: "1.4", text: "Travailler en mode projet : Coordination inter-spécialités SISR/SLAM." },
-      { num: "1.5", text: "Mettre à disposition un service informatique : Livraison d'une borne stable et exploitable." }
+      { category: 'Gérer le patrimoine informatique', name: 'Mettre en place et vérifier les niveaux d\'habilitation', desc: 'Création d\'un utilisateur restreint sans droits d\'administration pour sécuriser la borne.' },
+      { category: 'Gérer le patrimoine informatique', name: 'Vérifier les conditions de la continuité d\'un service', desc: 'Mise en place d\'un script de démarrage automatique pour assurer la disponibilité de la borne.' },
+      { category: 'Gérer le patrimoine informatique', name: 'Gérer des sauvegardes', desc: 'Réalisation de snapshots réguliers de la VM avant chaque modification critique.' },
+      { category: 'Gérer le patrimoine informatique', name: 'Vérifier le respect des règles d\'utilisation', desc: 'Verrouillage de l\'interface Kiosk pour empêcher toute navigation non autorisée.' },
+      { category: 'Travailler en mode projet', name: 'Analyser les objectifs et modalités d\'organisation', desc: 'Définition des contraintes de sécurité et d\'ergonomie nécessaires au projet inter-spécialités.' },
+      { category: 'Travailler en mode projet', name: 'Planifier les activités', desc: 'Utilisation d\'un diagramme de Gantt pour planifier et respecter les délais de livraison.' },
+      { category: 'Mettre à disposition un service', name: 'Réaliser les tests d\'intégration et d\'acceptation', desc: 'Tests rigoureux des redémarrages, des coupures réseau et de l\'accès web.' },
+      { category: 'Mettre à disposition un service', name: 'Déployer un service', desc: 'Livraison de la machine virtuelle pleinement fonctionnelle aux développeurs SLAM.' }
     ],
     resultats: `
       <p><strong>Résultat :</strong> une borne fonctionnelle, sécurisée et stable a été livrée dans les délais, répondant aux exigences du cahier des charges, notamment en termes de sécurité et d'accessibilité.</p>
@@ -902,7 +907,7 @@ const rpData = {
       status: 'Terminé',
       technologies: ['Xubuntu', 'Chromium Kiosk', 'Bash', 'Hardening Linux'],
       links: [
-        { label: 'Documentation GitHub', href: 'https://github.com/edib16/RP01-Borne-interactive-NutriFit' }
+        { label: 'Documentation GitHub', href: 'https://github.com/edib16/AP01-Borne-interactive-NutriFit' }
       ]
     },
     images: [
@@ -912,7 +917,7 @@ const rpData = {
   'rp6': {
     badge: 'Réseau',
     badgeClass: 'rp-badge-network',
-    title: 'RP02 - Infrastructure serveur Classcord',
+    title: 'AP02 - Infrastructure serveur Classcord',
     period: '06/2025',
     context: 'Projet inter-spécialités / IRIS Mediaschool',
     useStructuredTemplate: true,
@@ -1033,9 +1038,14 @@ const rpData = {
       'Documenter l\'exploitation et les procédures de maintenance'
     ],
     competences: [
-      { num: '1.1', text: 'Gérer le patrimoine informatique : Administration système Linux et configuration réseau.' },
-      { num: '1.4', text: 'Travailler en mode projet : Coordination inter-spécialités SISR/SLAM.' },
-      { num: '1.5', text: 'Mettre à disposition un service informatique : Infrastructure serveur sécurisée et disponible.' }
+      { category: 'Gérer le patrimoine informatique', name: 'Recenser et identifier les ressources numériques', desc: 'Dimensionnement et recensement des besoins en ressources de la machine virtuelle Debian.' },
+      { category: 'Gérer le patrimoine informatique', name: 'Mettre en place et vérifier les niveaux d\'habilitation', desc: 'Configuration des règles du parefeu UFW pour restreindre les ports ouverts.' },
+      { category: 'Gérer le patrimoine informatique', name: 'Vérifier les conditions de la continuité d\'un service', desc: 'Surveillance des logs système pour assurer la disponibilité du service.' },
+      { category: 'Répondre aux incidents et demandes', name: 'Traiter des demandes (services réseau/système)', desc: 'Ouverture des ports spécifiques requis par l\'application de l\'équipe SLAM.' },
+      { category: 'Travailler en mode projet', name: 'Analyser les objectifs et modalités d\'organisation', desc: 'Définition de l\'architecture réseau nécessaire à l\'application de messagerie.' },
+      { category: 'Travailler en mode projet', name: 'Planifier les activités', desc: 'Organisation de la mise en production du serveur en collaboration avec les développeurs.' },
+      { category: 'Mettre à disposition un service', name: 'Réaliser les tests d\'intégration et d\'acceptation', desc: 'Validation de la communication réseau et de la base de données entre les clients et le serveur.' },
+      { category: 'Mettre à disposition un service', name: 'Déployer un service', desc: 'Mise en ligne de l\'infrastructure serveur finale pour les développeurs.' }
     ],
     technologies: ['Debian Linux', 'UFW', 'Réseau TCP/IP', 'Supervision système', 'CLI Linux'],
     resultats: `
@@ -1049,7 +1059,7 @@ const rpData = {
       status: 'Terminé',
       technologies: ['Debian Linux', 'UFW', 'TCP/IP', 'Supervision', 'CLI Linux'],
       links: [
-        { label: 'Documentation GitHub', href: 'https://github.com/edib16/RP02-Infrastructure-serveur-Classcord' }
+        { label: 'Documentation GitHub', href: 'https://github.com/edib16/AP02-Infrastructure-serveur-Classcord' }
       ]
     },
     images: [
@@ -1059,7 +1069,7 @@ const rpData = {
   'rp7': {
     badge: '1ère Année',
     badgeClass: 'rp-badge-system',
-    title: 'RP03 - Annuaire d\'entreprise (Active Directory)',
+    title: 'AP03 - Annuaire d\'entreprise (Active Directory)',
     period: '01/2025',
     context: 'IRIS Mediaschool',
     useStructuredTemplate: true,
@@ -1215,9 +1225,16 @@ const rpData = {
     ],
     
     competences: [
-      { num: '1.1', text: 'Gérer le patrimoine informatique : Configuration d\'un serveur Microsoft et infrastructure AD.' },
-      { num: '1.2', text: 'Répondre aux incidents et demandes d\'assistance : Gestion des comptes et droits utilisateurs.' },
-      { num: '1.5', text: 'Mettre à disposition un service informatique : Service d\'authentification centralisé et sécurisé.' }
+      { category: 'Gérer le patrimoine informatique', name: 'Exploiter des référentiels, normes et standards', desc: 'Application des standards Microsoft pour la nomenclature et l\'arborescence de l\'Active Directory.' },
+      { category: 'Gérer le patrimoine informatique', name: 'Mettre en place et vérifier les niveaux d\'habilitation', desc: 'Structuration des Unités Organisationnelles et application du principe de moindre privilège.' },
+      { category: 'Gérer le patrimoine informatique', name: 'Vérifier les conditions de la continuité d\'un service', desc: 'Configuration de la réplication SYSVOL et de la redondance DNS.' },
+      { category: 'Gérer le patrimoine informatique', name: 'Gérer des sauvegardes', desc: 'Planification de sauvegardes régulières de l\'état du système (System State).' },
+      { category: 'Gérer le patrimoine informatique', name: 'Vérifier le respect des règles d\'utilisation', desc: 'Déploiement de GPO strictes bloquant l\'accès aux paramètres système pour les utilisateurs.' },
+      { category: 'Répondre aux incidents et demandes', name: 'Traiter des demandes (services réseau/système)', desc: 'Centralisation de la création des comptes et facilitation de la réinitialisation des mots de passe.' },
+      { category: 'Travailler en mode projet', name: 'Analyser les objectifs et modalités d\'organisation', desc: 'Cartographie des groupes de sécurité selon les besoins des différents services de l\'école.' },
+      { category: 'Travailler en mode projet', name: 'Planifier les activités', desc: 'Documentation et ordonnancement de chaque phase de création de l\'annuaire.' },
+      { category: 'Mettre à disposition un service', name: 'Réaliser les tests d\'intégration et d\'acceptation', desc: 'Simulation de connexions clients et validation de l\'application des stratégies GPO.' },
+      { category: 'Mettre à disposition un service', name: 'Déployer un service', desc: 'Mise en production du domaine pour l\'intégration de l\'ensemble des postes clients.' }
     ],
     
     technologies: ['Windows Server 2022', 'Active Directory Domain Services', 'DNS', 'Politiques de groupe (GPO)', 'Windows 10/11'],
@@ -1234,7 +1251,7 @@ const rpData = {
       status: 'Terminé',
       technologies: ['Windows Server 2022', 'Active Directory', 'DNS', 'GPO', 'Windows 10/11'],
       links: [
-        { label: 'Documentation GitHub', href: 'https://github.com/edib16/RP03-Annuaire-Active-Directory' }
+        { label: 'Documentation GitHub', href: 'https://github.com/edib16/AP03-Annuaire-Active-Directory' }
       ]
     },
     
@@ -1247,7 +1264,7 @@ const rpData = {
   'rp8': {
     badge: '1ère Année',
     badgeClass: 'rp-badge-system',
-    title: 'RP04 - Services d\'infrastructure Linux (DHCP & Web)',
+    title: 'AP04 - Services d\'infrastructure Linux (DHCP & Web)',
     period: '02/2025 - 03/2025',
     context: 'École IRIS',
     useStructuredTemplate: true,
@@ -1399,8 +1416,13 @@ const rpData = {
     ],
     
     competences: [
-      { num: '1.1', text: 'Gérer le patrimoine informatique : Administration Linux et services réseau.' },
-      { num: '1.5', text: 'Mettre à disposition un service informatique : Automation DHCP et intranet web.' }
+      { category: 'Gérer le patrimoine informatique', name: 'Vérifier les conditions de la continuité d\'un service', desc: 'Configuration des baux DHCP et du serveur Web pour garantir une haute disponibilité réseau.' },
+      { category: 'Gérer le patrimoine informatique', name: 'Gérer des sauvegardes', desc: 'Archivage des fichiers de configuration de Kea DHCP et Apache2.' },
+      { category: 'Répondre aux incidents et demandes', name: 'Traiter des demandes (services réseau/système)', desc: 'Automatisation de l\'attribution des IP pour éviter les conflits réseau.' },
+      { category: 'Travailler en mode projet', name: 'Analyser les objectifs et modalités d\'organisation', desc: 'Définition des plages d\'adresses IP et des réservations selon la topologie réseau existante.' },
+      { category: 'Travailler en mode projet', name: 'Planifier les activités', desc: 'Planification et échelonnement de l\'installation du serveur DHCP puis du serveur Web.' },
+      { category: 'Mettre à disposition un service', name: 'Réaliser les tests d\'intégration et d\'acceptation', desc: 'Vérification de l\'obtention des IP clients et de l\'accès à la page web.' },
+      { category: 'Mettre à disposition un service', name: 'Déployer un service', desc: 'Bascule transparente de l\'adressage réseau de l\'école en dynamique.' }
     ],
     
     technologies: ['Debian Server', 'Kea DHCP', 'Apache2', 'HTML/CSS', 'CLI Linux'],
@@ -1417,7 +1439,7 @@ const rpData = {
       status: 'Terminé',
       technologies: ['Debian Server', 'Kea DHCP', 'Apache2', 'HTML', 'CSS'],
       links: [
-        { label: 'Documentation GitHub', href: 'https://github.com/edib16/RP04-Services-infrastructure-Linux' }
+        { label: 'Documentation GitHub', href: 'https://github.com/edib16/AP04-Services-infrastructure-Linux' }
       ]
     },
     
@@ -1430,7 +1452,7 @@ const rpData = {
   'rp1': {
     badge: 'Sécurité',
     badgeClass: 'rp-badge-security',
-    title: 'RP06 - Sécurisation des accès réseau 802.1X (Standard Microsoft)',
+    title: 'RP01 - Sécurisation des accès réseau 802.1X (Standard Microsoft)',
     period: '10/11/2025 - 12/04/2026',
     context: 'IRIS Mediaschool',
     useStructuredTemplate: true,
@@ -1597,9 +1619,15 @@ const rpData = {
       'Windows Server 2022', 'NPS', 'Active Directory', 'Cisco Switch/AP', '802.1X / RADIUS'
     ],
     competences: [
-      { num: '1.1', text: 'Gérer le patrimoine informatique : Administration réseau Cisco et service NPS.' },
-      { num: '1.4', text: 'Travailler en mode projet : Cadrage, planification et validation technique.' },
-      { num: '1.5', text: 'Mettre à disposition un service informatique : Contrôle d\'accès 802.1X sécurisé.' }
+      { category: 'Gérer le patrimoine informatique', name: 'Exploiter des référentiels, normes et standards', desc: 'Implémentation du standard de sécurité 802.1X et du protocole RADIUS (PEAP-MSCHAPv2).' },
+      { category: 'Gérer le patrimoine informatique', name: 'Mettre en place et vérifier les niveaux d\'habilitation', desc: 'Conditionnement des accès réseau (NPS) en fonction des groupes Active Directory.' },
+      { category: 'Gérer le patrimoine informatique', name: 'Vérifier les conditions de la continuité d\'un service', desc: 'Documentation de la gestion des certificats serveurs pour anticiper leur renouvellement.' },
+      { category: 'Gérer le patrimoine informatique', name: 'Vérifier le respect des règles d\'utilisation', desc: 'Configuration des switchs pour bloquer instantanément les ports en cas de tentative frauduleuse.' },
+      { category: 'Répondre aux incidents et demandes', name: 'Traiter des demandes (services réseau/système)', desc: 'Configuration dynamique des VLANs pour affecter le bon réseau selon l\'utilisateur connecté.' },
+      { category: 'Travailler en mode projet', name: 'Analyser les objectifs et modalités d\'organisation', desc: 'Audit des failles de sécurité existantes pour justifier le déploiement du projet.' },
+      { category: 'Travailler en mode projet', name: 'Planifier les activités', desc: 'Gestion du projet sur 6 mois via un suivi rigoureux par tableau Kanban.' },
+      { category: 'Mettre à disposition un service', name: 'Réaliser les tests d\'intégration et d\'acceptation', desc: 'Analyse des trames d\'authentification avec Wireshark pour valider le processus.' },
+      { category: 'Mettre à disposition un service', name: 'Déployer un service', desc: 'Application et activation de la sécurisation sur l\'ensemble des équipements réseau.' }
     ],
     resultats: `
       <p>Le réseau est verrouillé et les accès sont centralisés sur l'AD. Cette RP m'a permis de maîtriser la sécurisation des accès réseau en environnement propriétaire Microsoft.</p>
@@ -1615,14 +1643,14 @@ const rpData = {
       status: 'Terminé',
       technologies: ['Windows Server 2022', 'NPS', 'Active Directory', 'Cisco Switch/AP', '802.1X / RADIUS'],
       links: [
-        { label: 'Documentation GitHub', href: 'https://github.com/edib16/RP06-Securisation-reseau-8021X' }
+        { label: 'Documentation GitHub', href: 'https://github.com/edib16/RP01-Securisation-reseau-8021X' }
       ]
     }
   },
   'rp2': {
     badge: 'Souveraineté',
     badgeClass: 'rp-badge-infra',
-    title: 'RP07 - Migration souveraine Open Source (FreeRADIUS/OpenLDAP)',
+    title: 'RP02 - Migration souveraine Open Source (FreeRADIUS/OpenLDAP)',
     period: '02/03/2026 - 30/04/2026',
     context: 'IRIS Mediaschool - Mediaschool Group',
     useStructuredTemplate: true,
@@ -1758,9 +1786,15 @@ const rpData = {
       'Debian 12', 'FreeRADIUS', 'OpenLDAP', 'Docker', 'Prometheus', 'Loki', 'Grafana', 'SNMP', 'Node Exporter'
     ],
     competences: [
-      { num: '1.1', text: 'Gérer le patrimoine informatique : Migration d\'infrastructure vers des solutions libres.' },
-      { num: '1.4', text: 'Travailler en mode projet : Planification et conduite de migration progressive.' },
-      { num: '1.5', text: 'Mettre à disposition un service informatique : Authentification et supervision pérennes.' }
+      { category: 'Gérer le patrimoine informatique', name: 'Recenser et identifier les ressources numériques', desc: 'Recensement de l\'ensemble des dépendances au serveur propriétaire Windows à remplacer.' },
+      { category: 'Gérer le patrimoine informatique', name: 'Exploiter des référentiels, normes et standards', desc: 'Utilisation de protocoles ouverts et standards comme LDAP et SNMP pour l\'architecture.' },
+      { category: 'Gérer le patrimoine informatique', name: 'Mettre en place et vérifier les niveaux d\'habilitation', desc: 'Configuration d\'OpenLDAP pour reproduire fidèlement l\'arborescence des droits d\'accès existants.' },
+      { category: 'Gérer le patrimoine informatique', name: 'Vérifier les conditions de la continuité d\'un service', desc: 'Mise en place d\'une stack Docker (Prometheus/Grafana) pour la supervision en temps réel.' },
+      { category: 'Répondre aux incidents et demandes', name: 'Traiter des demandes (services réseau/système)', desc: 'Réponse à la demande stratégique de la direction d\'atteindre une souveraineté numérique.' },
+      { category: 'Travailler en mode projet', name: 'Analyser les objectifs et modalités d\'organisation', desc: 'Étude de faisabilité technique par la comparaison de FreeRADIUS au système NPS propriétaire.' },
+      { category: 'Travailler en mode projet', name: 'Planifier les activités', desc: 'Préparation d\'un plan de migration progressif pour garantir un retour arrière possible.' },
+      { category: 'Mettre à disposition un service', name: 'Réaliser les tests d\'intégration et d\'acceptation', desc: 'Validation de la synchronisation LDAP et simulation de pannes pour tester les alertes Grafana.' },
+      { category: 'Mettre à disposition un service', name: 'Déployer un service', desc: 'Bascule complète de l\'authentification réseau vers la nouvelle solution Open Source.' }
     ],
     resultats: `
       <p>La migration vers une infrastructure libre est validée : authentification opérationnelle, supervision active, et autonomie renforcée de l'établissement.</p>
@@ -1777,14 +1811,14 @@ const rpData = {
       status: 'Terminé',
       technologies: ['Debian 12', 'FreeRADIUS', 'OpenLDAP', 'Docker', 'Prometheus', 'Grafana', 'SNMP'],
       links: [
-        { label: 'Documentation GitHub', href: 'https://github.com/edib16/RP07-Migration-Open-Source' }
+        { label: 'Documentation GitHub', href: 'https://github.com/edib16/RP02-Migration-Open-Source' }
       ]
     }
   },
   'rp3': {
     badge: 'Support',
     badgeClass: 'rp-badge-support',
-    title: 'RP08 - Support technique (Stage ActifAzur)',
+    title: 'Stage - Support technique (ActifAzur)',
     period: '05/01/2026 - 13/02/2026',
     context: 'Stage ActifAzur - Antibes',
     useStructuredTemplate: true,
@@ -1897,9 +1931,12 @@ const rpData = {
       'Windows 10/11', 'Outils de diagnostic hardware', 'Rufus'
     ],
     competences: [
-      { num: '1.1', text: 'Gérer le patrimoine informatique : Maintenance matérielle et logicielle du parc.' },
-      { num: '1.2', text: 'Répondre aux incidents : Diagnostic, résolution et communication client.' },
-      { num: '1.4', text: 'Travailler en mode projet : Organisation des interventions et suivi des priorités.' }
+      { category: 'Gérer le patrimoine informatique', name: 'Vérifier les conditions de la continuité d\'un service', desc: 'Réparation et standardisation des postes clients pour assurer la continuité d\'activité.' },
+      { category: 'Gérer le patrimoine informatique', name: 'Gérer des sauvegardes', desc: 'Sauvegarde des données utilisateurs sur supports externes avant toute intervention.' },
+      { category: 'Gérer le patrimoine informatique', name: 'Vérifier le respect des règles d\'utilisation', desc: 'Vérification de la conformité des postes à la politique de sécurité (antivirus, mises à jour).' },
+      { category: 'Travailler en mode projet', name: 'Analyser les objectifs et modalités d\'organisation', desc: 'Diagnostic des pannes matérielles et logicielles pour établir un plan de réparation.' },
+      { category: 'Travailler en mode projet', name: 'Planifier les activités', desc: 'Gestion du temps et du traitement des tickets SAV en respectant les priorités et urgences.' },
+      { category: 'Mettre à disposition un service', name: 'Accompagner les utilisateurs', desc: 'Accompagnement des clients par l\'explication des réparations et l\'apport de conseils préventifs.' }
     ],
     resultats: `
       <p>Optimisation du temps de diagnostic, amélioration du taux de résolution et satisfaction client renforcée.</p>
@@ -1918,7 +1955,7 @@ const rpData = {
   'rp4': {
     badge: 'Web',
     badgeClass: 'rp-badge-web',
-    title: 'RP09 - Conception du portfolio professionnel',
+    title: 'AP05 - Conception du portfolio professionnel',
     period: '10/10/2024 - 03/05/2026',
     context: 'Projet personnel',
     useStructuredTemplate: true,
@@ -2039,9 +2076,14 @@ const rpData = {
       'HTML5', 'CSS3', 'JS', 'Bootstrap 5', 'GitHub'
     ],
     competences: [
-      { num: '1.3', text: 'Développer la présence en ligne.' },
-      { num: '1.4', text: 'Travailler en mode projet.' },
-      { num: '1.6', text: 'Organiser son développement professionnel.' }
+      { category: 'Développer la présence en ligne', name: 'Participer à la valorisation de l\'image', desc: 'Conception d\'une interface web professionnelle pour mettre en valeur le profil et les réalisations.' },
+      { category: 'Développer la présence en ligne', name: 'Participer à l\'évolution d\'un site Web', desc: 'Développement du code source du portfolio et mise en ligne sur GitHub Pages.' },
+      { category: 'Travailler en mode projet', name: 'Analyser les objectifs et modalités d\'organisation', desc: 'Définition de l\'architecture et du design du site pour répondre aux attentes de l\'examen BTS.' },
+      { category: 'Travailler en mode projet', name: 'Planifier les activités', desc: 'Organisation du développement par itérations successives (parcours, grille, projets).' },
+      { category: 'Travailler en mode projet', name: 'Évaluer les indicateurs de suivi', desc: 'Correction des bugs et amélioration du code suite aux tests de rendu multi-écrans.' },
+      { category: 'Organiser son développement pro.', name: 'Mettre en œuvre des outils de veille', desc: 'Intégration d\'une section dédiée à la veille technologique illustrant la curiosité professionnelle.' },
+      { category: 'Organiser son développement pro.', name: 'Gérer son identité professionnelle', desc: 'Mise en valeur de l\'identité professionnelle, du CV téléchargeable et des coordonnées.' },
+      { category: 'Organiser son développement pro.', name: 'Développer son projet professionnel', desc: 'Explication claire des objectifs de carrière dans les domaines des réseaux et de la cybersécurité.' }
     ],
     resultats: `
       <p>Portfolio interactif et sécurisé en ligne.</p>
@@ -2069,10 +2111,26 @@ const rpModalOverlay = document.querySelector('.rp-modal-overlay');
 
 // Fonction pour générer le contenu du modal
 function generateRPContent(rp) {
-  const competencesHTML = rp.competences.map(c => `
-    <div class="rp-detail-competence-item">
-      <div class="rp-detail-competence-num">${c.num}</div>
-      <span class="rp-detail-competence-text">${c.text}</span>
+  // Grouper les compétences par catégorie
+  const groupedCompetences = (rp.competences || []).reduce((acc, curr) => {
+    if (!acc[curr.category]) acc[curr.category] = [];
+    acc[curr.category].push(curr);
+    return acc;
+  }, {});
+
+  const competencesHTML = Object.entries(groupedCompetences).map(([category, items]) => `
+    <div class="competence-group" style="margin-bottom: 2rem;">
+      <h5 class="competence-category-title" style="color: var(--primary); border-bottom: 2px solid var(--border-color); padding-bottom: 8px; margin-bottom: 15px; font-size: 1.1rem;">
+        <i class="fa-solid fa-check-circle" style="margin-right: 8px;"></i>${category}
+      </h5>
+      <div class="rp-competences-grid-new" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 15px;">
+        ${items.map(item => `
+          <div class="competence-item-card" style="background: var(--surface-light); border: 1px solid var(--border-color); border-radius: 8px; padding: 15px; display: flex; flex-direction: column; gap: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+            <h6 style="color: var(--text-primary); font-size: 0.95rem; margin: 0; font-weight: 600; line-height: 1.3;">${item.name}</h6>
+            <p style="color: var(--text-secondary); font-size: 0.85rem; margin: 0; line-height: 1.4;">${item.desc}</p>
+          </div>
+        `).join('')}
+      </div>
     </div>
   `).join('');
 
@@ -2373,14 +2431,14 @@ document.addEventListener('DOMContentLoaded', () => {
 (function() {
   // Mapping nom RP visible → ID interne utilisé par openRPModal
   const rpDeepLinkMap = {
-    'RP01': 'rp5',
-    'RP02': 'rp6',
-    'RP03': 'rp7',
-    'RP04': 'rp8',
-    'RP06': 'rp1',
-    'RP07': 'rp2',
-    'RP08': 'rp3',
-    'RP09': 'rp4'
+    'AP01': 'rp5',
+    'AP02': 'rp6',
+    'AP03': 'rp7',
+    'AP04': 'rp8',
+    'RP01': 'rp1',
+    'RP02': 'rp2',
+    'Stage': 'rp3',
+    'AP05': 'rp4'
   };
 
   function handleDeepLink() {
